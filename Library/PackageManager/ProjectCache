@@ -1,6 +1,6 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: C:/cygwin64/home/ilda-vive/henrylapassat/TERMag3/Packages/manifest.json
+    m_FilePath: C:/cygwin64/home/ilda-vive/henrylapassat/TERL3/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
@@ -8,7 +8,7 @@ m_ProjectFiles:
       ticks: 638019332435521810
     m_Hash: 2613951792
   m_LockFileStatus:
-    m_FilePath: C:/cygwin64/home/ilda-vive/henrylapassat/TERMag3/Packages/packages-lock.json
+    m_FilePath: C:/cygwin64/home/ilda-vive/henrylapassat/TERL3/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
@@ -25,7 +25,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.3.9
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.collab-proxy@1.3.9
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.collab-proxy@1.3.9
       assetPath: Packages/com.unity.collab-proxy
       name: com.unity.collab-proxy
       displayName: Unity Collaborate
@@ -34,7 +34,7 @@ m_PackageAssets:
         email: 
         url: 
       category: Editor
-      type: 
+      type: asset
       description: Collaborate with your teammates with the official version control
         system for Unity. Collaborate is a simple way for teams to save, share, and
         sync your Unity project.
@@ -93,6 +93,7 @@ m_PackageAssets:
         - 1.17.1
         - 1.17.2
         - 1.17.6
+        - 1.17.7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -153,7 +154,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
@@ -170,7 +171,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.0.7
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.ide.rider@2.0.7
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.ide.rider@2.0.7
       assetPath: Packages/com.unity.ide.rider
       name: com.unity.ide.rider
       displayName: JetBrains Rider Editor
@@ -291,7 +292,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.0.7
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.ide.visualstudio@2.0.7
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.ide.visualstudio@2.0.7
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -386,7 +387,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.2.3
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.ide.vscode@1.2.3
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.ide.vscode@1.2.3
       assetPath: Packages/com.unity.ide.vscode
       name: com.unity.ide.vscode
       displayName: Visual Studio Code Editor
@@ -459,7 +460,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.5.7
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.recorder@2.5.7
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.recorder@2.5.7
       assetPath: Packages/com.unity.recorder
       name: com.unity.recorder
       displayName: Unity Recorder
@@ -576,7 +577,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.1.24
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.test-framework@1.1.24
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.test-framework@1.1.24
       assetPath: Packages/com.unity.test-framework
       name: com.unity.test-framework
       displayName: Test Framework
@@ -585,7 +586,7 @@ m_PackageAssets:
         email: 
         url: 
       category: Unity Test Framework
-      type: 
+      type: asset
       description: Test framework for running Edit mode and Play mode tests in Unity.
       status: 4
       errors: []
@@ -627,6 +628,7 @@ m_PackageAssets:
         - 1.1.33
         - 1.3.0
         - 2.0.1-exp.1
+        - 2.0.1-exp.2
         - 2.0.1-pre.12
         - 2.0.1-pre.18
         compatible:
@@ -639,6 +641,7 @@ m_PackageAssets:
         - 1.1.33
         - 1.3.0
         - 2.0.1-exp.1
+        - 2.0.1-exp.2
         - 2.0.1-pre.12
         - 2.0.1-pre.18
         verified: 1.1.33
@@ -667,7 +670,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
@@ -684,7 +687,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 3.0.4
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.textmeshpro@3.0.4
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.textmeshpro@3.0.4
       assetPath: Packages/com.unity.textmeshpro
       name: com.unity.textmeshpro
       displayName: TextMeshPro
@@ -854,7 +857,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.4.7
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.timeline@1.4.7
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.timeline@1.4.7
       assetPath: Packages/com.unity.timeline
       name: com.unity.timeline
       displayName: Timeline
@@ -863,7 +866,7 @@ m_PackageAssets:
         email: 
         url: 
       category: 
-      type: 
+      type: asset
       description: Use Unity Timeline to create cinematic content, game-play sequences,
         audio sequences, and complex particle effects.
       status: 4
@@ -942,6 +945,8 @@ m_PackageAssets:
         - 1.7.0-pre.2
         - 1.7.0
         - 1.7.1
+        - 1.7.2
+        - 1.8.0
         compatible:
         - 1.4.7
         - 1.4.8
@@ -971,6 +976,8 @@ m_PackageAssets:
         - 1.7.0-pre.2
         - 1.7.0
         - 1.7.1
+        - 1.7.2
+        - 1.8.0
         verified: 1.4.8
       dependencies:
       - name: com.unity.modules.director
@@ -1004,7 +1011,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
@@ -1079,12 +1086,12 @@ m_PackageAssets:
         url: 
         revision: 
         path: 
-    - packageId: com.valvesoftware.unity.openvr@file:C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.1.4.tgz
+    - packageId: com.valvesoftware.unity.openvr@file:C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.1.4.tgz
       testable: 0
       isDirectDependency: 1
       version: 1.1.4
       source: 6
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.valvesoftware.unity.openvr@9a6add570e6c-1666336502947
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@205efce9c250-1666336502947
       assetPath: Packages/com.valvesoftware.unity.openvr
       name: com.valvesoftware.unity.openvr
       displayName: OpenVR XR Plugin
@@ -2911,7 +2918,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 3.2.13
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.xr.management@3.2.13
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.xr.management@3.2.13
       assetPath: Packages/com.unity.xr.management
       name: com.unity.xr.management
       displayName: XR Plugin Management
@@ -3049,7 +3056,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 2.1.7
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.xr.legacyinputhelpers@2.1.7
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.xr.legacyinputhelpers@2.1.7
       assetPath: Packages/com.unity.xr.legacyinputhelpers
       name: com.unity.xr.legacyinputhelpers
       displayName: XR Legacy Input Helpers
@@ -3147,7 +3154,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.6
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.ext.nunit@1.0.6
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.ext.nunit@1.0.6
       assetPath: Packages/com.unity.ext.nunit
       name: com.unity.ext.nunit
       displayName: Custom NUnit
@@ -3212,7 +3219,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.6
       source: 1
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Library\PackageCache\com.unity.subsystemregistration@1.0.6
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Library\PackageCache\com.unity.subsystemregistration@1.0.6
       assetPath: Packages/com.unity.subsystemregistration
       name: com.unity.subsystemregistration
       displayName: Subsystem Registration
@@ -3221,7 +3228,7 @@ m_PackageAssets:
         email: 
         url: 
       category: 
-      type: 
+      type: asset
       description: Provides internal registration mechanism for standalone subsystems. 
         It allows a standalone subsystem to inform the Subsystem Manager of its existence.
       status: 4
@@ -3234,11 +3241,13 @@ m_PackageAssets:
         - 1.0.6
         - 1.1.0
         - 1.1.1
+        - 1.1.2
         compatible:
         - 1.0.6
         - 1.1.0
         - 1.1.1
-        verified: 1.1.1
+        - 1.1.2
+        verified: 1.1.2
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -3253,7 +3262,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
@@ -3267,19 +3276,19 @@ m_PackageAssets:
         path: 
   m_LocalPackages:
     m_LocalFileStatus:
-    - m_FilePath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.1.4.tgz/package.json
+    - m_FilePath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.1.4.tgz/package.json
       m_PathExists: 0
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
         ticks: 0
       m_Hash: 0
-    - m_FilePath: C:\cygwin64\home\ilda-vive\henrylapassat\TERMag3\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.1.4.tgz
+    - m_FilePath: C:\cygwin64\home\ilda-vive\henrylapassat\TERL3\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.1.4.tgz
       m_PathExists: 1
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
         ticks: 638019333029468844
       m_Hash: 2919789393
-m_ProjectPath: C:/cygwin64/home/ilda-vive/henrylapassat/TERMag3/Packages
+m_ProjectPath: C:/cygwin64/home/ilda-vive/henrylapassat/TERL3/Packages
 m_EditorVersion: 2020.3.6f1 (338bb68529b2)

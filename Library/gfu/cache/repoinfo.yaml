@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2022-11-22T15:58:34.318+01:00
-  initializedAtString: 2022-11-22T14:57:26.786+01:00
+  lastUpdatedAtString: 2022-11-22T17:06:57.864+01:00
+  initializedAtString: 2022-11-22T17:06:57.864+01:00
   currentGitRemote:
     name: origin
-    url: https://github.com/Jvaljer/TERMag3
+    url: https://github.com/Jvaljer/TERL3
     login: 
     user: 
     host: 
@@ -30,9 +30,9 @@ MonoBehaviour:
     name: main
     remote:
       name: origin
-      url: https://github.com/Jvaljer/TERMag3
+      url: https://github.com/Jvaljer/TERL3
     trackingBranch: main
   currentConfigRemote:
     name: origin
-    url: https://github.com/Jvaljer/TERMag3
+    url: https://github.com/Jvaljer/TERL3
   currentHead: 
