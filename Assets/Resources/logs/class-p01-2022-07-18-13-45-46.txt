@@ -1,0 +1,8 @@
+g02 p01 kine action
+10.91282; Rotate
+16.19666; Rotate
+31.38836; Rotate
+46.3348; Rotate
+65.46185; Rotate
+65.6082; Rotate
+66.95; Rotate

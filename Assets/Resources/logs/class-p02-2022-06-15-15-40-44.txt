@@ -1,0 +1,5 @@
+g01 p02 kine action
+18.67933; Tag ; color : white (Instance)
+22.1323; Tag ; color : white (Instance)
+23.56541; Tag ; color : white (Instance)
+25.67592; Tag ; color : white (Instance)

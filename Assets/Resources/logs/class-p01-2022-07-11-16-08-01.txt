@@ -1,0 +1,2 @@
+g01 p01 kine action
+11.07173; Rotate
