@@ -132,10 +132,12 @@
      <None Include="Assets\Resources\logs\class-p01-2022-07-07-16-15-11.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-10-18-14-50-27.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-28-10-23-53.txt" />
+     <None Include="Assets\Resources\logs\class-ope01-2022-11-25-12-37-41.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-16-12-59-37.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-15-37-00.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-06-28-17-29-18.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-16-13-23-56.txt" />
+     <None Include="Assets\Resources\logs\class-ope01-2022-11-25-12-37-37.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-15-28-49.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-20-14-20-29.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-28-11-05-01.txt" />
@@ -197,6 +199,7 @@
      <None Include="Assets\Resources\logs\class-p01-2022-06-30-14-54-11.txt" />
      <None Include="Assets\Photon\PhotonVoice\changes-voice.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-11-40-38.txt" />
+     <None Include="Assets\Resources\logs\class-ope01-2022-11-25-12-37-44.txt" />
      <None Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-06-28-16-17-45.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-06-28-14-09-48.txt" />
@@ -246,6 +249,7 @@
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-11-03-03.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-06-30-14-36-45.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-13-18-50.txt" />
+     <None Include="Assets\Resources\logs\class-ope01-2022-11-25-12-37-40.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-07-15-57-05.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-25-12-46-08.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-21-12-37-17.txt" />
@@ -301,6 +305,7 @@
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-13-55-17.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-15-01-51.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-15-44-37.txt" />
+     <None Include="Assets\Resources\logs\class-ope01-2022-11-25-12-37-54.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-20-16-07-45.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-28-11-03-41.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-28-10-56-01.txt" />
@@ -346,6 +351,7 @@
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-11-20-26.txt" />
      <None Include="Assets\Photon\PhotonVoice\PhotonVoiceLibs\WSA\x64\webrtc-audio.dll" />
      <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll" />
+     <None Include="Assets\Resources\logs\class-ope01-2022-11-25-12-37-51.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-21-14-48-30.txt" />
      <None Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Audio\Reminder-public_d-291_hifi.mp3.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-14-12-59-40.txt" />
@@ -369,6 +375,7 @@
      <None Include="Assets\Resources\logs\class-p02-2022-06-28-10-24-32.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-22-15-27-41.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-15-27-40.txt" />
+     <None Include="Assets\Resources\logs\class-ope01-2022-11-25-12-37-45.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-25-11-46-44.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-25-11-51-10.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-15-57-21.txt" />
@@ -385,6 +392,7 @@
      <None Include="Assets\Resources\logs\class-p01-2022-07-18-13-45-46.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-15-58-24.txt" />
      <None Include="Assets\Resources\Experiments\initialTrialFile.txt" />
+     <None Include="Assets\Resources\logs\class-ope01-2022-11-25-12-37-36.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-16-13-03-28.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-21-13-07-32.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-16-13-17-22.txt" />
