@@ -13,7 +13,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("Connected to server!!");
         base.OnConnectedToMaster();
 
-        // Create the room
+        // Create the room 
         RoomOptions roomOptions = new RoomOptions
         {
             MaxPlayers = 3,
@@ -22,12 +22,15 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         };
         PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default);
     }
+
     private void Awake()
-    {
+    {   
+        Debug.Log("Awaking NetManag");
         PhotonNetwork.AutomaticallySyncScene = true;
     }
     void Start()
-    {
+    {   
+        Debug.Log("Starting NetManag");
         Connect();
     }
     

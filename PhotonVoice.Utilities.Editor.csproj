@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{50100A17-8C1F-F0F4-5743-53E8B092E78D}</ProjectGuid>
+    <ProjectGuid>{393C2C70-F8CA-B8D0-A760-38A817E0AB6E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>PhotonVoice.Utilities.Editor</AssemblyName>
@@ -678,11 +678,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="PhotonRealtime.csproj">
-      <Project>{A8FC2B61-F079-FA18-F740-70FE3CF5C60C}</Project>
+      <Project>{8338E1FC-0D0B-3681-D3B0-12D089C26F21}</Project>
       <Name>PhotonRealtime</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.csproj">
-      <Project>{324E530F-5704-0BD6-86D0-159B5B99C238}</Project>
+      <Project>{8397A3B9-D581-7E2C-F8FA-C403C3C8B055}</Project>
       <Name>PhotonVoice</Name>
     </ProjectReference>
   </ItemGroup>
