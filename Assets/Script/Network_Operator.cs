@@ -24,14 +24,9 @@ public class Network_Operator : MonoBehaviourPun {
     //private PhotonView photonView;
 
     void Start(){
-        int countP = PhotonNetwork.LocalPlayer.ActorNumber;
-        if(countP==1){
-            Debug.Log("Start network_Operator");
-            room = GameObject.Find("Salle");
-            moving = GameObject.Find("/[movingCam]");
-        } else {
-            Debug.Log("already an operator in room");
-        }
+        Debug.Log("Start network_Operator");
+        room = GameObject.Find("Salle");
+        moving = GameObject.Find("/[movingCam]");
     }
 
     void Update(){
