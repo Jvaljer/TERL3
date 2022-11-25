@@ -4,22 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
+    
 public class Network_Operator : MonoBehaviourPun {
 
     public float rotationX;
     public float rotationY;
     public float sensivity = 0.5f;
+    
 
     private GameObject body;
-    private GameObject currentCam;
     private GameObject room;
 
     private GameObject moving;
-    private GameObject overview;
 
 
     Expe expe;
-    private bool inScene = true;
+    private bool locked = true;
 
     //private PhotonView photonView;
 
@@ -38,9 +38,8 @@ public class Network_Operator : MonoBehaviourPun {
             Debug.Log("Now in an expe");
         }
 
-        if(inScene){
-            //the operator is in the room with players and though can move + interact with them
-            currentCam = moving;
+        if(!locked){
+            //the operator is free to move and watch how he wants
 
             transform.Translate(Vector3.forward * 0.1f * Time.fixedTime * Input.GetAxis("Vertical"));
             transform.Translate(Vector3.right * 0.1f * Time.fixedTime * Input.GetAxis("Horizontal")); 
@@ -51,15 +50,14 @@ public class Network_Operator : MonoBehaviourPun {
                 rotationX = Mathf.Clamp(rotationX, -90,90);
                 transform.rotation = Quaternion.Euler(rotationX,rotationY,0);
             }
-
-        } else {
-            //the operator is outside the scene and though can only watch from over the scene
-            currentCam = overview;
         }
+        
+        //else the operator can't do nothing 
+            //maybe move him to a general overview camera 
 
-        if(Input.GetKeyDown(KeyCode.M)){
-            Debug.Log("M was pressed ...");
-            inScene = !inScene;
+        if(Input.GetKeyDown(KeyCode.L)){
+            Debug.Log("L was pressed ...");
+            locked = !locked;
         }
     }
 
@@ -69,4 +67,5 @@ public class Network_Operator : MonoBehaviourPun {
         } 
         return false; 
     }
+    
 }
