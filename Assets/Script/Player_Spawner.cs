@@ -7,21 +7,17 @@ public class Player_Spawner : MonoBehaviourPunCallbacks
 {
     private GameObject spawnedPlayerPrefab;
     private GameObject spawnedOperatorPrefab;
-    private bool OperatorSpawned = false;
     // Start is called before the first frame update
     public override void OnJoinedRoom()
     {
         Debug.Log("OnJoinedRoom <- PlayerSpawner");
 
-        Debug.Log(" #1 OperatorSpawned =" + OperatorSpawned.ToString());
-
-        if(!OperatorSpawned){
+        int countP = PhotonNetwork.LocalPlayer.ActorNumber;
+        if(countP==1){
             //spawn the operator with the prefab
             Debug.Log("Instantiation of Network Operator");
             base.OnJoinedRoom();
             spawnedOperatorPrefab = PhotonNetwork.Instantiate("Network Operator", new Vector3(0,0,0), transform.rotation);
-            OperatorSpawned = !OperatorSpawned;
-            Debug.Log(" #2 OperatorSpawned =" + OperatorSpawned.ToString());
         } else {
             //spawn the player with the prefab
             base.OnJoinedRoom();
