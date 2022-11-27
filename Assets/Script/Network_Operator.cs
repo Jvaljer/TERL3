@@ -9,7 +9,7 @@ public class Network_Operator : MonoBehaviourPun {
 
     public float rotationX;
     public float rotationY;
-    public float sensivity = 0.5f;
+    public float sensivity = 5f;
     
 
     private GameObject body;
@@ -41,8 +41,8 @@ public class Network_Operator : MonoBehaviourPun {
         if(!locked){
             //the operator is free to move and watch how he wants
 
-            transform.Translate(Vector3.forward * 0.1f * Time.fixedTime * Input.GetAxis("Vertical"));
-            transform.Translate(Vector3.right * 0.1f * Time.fixedTime * Input.GetAxis("Horizontal")); 
+            transform.Translate(Vector3.forward * 0.01f * Time.fixedTime * Input.GetAxis("Vertical"));
+            transform.Translate(Vector3.right * 0.01f * Time.fixedTime * Input.GetAxis("Horizontal")); 
 
             if(!isMouseOffScreen()){
                 rotationX -= Input.GetAxis("Mouse Y") * sensivity;
@@ -68,4 +68,10 @@ public class Network_Operator : MonoBehaviourPun {
         return false; 
     }
     
+    private string[] getLogs(){
+        string[] logs = new string[10];
+        //the aim is to first get the position in real time of both players
+        logs[0] = "position";
+        return logs;
+    }
 }
