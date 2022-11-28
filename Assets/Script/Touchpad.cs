@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
+#if UNITY_EDITOR_LINUX
+    Debug.Log("running 'TouchPad.cs' under Linux -> OW SHIT");
+#endif
 public class Touchpad : MonoBehaviour
 {
 

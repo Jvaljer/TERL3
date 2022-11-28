@@ -7,6 +7,9 @@ using UnityEngine.UI;
 using System.Windows;
 using System;
 
+#if UNITY_EDITOR_LINUX
+    Debug.Log("running 'Teleporter.cs' under Linux -> OW SHIT");
+#endif
 public class Teleporter : MonoBehaviour
 {
     public GameObject menu;
@@ -362,7 +365,7 @@ public class Teleporter : MonoBehaviour
                     if (position.y > 0.5)
                     {
                         translateVect = m.MultiplyPoint3x4(plusZ * Vector3.Cross(Vector3.up, controllerRight.forward).magnitude * 1/FPS.GetCurrentFPS());
-                        /* Rotation de la camera dans la direction du pointeur, à décommenter avec le if getStateUp
+                        /* Rotation de la camera dans la direction du pointeur, ï¿½ dï¿½commenter avec le if getStateUp
                         
                         Vector3 camAngle = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z);
                         Vector3 ctrlAngle = new Vector3(controllerRight.transform.forward.x, 0, controllerRight.transform.forward.z);

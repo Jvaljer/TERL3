@@ -5,6 +5,10 @@ using Valve.VR;
 using Photon.Pun;
 using UnityEditor;
 
+#if UNITY_EDITOR_LINUX
+    Debug.Log("running 'DragDrop.cs' under Linux -> OW SHIT");
+#endif
+
 public class DragDrop : MonoBehaviourPun
 {
     // intersecion raycast and object
@@ -66,7 +70,7 @@ public class DragDrop : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        //décommenter pour réactiver le drag and drop
+        //dï¿½commenter pour rï¿½activer le drag and drop
         
         if(expe == null)
         {
