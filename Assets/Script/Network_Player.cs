@@ -4,9 +4,6 @@ using UnityEngine;
 using Valve.VR;
 using Photon.Pun;
 
-#if UNITY_EDITOR_LINUX
-    Debug.Log("running 'Network_Player.cs' under Linux -> OW SHIT");
-#endif
 public class Network_Player : MonoBehaviourPun
 {
     // empty

@@ -7,9 +7,6 @@ using UnityEngine.UI;
 using System.Windows;
 using System;
 
-#if UNITY_EDITOR_LINUX
-    Debug.Log("running 'Teleporter.cs' under Linux -> OW SHIT");
-#endif
 public class Teleporter : MonoBehaviour
 {
     public GameObject menu;

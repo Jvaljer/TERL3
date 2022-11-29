@@ -5,9 +5,6 @@ using Valve.VR;
 using Photon.Pun;
 using UnityEditor;
 
-#if UNITY_EDITOR_LINUX
-    Debug.Log("running 'DragDrop.cs' under Linux -> OW SHIT");
-#endif
 
 public class DragDrop : MonoBehaviourPun
 {
