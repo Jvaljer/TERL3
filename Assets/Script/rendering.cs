@@ -180,9 +180,9 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
     {
         if (PhotonNetwork.IsMasterClient)
         { 
-            participant = "ope01";
+            participant = "ope";
         }
-        else if (PhotonNetwork.LocalPlayer.ActorNumber == 1)
+        else if (PhotonNetwork.LocalPlayer.ActorNumber == 2)
         {
             participant = "p01";
         } else 
