@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,13 @@ public class Network_Operator : MonoBehaviourPun {
     public float rotationY;
     public float sensivity = 5f;
     
+    //Materials (used for tag colors)
+    public Material blue;
+    public Material green;
+    public Material white;
+    public Material red;
+    public Material none;
+    public Material lightRed;
 
     private GameObject body;
     private GameObject room;
@@ -20,6 +28,8 @@ public class Network_Operator : MonoBehaviourPun {
     private rendering render;
     Expe expe;
     private bool locked = true;
+    private bool expeState;
+    private bool trialState;
 
     //private PhotonView photonView;
 
@@ -61,13 +71,10 @@ public class Network_Operator : MonoBehaviourPun {
             locked = !locked;
         }
 
-        if(Input.GetKeyDown(KeyCode.I)){
-            //printing wanted informations
-            Debug.Log("render.expeEnCours : " + render.expeEnCours);
-            Debug.Log("render.trialEnCours : " + render.trialEnCours);
-            Debug.Log("expe.expeRunning : " + expe.expeRunning);
-            Debug.Log("expe.trialRunning : " + expe.trialRunning);
+        if(Input.GetKeyDown(KeyCode.Space)){
+            render.spacePressedOperator();
         }
+
     }
 
     private bool isMouseOffScreen(){

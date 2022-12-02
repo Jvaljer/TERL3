@@ -153,3 +153,9 @@ MonoBehaviour:
   rotationX: 0
   rotationY: 0
   sensivity: 5
+  blue: {fileID: 2100000, guid: b2e475abc24c327479abc278aa407c2c, type: 2}
+  green: {fileID: 2100000, guid: fcbabaf981be0dc47b646bf30f784533, type: 2}
+  white: {fileID: 2100000, guid: db16216c3f288ea4eb77dfefecada55a, type: 2}
+  red: {fileID: 2100000, guid: ad7ce727a68a61f4897679b81da7b344, type: 2}
+  none: {fileID: 2100000, guid: a4ce0e8f0688f71449afec0c97a57823, type: 2}
+  lightRed: {fileID: 2100000, guid: 106586d351237204593435414ee2ea5d, type: 2}

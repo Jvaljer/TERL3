@@ -78,6 +78,7 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
             photonView.RPC("curentTrialConditionCheck", Photon.Pun.RpcTarget.AllBuffered);
         }
 
+        /*
         if (Input.GetKeyDown(KeyCode.Space) && !expeEnCours)
         {
             print("space key was pressed -> trying to start an Expe . . . ");
@@ -91,7 +92,8 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
         else if (Input.GetKeyDown(KeyCode.Space) && expeEnCours && !trialEnCours)
         {
             photonView.RPC("nextTrial", Photon.Pun.RpcTarget.AllBuffered);
-        }
+        } 
+        */
 
         if (Input.GetKeyDown(KeyCode.E) && expeEnCours)
         {
@@ -300,4 +302,17 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
         }
     }
     
+    public void spacePressedOperator(){
+        if (Input.GetKeyDown(KeyCode.Space) && !expeEnCours){
+            print("space key was pressed -> trying to start an Expe . . . ");
+            Cards();
+            CardCreation();
+            photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb);
+            
+            print("Expe Started succesfully !");
+            expeEnCours = true;
+        } else if (Input.GetKeyDown(KeyCode.Space) && expeEnCours && !trialEnCours) {
+            photonView.RPC("nextTrial", Photon.Pun.RpcTarget.AllBuffered);
+        } 
+    }
 }

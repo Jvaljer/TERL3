@@ -184,6 +184,7 @@
      <None Include="Assets\Resources\logs\class-p02-2022-06-21-14-37-44.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-22-13-29-42.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-24-10-28-55.txt" />
+     <None Include="Assets\Resources\logs\class-p02-2022-12-02-11-55-18.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-16-13-10-29.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-16-13-03-23.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-16-09-01.txt" />
@@ -300,6 +301,7 @@
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-11-52-11.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-20-16-29-24.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-10-18-17-30-24.txt" />
+     <None Include="Assets\Resources\logs\class-p01-2022-12-02-11-51-54.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-10-18-17-37-58.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-20-14-19-30.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-13-23-46.txt" />
@@ -411,6 +413,7 @@
      <None Include="Assets\Resources\logs\class-p01-2022-12-02-11-20-45.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-18-13-45-46.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-15-58-24.txt" />
+     <None Include="Assets\Resources\logs\class-p01-2022-12-02-13-01-48.txt" />
      <None Include="Assets\Resources\Experiments\initialTrialFile.txt" />
      <None Include="Assets\Resources\logs\class-ope01-2022-11-25-12-37-36.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-16-13-03-28.txt" />
@@ -423,6 +426,7 @@
      <None Include="Assets\Resources\logs\class-p01-2022-06-28-15-34-01.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-24-10-26-23.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-16-13-25-10.txt" />
+     <None Include="Assets\Resources\logs\class-p01-2022-12-02-12-10-48.txt" />
      <None Include="Assets\Photon\PhotonVoice\PhotonVoiceLibs\x86\opus_egpv.dll" />
      <None Include="Assets\Resources\logs\class-ope-2022-12-02-10-52-10.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-20-16-12-12.txt" />

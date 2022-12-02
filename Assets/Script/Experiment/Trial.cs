@@ -11,7 +11,10 @@ public class Trial
 {
     public GameObject card;
     private Material initialCardMaterial;
+
+    private Network_Operator ope;
     private Network_Player player;
+
     private Teleporter teleport;
     private rendering render;
     private Transform cardArea;
@@ -61,8 +64,14 @@ public class Trial
         string colabEnv, string trial, string train, string moveM, string t, string w, string cardT
         )
     {   
-        if(p_ != "p01" && p_ != ""){ // with ope
+        if(p_ != "p01" && p_ != ""){
+            //with player as a master (not wanted...)
             player = GameObject.Find("Network Player(Clone)").GetComponent<Network_Player>();
+            ope = null;
+        } else {
+            //with operator as master
+            ope = GameObject.Find("Network Operator(Clone)").GetComponent<Network_Operator>();
+            player = null;
         }
         teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();
         render = GameObject.Find("/Salle").GetComponent<rendering>();
@@ -96,7 +105,11 @@ public class Trial
 
     public void startTrial()
     {
-        card.transform.GetChild(0).GetComponent<Renderer>().material = player.none;
+        if( player == null ){
+            card.transform.GetChild(0).GetComponent<Renderer>().material = ope.none;
+        } else {
+            card.transform.GetChild(0).GetComponent<Renderer>().material = player.none;
+        }
         initialCardMaterial = card.transform.GetChild(0).GetComponent<Renderer>().material;
         Debug.Log(task);
         if (task == "search")
@@ -139,12 +152,20 @@ public class Trial
         if (!trialEnded && (card.transform.rotation.eulerAngles.y == 0 && Math.Abs(teleport.centerBetweenPlayers.x - card.transform.position.x) < 1 && Math.Abs(teleport.centerBetweenPlayers.z - card.transform.position.z) < 2.5f) || (card.transform.rotation.eulerAngles.y != 0 && Math.Abs(teleport.centerBetweenPlayers.x - card.transform.position.x) < 2.5f && Math.Abs(teleport.centerBetweenPlayers.z - card.transform.position.z) < 1))
         {
             canTagCard = true;
-            cardArea.GetComponent<Renderer>().material = player.white;
+            if( player == null ){
+                cardArea.GetComponent<Renderer>().material = ope.white;
+            } else {
+                cardArea.GetComponent<Renderer>().material = player.white;
+            }
         }
         else
         {
             canTagCard = false;
-            cardArea.GetComponent<Renderer>().material = player.none;
+            if ( player == null ){
+                cardArea.GetComponent<Renderer>().material = ope.none;
+            } else {
+                cardArea.GetComponent<Renderer>().material = player.none;
+            }
         }
         if (!trialEnded && canTagCard && card.transform.GetChild(0).GetComponent<Renderer>().material != initialCardMaterial)
         {
@@ -157,7 +178,11 @@ public class Trial
     {
         trialTime = Time.time - trialTime;
         cardArea.gameObject.SetActive(false);
-        card.transform.GetChild(1).GetComponent<Renderer>().material = player.green;
+        if( player == null ){
+            card.transform.GetChild(1).GetComponent<Renderer>().material = ope.green;
+        } else {
+            card.transform.GetChild(1).GetComponent<Renderer>().material = player.green;
+        }
         trialEnded = true;
         curentTrialIsRunning = false;
         render.nextTrial();
