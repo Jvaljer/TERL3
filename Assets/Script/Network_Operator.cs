@@ -17,7 +17,7 @@ public class Network_Operator : MonoBehaviourPun {
 
     private GameObject moving;
 
-
+    private rendering render;
     Expe expe;
     private bool locked = true;
 
@@ -33,9 +33,8 @@ public class Network_Operator : MonoBehaviourPun {
         //searching for an expe if there isn't already one 
         if(expe==null){
             //Debug.Log("Searching for an expe");
-            expe = GameObject.Find("Salle").GetComponent<rendering>().expe;
-        } else if(expe != null){
-            Debug.Log("Now in an expe");
+            expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
+            render = GameObject.Find("/Salle").GetComponent<rendering>();
         }
 
         if(!locked){
@@ -55,9 +54,19 @@ public class Network_Operator : MonoBehaviourPun {
         //else the operator can't do nothing 
             //maybe move him to a general overview camera 
 
+        //all possible inputs  
         if(Input.GetKeyDown(KeyCode.L)){
-            Debug.Log("L was pressed ...");
+            // L -> cam lock for op
+            Debug.Log(".                     L was pressed (operator)");
             locked = !locked;
+        }
+
+        if(Input.GetKeyDown(KeyCode.I)){
+            //printing wanted informations
+            Debug.Log("render.expeEnCours : " + render.expeEnCours);
+            Debug.Log("render.trialEnCours : " + render.trialEnCours);
+            Debug.Log("expe.expeRunning : " + expe.expeRunning);
+            Debug.Log("expe.trialRunning : " + expe.trialRunning);
         }
     }
 

@@ -7,7 +7,7 @@ public class Player_Spawner : MonoBehaviourPunCallbacks
 {
     private GameObject spawnedPlayerPrefab;
     private GameObject spawnedOperatorPrefab;
-    public bool withOperator = false;
+    public bool withOperator = true;
 
     // Start is called before the first frame update
     public override void OnJoinedRoom()
@@ -15,7 +15,8 @@ public class Player_Spawner : MonoBehaviourPunCallbacks
         Debug.Log("OnJoinedRoom <- PlayerSpawner");
 
         int countP = PhotonNetwork.LocalPlayer.ActorNumber;
-        if(countP==1 && withOperator){
+        
+        if(countP==1){
             //spawn the operator with the prefab
             Debug.Log("Instantiation of Network Operator");
             base.OnJoinedRoom();

@@ -80,11 +80,12 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
 
         if (Input.GetKeyDown(KeyCode.Space) && !expeEnCours)
         {
+            print("space key was pressed -> trying to start an Expe . . . ");
             Cards();
             CardCreation();
-            print("space key was pressed");
             photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb);
             
+            print("Expe Started succesfully !");
             expeEnCours = true;
         }
         else if (Input.GetKeyDown(KeyCode.Space) && expeEnCours && !trialEnCours)
@@ -178,19 +179,26 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
     [PunRPC]
     void startExpe(string grp, int nb)
     {
+        print("startExpe -> ");
+        bool ope;
         if (PhotonNetwork.IsMasterClient)
         { 
-            participant = "ope";
+            participant = "p01";
+            ope = true;
         }
         else if (PhotonNetwork.LocalPlayer.ActorNumber == 2)
         {
-            participant = "p01";
+            participant = "p02";
+            ope = false;
         } else 
         {
-            participant = "p02";
+            participant = "p03";
+            ope = false;
         }
-        expe = new Expe(participant, grp, nb, cardList);
-        
+        print("calling on new Expe()");
+        expe = new Expe(participant, grp, nb, cardList,ope);
+        print("expe has well been instantiated !");
+
         if (expe.curentTrial.collabEnvironememnt == "C")
         {
             //desactiver son

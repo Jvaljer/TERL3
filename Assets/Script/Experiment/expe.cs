@@ -42,7 +42,7 @@ public class Expe
 
 
 
-    public Expe(string part, string grp, int startNb, List<GameObject> cardL)
+    public Expe(string part, string grp, int startNb, List<GameObject> cardL, bool ope)
     {
         expeRunning = true;
         group = grp;
@@ -52,7 +52,11 @@ public class Expe
         cardList = cardL;
 
         teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();
-        player = GameObject.Find("Network Player(Clone)").GetComponent<Network_Player>();
+
+        if(!ope){
+            player = GameObject.Find("Network Player(Clone)").GetComponent<Network_Player>();
+        }
+
         render = GameObject.Find("/Salle").GetComponent<rendering>();
 
         string mydate = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
@@ -60,8 +64,6 @@ public class Expe
         // file name should look like  "class-PXX-2019-MM-DD-HH-MM-SS.csv"
         //string path = "Assets/Resources/expeLogs/class-" +  group + "-" + participant + "-" + mydate + ".csv";
         string path = "Assets/Resources/logs/class-" +  group + "-" + participant + "-" + mydate + ".csv";
-        //string path = "Assets/Resources/logs/test.csv";
-
         //File.Create(path);
         //Write some text to the test.txt file
         writer = new StreamWriter(path, false);
@@ -82,13 +84,12 @@ public class Expe
         List<string> lines = new List<string>(txt.Split('\n'));        
 
         theTrials = new List<Trial>();
-
         foreach (string str in lines)
         {
-            
             List<string> values = new List<string>(str.Split(';'));
             if (values[0] == "#pause" && theTrials.Count != 0 && theTrials[theTrials.Count - 1].group == group)
             {
+                Debug.Log("#pause detected");
                 theTrials.Add(new Trial(this, values[0], "", "", "", "", "", "", "", ""));
                 Debug.Log("Pause added to trials");
             }
@@ -99,7 +100,7 @@ public class Expe
                         values[2], values[3], values[4], values[5], values[6], values[7], values[8]
                     ));
                 Debug.Log("Goupe: " + theTrials[theTrials.Count - 1].group + "; Participant: " + theTrials[theTrials.Count - 1].participant +
-                          "; collabEnvironememn: " + theTrials[theTrials.Count - 1].collabEnvironememnt + "; trialNb: " + theTrials[theTrials.Count - 1].trialNb + "; training: " + theTrials[theTrials.Count - 1].training + "; moveMode: " + theTrials[theTrials.Count - 1].moveMode + "; task: " + theTrials[theTrials.Count - 1].task + "; wall: " + theTrials[theTrials.Count - 1].wall + "; cardToTag: " + theTrials[theTrials.Count - 1].cardToTag);
+                          "; collabEnvironment: " + theTrials[theTrials.Count - 1].collabEnvironememnt + "; trialNb: " + theTrials[theTrials.Count - 1].trialNb + "; training: " + theTrials[theTrials.Count - 1].training + "; moveMode: " + theTrials[theTrials.Count - 1].moveMode + "; task: " + theTrials[theTrials.Count - 1].task + "; wall: " + theTrials[theTrials.Count - 1].wall + "; cardToTag: " + theTrials[theTrials.Count - 1].cardToTag);
 
                 theTrials[theTrials.Count - 1].pathLog = path;
 
@@ -107,7 +108,6 @@ public class Expe
             }
         }
         curentTrial = theTrials[trialNb];
-
         kineWriter.WriteLine(curentTrial.group + " " + curentTrial.participant + " kine action");
         kineWriter.Flush();
     }
@@ -241,7 +241,7 @@ public class Expe
     {
         write();
         teleport.menu.transform.Find("textInfo").gameObject.SetActive(true);
-        teleport.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "Fin de l'expérience";
+        teleport.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "Fin de l'expï¿½rience";
         trialRunning = false;
         expeRunning = false;
         writer.Close();

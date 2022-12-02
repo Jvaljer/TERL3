@@ -60,8 +60,10 @@ public class Trial
         string g_, string p_,
         string colabEnv, string trial, string train, string moveM, string t, string w, string cardT
         )
-    {
-        player = GameObject.Find("Network Player(Clone)").GetComponent<Network_Player>();
+    {   
+        if(p_ != "p01" && p_ != ""){ // with ope
+            player = GameObject.Find("Network Player(Clone)").GetComponent<Network_Player>();
+        }
         teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();
         render = GameObject.Find("/Salle").GetComponent<rendering>();
         cardArea = GameObject.Find("/Salle").GetComponent<rendering>().cardArea;

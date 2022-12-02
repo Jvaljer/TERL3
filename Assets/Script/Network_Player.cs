@@ -49,7 +49,7 @@ public class Network_Player : MonoBehaviourPun
 
     private bool synctag = true;
     private bool isOtherSynced;
-    private string moveMode = "drag";
+    private string moveMode = "drag"; // "TP" | "joy" | "sync"
 
 
 
