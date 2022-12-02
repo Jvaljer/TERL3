@@ -77,32 +77,6 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
         {
             photonView.RPC("curentTrialConditionCheck", Photon.Pun.RpcTarget.AllBuffered);
         }
-
-        /*
-        if (Input.GetKeyDown(KeyCode.Space) && !expeEnCours)
-        {
-            print("space key was pressed -> trying to start an Expe . . . ");
-            Cards();
-            CardCreation();
-            photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb);
-            
-            print("Expe Started succesfully !");
-            expeEnCours = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && expeEnCours && !trialEnCours)
-        {
-            photonView.RPC("nextTrial", Photon.Pun.RpcTarget.AllBuffered);
-        } 
-        */
-
-        if (Input.GetKeyDown(KeyCode.E) && expeEnCours)
-        {
-            photonView.RPC("endExpe", Photon.Pun.RpcTarget.AllBuffered);
-        }
-        if (Input.GetKeyDown(KeyCode.T) && expeEnCours)
-        {
-            expe.teleport.photonView.RPC("tpToOther", Photon.Pun.RpcTarget.Others);
-        }
     }
 
     // Start is called before the first frame update
@@ -303,16 +277,23 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
     }
     
     public void spacePressedOperator(){
-        if (Input.GetKeyDown(KeyCode.Space) && !expeEnCours){
-            print("space key was pressed -> trying to start an Expe . . . ");
+        if (!expeEnCours){
             Cards();
             CardCreation();
             photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb);
             
             print("Expe Started succesfully !");
             expeEnCours = true;
-        } else if (Input.GetKeyDown(KeyCode.Space) && expeEnCours && !trialEnCours) {
+        } else if (expeEnCours && !trialEnCours) {
             photonView.RPC("nextTrial", Photon.Pun.RpcTarget.AllBuffered);
         } 
+    }
+
+    public void EPressedOperator(){
+        photonView.RPC("endExpe", Photon.Pun.RpcTarget.AllBuffered);
+    }
+
+    public void TPressedOperator(){
+        expe.teleport.photonView.RPC("tpToOther", Photon.Pun.RpcTarget.Others);
     }
 }

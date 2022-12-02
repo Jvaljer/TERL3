@@ -72,7 +72,18 @@ public class Network_Operator : MonoBehaviourPun {
         }
 
         if(Input.GetKeyDown(KeyCode.Space)){
+            Debug.Log(".                     Space was pressed (operator)");
             render.spacePressedOperator();
+        }
+
+        if(Input.GetKeyDown(KeyCode.E)){
+            Debug.Log(".                     E was pressed (operator)");
+            render.EPressedOperator();
+        }
+
+        if(Input.GetKeyDown(KeyCode.T)){
+            Debug.Log(".                     T was pressed (operator)");
+            render.TPressedOperator();
         }
 
     }
