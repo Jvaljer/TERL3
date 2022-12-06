@@ -94,11 +94,5 @@ public class Network_Operator : MonoBehaviourPun {
         } 
         return false; 
     }
-    
-    private string[] getLogs(){
-        string[] logs = new string[10];
-        //the aim is to first get the position in real time of both players
-        logs[0] = "position";
-        return logs;
-    }
+
 }

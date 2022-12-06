@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2022-12-02T12:37:24.254+01:00
-  initializedAtString: 2022-12-02T12:37:23.158+01:00
+  lastUpdatedAtString: 2022-12-06T17:00:13.713+01:00
+  initializedAtString: 2022-12-06T17:00:13.699+01:00
   localBranches:
   - name: main
     tracking: origin/main
   remoteBranches:
   - name: origin/HEAD
+    tracking: '[None]'
+  - name: origin/LinuxAdapt
     tracking: '[None]'
   - name: origin/main
     tracking: '[None]'
@@ -46,10 +48,16 @@ MonoBehaviour:
     subKeys:
     - Values:
       - HEAD
+      - LinuxAdapt
       - main
     subKeyValues:
     - Values:
       - name: HEAD
+        remote:
+          name: origin
+          url: https://github.com/Jvaljer/TERL3
+        trackingBranch: 
+      - name: LinuxAdapt
         remote:
           name: origin
           url: https://github.com/Jvaljer/TERL3

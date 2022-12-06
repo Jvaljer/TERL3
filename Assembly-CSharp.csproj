@@ -239,6 +239,7 @@
      <None Include="Assets\Resources\logs\class-p01-2022-06-28-16-59-22.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-05-15-03-52.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-06-30-16-56-39.txt" />
+     <None Include="Assets\Resources\logs\class-p01-2022-12-06-15-42-41.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-11-20-56.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-25-13-19-39.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-28-11-02-41.txt" />
@@ -287,6 +288,7 @@
      <None Include="Assets\Resources\logs\class-p01-2022-07-07-11-51-52.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-15-48-54.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-16-24-04.txt" />
+     <None Include="Assets\Resources\logs\class-p01-2022-12-06-14-39-26.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-06-28-15-52-44.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-13-10-24-14.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-28-10-50-00.txt" />
@@ -374,9 +376,11 @@
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-11-20-26.txt" />
      <None Include="Assets\Photon\PhotonVoice\PhotonVoiceLibs\WSA\x64\webrtc-audio.dll" />
      <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll" />
+     <None Include="Assets\Resources\logs\class-p01-2022-12-06-14-49-58.txt" />
      <None Include="Assets\Resources\logs\class-ope01-2022-11-25-12-37-51.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-21-14-48-30.txt" />
      <None Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Audio\Reminder-public_d-291_hifi.mp3.txt" />
+     <None Include="Assets\Resources\logs\class-p01-2022-12-06-14-39-11.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-14-12-59-40.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-13-15-54-32.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-16-08-01.txt" />
@@ -387,6 +391,7 @@
      <None Include="Assets\Resources\logs\class-p02-2022-06-28-11-08-03.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-20-16-36-15.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-28-10-26-12.txt" />
+     <None Include="Assets\Resources\logs\class-p01-2022-12-06-14-44-05.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-04-10-50-22.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-07-13-10-53-29.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-07-11-15-35-32.txt" />
@@ -410,6 +415,7 @@
      <None Include="Assets\Resources\logs\class-p01-2022-07-25-12-37-26.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-12-02-13-43-51.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-06-28-14-16-32.txt" />
+     <None Include="Assets\Resources\logs\class-p01-2022-12-06-14-48-33.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-13-10-40-36.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-06-28-16-17-15.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-28-09-59-17.txt" />
@@ -442,6 +448,7 @@
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-13-58-58.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-21-12-38-42.txt" />
      <None Include="Assets\Photon\PhotonVoice\PhotonVoiceLibs\x86\webrtc-audio.dll" />
+     <None Include="Assets\Resources\logs\class-p01-2022-12-06-14-47-01.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-13-27-26.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-13-15-55-26.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-13-50-21.txt" />

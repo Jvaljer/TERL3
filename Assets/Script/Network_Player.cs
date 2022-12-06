@@ -63,6 +63,7 @@ public class Network_Player : MonoBehaviourPun
         cameraRig = GameObject.Find("/[CameraRig]");
         headset = GameObject.Find("Camera (eye)");
         right = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)");
+        Debug.Log("right :" right);
         left = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (left)");
 
         salle = GameObject.Find("Salle");
@@ -312,9 +313,5 @@ public class Network_Player : MonoBehaviourPun
             synctag = false;
         }
         Debug.Log("tag mode"+synctag);
-    }
-
-    GameObject getCam(){
-        return this.cameraRig;
     }
 }
