@@ -66,7 +66,7 @@ public class Network_Player : MonoBehaviourPun
 
         salle = GameObject.Find("Salle");
 
-        m_pose = right.GetComponent<SteamVR_Behaviour_Pose>();
+        m_pose = right?.GetComponent<SteamVR_Behaviour_Pose>();
 
         leftHand.gameObject.SetActive(true);
         
@@ -90,8 +90,12 @@ public class Network_Player : MonoBehaviourPun
             expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
         }
 
-        synctag = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>().synctag;
-        isOtherSynced = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>().isOtherSynced;
+        bool? synctagTest = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)")?.GetComponent<Teleporter>().synctag;
+        bool? isOtherSyncedTest = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)")?.GetComponent<Teleporter>().isOtherSynced;
+
+        synctag = synctagTest == null ? false : (bool)synctagTest;
+        isOtherSynced = isOtherSyncedTest == null ? false : (bool)isOtherSyncedTest;
+        
         Ray ray = new Ray(right.transform.position, right.transform.forward);
         if (photonView.IsMine) {
             // end the position and rotation over the network
