@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2022-12-06T16:57:25.728+01:00
-  initializedAtString: 2022-12-06T16:57:25.728+01:00
+  lastUpdatedAtString: 2022-12-09T10:24:51.140+01:00
+  initializedAtString: 2022-12-09T09:24:20.192+01:00
   currentGitRemote:
     name: origin
     url: https://github.com/Jvaljer/TERL3
@@ -24,14 +24,14 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-    name: main
-    tracking: origin/main
+    name: NewFeatures
+    tracking: origin/NewFeatures
   currentConfigBranch:
-    name: main
+    name: NewFeatures
     remote:
       name: origin
       url: https://github.com/Jvaljer/TERL3
-    trackingBranch: main
+    trackingBranch: NewFeatures
   currentConfigRemote:
     name: origin
     url: https://github.com/Jvaljer/TERL3

@@ -55,15 +55,13 @@ public class Network_Player : MonoBehaviourPun
 
     Expe expe;
 
-    void Start()
-    {
+    void Start() {
         //photonView = GetComponent<PhotonView>();
         Debug.Log("Start NetworkPlayer ");
         //room + wall + camera
         cameraRig = GameObject.Find("/[CameraRig]");
         headset = GameObject.Find("Camera (eye)");
         right = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)");
-        Debug.Log("right :" right);
         left = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (left)");
 
         salle = GameObject.Find("Salle");
@@ -74,8 +72,7 @@ public class Network_Player : MonoBehaviourPun
         
         palette.gameObject.SetActive(true);
 
-        if (photonView.IsMine)
-        {
+        if (photonView.IsMine) {
             //don't show my avatar
             leftHand.gameObject.SetActive(false);
             rightHand.gameObject.SetActive(false);
@@ -88,73 +85,55 @@ public class Network_Player : MonoBehaviourPun
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (expe == null)
-        {
+    void Update() {
+        if (expe == null) {
             expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
         }
 
         synctag = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>().synctag;
         isOtherSynced = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>().isOtherSynced;
         Ray ray = new Ray(right.transform.position, right.transform.forward);
-        if (photonView.IsMine)
-        {
+        if (photonView.IsMine) {
             // end the position and rotation over the network
             MapPosition();
         }
 
-        if (Physics.Raycast(ray, out hit))
-        {
+        if (Physics.Raycast(ray, out hit)) {
             //change tag color of the ray cast
-            if (interactWithUI.GetStateDown(m_pose.inputSource))
-            {
+            if (interactWithUI.GetStateDown(m_pose.inputSource)) {
 
-                if (hit.transform.tag == "Color tag")
-                {
-                    if (synctag)
-                    {
+                if (hit.transform.tag == "Color tag") {
+                    if (synctag) {
                         nameR = hit.transform.GetComponent<Renderer>().material.name;
                         photonView.RPC("ChangeRayColour", Photon.Pun.RpcTarget.All, nameR);
                         right.GetComponent<PhotonView>().RPC("RayColour", Photon.Pun.RpcTarget.All, nameR);
                         // Debug.Log("tag sync");
-                    }
-                    else if (photonView.IsMine)
-                    {
+                    } else if (photonView.IsMine) {
                         nameR = hit.transform.GetComponent<Renderer>().material.name;
                         photonView.RPC("ChangeRayColour", Photon.Pun.RpcTarget.All, nameR);
                         right.GetComponent<PhotonView>().RPC("RayColour", Photon.Pun.RpcTarget.All, nameR);
                         // Debug.Log("tag not sync: photonView.IsMine");
                     }
-                }
-                else if (photonView.IsMine)
-                {
-                    if (hit.transform.tag == "MoveControlTP")
-                    {
+                } else if (photonView.IsMine) {
+                    if (hit.transform.tag == "MoveControlTP") {
                         palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = green;
                         moveMode = "TP";
-                    }
-                    else if (hit.transform.tag == "MoveControlJoy")
-                    {
+                    } else if (hit.transform.tag == "MoveControlJoy") {
                         palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = green;
                         palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = red;
                         moveMode = "joy";
-                    }
-                    else if (hit.transform.tag == "MoveControlDrag")
-                    {
+                    } else if (hit.transform.tag == "MoveControlDrag") {
                         palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = green;
                         palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = red;
                         moveMode = "drag";
-                    }
-                    else if (hit.transform.tag == "MoveControlSync" && !isOtherSynced)
-                    {
+                    } else if (hit.transform.tag == "MoveControlSync" && !isOtherSynced) {
                         palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = green;
@@ -169,8 +148,7 @@ public class Network_Player : MonoBehaviourPun
 
     }
 
-    void MapPosition()
-    {
+    void MapPosition() {
         // left hand 
         palette.position = left.transform.position;
         palette.rotation = left.transform.rotation;
@@ -196,33 +174,25 @@ public class Network_Player : MonoBehaviourPun
     }
 
     [PunRPC]
-    void ChangeMovement(string moveMode)
-    {
-        if (moveMode == "TP")
-        {
+    void ChangeMovement(string moveMode) {
+        if (moveMode == "TP") {
             palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = green;
-        }
-        else if (moveMode == "joy")
-        {
+        } else if (moveMode == "joy") {
             palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = green;
             palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = red;
             moveMode = "joy";
-        }
-        else if (moveMode == "drag")
-        {
+        } else if (moveMode == "drag") {
             palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = green;
             palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = red;
             moveMode = "drag";
-        }
-        else if (moveMode == "sync")
-        {
+        } else if (moveMode == "sync") {
             palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = green;
@@ -232,68 +202,47 @@ public class Network_Player : MonoBehaviourPun
     }
 
     [PunRPC]
-    void ChangeRayColour(string nameR)
-    {
+    void ChangeRayColour(string nameR) {
        // change the ray color 
-        if (nameR == "blue (Instance)")
-        {
+        if (nameR == "blue (Instance)") {
             rayCast.GetComponent<Renderer>().material = blue;
-        }
-        else if(nameR == "green (Instance)")
-        {
+        } else if(nameR == "green (Instance)") {
             rayCast.GetComponent<Renderer>().material = green;
-        }
-        else if(nameR == "red (Instance)")
-        {
+        } else if(nameR == "red (Instance)") {
             rayCast.GetComponent<Renderer>().material = red;
-        }
-        else if (nameR == "white (Instance)")
-        {
+        } else if (nameR == "white (Instance)") {
             rayCast.GetComponent<Renderer>().material = white;
-        }
-        else 
-        {
+        } else {
             rayCast.GetComponent<Renderer>().material = none;
         }
     }
 
     [PunRPC]
-    void ChangeTag( int OB)
-    {
+    void ChangeTag( int OB) {
         {
             // change the tag color of a picture
             if (PhotonView.Find(OB).gameObject.tag != "Card"){ return; }
            
             nameT = rayCast.GetComponent<Renderer>().material.name;
-            if (expe != null && expe.curentTrial.canTagCard)
-            {
-                if (nameT == "blue (Instance)")
-                {
+            if (expe != null && expe.curentTrial.canTagCard) {
+                if (nameT == "blue (Instance)") {
                     PhotonView.Find(OB).gameObject.transform.GetChild(0).GetComponent<Renderer>().material = blue;
-                }
-                else if (nameT == "green (Instance)")
-                {
+                } else if (nameT == "green (Instance)") {
                     PhotonView.Find(OB).gameObject.transform.GetChild(0).GetComponent<Renderer>().material = green;
-                }
-                else if (nameT == "red (Instance)")
-                {
+                } else if (nameT == "red (Instance)") {
                     PhotonView.Find(OB).gameObject.transform.GetChild(0).GetComponent<Renderer>().material = red;
-                }
-                else if (nameT == "white (Instance)")
-                {
+                } else if (nameT == "white (Instance)") {
                     PhotonView.Find(OB).gameObject.transform.GetChild(0).GetComponent<Renderer>().material = white;
-                }
-                else
-                {
+                } else {
                     PhotonView.Find(OB).gameObject.transform.GetChild(0).GetComponent<Renderer>().material = none;
                 }
             }
         }
 
     }
+
     [PunRPC]
-    void removeTag(int OB)
-    {
+    void removeTag(int OB) {
         if (PhotonView.Find(OB).gameObject.tag != "Card") { return; }
 
         PhotonView.Find(OB).gameObject.transform.GetChild(0).GetComponent<Renderer>().material = none;
@@ -301,15 +250,11 @@ public class Network_Player : MonoBehaviourPun
     }
 
     [PunRPC]
-    void tagMode(string tag)
-    {
+    void tagMode(string tag) {
         Debug.Log("Change tag mode");
-        if (tag == "syncro tag")
-        {
+        if (tag == "syncro tag") {
             synctag = true;
-        }
-        else
-        {
+        } else {
             synctag = false;
         }
         Debug.Log("tag mode"+synctag);

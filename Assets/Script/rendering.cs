@@ -5,8 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEditor;
 
-public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
-{
+public class rendering : MonoBehaviourPunCallbacks {
     //Prefab card
     public GameObject pfCard;
 
@@ -47,8 +46,7 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
     public bool trialEnCours = false;
     public Expe expe;
 
-    public class MyCard
-    {
+    public class MyCard {
         // Creation of the card 
         public GameObject goCard = null;
         public string tag = "";
@@ -56,51 +54,46 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
         public Transform parent;
        
 
-        public MyCard(Texture2D tex, Transform mur , int i)
-        {
+        public MyCard(Texture2D tex, Transform mur , int i) {
             GameObject goCard = PhotonNetwork.InstantiateRoomObject("Card", mur.position, mur.rotation, 0, null);
             goCard.GetComponent<Renderer>().material.SetTexture("_MainTex", tex);
             parent = mur;
             pv = goCard.GetPhotonView();
+            Debug.Log("MyCard created on Mur : " + parent);
         }
     }
 
-    void Update()
-    {
-        if (expeEnCours)
-        {
+    void Update() {
+        if (expeEnCours) {
             expeEnCours = expe.expeRunning;
             trialEnCours = expe.trialRunning;
         }
 
-        if (trialEnCours && expeEnCours)
-        {
+        if (trialEnCours && expeEnCours) {
             photonView.RPC("curentTrialConditionCheck", Photon.Pun.RpcTarget.AllBuffered);
         }
     }
 
     // Start is called before the first frame update
-    void Awake()
-    {
+    void Awake() {
         trash1.SetActive(false);
         trash2.SetActive(false);
         trash3.SetActive(false);
         trash4.SetActive(false);
     }
 
-    public void Cards()
-    {
+    public void Cards() {
         // recup jeu de carte et training depuis le csv
         //card1 = GameObject.Find("/[CameraRig]/Controller (right)").GetComponent<Teleporter>().card1;
         //bool training = GameObject.Find("/[CameraRig]/Controller (right)").GetComponent<Teleporter>().training;
-        Debug.Log(card1);
-        if (training)
-        {
+        Debug.Log("card1 : " + card1);
+        if (training) {
             textures = Resources.LoadAll("dixit_training/", typeof(Texture2D));
+            Debug.Log("dixit_training/ is charged");
         }
-        else 
-        {
+        else {
             textures = Resources.LoadAll("dixit_all/", typeof(Texture2D));
+            Debug.Log("dixit_all/ is charged");
         }
         Debug.Log(textures.Length);
 
@@ -108,38 +101,31 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
 
     public void CardCreation() { 
         
-        Debug.Log("Creation carte " + PhotonNetwork.IsMasterClient);
+        Debug.Log("CardCreation with MasterClient : " + PhotonNetwork.IsMasterClient);
 
 
         Transform mur;
         int pos;
-        for (int i = 0 ; i < cardPerWall*3 ; i++)
-        {
-            if (i < textures.Length)
-            {
-                // Slit the cqrd over the 3 walls
-                if (i < cardPerWall)
-                {
+        for (int i = 0 ; i < cardPerWall*3 ; i++) {
+            if (i < textures.Length) {
+                // Slit the card over the 3 walls
+                if (i < cardPerWall) {
                     mur = MurL;
                     pos = i;
                 }
-                else if (i < 2 * cardPerWall)
-                {
+                else if (i < 2 * cardPerWall) {
                     mur = MurB;
                     pos = i - cardPerWall;
                 }
-                else
-                {
+                else {
                     mur = MurR;
                     pos = i - 2 * cardPerWall;
                 }
-                //Debug.Log(i);
                 MyCard c = new MyCard((Texture2D)textures[i], mur, i);
                 photonView.RPC("addListCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID);
                 c.pv.RPC("LoadCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, mur.GetComponent<PhotonView>().ViewID, pos, i);
             }
-            else
-            {
+            else {
                 break;
             }
         }
@@ -147,56 +133,46 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
 
     [PunRPC]
     //Add card to the list of card
-    void addListCard(int OB)
-    {
+    void addListCard(int OB) {
         cardList.Add(PhotonView.Find(OB).gameObject);
     }
 
     [PunRPC]
-    void startExpe(string grp, int nb)
-    {
+    void startExpe(string grp, int nb) {
         print("startExpe -> ");
         bool ope;
-        if (PhotonNetwork.IsMasterClient)
-        { 
+        if (PhotonNetwork.IsMasterClient) { 
             participant = "p01";
             ope = true;
-        }
-        else if (PhotonNetwork.LocalPlayer.ActorNumber == 2)
-        {
+        } else if (PhotonNetwork.LocalPlayer.ActorNumber == 2) {
             participant = "p02";
             ope = false;
-        } else 
-        {
+        } else {
             participant = "p03";
             ope = false;
         }
-        print("calling on new Expe()");
-        expe = new Expe(participant, grp, nb, cardList,ope);
-        print("expe has well been instantiated !");
 
-        if (expe.curentTrial.collabEnvironememnt == "C")
-        {
+        print("calling on new Expe() with ->\n  participant : " + participant + "\n  group : " + grp + "\n  nbTrial : " + nb  + "\n  ope : " + ope);
+        expe = new Expe(participant, grp, nb, cardList,ope);
+        print("\n\n    expe has well been instantiated !");
+
+        if (expe.curentTrial.collabEnvironememnt == "C") {
             //desactiver son
             Debug.Log("Sound off" );
             GameObject sound = GameObject.Find("Network Voice");
             sound.SetActive(false);
-        }
-        else
-        {
+        } else {
             Debug.Log(" Sound on");
         }
     }
 
     [PunRPC]
-    void curentTrialConditionCheck()
-    {
+    void curentTrialConditionCheck(){
         expe.curentTrial.checkConditions();
     }
 
     [PunRPC]
-    void endExpe()
-    {
+    void endExpe() {
         expe.Finished();
         print("End");
         //stop timing , stop expe ? 
@@ -222,61 +198,50 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
     }
 
     [PunRPC]
-    public void nextTrial()
-    {
+    public void nextTrial() {
         expe.nextTrial();
     }
 
     [PunRPC]
     //Add card to the list of card
-    void DestroyCard(int OB, int nbTrashs)
-    {
+    void DestroyCard(int OB, int nbTrashs) {
         // Undo.DestroyObjectImmediate(PhotonView.Find(OB).gameObject);
         PhotonView.Find(OB).gameObject.SetActive(false);
-        if (nbTrashs >= 1)
-        {
+        if (nbTrashs >= 1) {
             trash1.SetActive(true);
         }
-        if (nbTrashs >= 2)
-        {
+        if (nbTrashs >= 2) {
             trash2.SetActive(true);
         }
-        if (nbTrashs >= 3)
-        {
+        if (nbTrashs >= 3) {
             trash3.SetActive(true);
         }
-        if (nbTrashs >= 4)
-        {
+        if (nbTrashs >= 4) {
             trash4.SetActive(true);
         }
     }
     
     [PunRPC]
     //Add card to the list of card
-    void UndoCard(int OB, int nbTrashs)
-    {
+    void UndoCard(int OB, int nbTrashs) {
         // Undo.DestroyObjectImmediate(PhotonView.Find(OB).gameObject);
         PhotonView.Find(OB).gameObject.SetActive(true);
 
-        if (nbTrashs <= 1)
-        {
+        if (nbTrashs <= 1) {
             trash1.SetActive(false);
         }
-        if (nbTrashs <= 2)
-        {
+        if (nbTrashs <= 2) {
             trash2.SetActive(false);
         }
-        if (nbTrashs <= 3)
-        {
+        if (nbTrashs <= 3) {
             trash3.SetActive(false);
         }
-        if (nbTrashs <=4)
-        {
+        if (nbTrashs <=4) {
             trash4.SetActive(false);
         }
     }
     
-    public void spacePressedOperator(){
+    public void spacePressedOperator() {
         if (!expeEnCours){
             Cards();
             CardCreation();
@@ -289,11 +254,11 @@ public class rendering : MonoBehaviourPunCallbacks //, MonoBehaviourPun
         } 
     }
 
-    public void EPressedOperator(){
+    public void EPressedOperator() {
         photonView.RPC("endExpe", Photon.Pun.RpcTarget.AllBuffered);
     }
 
-    public void TPressedOperator(){
+    public void TPressedOperator() {
         expe.teleport.photonView.RPC("tpToOther", Photon.Pun.RpcTarget.Others);
     }
 }

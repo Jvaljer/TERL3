@@ -6,8 +6,7 @@ using UnityEngine.UI;
 using System.IO;
 using System.Threading;
 
-public class Expe
-{
+public class Expe {
     public string participant;
     private string group; // = "g01";
     public int startTrial = 1;
@@ -30,25 +29,24 @@ public class Expe
     public bool expeRunning = false;
     public bool trialRunning = false;
 
-    static class ThreadSafeRandom
-    {
+    static class ThreadSafeRandom {
         [ThreadStatic] private static System.Random Local;
 
-        public static System.Random ThisThreadsRandom
-        {
+        public static System.Random ThisThreadsRandom {
             get { return Local ?? (Local = new System.Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId))); }
         }
     }
 
 
 
-    public Expe(string part, string grp, int startNb, List<GameObject> cardL, bool ope)
-    {
+    public Expe(string part, string grp, int startNb, List<GameObject> cardL, bool ope) {
         expeRunning = true;
         group = grp;
+        Debug.Log("expe.group : " + group);
         participant = part;
+        Debug.Log("expe.participant : " + participant);
         trialNb = startNb;
-        Debug.Log(part);
+        Debug.Log("expe.trialNb : " + trialNb);
         cardList = cardL;
 
         teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();
@@ -66,6 +64,7 @@ public class Expe
         string path = "Assets/Resources/logs/class-" +  group + "-" + participant + "-" + mydate + ".csv";
         //File.Create(path);
         //Write some text to the test.txt file
+        Debug.Log("path : " + path);
         writer = new StreamWriter(path, false);
 
         writer.WriteLine(
@@ -77,24 +76,20 @@ public class Expe
         writer.Flush();
         path = "Assets/Resources/logs/class-" + participant + "-" + mydate + ".txt";
         kineWriter = new StreamWriter(path, false);
-        Debug.Log("VisExpe :" + expeDescriptionFile + " " + participant);
+        Debug.Log("VisExpe :" + expeDescriptionFile + " with participant : " + participant);
 
         TextAsset mytxtData = (TextAsset)Resources.Load(expeDescriptionFile);
         string txt = mytxtData.text;
         List<string> lines = new List<string>(txt.Split('\n'));        
 
         theTrials = new List<Trial>();
-        foreach (string str in lines)
-        {
+        foreach (string str in lines) {
             List<string> values = new List<string>(str.Split(';'));
-            if (values[0] == "#pause" && theTrials.Count != 0 && theTrials[theTrials.Count - 1].group == group)
-            {
+            if (values[0] == "#pause" && theTrials.Count != 0 && theTrials[theTrials.Count - 1].group == group) {
                 Debug.Log("#pause detected");
                 theTrials.Add(new Trial(this, values[0], "", "", "", "", "", "", "", ""));
                 Debug.Log("Pause added to trials");
-            }
-            else if (values[0] == group && values[1] == participant)
-            {
+            } else if (values[0] == group && values[1] == participant) {
                 theTrials.Add(new Trial(this,
                         values[0], values[1],
                         values[2], values[3], values[4], values[5], values[6], values[7], values[8]
@@ -112,51 +107,38 @@ public class Expe
         kineWriter.Flush();
     }
 
-    public void setInfoLocation()
-    {
+    public void setInfoLocation(){
         teleport.menu.transform.position = teleport.cam.position + 1f*teleport.cam.forward;
         teleport.menu.transform.rotation = teleport.cam.rotation;
         //teleport.menu.transform.RotateAround(teleport.menu.transform.position, Vector3.up, teleport.cam.rotation.eulerAngles.y - teleport.menu.transform.rotation.eulerAngles.y);
     }
 
-    public IEnumerator trialStarted()
-    {
+    public IEnumerator trialStarted(){
         curentTrial.startTrialTimer();
         teleport.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "Trial started";
         yield return new WaitForSeconds(5);
         teleport.menu.SetActive(false);
     }
 
-    public void nextTrial()
-    {
+    public void nextTrial(){
         
         Debug.Log("Trial count" + theTrials.Count + " curent nb " + trialNb);
-        if (!trialRunning)
-        {
+        if (!trialRunning){
             trialRunning = true;
             Debug.Log("update text info no trial running");
             setInfoLocation();
             teleport.menu.SetActive(true);
-            if (theTrials[trialNb].task == "search")
-            {
-                if (theTrials[trialNb].training == "1")
-                {
+            if (theTrials[trialNb].task == "search"){
+                if (theTrials[trialNb].training == "1"){
                     teleport.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search \n Training";
-                }
-                else
-                {
+                } else {
                     teleport.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search";
                 }
                 teleport.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
-            }
-            else
-            {
-                if (theTrials[trialNb].training == "1")
-                {
+            } else {
+                if (theTrials[trialNb].training == "1") {
                     teleport.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode + "\n Training";
-                }
-                else
-                {
+                } else {
                     teleport.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode;
                 }
                 teleport.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
@@ -165,21 +147,16 @@ public class Expe
             theTrials[trialNb].startTrial();
             curentTrial = theTrials[trialNb];
             //trialRunning = true;
-        }
-        else if (trialNb == theTrials.Count - 1)
-        {
+        } else if (trialNb == theTrials.Count - 1) {
             write();
             theTrials[trialNb - 1].card.transform.GetChild(1).gameObject.SetActive(false);
             theTrials[trialNb].card.transform.GetChild(1).gameObject.SetActive(false);
             Finished();
-        }
-        else
-        {
+        } else {
             write();
             incTrialNb();
             Debug.Log(theTrials[trialNb].group);
-            if (theTrials[trialNb].group == "#pause")
-            {
+            if (theTrials[trialNb].group == "#pause") {
                 trialRunning = false;
                 teleport.photonView.RPC("resetPosition", Photon.Pun.RpcTarget.AllBuffered);
                 teleport.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "Pause";
@@ -189,31 +166,20 @@ public class Expe
                 teleport.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Next move " + theTrials[trialNb].moveMode;
                 setInfoLocation();
                 teleport.menu.SetActive(true);
-            }
-            else
-            {
+            } else {
                 Debug.Log("update text info");
                 setInfoLocation();
-                if (theTrials[trialNb].task == "search")
-                {
-                    if (theTrials[trialNb].training == "1")
-                    {
+                if (theTrials[trialNb].task == "search") {
+                    if (theTrials[trialNb].training == "1") {
                         teleport.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search \n Training";
-                    }
-                    else
-                    {
+                    } else {
                         teleport.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search";
                     }
                     teleport.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
-                }
-                else
-                {
-                    if (theTrials[trialNb].training == "1")
-                    {
+                } else {
+                    if (theTrials[trialNb].training == "1") {
                         teleport.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode + "\n Training";
-                    }
-                    else
-                    {
+                    } else {
                         teleport.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode;
                     }
                     teleport.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
@@ -225,8 +191,7 @@ public class Expe
         }
     }
 
-    public void write()
-    {
+    public void write() {
         writer.WriteLine(
             // "factor"
             theTrials[trialNb].group + ";" + theTrials[trialNb].participant + ";" + theTrials[trialNb].collabEnvironememnt + ";" + theTrials[trialNb].trialNb + ";" + theTrials[trialNb].training + ";" + theTrials[trialNb].moveMode + ";" + theTrials[trialNb].task + ";" + theTrials[trialNb].wall + ";" + theTrials[trialNb].cardToTag + ";"
@@ -237,8 +202,7 @@ public class Expe
         writer.Flush();
     }
 
-    public void Finished()
-    {
+    public void Finished() {
         write();
         teleport.menu.transform.Find("textInfo").gameObject.SetActive(true);
         teleport.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "Fin de l'exp�rience";
@@ -248,8 +212,7 @@ public class Expe
         kineWriter.Close();
     }
 
-    public void incTrialNb()
-    {
+    public void incTrialNb() {
         trialNb += 1;
         if (trialNb - 2 >= 0 && theTrials[trialNb - 2].group != "#pause")
         {
