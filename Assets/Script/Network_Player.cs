@@ -95,10 +95,12 @@ public class Network_Player : MonoBehaviourPun
 
         synctag = synctagTest == null ? false : (bool)synctagTest;
         isOtherSynced = isOtherSyncedTest == null ? false : (bool)isOtherSyncedTest;
-        
+
         Ray ray = new Ray(right.transform.position, right.transform.forward);
+
         if (photonView.IsMine) {
             // end the position and rotation over the network
+            Debug.Log("photonView.IsMine");
             MapPosition();
         }
 
