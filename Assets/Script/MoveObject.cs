@@ -9,7 +9,7 @@ public class MoveObject : MonoBehaviourPun
 {
     // intersecion raycast and object
     public GameObject m_Pointer;
-    private bool m_HasPosition = false;
+    private bool m_HasPosition = true;
     private RaycastHit hit;
 
     // laterals buttons
