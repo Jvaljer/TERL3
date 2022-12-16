@@ -69,6 +69,7 @@ public class Network_Operator : MonoBehaviourPun {
             // L -> cam lock for op
             Debug.Log(".                     L was pressed (operator)");
             locked = !locked;
+            // if locked -> can use it's buttons
         }
 
         if(Input.GetKeyDown(KeyCode.Space)){
@@ -86,6 +87,7 @@ public class Network_Operator : MonoBehaviourPun {
             render.TPressedOperator();
         }
 
+ 
     }
 
     private bool isMouseOffScreen(){
@@ -95,4 +97,17 @@ public class Network_Operator : MonoBehaviourPun {
         return false; 
     }
 
+    /*
+        New features idea for Operator : 
+            Can Pause the expe whenever he wants 
+                -> Pause shown on player's screen 
+                -> Only operator can act
+            Can Choose the Player's MoveMod (+ Syncro)
+                -> Via a menu ? 
+                -> Can only switch before starting a Trial
+            Can choose the newt trial's aim for Players
+                -> Choose between "search" & "story" ? 
+
+        Globaly : MAKE A MENU FOR OPERATOR SYNTHETISING ALL OF HIS POSSIBLE ACTIONS
+    */
 }

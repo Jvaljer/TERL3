@@ -69,10 +69,10 @@ public class Network_Player : MonoBehaviourPun
         m_pose = right.GetComponent<SteamVR_Behaviour_Pose>();
 
         leftHand.gameObject.SetActive(true);
-        
         palette.gameObject.SetActive(true);
 
         if (photonView.IsMine) {
+            Debug.Log("Start -> photonView.IsMine");
             //don't show my avatar
             leftHand.gameObject.SetActive(false);
             rightHand.gameObject.SetActive(false);
@@ -101,46 +101,57 @@ public class Network_Player : MonoBehaviourPun
         if (Physics.Raycast(ray, out hit)) {
             //change tag color of the ray cast
             if (interactWithUI.GetStateDown(m_pose.inputSource)) {
+                Debug.Log("interactWithUI -> GetStateDown was called");
 
                 if (hit.transform.tag == "Color tag") {
+                    Debug.Log("Color tag :");
                     if (synctag) {
+                        Debug.Log("     synctag");
                         nameR = hit.transform.GetComponent<Renderer>().material.name;
                         photonView.RPC("ChangeRayColour", Photon.Pun.RpcTarget.All, nameR);
                         right.GetComponent<PhotonView>().RPC("RayColour", Photon.Pun.RpcTarget.All, nameR);
                         // Debug.Log("tag sync");
                     } else if (photonView.IsMine) {
+                        Debug.Log("     photonView.IsMine");
                         nameR = hit.transform.GetComponent<Renderer>().material.name;
                         photonView.RPC("ChangeRayColour", Photon.Pun.RpcTarget.All, nameR);
                         right.GetComponent<PhotonView>().RPC("RayColour", Photon.Pun.RpcTarget.All, nameR);
                         // Debug.Log("tag not sync: photonView.IsMine");
                     }
                 } else if (photonView.IsMine) {
+                    Debug.Log("photonView.IsMine <- Network_Player");
                     if (hit.transform.tag == "MoveControlTP") {
+                        Debug.Log(" MoveControl - TP ");
                         palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = green;
                         moveMode = "TP";
                     } else if (hit.transform.tag == "MoveControlJoy") {
+                        Debug.Log(" MoveControl - Joy ");
                         palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = green;
                         palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = red;
                         moveMode = "joy";
                     } else if (hit.transform.tag == "MoveControlDrag") {
+                        Debug.Log(" MoveControl - Drag ");
                         palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = green;
                         palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = red;
                         moveMode = "drag";
                     } else if (hit.transform.tag == "MoveControlSync" && !isOtherSynced) {
+                        Debug.Log(" MoveControl - Sync ");
                         palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
                         palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = green;
                         palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = red;
                         moveMode = "sync";
                     }
+                    Debug.Log(" Calling 'ChangeMovement' ");
                     photonView.RPC("ChangeMovement", Photon.Pun.RpcTarget.All, moveMode);
+                    Debug.Log(" Exited 'ChangeMovement' ");
                 }
             }
 
@@ -175,30 +186,37 @@ public class Network_Player : MonoBehaviourPun
 
     [PunRPC]
     void ChangeMovement(string moveMode) {
+        Debug.Log("Inside 'ChangeMovement' : ");
         if (moveMode == "TP") {
+            Debug.Log("     TP ");
             palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = green;
+            moveMode = "TP";
         } else if (moveMode == "joy") {
+            Debug.Log("     joy ");
             palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = green;
             palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = red;
             moveMode = "joy";
         } else if (moveMode == "drag") {
+            Debug.Log("     drag ");
             palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = green;
             palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = red;
             moveMode = "drag";
         } else if (moveMode == "sync") {
+            Debug.Log("     sync ");
             palette.Find("GameObjectMoveJoy/CubeMoveModeJoy").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveDrag/CubeMoveModeDrag").GetComponent<Renderer>().material = red;
             palette.Find("GameObjectMoveSync/CubeMoveModeSync").GetComponent<Renderer>().material = green;
             palette.Find("GameObjectMoveTP/CubeMoveModeTP").GetComponent<Renderer>().material = red;
             moveMode = "sync";
         }
+        Debug.Log(" 'ChangeMovement' ended ");
     }
 
     [PunRPC]
