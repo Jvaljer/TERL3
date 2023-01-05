@@ -40,23 +40,33 @@ public class Expe {
 
 
     public Expe(string part, string grp, int startNb, List<GameObject> cardL, bool ope) {
+        Debug.Log("INSIDE EXPE CONSTRUCTOR");
+
         expeRunning = true;
         group = grp;
+
         Debug.Log("expe.group : " + group);
         participant = part;
+
         Debug.Log("expe.participant : " + participant);
         trialNb = startNb;
+
         Debug.Log("expe.trialNb : " + trialNb);
         cardList = cardL;
 
         teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();
 
         if(!ope){
+            Debug.Log("not called as Operator");
             player = GameObject.Find("Network Player(Clone)").GetComponent<Network_Player>();
+        } else {
+            Debug.Log("called as Operator");
         }
 
+        Debug.Log("getting the render");
         render = GameObject.Find("/Salle").GetComponent<rendering>();
 
+        Debug.Log("making the pathname");
         string mydate = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
         //  Debug.Log("Goupe: " + trial.group + );
         // file name should look like  "class-PXX-2019-MM-DD-HH-MM-SS.csv"
@@ -64,7 +74,7 @@ public class Expe {
         string path = "Assets/Resources/logs/class-" +  group + "-" + participant + "-" + mydate + ".csv";
         //File.Create(path);
         //Write some text to the test.txt file
-        Debug.Log("path : " + path);
+            //Debug.Log("path : " + path);
         writer = new StreamWriter(path, false);
 
         writer.WriteLine(
@@ -74,34 +84,39 @@ public class Expe {
             + "nbMove;nbMoveWall;nbDragWallFloor;distTotal;nbRotate;rotateTotal;"
             + "trialTime;moveTime");
         writer.Flush();
-        path = "Assets/Resources/logs/class-" + participant + "-" + mydate + ".txt";
+            //path = "Assets/Resources/logs/class-" + participant + "-" + mydate + ".txt";
         kineWriter = new StreamWriter(path, false);
-        Debug.Log("VisExpe :" + expeDescriptionFile + " with participant : " + participant);
+            //Debug.Log("VisExpe :" + expeDescriptionFile + " with participant : " + participant);
 
+        Debug.Log("making the 'List<string> lines' ");
         TextAsset mytxtData = (TextAsset)Resources.Load(expeDescriptionFile);
         string txt = mytxtData.text;
         List<string> lines = new List<string>(txt.Split('\n'));        
 
+        Debug.Log("making 'theTrials' ");
         theTrials = new List<Trial>();
+        Debug.Log("starting foreach :");
         foreach (string str in lines) {
             List<string> values = new List<string>(str.Split(';'));
             if (values[0] == "#pause" && theTrials.Count != 0 && theTrials[theTrials.Count - 1].group == group) {
-                Debug.Log("#pause detected");
+                //Debug.Log("#pause detected");
                 theTrials.Add(new Trial(this, values[0], "", "", "", "", "", "", "", ""));
-                Debug.Log("Pause added to trials");
+                //Debug.Log("Pause added to trials");
             } else if (values[0] == group && values[1] == participant) {
                 theTrials.Add(new Trial(this,
                         values[0], values[1],
                         values[2], values[3], values[4], values[5], values[6], values[7], values[8]
                     ));
-                Debug.Log("Goupe: " + theTrials[theTrials.Count - 1].group + "; Participant: " + theTrials[theTrials.Count - 1].participant +
-                          "; collabEnvironment: " + theTrials[theTrials.Count - 1].collabEnvironememnt + "; trialNb: " + theTrials[theTrials.Count - 1].trialNb + "; training: " + theTrials[theTrials.Count - 1].training + "; moveMode: " + theTrials[theTrials.Count - 1].moveMode + "; task: " + theTrials[theTrials.Count - 1].task + "; wall: " + theTrials[theTrials.Count - 1].wall + "; cardToTag: " + theTrials[theTrials.Count - 1].cardToTag);
+                //Debug.Log("Goupe: " + theTrials[theTrials.Count - 1].group + "; Participant: " + theTrials[theTrials.Count - 1].participant +
+                  //        "; collabEnvironment: " + theTrials[theTrials.Count - 1].collabEnvironememnt + "; trialNb: " + theTrials[theTrials.Count - 1].trialNb + "; training: " + theTrials[theTrials.Count - 1].training + "; moveMode: " + theTrials[theTrials.Count - 1].moveMode + "; task: " + theTrials[theTrials.Count - 1].task + "; wall: " + theTrials[theTrials.Count - 1].wall + "; cardToTag: " + theTrials[theTrials.Count - 1].cardToTag);
 
                 theTrials[theTrials.Count - 1].pathLog = path;
 
                 theTrials[theTrials.Count - 1].kineWriter = kineWriter;
             }
         }
+        Debug.Log("     foreach passed");
+
         curentTrial = theTrials[trialNb];
         kineWriter.WriteLine(curentTrial.group + " " + curentTrial.participant + " kine action");
         kineWriter.Flush();
@@ -112,6 +127,7 @@ public class Expe {
         //Expe launch for the assigned participant being apart of the selected group with the initNb
         return;
     }
+
     public void setInfoLocation(){
         teleport.menu.transform.position = teleport.cam.position + 1f*teleport.cam.forward;
         teleport.menu.transform.rotation = teleport.cam.rotation;
