@@ -168,7 +168,9 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     void curentTrialConditionCheck(){
+        Debug.Log("curentTrial.checkConditions -> ");
         expe.curentTrial.checkConditions();
+        Debug.Log("     called successfully");
     }
 
     [PunRPC]
@@ -199,7 +201,9 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     public void nextTrial() {
+        Debug.Log("expe.nextTrial -> ");
         expe.nextTrial();
+        Debug.Log("     called successfully");
     }
 
     [PunRPC]
@@ -250,7 +254,9 @@ public class rendering : MonoBehaviourPunCallbacks {
             print("Expe Started succesfully !");
             expeEnCours = true;
         } else if (expeEnCours && !trialEnCours) {
+            Debug.Log("expeEnCour && !trialEnCours ->");
             photonView.RPC("nextTrial", Photon.Pun.RpcTarget.AllBuffered);
+            Debug.Log("     nextTrial called successfully");
         } 
     }
 

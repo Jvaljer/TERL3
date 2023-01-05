@@ -39,6 +39,8 @@ public class Network_Player : MonoBehaviourPun
     //room + wall
     private GameObject salle;
 
+
+    private bool punview = true;
     //private PhotonView photonView;
 
     private RaycastHit hit;
@@ -80,7 +82,6 @@ public class Network_Player : MonoBehaviourPun
             torse.gameObject.SetActive(false);
         }
         nameR = rayCast.GetComponent<Renderer>().material.name.ToString();
-
         
     }
 
@@ -100,7 +101,11 @@ public class Network_Player : MonoBehaviourPun
 
         if (photonView.IsMine) {
             // end the position and rotation over the network
-            Debug.Log("photonView.IsMine");
+            if(punview){
+                Debug.Log("photonView.IsMine");
+                punview = false;
+            }
+            //Ray ray = new Ray(right.transform.position, right.transform.forward);
             MapPosition();
         }
 

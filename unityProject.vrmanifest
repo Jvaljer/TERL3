@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.coreach.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\cygwin64\\home\\ilda-vive\\henrylapassat\\TL3NewFeatures\\TERL3\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\cygwin64\\home\\ilda-vive\\henrylapassat\\LinAdapt\\TERL3\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "CoReach [Testing]"
