@@ -99,7 +99,7 @@ public class Trial
         Debug.Log("creating cards");
         if (cardT != "")
         {
-            Debug.Log("cardT not "" " );
+            Debug.Log("cardT not 'nothing' ");
             card = expe.cardList[int.Parse(cardT)];
         }
         //Debug.Log("card found" + card);
