@@ -67,24 +67,32 @@ public class Expe {
         render = GameObject.Find("/Salle").GetComponent<rendering>();
 
         Debug.Log("making the pathname");
+        Debug.Log("     mydate");
         string mydate = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
         //  Debug.Log("Goupe: " + trial.group + );
         // file name should look like  "class-PXX-2019-MM-DD-HH-MM-SS.csv"
         //string path = "Assets/Resources/expeLogs/class-" +  group + "-" + participant + "-" + mydate + ".csv";
+        Debug.Log("     path");
         string path = "Assets/Resources/logs/class-" +  group + "-" + participant + "-" + mydate + ".csv";
         //File.Create(path);
         //Write some text to the test.txt file
             //Debug.Log("path : " + path);
+        Debug.Log("Starting to write");
+        Debug.Log("     writer (new StreamWriter)");
         writer = new StreamWriter(path, false);
 
+        Debug.Log("     WriteLine");
         writer.WriteLine(
             // "factor"
             "Group;Participant;CollabEnvironememnt;trialNb;training;MoveMode;Task;Wall;CardToTag;"
             // measure
             + "nbMove;nbMoveWall;nbDragWallFloor;distTotal;nbRotate;rotateTotal;"
             + "trialTime;moveTime");
+        Debug.Log("     Flush");
         writer.Flush();
             //path = "Assets/Resources/logs/class-" + participant + "-" + mydate + ".txt";
+        Debug.Log("     kineWriter");
+        path = "Assets/Resources/logs/class-" + participant + "-" + mydate + ".txt";
         kineWriter = new StreamWriter(path, false);
             //Debug.Log("VisExpe :" + expeDescriptionFile + " with participant : " + participant);
 
