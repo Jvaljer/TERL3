@@ -76,6 +76,7 @@ public class Network_Player : MonoBehaviourPun
 
         if (photonView.IsMine) {
             //don't show my avatar
+            Debug.Log("PhotonView.IsMine (Start)" + PhotonNetwork.LocalPlayer.ActorNumber.ToString() );
             leftHand.gameObject.SetActive(false);
             rightHand.gameObject.SetActive(false);
             head.gameObject.SetActive(false);
@@ -88,6 +89,7 @@ public class Network_Player : MonoBehaviourPun
     // Update is called once per frame
     void Update() {
         if (expe == null) {
+            Debug.Log("getting the expe (Player -> expe == null) ");
             expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
         }
 
@@ -102,7 +104,7 @@ public class Network_Player : MonoBehaviourPun
         if (photonView.IsMine) {
             // end the position and rotation over the network
             if(punview){
-                Debug.Log("photonView.IsMine");
+                Debug.Log("photonView.IsMine (Update)" + PhotonNetwork.LocalPlayer.ActorNumber.ToString() );
                 punview = false;
             }
             //Ray ray = new Ray(right.transform.position, right.transform.forward);

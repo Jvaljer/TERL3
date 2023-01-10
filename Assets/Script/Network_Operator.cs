@@ -43,8 +43,9 @@ public class Network_Operator : MonoBehaviourPun {
         //searching for an expe if there isn't already one 
         if(expe==null){
             //Debug.Log("Searching for an expe");
-            expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
+            //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
             render = GameObject.Find("/Salle").GetComponent<rendering>();
+            expe = render.expe; 
         }
 
         if(!locked){
