@@ -123,7 +123,7 @@ public class Expe {
                 theTrials[theTrials.Count - 1].kineWriter = kineWriter;
             }
         }
-        Debug.Log("     foreach passed");
+        Debug.Log("     foreach passed " + trialNb  + " " + theTrials.Count);
 
         curentTrial = theTrials[trialNb];
         kineWriter.WriteLine(curentTrial.group + " " + curentTrial.participant + " kine action");

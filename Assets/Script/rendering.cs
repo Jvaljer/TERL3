@@ -165,7 +165,7 @@ public class rendering : MonoBehaviourPunCallbacks {
 
         print("calling on new Expe() with ->\n  participant : " + participant + "\n  group : " + grp + "\n  nbTrial : " + nb  + "\n  ope : " + ope);
         expe = new Expe(participant, grp, nb, cardList,ope);
-        print("\n\n    expe has well been instantiated !");
+        print("\n\n    expe has well been instantiated !" + expe);
 
         if (expe.curentTrial.collabEnvironememnt == "C") {
             //desactiver son
