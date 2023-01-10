@@ -44,8 +44,11 @@ public class Network_Operator : MonoBehaviourPun {
         if(expe==null){
             //Debug.Log("Searching for an expe");
             //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
-            render = GameObject.Find("/Salle").GetComponent<rendering>();
+            render = room.GetComponent<rendering>();
             expe = render.expe; 
+            if(expe!=null){
+                Debug.Log("expe has been created");
+            }
         }
 
         if(!locked){
@@ -94,6 +97,14 @@ public class Network_Operator : MonoBehaviourPun {
             return true;
         } 
         return false; 
+    }
+
+    public GameObject GetRoom(){
+        return room;
+    }
+
+    public rendering GetRender(){
+        return render;
     }
 
 }

@@ -37,8 +37,12 @@ public class Network_Player : MonoBehaviourPun
     private GameObject left;
 
     //room + wall
-    private GameObject salle;
+    private GameObject room;
 
+    //operator's stuff
+    private GameObject ope;
+    private Network_Operator ope_Script;
+    private rendering render;
 
     private bool punview = true;
     //private PhotonView photonView;
@@ -60,13 +64,18 @@ public class Network_Player : MonoBehaviourPun
     void Start() {
         //photonView = GetComponent<PhotonView>();
         Debug.Log("Start NetworkPlayer ");
+        //getting the operator 
+        Debug.Log("getting ope");
+        ope = GameObject.Find("/Network Operator(Clone)");
+        ope_Script = ope.GetComponent<Network_Operator>();
+
         //room + wall + camera
         cameraRig = GameObject.Find("/[CameraRig]");
         headset = GameObject.Find("Camera (eye)");
         right = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)");
         left = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (left)");
 
-        salle = GameObject.Find("Salle");
+        room = ope_Script.GetRoom();
 
         m_pose = right?.GetComponent<SteamVR_Behaviour_Pose>();
 
@@ -89,8 +98,12 @@ public class Network_Player : MonoBehaviourPun
     // Update is called once per frame
     void Update() {
         if (expe == null) {
-            Debug.Log("getting the expe (Player -> expe == null) ");
-            expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
+            //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
+            render = ope_Script.GetRender();
+            expe = render.expe;
+            if(expe!=null){
+                Debug.Log("expe has been found");
+            }
         }
 
         bool? synctagTest = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)")?.GetComponent<Teleporter>().synctag;
@@ -104,7 +117,7 @@ public class Network_Player : MonoBehaviourPun
         if (photonView.IsMine) {
             // end the position and rotation over the network
             if(punview){
-                Debug.Log("photonView.IsMine (Update)" + PhotonNetwork.LocalPlayer.ActorNumber.ToString() );
+                Debug.Log("photonView.IsMine (Update)");
                 punview = false;
             }
             //Ray ray = new Ray(right.transform.position, right.transform.forward);
