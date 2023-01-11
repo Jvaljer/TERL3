@@ -153,18 +153,15 @@ public class rendering : MonoBehaviourPunCallbacks {
         print("startExpe -> ");
         bool ope;
         if (PhotonNetwork.IsMasterClient) { 
-            participant = "p01";
-            ope = true;
+            participant = "p01"; //for now we just want it to work but then we will make it "ope" & add a centralized expe
         } else if (PhotonNetwork.LocalPlayer.ActorNumber == 2) {
-            participant = "p02";
-            ope = false;
+            participant = "p01";
         } else {
-            participant = "p03";
-            ope = false;
+            participant = "p02";
         }
 
         print("calling on new Expe() with ->\n  participant : " + participant + "\n  group : " + grp + "\n  nbTrial : " + nb  + "\n  ope : " + ope);
-        expe = new Expe(participant, grp, nb, cardList,ope);
+        expe = new Expe(participant, grp, nb, cardList);
         print("\n\n    expe has well been instantiated !" + expe);
 
         if (expe.curentTrial.collabEnvironememnt == "C") {

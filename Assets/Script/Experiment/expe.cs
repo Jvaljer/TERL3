@@ -39,78 +39,55 @@ public class Expe {
 
 
 
-    public Expe(string part, string grp, int startNb, List<GameObject> cardL, bool ope) {
+    public Expe(string part, string grp, int startNb, List<GameObject> cardL) {
         Debug.Log("INSIDE EXPE CONSTRUCTOR");
 
         expeRunning = true;
         group = grp;
-
-        Debug.Log("expe.group : " + group);
         participant = part;
-
-        Debug.Log("expe.participant : " + participant);
         trialNb = startNb;
-
-        Debug.Log("expe.trialNb : " + trialNb);
         cardList = cardL;
+        Debug.Log("group : " + group  +"   participant : " + part + "   trialNb : " + startNb );
 
         teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();
+        render = GameObject.Find("Network Operator(Clone)").GetComponent<Network_Operator>().GetRender();
 
-        if(!ope){
-            Debug.Log("not called as Operator");
-            player = GameObject.Find("Network Player(Clone)").GetComponent<Network_Player>();
-        } else {
-            Debug.Log("called as Operator");
-        }
-
-        Debug.Log("getting the render");
-        render = GameObject.Find("/Salle").GetComponent<rendering>();
-
-        Debug.Log("making the pathname");
-        Debug.Log("     mydate");
         string mydate = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
         //  Debug.Log("Goupe: " + trial.group + );
         // file name should look like  "class-PXX-2019-MM-DD-HH-MM-SS.csv"
         //string path = "Assets/Resources/expeLogs/class-" +  group + "-" + participant + "-" + mydate + ".csv";
-        Debug.Log("     path");
         string path = "Assets/Resources/logs/class-" +  group + "-" + participant + "-" + mydate + ".csv";
         //File.Create(path);
         //Write some text to the test.txt file
             //Debug.Log("path : " + path);
-        Debug.Log("Starting to write");
-        Debug.Log("     writer (new StreamWriter)");
         writer = new StreamWriter(path, false);
 
-        Debug.Log("     WriteLine");
         writer.WriteLine(
             // "factor"
             "Group;Participant;CollabEnvironememnt;trialNb;training;MoveMode;Task;Wall;CardToTag;"
             // measure
             + "nbMove;nbMoveWall;nbDragWallFloor;distTotal;nbRotate;rotateTotal;"
             + "trialTime;moveTime");
-        Debug.Log("     Flush");
         writer.Flush();
-            //path = "Assets/Resources/logs/class-" + participant + "-" + mydate + ".txt";
-        Debug.Log("     kineWriter");
         path = "Assets/Resources/logs/class-" + participant + "-" + mydate + ".txt";
         kineWriter = new StreamWriter(path, false);
             //Debug.Log("VisExpe :" + expeDescriptionFile + " with participant : " + participant);
 
-        Debug.Log("making the 'List<string> lines' ");
         TextAsset mytxtData = (TextAsset)Resources.Load(expeDescriptionFile);
+
         string txt = mytxtData.text;
         List<string> lines = new List<string>(txt.Split('\n'));        
 
-        Debug.Log("making 'theTrials' ");
         theTrials = new List<Trial>();
-        Debug.Log("starting foreach :");
+
         foreach (string str in lines) {
             List<string> values = new List<string>(str.Split(';'));
             if (values[0] == "#pause" && theTrials.Count != 0 && theTrials[theTrials.Count - 1].group == group) {
-                //Debug.Log("#pause detected");
+                Debug.Log("#pause detected");
                 theTrials.Add(new Trial(this, values[0], "", "", "", "", "", "", "", ""));
                 //Debug.Log("Pause added to trials");
             } else if (values[0] == group && values[1] == participant) {
+                Debug.Log("adding a Trial");
                 theTrials.Add(new Trial(this,
                         values[0], values[1],
                         values[2], values[3], values[4], values[5], values[6], values[7], values[8]
@@ -123,7 +100,7 @@ public class Expe {
                 theTrials[theTrials.Count - 1].kineWriter = kineWriter;
             }
         }
-        Debug.Log("     foreach passed " + trialNb  + " " + theTrials.Count);
+        Debug.Log(" foreach passed " + trialNb  + " " + theTrials.Count);
 
         curentTrial = theTrials[trialNb];
         kineWriter.WriteLine(curentTrial.group + " " + curentTrial.participant + " kine action");
