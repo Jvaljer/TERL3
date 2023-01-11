@@ -107,11 +107,7 @@ public class Expe {
         kineWriter.Flush();
     }
 
-    // Re-doing the Expe Constructor to improve it (or at least try) + adapt it to new format
-    public Expe(string partId, string grpId, int initNb, List<GameObject> cards){ //cannot be without operator. 
-        //Expe launch for the assigned participant being apart of the selected group with the initNb
-        return;
-    }
+    //Might need to redo the Expe Constructor on a way that will behave more like what we wanna do 
 
     public void setInfoLocation(){
         teleport.menu.transform.position = teleport.cam.position + 1f*teleport.cam.forward;

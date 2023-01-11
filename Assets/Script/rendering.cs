@@ -150,17 +150,16 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     void startExpe(string grp, int nb) {
-        print("startExpe -> ");
         bool ope;
         if (PhotonNetwork.IsMasterClient) { 
-            participant = "p01"; //for now we just want it to work but then we will make it "ope" & add a centralized expe
+            participant = "ope";
         } else if (PhotonNetwork.LocalPlayer.ActorNumber == 2) {
             participant = "p01";
         } else {
             participant = "p02";
         }
 
-        print("calling on new Expe() with ->\n  participant : " + participant + "\n  group : " + grp + "\n  nbTrial : " + nb  + "\n  ope : " + ope);
+        print("calling on new Expe() with ->\n  participant : " + participant + "\n  group : " + grp + "\n  nbTrial : " + nb  );
         expe = new Expe(participant, grp, nb, cardList);
         print("\n\n    expe has well been instantiated !" + expe);
 

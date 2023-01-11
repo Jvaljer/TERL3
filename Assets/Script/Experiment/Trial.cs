@@ -64,26 +64,23 @@ public class Trial
         string colabEnv, string trial, string train, string moveM, string t, string w, string cardT
         )
     {   
-        Debug.Log("INSIDE TRIAL CONSTRUCTOR");
 
-        if(p_ != "p01" && p_ != ""){
+        if(p_ == "ope" ){
             //with player as a master (not wanted...)
-            Debug.Log("Player is master");
-            player = GameObject.Find("Network Player(Clone)").GetComponent<Network_Player>();
-            ope = null;
-        } else {
-            //with operator as master
             Debug.Log("Operator is master");
             ope = GameObject.Find("Network Operator(Clone)").GetComponent<Network_Operator>();
             player = null;
+        } else {
+            //with operator as master
+            Debug.Log("Player is master");
+            player = GameObject.Find("Network Player(Clone)").GetComponent<Network_Player>();
+            ope = null;
         }
 
-        Debug.Log("getting teleport,render,cardArea");
         teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();
         render = GameObject.Find("/Salle").GetComponent<rendering>();
         cardArea = GameObject.Find("/Salle").GetComponent<rendering>().cardArea;
 
-        Debug.Log("giving expe,group,participant,collabEnv,trialNb,training,moveMode,task,wall,cardToTag,timer the parameters values");
         expe = e;
         group = g_;
         participant = p_;
@@ -96,10 +93,8 @@ public class Trial
         cardToTag = cardT;
         timer = Time.time;
 
-        Debug.Log("creating cards");
         if (cardT != "")
         {
-            Debug.Log("cardT not 'nothing' ");
             card = expe.cardList[int.Parse(cardT)];
         }
         //Debug.Log("card found" + card);
