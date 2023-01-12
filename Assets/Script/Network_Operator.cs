@@ -28,8 +28,6 @@ public class Network_Operator : MonoBehaviourPun {
     private rendering render;
     Expe expe;
     private bool locked = true;
-    private bool expeState;
-    private bool trialState;
 
     //private PhotonView photonView;
 
@@ -65,8 +63,7 @@ public class Network_Operator : MonoBehaviourPun {
             }
         }
         
-        //else the operator can't do nothing 
-            //maybe move him to a general overview camera 
+        //else the operator can't do nothing but press buttons
 
         //all possible inputs  
         if(Input.GetKeyDown(KeyCode.L)){
@@ -107,4 +104,26 @@ public class Network_Operator : MonoBehaviourPun {
         return render;
     }
 
+    //trying to centralize the calls only for the operator
+    private void SpacePressed(){
+        if(!(render.expeEnCours)){
+            render.Cards();
+            render.CardCreation();
+            render.photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, render.group, render.firstTrialNb);
+            print("Expe Started successfully");
+            render.expeEnCours;
+        } else if(render.expeEnCours && !(render.trialEnCours)){
+            Debug.Log("expeEnCour && !trialEnCours ->");
+            render.photonView.RPC("nextTrial", Photon.Pun.RpcTarget.AllBuffered);
+            Debug.Log("     nextTrial called successfully");
+        }
+    } 
+
+    private void EPressed(){
+        render.photonView.RPC("rendExpe", Photon.Pun.RpcTarget.AllBuffered);
+    }
+
+    private void TPressed(){
+        expe.teleport.photonView("tpToOther", Photon.Pun.RpcTarget.Others);
+    }
 }

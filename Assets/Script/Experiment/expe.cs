@@ -16,7 +16,7 @@ public class Expe {
     private Network_Player player;
     private rendering render;
 
-    private readonly string expeDescriptionFile = "Experiments/initialTrialFile";
+    private readonly string expeDescriptionFile = "Experiments/textDataFile"; // "Experiments/initialTrialFile"
     private string previousCardNum;
     //static string[] letters = {"H", "N", "K", "R"};
     static readonly string[] letters = { "evertnone", "ehornone" };
@@ -47,6 +47,7 @@ public class Expe {
         participant = part;
         trialNb = startNb;
         cardList = cardL;
+        
         Debug.Log("group : " + group  +"   participant : " + part + "   trialNb : " + startNb );
 
         teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();

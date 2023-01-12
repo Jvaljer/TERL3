@@ -57,9 +57,7 @@ public class Network_Player : MonoBehaviourPun
     private bool isOtherSynced;
     private string moveMode = "drag"; // "TP" | "joy" | "sync"
 
-
-
-    Expe expe;
+    Expe expe; // the aim is to remove this, and directly refers to ope.expe instead -> wanna centralize the expe management 
 
     void Start() {
         //photonView = GetComponent<PhotonView>();
@@ -76,7 +74,8 @@ public class Network_Player : MonoBehaviourPun
         left = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (left)");
 
         room = ope_Script.GetRoom();
-
+        render = ope_Script.GetRender();
+        
         m_pose = right?.GetComponent<SteamVR_Behaviour_Pose>();
 
         leftHand.gameObject.SetActive(true);
@@ -99,8 +98,8 @@ public class Network_Player : MonoBehaviourPun
     void Update() {
         if (expe == null) {
             //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
-            render = ope_Script.GetRender();
-            expe = render.expe;
+            if(render.expe != null)
+                expe = render.expe;
             if(expe!=null){
                 Debug.Log("expe has been found");
             }
