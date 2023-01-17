@@ -21,11 +21,11 @@ public class Network_Operator : MonoBehaviourPun {
     public Material lightRed;
 
     private GameObject body;
-    private GameObject room;
+    public GameObject room;
 
     private GameObject moving;
 
-    private rendering render;
+    public rendering render;
     Expe expe;
     private bool locked = true;
 
@@ -37,7 +37,7 @@ public class Network_Operator : MonoBehaviourPun {
         moving = GameObject.Find("/[movingCam]");
         render = room.GetComponent<rendering>();
         if(render==null){
-            Debug.Log("render is null duh");
+            Debug.Log("ope -> render is null duh");
         }
     }
 
@@ -48,7 +48,7 @@ public class Network_Operator : MonoBehaviourPun {
             //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
             expe = render.expe; 
             if(expe!=null){
-                Debug.Log("expe isn't null anymore");
+                Debug.Log("ope -> expe isn't null anymore");
             }
         }
 
@@ -97,13 +97,5 @@ public class Network_Operator : MonoBehaviourPun {
             return true;
         } 
         return false; 
-    }
-
-    public GameObject GetRoom(){
-        return room;
-    }
-
-    public rendering GetRender(){
-        return render;
     }
 }

@@ -66,6 +66,13 @@ public class Network_Player : MonoBehaviourPun
         Debug.Log("getting ope");
         ope = GameObject.Find("/Network Operator(Clone)");
         ope_Script = ope.GetComponent<Network_Operator>();
+        if(ope==null){
+            Debug.Log("ope is null duh");
+        }
+
+        if(ope_Script==null){
+            Debug.Log("ope_Script is null duh");
+        }
 
         //room + wall + camera
         cameraRig = GameObject.Find("/[CameraRig]");
@@ -73,8 +80,10 @@ public class Network_Player : MonoBehaviourPun
         right = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)");
         left = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (left)");
 
-        room = ope_Script.GetRoom();
-        render = ope_Script.GetRender();
+        //these 2 lines aren't working, returning NULL on both
+        room = ope_Script.room;
+        render = ope_Script.render;
+
         if(room==null){
             Debug.Log("start -> room is null duh");
         }
@@ -105,9 +114,7 @@ public class Network_Player : MonoBehaviourPun
     void Update() {
         if (expe == null) {
             //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
-            if(render.expe != null){
-                expe = render.expe;
-            }
+            expe = render?.expe;
             if(expe!=null){
                 Debug.Log("expe has been found");
             }
