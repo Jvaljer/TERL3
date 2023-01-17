@@ -103,27 +103,4 @@ public class Network_Operator : MonoBehaviourPun {
     public rendering GetRender(){
         return render;
     }
-
-    //trying to centralize the calls only for the operator
-    private void SpacePressed(){
-        if(!(render.expeEnCours)){
-            render.Cards();
-            render.CardCreation();
-            render.photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, render.group, render.firstTrialNb);
-            print("Expe Started successfully");
-            render.expeEnCours;
-        } else if(render.expeEnCours && !(render.trialEnCours)){
-            Debug.Log("expeEnCour && !trialEnCours ->");
-            render.photonView.RPC("nextTrial", Photon.Pun.RpcTarget.AllBuffered);
-            Debug.Log("     nextTrial called successfully");
-        }
-    } 
-
-    private void EPressed(){
-        render.photonView.RPC("rendExpe", Photon.Pun.RpcTarget.AllBuffered);
-    }
-
-    private void TPressed(){
-        expe.teleport.photonView("tpToOther", Photon.Pun.RpcTarget.Others);
-    }
 }

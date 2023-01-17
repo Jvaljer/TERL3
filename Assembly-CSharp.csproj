@@ -241,6 +241,7 @@
      <None Include="Assets\Resources\logs\class-p01-2022-07-25-13-19-39.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-28-11-02-41.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-15-11-46.txt" />
+     <None Include="Assets\Resources\logs\class-ope-2023-01-11-16-28-19.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-28-10-31-55.txt" />
      <None Include="Assets\Resources\logs\class-p02-2022-06-16-13-07-01.txt" />
      <None Include="Assets\Resources\logs\class-ope-2022-12-02-11-01-15.txt" />
@@ -509,6 +510,7 @@
      <None Include="Assets\Resources\logs\class-p01-2022-07-11-15-41-58.txt" />
      <None Include="Assets\Photon\PhotonVoice\PhotonVoiceLibs\WebRTC-LICENSE.txt" />
      <None Include="Assets\Resources\logs\class-p01-2022-06-28-15-45-48.txt" />
+     <None Include="Assets\Resources\logs\class-ope-2023-01-11-16-43-21.txt" />
  <Reference Include="UnityEngine">
  <HintPath>/home/abel/Unity/Hub/Editor/2020.3.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -732,13 +734,13 @@
  <HintPath>/home/abel/Unity/Hub/Editor/2020.3.6f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="Valve.Newtonsoft.Json">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/home/abel/Unity/Hub/Editor/2020.3.6f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -1092,67 +1094,67 @@
  <HintPath>/home/abel/Unity/Hub/Editor/2020.3.6f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder.Editor">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.XR.OpenVR">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.XR.OpenVR.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.XR.OpenVR.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder.Base">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.XR.Management.Editor">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Subsystem.Registration">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Unity.XR.OpenVR.Editor">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.XR.OpenVR.Editor.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.XR.OpenVR.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.XR.LegacyInputHelpers">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.XR.LegacyInputHelpers">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
  </Reference>
  <Reference Include="Unity.XR.Management">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.SpatialTracking">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

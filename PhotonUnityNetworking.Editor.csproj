@@ -304,31 +304,31 @@
  <HintPath>/home/abel/Unity/Hub/Editor/2020.3.6f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="GitHub.Logging">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="GitHub.Unity.45">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
  </Reference>
  <Reference Include="Valve.Newtonsoft.Json">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="GitHub.UnityShim">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
  </Reference>
  <Reference Include="GitHub.Api.45">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
  </Reference>
  <Reference Include="sfw.net">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/home/abel/Unity/Hub/Editor/2020.3.6f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -682,16 +682,16 @@
  <HintPath>/home/abel/Unity/Hub/Editor/2020.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.TestRunner">
- <HintPath>/home/abel/JvaljerGit/TERMag3/LinuxAdapt/TERL3/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ <HintPath>/home/abel/JvaljerGit/TERL3/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
