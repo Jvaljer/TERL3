@@ -46,9 +46,6 @@ public class rendering : MonoBehaviourPunCallbacks {
     public bool trialEnCours = false;
     public Expe expe;
 
-    private bool printing_stopper = false;
-    private bool printing_stopper_bis = false;
-
     public class MyCard {
         // Creation of the card 
         public GameObject goCard = null;
@@ -73,15 +70,7 @@ public class rendering : MonoBehaviourPunCallbacks {
         }
 
         if (trialEnCours && expeEnCours) {
-            if(!printing_stopper){
-                Debug.Log("calling 'currentTrialConditionCheck' ");
-                printing_stopper = true;
-            }
             photonView.RPC("curentTrialConditionCheck", Photon.Pun.RpcTarget.AllBuffered);
-            if(!printing_stopper_bis){
-                Debug.Log("'currentTrialConditionCheck' successfully called");
-                printing_stopper_bis = true;
-            }
         }
     }
 
@@ -175,9 +164,7 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     void curentTrialConditionCheck(){
-        Debug.Log("curentTrial.checkConditions -> ");
         expe.curentTrial.checkConditions();
-        Debug.Log("     called successfully");
     }
 
     [PunRPC]
@@ -208,9 +195,7 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     public void nextTrial() {
-        Debug.Log("expe.nextTrial -> ");
         expe.nextTrial();
-        Debug.Log("     called successfully");
     }
 
     [PunRPC]

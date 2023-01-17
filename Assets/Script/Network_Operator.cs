@@ -35,6 +35,10 @@ public class Network_Operator : MonoBehaviourPun {
         Debug.Log("Start network_Operator");
         room = GameObject.Find("Salle");
         moving = GameObject.Find("/[movingCam]");
+        render = room.GetComponent<rendering>();
+        if(render==null){
+            Debug.Log("render is null duh");
+        }
     }
 
     void Update(){
@@ -42,10 +46,9 @@ public class Network_Operator : MonoBehaviourPun {
         if(expe==null){
             //Debug.Log("Searching for an expe");
             //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
-            render = room.GetComponent<rendering>();
             expe = render.expe; 
             if(expe!=null){
-                Debug.Log("expe has been created");
+                Debug.Log("expe isn't null anymore");
             }
         }
 

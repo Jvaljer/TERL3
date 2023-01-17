@@ -66,12 +66,14 @@ public class Trial
     {   
 
         if(p_ == "ope" ){
-            //with player as a master (not wanted...)
             Debug.Log("Operator is master");
             ope = GameObject.Find("Network Operator(Clone)").GetComponent<Network_Operator>();
             player = null;
+        } else if(p_ == ""){
+            Debug.Log("adding a pause ?");
+            ope = GameObject.Find("Network Operator(Clone)")?.GetComponent<Network_Operator>();
+            player = GameObject.Find("Network Player(Clone)")?.GetComponent<Network_Player>();
         } else {
-            //with operator as master
             Debug.Log("Player is master");
             player = GameObject.Find("Network Player(Clone)").GetComponent<Network_Player>();
             ope = null;

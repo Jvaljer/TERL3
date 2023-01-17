@@ -75,6 +75,13 @@ public class Network_Player : MonoBehaviourPun
 
         room = ope_Script.GetRoom();
         render = ope_Script.GetRender();
+        if(room==null){
+            Debug.Log("start -> room is null duh");
+        }
+
+        if(render==null){
+            Debug.Log("start -> render is null duh");
+        }
         
         m_pose = right?.GetComponent<SteamVR_Behaviour_Pose>();
 
@@ -98,8 +105,9 @@ public class Network_Player : MonoBehaviourPun
     void Update() {
         if (expe == null) {
             //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
-            if(render.expe != null)
+            if(render.expe != null){
                 expe = render.expe;
+            }
             if(expe!=null){
                 Debug.Log("expe has been found");
             }

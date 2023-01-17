@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2023-01-11T16:02:44.568+01:00
-  initializedAtString: 2023-01-11T16:02:44.568+01:00
+  lastUpdatedAtString: 2023-01-17T14:49:19.492+01:00
+  initializedAtString: 2023-01-17T14:49:19.492+01:00
   currentGitRemote:
     name: origin
     url: https://github.com/Jvaljer/TERL3
@@ -24,14 +24,14 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-    name: LinuxAdapt
-    tracking: origin/LinuxAdapt
+    name: OpeCentralizedExpe
+    tracking: origin/OpeCentralizedExpe
   currentConfigBranch:
-    name: LinuxAdapt
+    name: OpeCentralizedExpe
     remote:
       name: origin
       url: https://github.com/Jvaljer/TERL3
-    trackingBranch: LinuxAdapt
+    trackingBranch: OpeCentralizedExpe
   currentConfigRemote:
     name: origin
     url: https://github.com/Jvaljer/TERL3
