@@ -15,7 +15,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         // Create the room 
         RoomOptions roomOptions = new RoomOptions
-        {
+        {   
             MaxPlayers = 3,
             IsVisible = true,
             IsOpen = true

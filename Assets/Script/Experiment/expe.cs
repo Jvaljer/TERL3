@@ -16,7 +16,7 @@ public class Expe {
     private Network_Player player;
     private rendering render;
 
-    private readonly string expeDescriptionFile = "Experiments/textDataFile"; // "Experiments/initialTrialFile"
+    private readonly string expeDescriptionFile; // "Experiments/textDataFile" // "Experiments/initialTrialFile"
     private string previousCardNum;
     //static string[] letters = {"H", "N", "K", "R"};
     static readonly string[] letters = { "evertnone", "ehornone" };
@@ -39,7 +39,7 @@ public class Expe {
 
 
 
-    public Expe(string part, string grp, int startNb, List<GameObject> cardL) {
+    public Expe(string part, string grp, int startNb, List<GameObject> cardL, bool withOpe) {
         Debug.Log("INSIDE EXPE CONSTRUCTOR");
 
         expeRunning = true;
@@ -73,6 +73,11 @@ public class Expe {
         path = "Assets/Resources/logs/class-" + participant + "-" + mydate + ".txt";
         kineWriter = new StreamWriter(path, false);
             //Debug.Log("VisExpe :" + expeDescriptionFile + " with participant : " + participant);
+        if(withOpe){
+            expeDescriptionFile = "Experiments/textDataFile";
+        } else {
+            expeDescriptionFile = "Experiments/initialTrialFile";
+        }
 
         TextAsset mytxtData = (TextAsset)Resources.Load(expeDescriptionFile);
 

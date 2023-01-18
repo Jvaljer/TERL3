@@ -61,37 +61,29 @@ public class Network_Player : MonoBehaviourPun
 
     void Start() {
         //photonView = GetComponent<PhotonView>();
-        Debug.Log("Start NetworkPlayer ");
+        Debug.Log("Start NetworkPlayer With Operator");
         //getting the operator 
-        Debug.Log("getting ope");
-        ope = GameObject.Find("/Network Operator(Clone)");
-        ope_Script = ope.GetComponent<Network_Operator>();
-        if(ope==null){
-            Debug.Log("ope is null duh");
-        }
+        if(GameObject.Find("/Network Operator(Clone)")!=null){
+            Debug.Log("no operator -> implement 2 players functionnability");
+            ope = GameObject.Find("/Network Operator(Clone)");
+            ope_Script = ope.GetComponent<Network_Operator>();
 
-        if(ope_Script==null){
-            Debug.Log("ope_Script is null duh");
-        }
 
+            //these 2 lines aren't working, returning NULL on both
+            room = ope_Script.room;
+            render = ope_Script.render;
+        
+        } else {
+            room = GameObject.Find("/Salle");
+            render = room.GetComponent<rendering>();
+        }
+        
         //room + wall + camera
         cameraRig = GameObject.Find("/[CameraRig]");
         headset = GameObject.Find("Camera (eye)");
         right = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)");
         left = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (left)");
 
-        //these 2 lines aren't working, returning NULL on both
-        room = ope_Script.room;
-        render = ope_Script.render;
-
-        if(room==null){
-            Debug.Log("start -> room is null duh");
-        }
-
-        if(render==null){
-            Debug.Log("start -> render is null duh");
-        }
-        
         m_pose = right?.GetComponent<SteamVR_Behaviour_Pose>();
 
         leftHand.gameObject.SetActive(true);
@@ -112,6 +104,20 @@ public class Network_Player : MonoBehaviourPun
 
     // Update is called once per frame
     void Update() {
+        if(GameObject.Find("/Network Operator(Clone)")==null){
+            if(Input.GetKeyDown(KeyCode.Space)){
+                Debug.Log(".                Space was pressed (player one)");
+                render.spacePressedOperator();
+            }
+            if(Input.GetKeyDown(KeyCode.E)){
+                Debug.Log(".                E was pressed (player one)");
+                render.EPressedOperator();
+            }
+            if(Input.GetKeyDown(KeyCode.T)){
+                Debug.Log(".                T was pressed (player one)");
+                render.TPressedOperator();
+            }
+        }
         if (expe == null) {
             //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
             expe = render?.expe;

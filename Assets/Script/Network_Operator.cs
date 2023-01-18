@@ -36,9 +36,6 @@ public class Network_Operator : MonoBehaviourPun {
         room = GameObject.Find("Salle");
         moving = GameObject.Find("/[movingCam]");
         render = room.GetComponent<rendering>();
-        if(render==null){
-            Debug.Log("ope -> render is null duh");
-        }
     }
 
     void Update(){
