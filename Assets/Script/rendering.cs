@@ -46,6 +46,10 @@ public class rendering : MonoBehaviourPunCallbacks {
     public bool trialEnCours = false;
     public Expe expe;
 
+    public bool demoRunning = false;
+    public Demo demo;
+
+
     public class MyCard {
         // Creation of the card 
         public GameObject goCard = null;
@@ -67,6 +71,10 @@ public class rendering : MonoBehaviourPunCallbacks {
         if (expeEnCours) {
             expeEnCours = expe.expeRunning;
             trialEnCours = expe.trialRunning;
+        }
+
+        if(demoRunning){
+            demoRunning = demo.demoRunning;
         }
 
         if (trialEnCours && expeEnCours) {
@@ -139,7 +147,6 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     void startExpe(string grp, int nb, bool withOpe) {
-        bool ope;
         if(withOpe){
             if (PhotonNetwork.IsMasterClient) { 
                 participant = "ope";
@@ -178,7 +185,7 @@ public class rendering : MonoBehaviourPunCallbacks {
     [PunRPC]
     void endExpe() {
         expe.Finished();
-        print("End");
+        print("Expe End");
         //stop timing , stop expe ? 
         /*
         Debug.Log("nb tag card : " + expe.curentTrial.nbTag);
@@ -245,11 +252,32 @@ public class rendering : MonoBehaviourPunCallbacks {
         }
     }
     
+    [PunRPC]
+    void startDemo(){
+        Debug.Log("demo Beginning ... ");
+        demo = new Demo(); //must finish
+        demo.Begin();
+        Debug.Log("demo has begun");
+    }
+
+    [PunRPC]
+    void endDemo(){
+        Debug.Log("demo ending ... ");
+        demo.End();
+        Debug.Log("demo has ended");
+    }
+
     public void spacePressedOperator() {
         if (!expeEnCours){
+            bool b;
+            if(GameObject.Find("Network Operator(Clone)")==null){
+                b = false;
+            } else {
+                b = true;
+            }
             Cards();
             CardCreation();
-            photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb);
+            photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb, b_);
             
             print("Expe Started succesfully !");
             expeEnCours = true;
@@ -266,5 +294,15 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     public void TPressedOperator() {
         expe.teleport.photonView.RPC("tpToOther", Photon.Pun.RpcTarget.Others);
+    }
+
+    public void DPressedOperator(){
+        if(!expeEnCours && !demoRunning){
+            Cards();
+            CardCreation();
+            photonView.RPC("startDemo", Photon.Pun.RpcTarget.AllBuffered, b_, );
+        } else if(demoRunning){
+            photonView.RPC("endDemo", Photon.Pun.RpcTarget.AllBuffered);
+        }
     }
 }
