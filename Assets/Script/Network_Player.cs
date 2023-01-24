@@ -88,7 +88,7 @@ public class Network_Player : MonoBehaviourPun
 
         leftHand.gameObject.SetActive(true);
         
-        palette.gameObject.SetActive(true);
+        palette.gameObject.SetActive(true); //abling / disabling the left hand palette 
 
         if (photonView.IsMine) {
             //don't show my avatar
