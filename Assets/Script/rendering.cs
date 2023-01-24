@@ -46,6 +46,7 @@ public class rendering : MonoBehaviourPunCallbacks {
     public bool trialEnCours = false;
     public Expe expe;
 
+    public bool demoRunning = false;
 
     public class MyCard {
         // Creation of the card 
@@ -247,6 +248,10 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     public void spacePressedOperator() {
         if (!expeEnCours){
+            if(demoRunning){
+                //wanna reset the cards & then let all recreate
+                demoRunning = false;
+            } 
             bool b_;
             if(GameObject.Find("Network Operator(Clone)")==null){
                 b_ = false;
@@ -272,5 +277,16 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     public void TPressedOperator() {
         expe.teleport.photonView.RPC("tpToOther", Photon.Pun.RpcTarget.Others);
+    }
+
+    public void DPressedOperator(){
+        if(!demoRunning && !expeEnCours){
+            Cards();
+            CardCreation();
+            demoRunning = true;
+        } else if(/*cards are already created */ && !expeEnCours){
+            //here we wanna set the cards OFF
+            demoRunning = false;
+        }
     }
 }

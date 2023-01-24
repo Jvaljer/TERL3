@@ -87,6 +87,10 @@ public class Network_Operator : MonoBehaviourPun {
             render.TPressedOperator();
         }
 
+        if(Input.GetKeyDown(KeyCode.D)){
+            Debug.Log(".                     D was pressed (operator)");
+            render.DPressedOperator();
+        }
     }
 
     private bool isMouseOffScreen(){
