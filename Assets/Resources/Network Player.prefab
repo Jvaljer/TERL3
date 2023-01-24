@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6196246392311772783}
   - component: {fileID: 5882121372034715882}
   - component: {fileID: 2843356822700687864}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: CubeBlue
   m_TagString: Color tag
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 5841701782100662266}
   - component: {fileID: 7525060277924230874}
   - component: {fileID: 6159283843100770007}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Text Drag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6492766886593576810}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: GameObjectMoveDrag
   m_TagString: MoveControlDrag
   m_Icon: {fileID: 0}
@@ -1317,7 +1317,7 @@ GameObject:
   - component: {fileID: 8543072798253752398}
   - component: {fileID: 919975971928557404}
   - component: {fileID: 4506100738851999984}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: CubeTransparent
   m_TagString: Color tag
   m_Icon: {fileID: 0}
@@ -1583,7 +1583,7 @@ GameObject:
   - component: {fileID: 7248346766172021888}
   - component: {fileID: 3966141929081571210}
   - component: {fileID: 8475473895234451533}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: CubeMoveModeSync
   m_TagString: MoveControlSync
   m_Icon: {fileID: 0}
@@ -1677,7 +1677,7 @@ GameObject:
   - component: {fileID: 4055292629068033651}
   - component: {fileID: 5297887109864139490}
   - component: {fileID: 5264337131270553182}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Text TP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1773,7 +1773,7 @@ GameObject:
   - component: {fileID: 2573241025226366008}
   - component: {fileID: 5330490298265342869}
   - component: {fileID: 3356474218222844914}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: CubeRed
   m_TagString: Color tag
   m_Icon: {fileID: 0}
@@ -1867,7 +1867,7 @@ GameObject:
   - component: {fileID: 3549150889348226869}
   - component: {fileID: 5814396777685470629}
   - component: {fileID: 903412208941646669}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Text Joystick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1964,7 +1964,7 @@ GameObject:
   - component: {fileID: 429008530431070165}
   - component: {fileID: 8469189775986577249}
   - component: {fileID: 7060449012260942197}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Text Tag Color
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2060,7 +2060,7 @@ GameObject:
   - component: {fileID: 856457897484330858}
   - component: {fileID: 1813665818232318654}
   - component: {fileID: 5405034314022649583}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: CubeWhite
   m_TagString: Color tag
   m_Icon: {fileID: 0}
@@ -2251,7 +2251,7 @@ GameObject:
   - component: {fileID: 2515014685880973792}
   - component: {fileID: 5394570621577544903}
   - component: {fileID: 1521028048604930505}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2345,7 +2345,7 @@ GameObject:
   - component: {fileID: 1761431181306006827}
   - component: {fileID: 6902671317562948165}
   - component: {fileID: 6528025666562918764}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Text SyncMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2443,7 +2443,7 @@ GameObject:
   - component: {fileID: 2130755463955346663}
   - component: {fileID: 4820208042498770968}
   - component: {fileID: 480596270999684925}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: CubeMoveModeJoy
   m_TagString: MoveControlJoy
   m_Icon: {fileID: 0}
@@ -2535,7 +2535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5577505171693838932}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: GameObjectMoveTP
   m_TagString: MoveControlTP
   m_Icon: {fileID: 0}
@@ -2567,7 +2567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4185202662225265498}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: GameObjectMoveSync
   m_TagString: MoveControlSync
   m_Icon: {fileID: 0}
@@ -2600,7 +2600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6971465204408581961}
   - component: {fileID: 528345850465377094}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Palette
   m_TagString: Red tag
   m_Icon: {fileID: 0}
@@ -2660,7 +2660,7 @@ GameObject:
   - component: {fileID: 3731756001595899902}
   - component: {fileID: 4859313830028551362}
   - component: {fileID: 4550944007536478882}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: CubeGreen
   m_TagString: Color tag
   m_Icon: {fileID: 0}
@@ -2752,7 +2752,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3166111475497138675}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: GameObjectMoveJoy
   m_TagString: MoveControlJoy
   m_Icon: {fileID: 0}
@@ -2787,7 +2787,7 @@ GameObject:
   - component: {fileID: 1986369822216309611}
   - component: {fileID: 1332744505998707759}
   - component: {fileID: 4317894682171061075}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: CubeMoveModeTP
   m_TagString: MoveControlTP
   m_Icon: {fileID: 0}
@@ -2978,7 +2978,7 @@ GameObject:
   - component: {fileID: 7900708210986363717}
   - component: {fileID: 306259880633652108}
   - component: {fileID: 7517551668407548837}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: CubeMoveModeDrag
   m_TagString: MoveControlDrag
   m_Icon: {fileID: 0}
