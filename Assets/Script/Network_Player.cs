@@ -64,7 +64,7 @@ public class Network_Player : MonoBehaviourPun
         Debug.Log("Start NetworkPlayer With Operator");
         //getting the operator 
         if(GameObject.Find("/Network Operator(Clone)")!=null){
-            Debug.Log("no operator -> implement 2 players functionnability");
+            Debug.Log("operator found -> implementing 3 computers model");
             ope = GameObject.Find("/Network Operator(Clone)");
             ope_Script = ope.GetComponent<Network_Operator>();
 
@@ -74,6 +74,7 @@ public class Network_Player : MonoBehaviourPun
             render = ope_Script.render;
         
         } else {
+            Debug.Log("no operator -> implement 2 players functionnability");
             room = GameObject.Find("/Salle");
             render = room.GetComponent<rendering>();
         }

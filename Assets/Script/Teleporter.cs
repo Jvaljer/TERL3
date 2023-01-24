@@ -32,8 +32,10 @@ public class Teleporter : MonoBehaviour
 
     //clic touchpad
     public SteamVR_Action_Boolean m_TeleportAction;
+
     //trigger
     public SteamVR_Action_Boolean interactWithUI = SteamVR_Input.GetBooleanAction("InteractUI");
+
     //public SteamVR_Action_Boolean m_up;
     //public SteamVR_Action_Boolean m_down;
 
@@ -113,6 +115,29 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //TRYING TO UNDERSTAND HOW TRIGGER 1 CLICKS ARE DETECTED FROM CODE.
+
+        //testing trigger detection
+        if(interactWithUI.GetStateDown(m_pose.inputSource) && m_HasPosition){
+            Debug.Log("trigger 1");
+        }
+        if(interactWithUI.GetLastStateDown(m_pose.inputSource) && m_HasPosition){
+            Debug.Log("trigger 2");
+        }
+
+        //testing click detection (on touchpad)
+        if(m_TeleportAction.GetStateDown(m_pose.inputSource)){
+            Debug.Log("click 1");
+        }
+        if(m_TeleportAction.GetStateUp(m_pose.inputSource)){
+            Debug.Log("click 2");
+        }
+        if(m_TeleportAction.GetLastStateDown(m_pose.inputSource)){
+            Debug.Log("click 3");
+        }
+        if(m_TeleportAction.GetState(m_pose.inputSource)){
+            Debug.Log("click 4");
+        }
         /*
         if (Time.frameCount == 3 && (cam.rotation.eulerAngles.y < 315 || cam.rotation.eulerAngles.y > 45))
         {
