@@ -46,9 +46,6 @@ public class rendering : MonoBehaviourPunCallbacks {
     public bool trialEnCours = false;
     public Expe expe;
 
-    public bool demoRunning = false;
-    public Demo demo;
-
 
     public class MyCard {
         // Creation of the card 
@@ -71,10 +68,6 @@ public class rendering : MonoBehaviourPunCallbacks {
         if (expeEnCours) {
             expeEnCours = expe.expeRunning;
             trialEnCours = expe.trialRunning;
-        }
-
-        if(demoRunning){
-            demoRunning = demo.demoRunning;
         }
 
         if (trialEnCours && expeEnCours) {
@@ -251,29 +244,14 @@ public class rendering : MonoBehaviourPunCallbacks {
             trash4.SetActive(false);
         }
     }
-    
-    [PunRPC]
-    void startDemo(){
-        Debug.Log("demo Beginning ... ");
-        demo = new Demo(); //must finish
-        demo.Begin();
-        Debug.Log("demo has begun");
-    }
-
-    [PunRPC]
-    void endDemo(){
-        Debug.Log("demo ending ... ");
-        demo.End();
-        Debug.Log("demo has ended");
-    }
 
     public void spacePressedOperator() {
         if (!expeEnCours){
-            bool b;
+            bool b_;
             if(GameObject.Find("Network Operator(Clone)")==null){
-                b = false;
+                b_ = false;
             } else {
-                b = true;
+                b_ = true;
             }
             Cards();
             CardCreation();
@@ -294,15 +272,5 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     public void TPressedOperator() {
         expe.teleport.photonView.RPC("tpToOther", Photon.Pun.RpcTarget.Others);
-    }
-
-    public void DPressedOperator(){
-        if(!expeEnCours && !demoRunning){
-            Cards();
-            CardCreation();
-            photonView.RPC("startDemo", Photon.Pun.RpcTarget.AllBuffered, b_, );
-        } else if(demoRunning){
-            photonView.RPC("endDemo", Photon.Pun.RpcTarget.AllBuffered);
-        }
     }
 }

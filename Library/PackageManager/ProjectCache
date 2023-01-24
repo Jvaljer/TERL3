@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638096448230641149
+      ticks: 638101646298448594
     m_Hash: 2613951792
   m_LockFileStatus:
     m_FilePath: C:/cygwin64/home/ilda-vive/henrylapassat/DemoMode/TERL3/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638096448230646108
+      ticks: 638101646298453553
     m_Hash: 3903024351
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -1091,7 +1091,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.1.4
       source: 6
-      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674048013901
+      resolvedPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674567820505
       assetPath: Packages/com.valvesoftware.unity.openvr
       name: com.valvesoftware.unity.openvr
       displayName: OpenVR XR Plugin
@@ -3288,7 +3288,7 @@ m_PackageAssets:
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
-        ticks: 638096448139010792
+        ticks: 638101646205049329
       m_Hash: 2919789393
 m_ProjectPath: C:/cygwin64/home/ilda-vive/henrylapassat/DemoMode/TERL3/Packages
 m_EditorVersion: 2020.3.6f1 (338bb68529b2)

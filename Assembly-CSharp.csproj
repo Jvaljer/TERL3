@@ -117,7 +117,6 @@
     <Compile Include="Assets\Script\Teleporter.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
-    <Compile Include="Assets\Script\Demo.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Resources\logs\class-p02-2022-06-15-15-32-43.txt" />
