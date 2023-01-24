@@ -34,7 +34,13 @@ public class Network_Operator : MonoBehaviourPun {
     void Start(){
         Debug.Log("Start network_Operator");
         room = GameObject.Find("Salle");
+
         moving = GameObject.Find("/[movingCam]");
+
+        if(!photonView.IsMine){
+            moving.gameObject.SetActive(false);
+        }
+
         render = room.GetComponent<rendering>();
     }
 
