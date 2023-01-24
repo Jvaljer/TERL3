@@ -115,8 +115,7 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //TRYING TO UNDERSTAND HOW TRIGGER 1 CLICKS ARE DETECTED FROM CODE.
-
+        /* 
         //testing trigger detection
         if(interactWithUI.GetStateDown(m_pose.inputSource) && m_HasPosition){
             Debug.Log("trigger 1");
@@ -138,6 +137,8 @@ public class Teleporter : MonoBehaviour
         if(m_TeleportAction.GetState(m_pose.inputSource)){
             Debug.Log("click 4");
         }
+        */
+        
         /*
         if (Time.frameCount == 3 && (cam.rotation.eulerAngles.y < 315 || cam.rotation.eulerAngles.y > 45))
         {
