@@ -21,6 +21,7 @@ TagManager:
   - MoveControlDrag
   - MoveControl
   - MoveControlSync
+  - CanvasMenu
   layers:
   - Default
   - TransparentFX
