@@ -47,6 +47,7 @@ public class rendering : MonoBehaviourPunCallbacks {
     public Expe expe;
 
     public bool demoRunning = false;
+    public bool cardsCreated = false;
 
     public class MyCard {
         // Creation of the card 
@@ -131,6 +132,8 @@ public class rendering : MonoBehaviourPunCallbacks {
                 break;
             }
         }
+
+        cardsCreated = true;
     }
 
     [PunRPC]
@@ -279,14 +282,19 @@ public class rendering : MonoBehaviourPunCallbacks {
         expe.teleport.photonView.RPC("tpToOther", Photon.Pun.RpcTarget.Others);
     }
 
+    public void CardDeletion(){
+        cardList.Clear();
+        cardsCreated = false;
+    }
+
     public void DPressedOperator(){
         if(!demoRunning && !expeEnCours){
             Cards();
             CardCreation();
             demoRunning = true;
-        } else if(/*cards are already created */ && !expeEnCours){
-            //here we wanna set the cards OFF
+        } else if(cardsCreated && !expeEnCours){
+            CardDeletion();
             demoRunning = false;
         }
-    }
+    } 
 }
