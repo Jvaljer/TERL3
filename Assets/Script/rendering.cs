@@ -297,4 +297,8 @@ public class rendering : MonoBehaviourPunCallbacks {
             demoRunning = false;
         }
     } 
+
+    public void PauseExpe(){
+        //must implement...
+    }
 }
