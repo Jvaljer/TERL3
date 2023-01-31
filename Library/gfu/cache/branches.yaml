@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2023-01-25T16:42:52.086+01:00
-  initializedAtString: 2023-01-25T14:34:41.801+01:00
+  lastUpdatedAtString: 2023-01-31T16:34:01.748+01:00
+  initializedAtString: 2023-01-31T16:34:01.729+01:00
   localBranches:
   - name: DemoMode
     tracking: origin/DemoMode
   remoteBranches:
+  - name: origin/DemoMode
+    tracking: '[None]'
   - name: origin/HEAD
     tracking: '[None]'
   remotes:
@@ -43,9 +45,15 @@ MonoBehaviour:
     - origin
     subKeys:
     - Values:
+      - DemoMode
       - HEAD
     subKeyValues:
     - Values:
+      - name: DemoMode
+        remote:
+          name: origin
+          url: https://github.com/Jvaljer/TERL3
+        trackingBranch: 
       - name: HEAD
         remote:
           name: origin
