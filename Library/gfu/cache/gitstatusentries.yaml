@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2023-01-25T16:44:19.130+01:00
-  initializedAtString: 2023-01-25T13:40:49.300+01:00
+  lastUpdatedAtString: 2023-01-31T15:30:47.014+01:00
+  initializedAtString: 2023-01-31T15:30:43.070+01:00
   entries:
   - path: .vs\stage-L3\v15\.suo
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\.vs\stage-L3\v15\.suo
@@ -24079,20 +24079,20 @@ MonoBehaviour:
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Assets\Script\OperatorMenu.meta
     projectPath: Assets\Script\OperatorMenu.meta
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Assets\Script\OperatorMenu\Operating_Menu.cs
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Assets\Script\OperatorMenu\Operating_Menu.cs
     projectPath: Assets\Script\OperatorMenu\Operating_Menu.cs
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Assets\Script\OperatorMenu\Operating_Menu.cs.meta
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Assets\Script\OperatorMenu\Operating_Menu.cs.meta
     projectPath: Assets\Script\OperatorMenu\Operating_Menu.cs.meta
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Assets\Script\Player_Spawner.cs
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Assets\Script\Player_Spawner.cs
     projectPath: Assets\Script\Player_Spawner.cs
@@ -34167,12 +34167,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\02\02be3a186bc5ab052acfcb7f9c703c0b
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\02\02be3a186bc5ab052acfcb7f9c703c0b
-    projectPath: Library\Artifacts\02\02be3a186bc5ab052acfcb7f9c703c0b
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\02\02c65a49d6fc80c1d7d81bcbf0eed780
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\02\02c65a49d6fc80c1d7d81bcbf0eed780
     projectPath: Library\Artifacts\02\02c65a49d6fc80c1d7d81bcbf0eed780
@@ -34839,12 +34833,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\08\08b87fd764c3694ca2c0ee78730dcacf
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\08\08b87fd764c3694ca2c0ee78730dcacf
-    projectPath: Library\Artifacts\08\08b87fd764c3694ca2c0ee78730dcacf
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\08\08becf0e3c874e85a5d4aba95670984d
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\08\08becf0e3c874e85a5d4aba95670984d
     projectPath: Library\Artifacts\08\08becf0e3c874e85a5d4aba95670984d
@@ -37527,12 +37515,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\22\22f000b282865e276f42c5d58d3897d4
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\22\22f000b282865e276f42c5d58d3897d4
-    projectPath: Library\Artifacts\22\22f000b282865e276f42c5d58d3897d4
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: Library\Artifacts\22\22f2cf22956b4af948aed1c4fd5eb067
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\22\22f2cf22956b4af948aed1c4fd5eb067
     projectPath: Library\Artifacts\22\22f2cf22956b4af948aed1c4fd5eb067
@@ -37839,6 +37821,12 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Library\Artifacts\26\26613b628ea84738aa302a6dd6964ca0
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\26\26613b628ea84738aa302a6dd6964ca0
+    projectPath: Library\Artifacts\26\26613b628ea84738aa302a6dd6964ca0
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Library\Artifacts\26\266d4641080e7fd0cb235db1ad57f444
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\26\266d4641080e7fd0cb235db1ad57f444
     projectPath: Library\Artifacts\26\266d4641080e7fd0cb235db1ad57f444
@@ -39609,12 +39597,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\3a\3a5957680638169f5909cc01a3a34d6e
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\3a\3a5957680638169f5909cc01a3a34d6e
-    projectPath: Library\Artifacts\3a\3a5957680638169f5909cc01a3a34d6e
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\3a\3a8ffeb73eec7e8a2bcda0bdd3d75fe4
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\3a\3a8ffeb73eec7e8a2bcda0bdd3d75fe4
     projectPath: Library\Artifacts\3a\3a8ffeb73eec7e8a2bcda0bdd3d75fe4
@@ -40737,6 +40719,12 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Library\Artifacts\45\453fa11cf1be0a49f67d9e1bbc2c9ac6
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\45\453fa11cf1be0a49f67d9e1bbc2c9ac6
+    projectPath: Library\Artifacts\45\453fa11cf1be0a49f67d9e1bbc2c9ac6
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Library\Artifacts\45\454a71430a20619e7a60ec778da48444
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\45\454a71430a20619e7a60ec778da48444
     projectPath: Library\Artifacts\45\454a71430a20619e7a60ec778da48444
@@ -42315,12 +42303,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\53\53d3c1ea78edf7072f8bf143a2a330b2
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\53\53d3c1ea78edf7072f8bf143a2a330b2
-    projectPath: Library\Artifacts\53\53d3c1ea78edf7072f8bf143a2a330b2
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\53\53e7e3016ff7f565c06f9f0c14e0c0c6
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\53\53e7e3016ff7f565c06f9f0c14e0c0c6
     projectPath: Library\Artifacts\53\53e7e3016ff7f565c06f9f0c14e0c0c6
@@ -42609,12 +42591,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\56\56cf88a7d1ed056b540057687970c71c
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\56\56cf88a7d1ed056b540057687970c71c
-    projectPath: Library\Artifacts\56\56cf88a7d1ed056b540057687970c71c
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\56\56f4827d98bacff6cc6daac5449d2c25
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\56\56f4827d98bacff6cc6daac5449d2c25
     projectPath: Library\Artifacts\56\56f4827d98bacff6cc6daac5449d2c25
@@ -42921,12 +42897,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\5a\5a115fa21b494c9eb4c3baa94212eaea
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\5a\5a115fa21b494c9eb4c3baa94212eaea
-    projectPath: Library\Artifacts\5a\5a115fa21b494c9eb4c3baa94212eaea
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
   - path: Library\Artifacts\5a\5a148299333fb704c4ebaeef5c03fb00
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\5a\5a148299333fb704c4ebaeef5c03fb00
     projectPath: Library\Artifacts\5a\5a148299333fb704c4ebaeef5c03fb00
@@ -43029,12 +42999,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\5b\5b90319dd4c2ec42949d8459ccc61f90
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\5b\5b90319dd4c2ec42949d8459ccc61f90
-    projectPath: Library\Artifacts\5b\5b90319dd4c2ec42949d8459ccc61f90
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\5b\5bc416d12a2fdd6ae60c647b88d4250d
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\5b\5bc416d12a2fdd6ae60c647b88d4250d
     projectPath: Library\Artifacts\5b\5bc416d12a2fdd6ae60c647b88d4250d
@@ -43287,12 +43251,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\5e\5e786e1e5159dc884dfbdbfffe4dedbb
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\5e\5e786e1e5159dc884dfbdbfffe4dedbb
-    projectPath: Library\Artifacts\5e\5e786e1e5159dc884dfbdbfffe4dedbb
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\5e\5e9f7fd318527bea035d32bacee391e7
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\5e\5e9f7fd318527bea035d32bacee391e7
     projectPath: Library\Artifacts\5e\5e9f7fd318527bea035d32bacee391e7
@@ -44541,12 +44499,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\6b\6b3055bcd3188ed9f32c7728b456e2ea
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\6b\6b3055bcd3188ed9f32c7728b456e2ea
-    projectPath: Library\Artifacts\6b\6b3055bcd3188ed9f32c7728b456e2ea
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\6b\6b4288fe89dd01aee56535bbf39b9019
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\6b\6b4288fe89dd01aee56535bbf39b9019
     projectPath: Library\Artifacts\6b\6b4288fe89dd01aee56535bbf39b9019
@@ -44955,12 +44907,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\6f\6f6f276b15b33c94f4c5ddca562169fd
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\6f\6f6f276b15b33c94f4c5ddca562169fd
-    projectPath: Library\Artifacts\6f\6f6f276b15b33c94f4c5ddca562169fd
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\6f\6f77e07d1c6c0c4ca8223727b5c19fa3
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\6f\6f77e07d1c6c0c4ca8223727b5c19fa3
     projectPath: Library\Artifacts\6f\6f77e07d1c6c0c4ca8223727b5c19fa3
@@ -44991,12 +44937,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\6f\6fb36cbd9a70ebbca156173c9058c8a9
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\6f\6fb36cbd9a70ebbca156173c9058c8a9
-    projectPath: Library\Artifacts\6f\6fb36cbd9a70ebbca156173c9058c8a9
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\6f\6fdd373d5df96c4bc4d33bf1fc41a8fb
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\6f\6fdd373d5df96c4bc4d33bf1fc41a8fb
     projectPath: Library\Artifacts\6f\6fdd373d5df96c4bc4d33bf1fc41a8fb
@@ -45069,12 +45009,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\70\70ffa818d636205dd581e252d382ed05
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\70\70ffa818d636205dd581e252d382ed05
-    projectPath: Library\Artifacts\70\70ffa818d636205dd581e252d382ed05
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\71\71024b73b524ee7d4e3419740c69f849
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\71\71024b73b524ee7d4e3419740c69f849
     projectPath: Library\Artifacts\71\71024b73b524ee7d4e3419740c69f849
@@ -45543,12 +45477,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\75\75ffdeb99a3858bad69ad27dcfda7e82
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\75\75ffdeb99a3858bad69ad27dcfda7e82
-    projectPath: Library\Artifacts\75\75ffdeb99a3858bad69ad27dcfda7e82
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\76\761aae7ba40ebf50cd2fff9efa15f06b
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\76\761aae7ba40ebf50cd2fff9efa15f06b
     projectPath: Library\Artifacts\76\761aae7ba40ebf50cd2fff9efa15f06b
@@ -46479,12 +46407,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\7f\7f8688b4ebc1c97a9412f633a6e297d0
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\7f\7f8688b4ebc1c97a9412f633a6e297d0
-    projectPath: Library\Artifacts\7f\7f8688b4ebc1c97a9412f633a6e297d0
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\7f\7fb3d5e0781edfd0aa3f1e52459a9371
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\7f\7fb3d5e0781edfd0aa3f1e52459a9371
     projectPath: Library\Artifacts\7f\7fb3d5e0781edfd0aa3f1e52459a9371
@@ -47865,12 +47787,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\8c\8ca5439b5462456d078023431267910f
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\8c\8ca5439b5462456d078023431267910f
-    projectPath: Library\Artifacts\8c\8ca5439b5462456d078023431267910f
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\8c\8cd25c424eb70d5b4ccd42414f6c37be
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\8c\8cd25c424eb70d5b4ccd42414f6c37be
     projectPath: Library\Artifacts\8c\8cd25c424eb70d5b4ccd42414f6c37be
@@ -48237,6 +48153,12 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Library\Artifacts\90\90a4098e3bafe850391a68d479e8250c
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\90\90a4098e3bafe850391a68d479e8250c
+    projectPath: Library\Artifacts\90\90a4098e3bafe850391a68d479e8250c
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Library\Artifacts\90\90b42470afb87ed3e50aba0cd2ea05b7
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\90\90b42470afb87ed3e50aba0cd2ea05b7
     projectPath: Library\Artifacts\90\90b42470afb87ed3e50aba0cd2ea05b7
@@ -48417,6 +48339,12 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Library\Artifacts\92\92bb3ffeb66bdd68c461b2a1b2c05f26
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\92\92bb3ffeb66bdd68c461b2a1b2c05f26
+    projectPath: Library\Artifacts\92\92bb3ffeb66bdd68c461b2a1b2c05f26
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Library\Artifacts\92\92c575c96342ed5a54706731457c02cc
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\92\92c575c96342ed5a54706731457c02cc
     projectPath: Library\Artifacts\92\92c575c96342ed5a54706731457c02cc
@@ -48435,6 +48363,12 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Library\Artifacts\92\92f01390b913d5c57e7f1c5283d1ca37
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\92\92f01390b913d5c57e7f1c5283d1ca37
+    projectPath: Library\Artifacts\92\92f01390b913d5c57e7f1c5283d1ca37
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Library\Artifacts\93\93064172fa9ee1039974d772d8f0c9f9
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\93\93064172fa9ee1039974d772d8f0c9f9
     projectPath: Library\Artifacts\93\93064172fa9ee1039974d772d8f0c9f9
@@ -49401,12 +49335,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\9d\9d977572ae6b9f5f1b843d4391dbbccc
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\9d\9d977572ae6b9f5f1b843d4391dbbccc
-    projectPath: Library\Artifacts\9d\9d977572ae6b9f5f1b843d4391dbbccc
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: Library\Artifacts\9d\9da5da3e5c34b0f6559a4201f8d448ec
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\9d\9da5da3e5c34b0f6559a4201f8d448ec
     projectPath: Library\Artifacts\9d\9da5da3e5c34b0f6559a4201f8d448ec
@@ -49653,6 +49581,12 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Library\Artifacts\9f\9fbff856a9d1d1955945bbe6fd14e29e
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\9f\9fbff856a9d1d1955945bbe6fd14e29e
+    projectPath: Library\Artifacts\9f\9fbff856a9d1d1955945bbe6fd14e29e
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Library\Artifacts\9f\9fc30ef1561161417595595056126015
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\9f\9fc30ef1561161417595595056126015
     projectPath: Library\Artifacts\9f\9fc30ef1561161417595595056126015
@@ -50325,12 +50259,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\a5\a569e1b4c83e922550ed399610110fe2
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\a5\a569e1b4c83e922550ed399610110fe2
-    projectPath: Library\Artifacts\a5\a569e1b4c83e922550ed399610110fe2
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\a5\a57220f5b588f783c9a48360122691f6
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\a5\a57220f5b588f783c9a48360122691f6
     projectPath: Library\Artifacts\a5\a57220f5b588f783c9a48360122691f6
@@ -50907,6 +50835,12 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Library\Artifacts\aa\aaa2130edad294d4d51691af0fbf5710
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\aa\aaa2130edad294d4d51691af0fbf5710
+    projectPath: Library\Artifacts\aa\aaa2130edad294d4d51691af0fbf5710
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Library\Artifacts\aa\aaab56fec7deb238c938bdf02d3ad26a
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\aa\aaab56fec7deb238c938bdf02d3ad26a
     projectPath: Library\Artifacts\aa\aaab56fec7deb238c938bdf02d3ad26a
@@ -50949,6 +50883,12 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Library\Artifacts\aa\aae8fb4196c13d0e7fa7ad44e4a3c16e
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\aa\aae8fb4196c13d0e7fa7ad44e4a3c16e
+    projectPath: Library\Artifacts\aa\aae8fb4196c13d0e7fa7ad44e4a3c16e
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
   - path: Library\Artifacts\aa\aaf01e886d37227d1d5ae14e7a7beda3
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\aa\aaf01e886d37227d1d5ae14e7a7beda3
     projectPath: Library\Artifacts\aa\aaf01e886d37227d1d5ae14e7a7beda3
@@ -54675,12 +54615,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\d0\d00ed50d1b4ca7f86cf897181cdbb66a
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\d0\d00ed50d1b4ca7f86cf897181cdbb66a
-    projectPath: Library\Artifacts\d0\d00ed50d1b4ca7f86cf897181cdbb66a
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\d0\d02ff49bdb48a9a2d4364d7272dcc2f5
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\d0\d02ff49bdb48a9a2d4364d7272dcc2f5
     projectPath: Library\Artifacts\d0\d02ff49bdb48a9a2d4364d7272dcc2f5
@@ -55035,12 +54969,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\d3\d3940960169c8aafe5350cf9c2598c8f
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\d3\d3940960169c8aafe5350cf9c2598c8f
-    projectPath: Library\Artifacts\d3\d3940960169c8aafe5350cf9c2598c8f
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\d3\d39654f2c15be3c4ac65eb781b9217a3
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\d3\d39654f2c15be3c4ac65eb781b9217a3
     projectPath: Library\Artifacts\d3\d39654f2c15be3c4ac65eb781b9217a3
@@ -55737,12 +55665,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\d9\d92ed061c5d6a6a8f5a831d52f77502a
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\d9\d92ed061c5d6a6a8f5a831d52f77502a
-    projectPath: Library\Artifacts\d9\d92ed061c5d6a6a8f5a831d52f77502a
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\d9\d9417f4a4c33f09aadb8176acdf202d6
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\d9\d9417f4a4c33f09aadb8176acdf202d6
     projectPath: Library\Artifacts\d9\d9417f4a4c33f09aadb8176acdf202d6
@@ -56733,12 +56655,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\e3\e317e862793b4d4367b7f4a981856367
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\e3\e317e862793b4d4367b7f4a981856367
-    projectPath: Library\Artifacts\e3\e317e862793b4d4367b7f4a981856367
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\e3\e3215ce0ef6ddcfbfa38ba399995eeb8
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\e3\e3215ce0ef6ddcfbfa38ba399995eeb8
     projectPath: Library\Artifacts\e3\e3215ce0ef6ddcfbfa38ba399995eeb8
@@ -59079,12 +58995,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\f8\f88778da01eaa538bdf0908f1b9ebb07
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\f8\f88778da01eaa538bdf0908f1b9ebb07
-    projectPath: Library\Artifacts\f8\f88778da01eaa538bdf0908f1b9ebb07
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\f8\f8989878baa9c99141e4fba941c38983
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\f8\f8989878baa9c99141e4fba941c38983
     projectPath: Library\Artifacts\f8\f8989878baa9c99141e4fba941c38983
@@ -59799,12 +59709,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\Artifacts\ff\ff917f2de7f0a0f27ae7a5e3ae3cf3c6
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\ff\ff917f2de7f0a0f27ae7a5e3ae3cf3c6
-    projectPath: Library\Artifacts\ff\ff917f2de7f0a0f27ae7a5e3ae3cf3c6
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\Artifacts\ff\ff9213479450e88f0979d4dce217848b
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\Artifacts\ff\ff9213479450e88f0979d4dce217848b
     projectPath: Library\Artifacts\ff\ff9213479450e88f0979d4dce217848b
@@ -59856,6 +59760,12 @@ MonoBehaviour:
   - path: Library\BuildSettings.asset
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\BuildSettings.asset
     projectPath: Library\BuildSettings.asset
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Library\CurrentLayout-default.dwlt
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\CurrentLayout-default.dwlt
+    projectPath: Library\CurrentLayout-default.dwlt
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -60747,597 +60657,597 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\CHANGELOG.md
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\CHANGELOG.md
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\CHANGELOG.md
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\CHANGELOG.md
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\CHANGELOG.md
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\CHANGELOG.md
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\CHANGELOG.md.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\CHANGELOG.md.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\CHANGELOG.md.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\CHANGELOG.md.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\CHANGELOG.md.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\CHANGELOG.md.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Documentation~\com.valvesoftware.unity.openvr.md
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Documentation~\com.valvesoftware.unity.openvr.md
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Documentation~\com.valvesoftware.unity.openvr.md
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Documentation~\com.valvesoftware.unity.openvr.md
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Documentation~\com.valvesoftware.unity.openvr.md
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Documentation~\com.valvesoftware.unity.openvr.md
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRBuildProcessor.cs
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRBuildProcessor.cs
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRBuildProcessor.cs
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRBuildProcessor.cs
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRBuildProcessor.cs
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRBuildProcessor.cs
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRBuildProcessor.cs.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRBuildProcessor.cs.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRBuildProcessor.cs.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRBuildProcessor.cs.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRBuildProcessor.cs.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRBuildProcessor.cs.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRLoaderMetadata.cs
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRLoaderMetadata.cs
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRLoaderMetadata.cs
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRLoaderMetadata.cs
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRLoaderMetadata.cs
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRLoaderMetadata.cs
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRLoaderMetadata.cs.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRLoaderMetadata.cs.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRLoaderMetadata.cs.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRLoaderMetadata.cs.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRLoaderMetadata.cs.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRLoaderMetadata.cs.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsCopier.cs
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsCopier.cs
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsCopier.cs
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsCopier.cs
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsCopier.cs
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsCopier.cs
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsCopier.cs.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsCopier.cs.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsCopier.cs.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsCopier.cs.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsCopier.cs.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsCopier.cs.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsEditor.cs
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsEditor.cs
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsEditor.cs
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsEditor.cs
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsEditor.cs
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsEditor.cs
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsEditor.cs.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsEditor.cs.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\OpenVRSettingsEditor.cs.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsEditor.cs.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsEditor.cs.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\OpenVRSettingsEditor.cs.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\Unity.XR.OpenVR.Editor.asmdef
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\Unity.XR.OpenVR.Editor.asmdef
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\Unity.XR.OpenVR.Editor.asmdef
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\Unity.XR.OpenVR.Editor.asmdef
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\Unity.XR.OpenVR.Editor.asmdef
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\Unity.XR.OpenVR.Editor.asmdef
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\Unity.XR.OpenVR.Editor.asmdef.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\Unity.XR.OpenVR.Editor.asmdef.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Editor\Unity.XR.OpenVR.Editor.asmdef.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\Unity.XR.OpenVR.Editor.asmdef.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\Unity.XR.OpenVR.Editor.asmdef.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Editor\Unity.XR.OpenVR.Editor.asmdef.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\LICENSE.md
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\LICENSE.md
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\LICENSE.md
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\LICENSE.md
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\LICENSE.md
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\LICENSE.md
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\LICENSE.md.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\LICENSE.md.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\LICENSE.md.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\LICENSE.md.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\LICENSE.md.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\LICENSE.md.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\package.json
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\package.json
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\package.json
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\package.json
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\package.json
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\package.json
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\package.json.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\package.json.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\package.json.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\package.json.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\package.json.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\package.json.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\README.md
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\README.md
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\README.md
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\README.md
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\README.md
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\README.md
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\README.md.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\README.md.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\README.md.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\README.md.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\README.md.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\README.md.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\DeviceLayouts.cs
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\DeviceLayouts.cs
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\DeviceLayouts.cs
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\DeviceLayouts.cs
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\DeviceLayouts.cs
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\DeviceLayouts.cs
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\DeviceLayouts.cs.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\DeviceLayouts.cs.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\DeviceLayouts.cs.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\DeviceLayouts.cs.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\DeviceLayouts.cs.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\DeviceLayouts.cs.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\openvr_api.cs
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\openvr_api.cs
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\openvr_api.cs
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\openvr_api.cs
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\openvr_api.cs
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\openvr_api.cs
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\openvr_api.cs.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\openvr_api.cs.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\openvr_api.cs.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\openvr_api.cs.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\openvr_api.cs.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\openvr_api.cs.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVREvents.cs
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVREvents.cs
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVREvents.cs
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVREvents.cs
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVREvents.cs
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVREvents.cs
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVREvents.cs.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVREvents.cs.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVREvents.cs.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVREvents.cs.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVREvents.cs.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVREvents.cs.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRHelpers.cs
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRHelpers.cs
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRHelpers.cs
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRHelpers.cs
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRHelpers.cs
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRHelpers.cs
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRHelpers.cs.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRHelpers.cs.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRHelpers.cs.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRHelpers.cs.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRHelpers.cs.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRHelpers.cs.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRLoader.cs
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRLoader.cs
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRLoader.cs
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRLoader.cs
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRLoader.cs
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRLoader.cs
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRLoader.cs.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRLoader.cs.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRLoader.cs.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRLoader.cs.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRLoader.cs.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRLoader.cs.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRSettings.cs
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRSettings.cs
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRSettings.cs
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRSettings.cs
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRSettings.cs
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRSettings.cs
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRSettings.cs.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRSettings.cs.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\OpenVRSettings.cs.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRSettings.cs.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRSettings.cs.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\OpenVRSettings.cs.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\Unity.XR.OpenVR.asmdef
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\Unity.XR.OpenVR.asmdef
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\Unity.XR.OpenVR.asmdef
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\Unity.XR.OpenVR.asmdef
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\Unity.XR.OpenVR.asmdef
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\Unity.XR.OpenVR.asmdef
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\Unity.XR.OpenVR.asmdef.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\Unity.XR.OpenVR.asmdef.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\Unity.XR.OpenVR.asmdef.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\Unity.XR.OpenVR.asmdef.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\Unity.XR.OpenVR.asmdef.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\Unity.XR.OpenVR.asmdef.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\UnitySubsystemsManifest.json
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\UnitySubsystemsManifest.json
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\UnitySubsystemsManifest.json
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\UnitySubsystemsManifest.json
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\UnitySubsystemsManifest.json
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\UnitySubsystemsManifest.json
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\UnitySubsystemsManifest.json.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\UnitySubsystemsManifest.json.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\UnitySubsystemsManifest.json.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\UnitySubsystemsManifest.json.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\UnitySubsystemsManifest.json.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\UnitySubsystemsManifest.json.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so.dbg
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so.dbg
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so.dbg
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so.dbg
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so.dbg
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so.dbg
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so.dbg.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so.dbg.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\lib\x64\libopenvr_api.so.dbg.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so.dbg.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so.dbg.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\lib\x64\libopenvr_api.so.dbg.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so.dbg
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so.dbg
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so.dbg
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so.dbg
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so.dbg
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so.dbg
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so.dbg.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so.dbg.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libopenvr_api.so.dbg.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so.dbg.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so.dbg.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libopenvr_api.so.dbg.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libXRSDKOpenVR.so
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libXRSDKOpenVR.so
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libXRSDKOpenVR.so
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libXRSDKOpenVR.so
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libXRSDKOpenVR.so
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libXRSDKOpenVR.so
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libXRSDKOpenVR.so.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libXRSDKOpenVR.so.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\libXRSDKOpenVR.so.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libXRSDKOpenVR.so.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libXRSDKOpenVR.so.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\libXRSDKOpenVR.so.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll.sig
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll.sig
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll.sig
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll.sig
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll.sig
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll.sig
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll.sig.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll.sig.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.dll.sig.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll.sig.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll.sig.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.dll.sig.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.lib
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.lib
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.lib
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.lib
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.lib
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.lib
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.lib.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.lib.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.lib.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.lib.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.lib.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.lib.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.pdb
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.pdb
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.pdb
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.pdb
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.pdb
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.pdb
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.pdb.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.pdb.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\openvr_api.pdb.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.pdb.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.pdb.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\openvr_api.pdb.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\ucrtbased.dll
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\ucrtbased.dll
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\ucrtbased.dll
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\ucrtbased.dll
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\ucrtbased.dll
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\ucrtbased.dll
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\ucrtbased.dll.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\ucrtbased.dll.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\ucrtbased.dll.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\ucrtbased.dll.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\ucrtbased.dll.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\ucrtbased.dll.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc141.pdb
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc141.pdb
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc141.pdb
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc141.pdb
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc141.pdb
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc141.pdb
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc141.pdb.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc141.pdb.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc141.pdb.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc141.pdb.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc141.pdb.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc141.pdb.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc142.pdb
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc142.pdb
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc142.pdb
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc142.pdb
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc142.pdb
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc142.pdb
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc142.pdb.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc142.pdb.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\vc142.pdb.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc142.pdb.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc142.pdb.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\vc142.pdb.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll.sig
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll.sig
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll.sig
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll.sig
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll.sig
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll.sig
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll.sig.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll.sig.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.dll.sig.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll.sig.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll.sig.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.dll.sig.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.exp
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.exp
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.exp
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.exp
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.exp
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.exp
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.exp.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.exp.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.exp.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.exp.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.exp.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.exp.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.lib
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.lib
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.lib
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.lib
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.lib
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.lib
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.lib.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.lib.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.lib.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.lib.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.lib.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.lib.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.pdb
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.pdb
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.pdb
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.pdb
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.pdb
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.pdb
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.pdb.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.pdb.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x64\XRSDKOpenVR.pdb.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.pdb.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.pdb.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x64\XRSDKOpenVR.pdb.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll.sig
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll.sig
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll.sig
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll.sig
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll.sig
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll.sig
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll.sig.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll.sig.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.dll.sig.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll.sig.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll.sig.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.dll.sig.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.lib
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.lib
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.lib
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.lib
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.lib
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.lib
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.lib.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.lib.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.lib.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.lib.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.lib.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.lib.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.pdb
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.pdb
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.pdb
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.pdb
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.pdb
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.pdb
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.pdb.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.pdb.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\openvr_api.pdb.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.pdb.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.pdb.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\openvr_api.pdb.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\ucrtbased.dll
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\ucrtbased.dll
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\ucrtbased.dll
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\ucrtbased.dll
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\ucrtbased.dll
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\ucrtbased.dll
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\ucrtbased.dll.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\ucrtbased.dll.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\ucrtbased.dll.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\ucrtbased.dll.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\ucrtbased.dll.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\ucrtbased.dll.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc141.pdb
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc141.pdb
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc141.pdb
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc141.pdb
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc141.pdb
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc141.pdb
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc141.pdb.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc141.pdb.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc141.pdb.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc141.pdb.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc141.pdb.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc141.pdb.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc142.pdb
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc142.pdb
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc142.pdb
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc142.pdb
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc142.pdb
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc142.pdb
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc142.pdb.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc142.pdb.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\vc142.pdb.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc142.pdb.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc142.pdb.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\vc142.pdb.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll.sig
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll.sig
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll.sig
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll.sig
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll.sig
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll.sig
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll.sig.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll.sig.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.dll.sig.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll.sig.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll.sig.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.dll.sig.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.exp
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.exp
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.exp
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.exp
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.exp
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.exp
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.exp.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.exp.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.exp.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.exp.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.exp.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.exp.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.lib
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.lib
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.lib
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.lib
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.lib
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.lib
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.lib.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.lib.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.lib.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.lib.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.lib.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.lib.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.pdb
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.pdb
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.pdb
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.pdb
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.pdb
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.pdb
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.pdb.meta
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.pdb.meta
-    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1674649818930\Runtime\x86\XRSDKOpenVR.pdb.meta
+  - path: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.pdb.meta
+    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.pdb.meta
+    projectPath: Library\PackageCache\com.valvesoftware.unity.openvr@1913de8b9554-1675174160060\Runtime\x86\XRSDKOpenVR.pdb.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
@@ -61999,8 +61909,8 @@ MonoBehaviour:
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\ScriptAssemblies\BuiltinAssemblies.stamp
     projectPath: Library\ScriptAssemblies\BuiltinAssemblies.stamp
     originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
+    indexStatus: 1
+    workTreeStatus: 1
   - path: Library\ScriptAssemblies\PhotonChat.dll
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Library\ScriptAssemblies\PhotonChat.dll
     projectPath: Library\ScriptAssemblies\PhotonChat.dll
@@ -64671,790 +64581,9 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Temp\ApiUpdater_CheckMovedFrom3949cddb9d91cdd439465fcbad334108
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\ApiUpdater_CheckMovedFrom3949cddb9d91cdd439465fcbad334108
-    projectPath: Temp\ApiUpdater_CheckMovedFrom3949cddb9d91cdd439465fcbad334108
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\ApiUpdater_CheckMovedFrom58fba9cc36daf6d41b0a1b07c9ee8415
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\ApiUpdater_CheckMovedFrom58fba9cc36daf6d41b0a1b07c9ee8415
-    projectPath: Temp\ApiUpdater_CheckMovedFrom58fba9cc36daf6d41b0a1b07c9ee8415
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Assembly-CSharp.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Assembly-CSharp.dll.hash
-    projectPath: Temp\Assembly-CSharp.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Assembly-CSharp-Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Assembly-CSharp-Editor.dll.hash
-    projectPath: Temp\Assembly-CSharp-Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Assembly-CSharp-Editor-firstpass.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Assembly-CSharp-Editor-firstpass.dll.hash
-    projectPath: Temp\Assembly-CSharp-Editor-firstpass.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\CompilationLog.txt
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\CompilationLog.txt
-    projectPath: Temp\CompilationLog.txt
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonChat.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonChat.dll.hash
-    projectPath: Temp\PhotonChat.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonRealtime.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonRealtime.dll.hash
-    projectPath: Temp\PhotonRealtime.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonUnityNetworking.Demos.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonUnityNetworking.Demos.dll.hash
-    projectPath: Temp\PhotonUnityNetworking.Demos.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonUnityNetworking.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonUnityNetworking.dll.hash
-    projectPath: Temp\PhotonUnityNetworking.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonUnityNetworking.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonUnityNetworking.Editor.dll.hash
-    projectPath: Temp\PhotonUnityNetworking.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonUnityNetworking.Utilities.Culling.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonUnityNetworking.Utilities.Culling.Editor.dll.hash
-    projectPath: Temp\PhotonUnityNetworking.Utilities.Culling.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonUnityNetworking.Utilities.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonUnityNetworking.Utilities.dll.hash
-    projectPath: Temp\PhotonUnityNetworking.Utilities.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.dll.hash
-    projectPath: Temp\PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonVoice.API.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonVoice.API.dll.hash
-    projectPath: Temp\PhotonVoice.API.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonVoice.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonVoice.dll.hash
-    projectPath: Temp\PhotonVoice.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonVoice.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonVoice.Editor.dll.hash
-    projectPath: Temp\PhotonVoice.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonVoice.PUN.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonVoice.PUN.dll.hash
-    projectPath: Temp\PhotonVoice.PUN.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonVoice.PUN.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonVoice.PUN.Editor.dll.hash
-    projectPath: Temp\PhotonVoice.PUN.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PhotonVoice.Utilities.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PhotonVoice.Utilities.Editor.dll.hash
-    projectPath: Temp\PhotonVoice.Utilities.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PunDemos.DemoHubEditor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PunDemos.DemoHubEditor.dll.hash
-    projectPath: Temp\PunDemos.DemoHubEditor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\PunDemos.DemoSlotcarEditor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\PunDemos.DemoSlotcarEditor.dll.hash
-    projectPath: Temp\PunDemos.DemoSlotcarEditor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\SteamVR.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\SteamVR.dll.hash
-    projectPath: Temp\SteamVR.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\SteamVR_Actions.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\SteamVR_Actions.dll.hash
-    projectPath: Temp\SteamVR_Actions.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\SteamVR_Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\SteamVR_Editor.dll.hash
-    projectPath: Temp\SteamVR_Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\SteamVR_Input_Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\SteamVR_Input_Editor.dll.hash
-    projectPath: Temp\SteamVR_Input_Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\SteamVR_Windows_EditorHelper.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\SteamVR_Windows_EditorHelper.dll.hash
-    projectPath: Temp\SteamVR_Windows_EditorHelper.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.CollabProxy.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.CollabProxy.Editor.dll.hash
-    projectPath: Temp\Unity.CollabProxy.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.Recorder.Base.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.Recorder.Base.dll.hash
-    projectPath: Temp\Unity.Recorder.Base.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.Recorder.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.Recorder.dll.hash
-    projectPath: Temp\Unity.Recorder.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.Recorder.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.Recorder.Editor.dll.hash
-    projectPath: Temp\Unity.Recorder.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.Recorder.Samples.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.Recorder.Samples.Editor.dll.hash
-    projectPath: Temp\Unity.Recorder.Samples.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.Rider.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.Rider.Editor.dll.hash
-    projectPath: Temp\Unity.Rider.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.Subsystem.Registration.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.Subsystem.Registration.dll.hash
-    projectPath: Temp\Unity.Subsystem.Registration.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.TextMeshPro.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.TextMeshPro.dll.hash
-    projectPath: Temp\Unity.TextMeshPro.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.TextMeshPro.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.TextMeshPro.Editor.dll.hash
-    projectPath: Temp\Unity.TextMeshPro.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.Timeline.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.Timeline.dll.hash
-    projectPath: Temp\Unity.Timeline.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.Timeline.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.Timeline.Editor.dll.hash
-    projectPath: Temp\Unity.Timeline.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.VisualStudio.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.VisualStudio.Editor.dll.hash
-    projectPath: Temp\Unity.VisualStudio.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.VSCode.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.VSCode.Editor.dll.hash
-    projectPath: Temp\Unity.VSCode.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.XR.Management.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.XR.Management.dll.hash
-    projectPath: Temp\Unity.XR.Management.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.XR.Management.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.XR.Management.Editor.dll.hash
-    projectPath: Temp\Unity.XR.Management.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.XR.OpenVR.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.XR.OpenVR.dll.hash
-    projectPath: Temp\Unity.XR.OpenVR.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\Unity.XR.OpenVR.Editor.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\Unity.XR.OpenVR.Editor.dll.hash
-    projectPath: Temp\Unity.XR.OpenVR.Editor.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityEditor.SpatialTracking.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityEditor.SpatialTracking.dll.hash
-    projectPath: Temp\UnityEditor.SpatialTracking.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityEditor.TestRunner.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityEditor.TestRunner.dll.hash
-    projectPath: Temp\UnityEditor.TestRunner.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityEditor.UI.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityEditor.UI.dll.hash
-    projectPath: Temp\UnityEditor.UI.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityEditor.XR.LegacyInputHelpers.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityEditor.XR.LegacyInputHelpers.dll.hash
-    projectPath: Temp\UnityEditor.XR.LegacyInputHelpers.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityEngine.SpatialTracking.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityEngine.SpatialTracking.dll.hash
-    projectPath: Temp\UnityEngine.SpatialTracking.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityEngine.TestRunner.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityEngine.TestRunner.dll.hash
-    projectPath: Temp\UnityEngine.TestRunner.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityEngine.UI.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityEngine.UI.dll.hash
-    projectPath: Temp\UnityEngine.UI.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityEngine.XR.LegacyInputHelpers.dll.hash
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityEngine.XR.LegacyInputHelpers.dll.hash
-    projectPath: Temp\UnityEngine.XR.LegacyInputHelpers.dll.hash
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Temp\UnityLockfile
     fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityLockfile
     projectPath: Temp\UnityLockfile
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-070235503365a61499a58c1950f96507
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-070235503365a61499a58c1950f96507
-    projectPath: Temp\UnityTempFile-070235503365a61499a58c1950f96507
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-07031a13b2288334196e3f5bd50b63b5
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-07031a13b2288334196e3f5bd50b63b5
-    projectPath: Temp\UnityTempFile-07031a13b2288334196e3f5bd50b63b5
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-135347d85c41efe49a4961a780d068c7
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-135347d85c41efe49a4961a780d068c7
-    projectPath: Temp\UnityTempFile-135347d85c41efe49a4961a780d068c7
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-13f59b354058fcc42a8f4f3ce581f825
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-13f59b354058fcc42a8f4f3ce581f825
-    projectPath: Temp\UnityTempFile-13f59b354058fcc42a8f4f3ce581f825
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-1dd04f3ff95bf324092c25f9e79ba0a7
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-1dd04f3ff95bf324092c25f9e79ba0a7
-    projectPath: Temp\UnityTempFile-1dd04f3ff95bf324092c25f9e79ba0a7
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-1f2a4fd3d856d784d8dd69240e8b9451
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-1f2a4fd3d856d784d8dd69240e8b9451
-    projectPath: Temp\UnityTempFile-1f2a4fd3d856d784d8dd69240e8b9451
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-203b3c241d6d8ed4d83e351984140a23
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-203b3c241d6d8ed4d83e351984140a23
-    projectPath: Temp\UnityTempFile-203b3c241d6d8ed4d83e351984140a23
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-248c2058c5f41e8498fb4fb30136ecc3
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-248c2058c5f41e8498fb4fb30136ecc3
-    projectPath: Temp\UnityTempFile-248c2058c5f41e8498fb4fb30136ecc3
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-25098c7c641ae2c4280f277c44ec3543
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-25098c7c641ae2c4280f277c44ec3543
-    projectPath: Temp\UnityTempFile-25098c7c641ae2c4280f277c44ec3543
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-2f8fd80c914af0f46a0131c321835b89
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-2f8fd80c914af0f46a0131c321835b89
-    projectPath: Temp\UnityTempFile-2f8fd80c914af0f46a0131c321835b89
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-31ece8ef97d21b7439e634df94042456
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-31ece8ef97d21b7439e634df94042456
-    projectPath: Temp\UnityTempFile-31ece8ef97d21b7439e634df94042456
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-338dd97eba8d0304bbaf6e0750729857
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-338dd97eba8d0304bbaf6e0750729857
-    projectPath: Temp\UnityTempFile-338dd97eba8d0304bbaf6e0750729857
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-3a66f51952fbec74482646a12ec11754
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-3a66f51952fbec74482646a12ec11754
-    projectPath: Temp\UnityTempFile-3a66f51952fbec74482646a12ec11754
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-41d408c22de322043b1eb50dccd05a73
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-41d408c22de322043b1eb50dccd05a73
-    projectPath: Temp\UnityTempFile-41d408c22de322043b1eb50dccd05a73
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-42b08e87f30ac70419f1540e07d9c621
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-42b08e87f30ac70419f1540e07d9c621
-    projectPath: Temp\UnityTempFile-42b08e87f30ac70419f1540e07d9c621
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-43c5057dbf741634ea09a73cac4f0847
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-43c5057dbf741634ea09a73cac4f0847
-    projectPath: Temp\UnityTempFile-43c5057dbf741634ea09a73cac4f0847
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-44478be39dbb6454791e1db11fd69fc4
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-44478be39dbb6454791e1db11fd69fc4
-    projectPath: Temp\UnityTempFile-44478be39dbb6454791e1db11fd69fc4
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-4751b7c60679d0a49bccc9154b734dbd
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-4751b7c60679d0a49bccc9154b734dbd
-    projectPath: Temp\UnityTempFile-4751b7c60679d0a49bccc9154b734dbd
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-48d5bf25978a3c1468068739a0501afb
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-48d5bf25978a3c1468068739a0501afb
-    projectPath: Temp\UnityTempFile-48d5bf25978a3c1468068739a0501afb
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-54ff774fa82f7eb4d8492cb683413455
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-54ff774fa82f7eb4d8492cb683413455
-    projectPath: Temp\UnityTempFile-54ff774fa82f7eb4d8492cb683413455
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-5ec1e0de86d275944a29c3fddc254758
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-5ec1e0de86d275944a29c3fddc254758
-    projectPath: Temp\UnityTempFile-5ec1e0de86d275944a29c3fddc254758
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-63f71b572e171d849af12f9343811f30
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-63f71b572e171d849af12f9343811f30
-    projectPath: Temp\UnityTempFile-63f71b572e171d849af12f9343811f30
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-6523087abd38d084eb1b1c61f3daf52b
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-6523087abd38d084eb1b1c61f3daf52b
-    projectPath: Temp\UnityTempFile-6523087abd38d084eb1b1c61f3daf52b
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-66fda204d09121041999fe753428728e
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-66fda204d09121041999fe753428728e
-    projectPath: Temp\UnityTempFile-66fda204d09121041999fe753428728e
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-6722cb9d2bece814eb460f5574b8217f
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-6722cb9d2bece814eb460f5574b8217f
-    projectPath: Temp\UnityTempFile-6722cb9d2bece814eb460f5574b8217f
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-6f9080de899ec96429d5317600b4a8ec
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-6f9080de899ec96429d5317600b4a8ec
-    projectPath: Temp\UnityTempFile-6f9080de899ec96429d5317600b4a8ec
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-700110deece87d64d84521f8be5d73a1
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-700110deece87d64d84521f8be5d73a1
-    projectPath: Temp\UnityTempFile-700110deece87d64d84521f8be5d73a1
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-736a8d46df36e0f44ae04341610c1317
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-736a8d46df36e0f44ae04341610c1317
-    projectPath: Temp\UnityTempFile-736a8d46df36e0f44ae04341610c1317
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-75219334d6b77ed49980cd8e4917bb9b
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-75219334d6b77ed49980cd8e4917bb9b
-    projectPath: Temp\UnityTempFile-75219334d6b77ed49980cd8e4917bb9b
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-76832ecc31be2c54598d72fdb6ef84b3
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-76832ecc31be2c54598d72fdb6ef84b3
-    projectPath: Temp\UnityTempFile-76832ecc31be2c54598d72fdb6ef84b3
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-76fffcd9d3eb25f4bb73c25d986bf463
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-76fffcd9d3eb25f4bb73c25d986bf463
-    projectPath: Temp\UnityTempFile-76fffcd9d3eb25f4bb73c25d986bf463
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-786f967f6fe07884f966c3d4c0ec0b70
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-786f967f6fe07884f966c3d4c0ec0b70
-    projectPath: Temp\UnityTempFile-786f967f6fe07884f966c3d4c0ec0b70
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-7fcecb763dc360a429b7b5a4f4d6f972
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-7fcecb763dc360a429b7b5a4f4d6f972
-    projectPath: Temp\UnityTempFile-7fcecb763dc360a429b7b5a4f4d6f972
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-816c9254a9ce020409d659019665c3e4
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-816c9254a9ce020409d659019665c3e4
-    projectPath: Temp\UnityTempFile-816c9254a9ce020409d659019665c3e4
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-844b36457823c3d49b1659e5a2e4039a
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-844b36457823c3d49b1659e5a2e4039a
-    projectPath: Temp\UnityTempFile-844b36457823c3d49b1659e5a2e4039a
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-891df7e42f6c52b4ead6e822a03d866f
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-891df7e42f6c52b4ead6e822a03d866f
-    projectPath: Temp\UnityTempFile-891df7e42f6c52b4ead6e822a03d866f
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-898a6e4a7fc24eb48ad7f4d02238aec7
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-898a6e4a7fc24eb48ad7f4d02238aec7
-    projectPath: Temp\UnityTempFile-898a6e4a7fc24eb48ad7f4d02238aec7
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-8ba0b653ecab5f44489da997956b7292
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-8ba0b653ecab5f44489da997956b7292
-    projectPath: Temp\UnityTempFile-8ba0b653ecab5f44489da997956b7292
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-8e1b2e853495067449386bc88b0f1dd6
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-8e1b2e853495067449386bc88b0f1dd6
-    projectPath: Temp\UnityTempFile-8e1b2e853495067449386bc88b0f1dd6
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-8e9da42482395764dba911ba9c277b9d
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-8e9da42482395764dba911ba9c277b9d
-    projectPath: Temp\UnityTempFile-8e9da42482395764dba911ba9c277b9d
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-905edc5eb483f384281b86a9c3e80a7b
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-905edc5eb483f384281b86a9c3e80a7b
-    projectPath: Temp\UnityTempFile-905edc5eb483f384281b86a9c3e80a7b
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-95835faa740e1a947b2bef77e0a05bbb
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-95835faa740e1a947b2bef77e0a05bbb
-    projectPath: Temp\UnityTempFile-95835faa740e1a947b2bef77e0a05bbb
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-97c55b52881a5764ea169efe5102f7d9
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-97c55b52881a5764ea169efe5102f7d9
-    projectPath: Temp\UnityTempFile-97c55b52881a5764ea169efe5102f7d9
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-99a56e9a3040a66438c520aaa325928a
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-99a56e9a3040a66438c520aaa325928a
-    projectPath: Temp\UnityTempFile-99a56e9a3040a66438c520aaa325928a
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-99ad829caedfffc409c706233caba6c8
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-99ad829caedfffc409c706233caba6c8
-    projectPath: Temp\UnityTempFile-99ad829caedfffc409c706233caba6c8
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-9b7c2ff63e1c6c44c852b7f4ed0cdcd8
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-9b7c2ff63e1c6c44c852b7f4ed0cdcd8
-    projectPath: Temp\UnityTempFile-9b7c2ff63e1c6c44c852b7f4ed0cdcd8
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-9c349e2dbe02f154db6c5e8214937289
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-9c349e2dbe02f154db6c5e8214937289
-    projectPath: Temp\UnityTempFile-9c349e2dbe02f154db6c5e8214937289
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-9c56140c372add548ba063a83fe3c974
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-9c56140c372add548ba063a83fe3c974
-    projectPath: Temp\UnityTempFile-9c56140c372add548ba063a83fe3c974
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-9dcf821428a99bd40b736c108077b78c
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-9dcf821428a99bd40b736c108077b78c
-    projectPath: Temp\UnityTempFile-9dcf821428a99bd40b736c108077b78c
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-9e0dcfd335f3c984582683bdcdc57df4
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-9e0dcfd335f3c984582683bdcdc57df4
-    projectPath: Temp\UnityTempFile-9e0dcfd335f3c984582683bdcdc57df4
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-a0f46b89a0b5d344fabba6eb5d521732
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-a0f46b89a0b5d344fabba6eb5d521732
-    projectPath: Temp\UnityTempFile-a0f46b89a0b5d344fabba6eb5d521732
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-a3b485bdbaa8a3647b706995fad3e8e5
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-a3b485bdbaa8a3647b706995fad3e8e5
-    projectPath: Temp\UnityTempFile-a3b485bdbaa8a3647b706995fad3e8e5
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-a4f01523702dd064fb536764938e726f
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-a4f01523702dd064fb536764938e726f
-    projectPath: Temp\UnityTempFile-a4f01523702dd064fb536764938e726f
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-a65202ba80abdb647b85706dbd424576
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-a65202ba80abdb647b85706dbd424576
-    projectPath: Temp\UnityTempFile-a65202ba80abdb647b85706dbd424576
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-a6a42fed734a0df4dac60a7746b3f4dd
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-a6a42fed734a0df4dac60a7746b3f4dd
-    projectPath: Temp\UnityTempFile-a6a42fed734a0df4dac60a7746b3f4dd
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-aaf5b0b19c2596b45b79aad362e018f4
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-aaf5b0b19c2596b45b79aad362e018f4
-    projectPath: Temp\UnityTempFile-aaf5b0b19c2596b45b79aad362e018f4
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-af75ea063c1ee164eabe05a5c67da1ba
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-af75ea063c1ee164eabe05a5c67da1ba
-    projectPath: Temp\UnityTempFile-af75ea063c1ee164eabe05a5c67da1ba
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-b6ff269a7e7d7154cb75a856c962149b
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-b6ff269a7e7d7154cb75a856c962149b
-    projectPath: Temp\UnityTempFile-b6ff269a7e7d7154cb75a856c962149b
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-bda630450089a964ba0cb25f83b2ec2e
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-bda630450089a964ba0cb25f83b2ec2e
-    projectPath: Temp\UnityTempFile-bda630450089a964ba0cb25f83b2ec2e
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-be651d760afd4ba4496d7071bb5afe31
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-be651d760afd4ba4496d7071bb5afe31
-    projectPath: Temp\UnityTempFile-be651d760afd4ba4496d7071bb5afe31
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-bfefa25845cc5d04ba65bebf0b649def
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-bfefa25845cc5d04ba65bebf0b649def
-    projectPath: Temp\UnityTempFile-bfefa25845cc5d04ba65bebf0b649def
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-c28e0b0a074c6954488843956f4d2d39
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-c28e0b0a074c6954488843956f4d2d39
-    projectPath: Temp\UnityTempFile-c28e0b0a074c6954488843956f4d2d39
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-c85e093229248454298090af34a2ea15
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-c85e093229248454298090af34a2ea15
-    projectPath: Temp\UnityTempFile-c85e093229248454298090af34a2ea15
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-cc53349428e79e640bc23a2e54d03d8a
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-cc53349428e79e640bc23a2e54d03d8a
-    projectPath: Temp\UnityTempFile-cc53349428e79e640bc23a2e54d03d8a
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-ce8b80972986eaa46a344618da331315
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-ce8b80972986eaa46a344618da331315
-    projectPath: Temp\UnityTempFile-ce8b80972986eaa46a344618da331315
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-cf0d47e33d22e804c8519847dd69c5d0
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-cf0d47e33d22e804c8519847dd69c5d0
-    projectPath: Temp\UnityTempFile-cf0d47e33d22e804c8519847dd69c5d0
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-cff111ac098fa0848a16c31559b552f4
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-cff111ac098fa0848a16c31559b552f4
-    projectPath: Temp\UnityTempFile-cff111ac098fa0848a16c31559b552f4
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-d166f5015d4d3944caafd7cb5123f1b0
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-d166f5015d4d3944caafd7cb5123f1b0
-    projectPath: Temp\UnityTempFile-d166f5015d4d3944caafd7cb5123f1b0
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-d4f6049038a969b43b8c70006c9f5a77
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-d4f6049038a969b43b8c70006c9f5a77
-    projectPath: Temp\UnityTempFile-d4f6049038a969b43b8c70006c9f5a77
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-d50c4dd0e0bef8e47aae4a56fbfb85c8
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-d50c4dd0e0bef8e47aae4a56fbfb85c8
-    projectPath: Temp\UnityTempFile-d50c4dd0e0bef8e47aae4a56fbfb85c8
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-d75ce607621cb5c4b86cf03e629b5866
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-d75ce607621cb5c4b86cf03e629b5866
-    projectPath: Temp\UnityTempFile-d75ce607621cb5c4b86cf03e629b5866
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-d7725ed595058f44284037be3ee77bd5
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-d7725ed595058f44284037be3ee77bd5
-    projectPath: Temp\UnityTempFile-d7725ed595058f44284037be3ee77bd5
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-dc515769ddfc60340b1ba3673434ee6b
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-dc515769ddfc60340b1ba3673434ee6b
-    projectPath: Temp\UnityTempFile-dc515769ddfc60340b1ba3673434ee6b
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-e00753cbd1c41254c89b985f879c6605
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-e00753cbd1c41254c89b985f879c6605
-    projectPath: Temp\UnityTempFile-e00753cbd1c41254c89b985f879c6605
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-e34760637ca4a7b419fe53fd7e5bc62b
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-e34760637ca4a7b419fe53fd7e5bc62b
-    projectPath: Temp\UnityTempFile-e34760637ca4a7b419fe53fd7e5bc62b
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-e5f1c8fff7877824485f286c054df54a
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-e5f1c8fff7877824485f286c054df54a
-    projectPath: Temp\UnityTempFile-e5f1c8fff7877824485f286c054df54a
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-f245121cb12e522499de10cdd5aa20d9
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityTempFile-f245121cb12e522499de10cdd5aa20d9
-    projectPath: Temp\UnityTempFile-f245121cb12e522499de10cdd5aa20d9
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityVS\Visual Studio 2017 Tools.unitypackage
-    fullPath: C:\cygwin64\home\ilda-vive\henrylapassat\DemoMode\TERL3\Temp\UnityVS\Visual
-      Studio 2017 Tools.unitypackage
-    projectPath: Temp\UnityVS\Visual Studio 2017 Tools.unitypackage
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1

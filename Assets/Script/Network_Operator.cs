@@ -32,8 +32,6 @@ public class Network_Operator : MonoBehaviourPun {
     private bool onMenu;
     private bool expePaused;
 
-    private GameObject menu;
-    private Operating_Menu menu_script;
     //private PhotonView photonView;
 
     void Start(){
@@ -42,12 +40,8 @@ public class Network_Operator : MonoBehaviourPun {
 
         moving = GameObject.Find("/[movingCam]");
 
-        menu = GameObject.Find("Operating Menu");
-        menu_script = menu.GetComponent<Operating_Menu>();
-
         if(!photonView.IsMine){
             moving.gameObject.SetActive(false);
-            menu.gameObject.SetActive(false);  
         }
 
         render = room.GetComponent<rendering>();
@@ -81,15 +75,6 @@ public class Network_Operator : MonoBehaviourPun {
         if(expePaused){
             //must implement a pause in the expe
             render.PauseExpe();
-        }
-
-        if(Input.GetKeyDown(KeyCode.M)){
-            // M -> opening / closing the menu
-            if(onMenu){
-
-            } else {
-                
-            }
         }
         //else the operator can't do nothing but press buttons
 
