@@ -36,5 +36,70 @@ public class Operating_Menu : MonoBehaviour {
 
     // Update is called once per frame
     void Update(){
+        //here we just wanna make sure which Canvas (i.e. Menu) we wanna set as Active.
+    }
+
+    //Buttons functions
+    public void OpeOption(){
+        Debug.Log("Button -> OpeOption");
+        //here we wanna make the PlayerSpawner 'WithOpe' variable switch from True to False to True ... on each click
+        // & print the result on the menu (true & false setActive(...))
+        return;
+    }
+
+    public void OpeChoosed(){
+        Debug.Log("Button -> OpeChoosed");
+        //here we wanna go on with the 'ok' button with the chosen parameter 'WithOpe'
+        return;
+    }
+
+    public void StartDemo(){
+        Debug.Log("Button -> StartDemo");
+        //simply wanna launch the demo -> giving the Demo Menu to operator (I guess)
+        return;
+    }
+
+    public void StartExpe(){
+        Debug.Log("Button -> StartExpe");
+        //here wanna start the expe (check if in a demo first -> if so then stop it, if not so simply initiates a demo)
+        // careful with the startExpe method of 'rendering'...
+        return;
+    }
+
+    public void CreateCards(){
+        Debug.Log("Button -> CreateCards");
+        //here we wanna create the cards for the demo version (maybe wanna make a second CreateCards method for the demo ?)
+        return;
+    }
+
+    public void DeleteCards(){
+        Debug.Log("Button -> DeleteCards");
+        //here we wanna delete the cards of the demo version (maybe wanna make a second DeleteCards method for the demo ?)
+        return;
+    }
+
+    public void End(){
+        Debug.Log("Button -> End");
+        //here we wanna end the expe -> make everything stop as the expe is the finality of the program ? 
+        return;
+    }
+
+    public void LaunchExpe(){
+        Debug.Log("Button -> LaunchExpe");
+        //just wanna launch the expe -> use for the first time 'NextTrial' to start the first one (as the 2nd space press actually)
+        return;
+    }
+
+    public void LaunchNextTrial(){
+        Debug.Log("Button -> LaunchNextTrial");
+        //here we're simply gonna launch the 'nextTrial' method as the first one has already been created
+        return;
+    }
+
+    public void TpToOther(){
+        Debug.Log("Button -> TpToOther");
+        //here we wanna implement a new feature -> TP both player at the beginning point but without going on nextTrial
+        //not a priority tho...
+        return;
     }
 }
