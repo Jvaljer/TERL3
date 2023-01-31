@@ -18,9 +18,11 @@ public class Operating_Menu : MonoBehaviour {
 
     private Player_Spawner spawner;
     private NetworkManager manager;
+    private bool fromDemo;
 
     // Start is called before the first frame update
     void Start(){
+        fromDemo = false;
         spawner = GameObject.Find("NetworkManager").GetComponent<Player_Spawner>();
         manager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
         
@@ -30,8 +32,7 @@ public class Operating_Menu : MonoBehaviour {
         Canvas_Expe_1 = GameObject.Find("Canvas Expe 1");
         Canvas_Expe_2 = GameObject.Find("Canvas Expe 2");
 
-        Current_Canvas = Canvas_Operator;
-        Current_Canvas.gameObject.SetActive(true);
+        Canvas_Operator.gameObject.SetActive(true);
 
         Canvas_Options.gameObject.SetActive(false);
         Canvas_Demo.gameObject.SetActive(false);
@@ -49,9 +50,14 @@ public class Operating_Menu : MonoBehaviour {
         Debug.Log("Button -> OpeOption");
         //here we wanna make the PlayerSpawner 'WithOpe' variable switch from True to False to True ... on each click
         // & print the result on the menu (true & false setActive(...))
-
         spawner.withOperator = !spawner.withOperator;
-        return;
+        if(spawner.withOperator){
+            Canvas_Operator.Find("True").gameObject.SetActive(true);
+            Canvas_Operator.Find("False").gameObject.SetActive(false);
+        } else {
+            Canvas_Operator.Find("True").gameObject.SetActive(false);
+            Canvas_Operator.Find("False").gameObject.SetActive(true);
+        }
     }
 
     public void OpeChoosed(){
@@ -59,19 +65,30 @@ public class Operating_Menu : MonoBehaviour {
         //here we wanna go on with the 'ok' button with the chosen parameter 'WithOpe'
 
         manager.Connect();
-        return;
+
+        Canvas_Operator.gameObject.SetActive(false);
+        Canvas_Options.gameObject.SetActive(true);
+        fromDemo = false;
     }
 
     public void StartDemo(){
         Debug.Log("Button -> StartDemo");
         //simply wanna launch the demo -> giving the Demo Menu to operator (I guess)
-        return;
+        
+        Canvas_Options.gameObject.SetActive(false);
+        Canvas_Demo.gameObject.SetActive(true);
+        fromDemo = true;
     }
 
     public void StartExpe(){
         Debug.Log("Button -> StartExpe");
         //here wanna start the expe (check if in a demo first -> if so then stop it, if not so simply initiates a demo)
         // careful with the startExpe method of 'rendering'...
+        if(fromDemo){
+            //must implement
+        } else {
+            //must implement
+        }
         return;
     }
 
@@ -90,7 +107,11 @@ public class Operating_Menu : MonoBehaviour {
     public void End(){
         Debug.Log("Button -> End");
         //here we wanna end the expe -> make everything stop as the expe is the finality of the program ? 
-        return;
+        if(fromDemo){
+            //must implement
+        } else {
+            //must implement
+        }
     }
 
     public void LaunchExpe(){
