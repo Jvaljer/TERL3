@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Operating_Menu : MonoBehaviour {
-
     private GameObject title;
 
     private GameObject Options; //Canvas which will be shown throughout the program
@@ -15,10 +14,16 @@ public class Operating_Menu : MonoBehaviour {
     private GameObject Canvas_Expe_2; //all components of "Canvas Expe 2"
 
     private GameObject Current_Canvas; //actual canva we wanna show when needed
-    private GameObject Canvas_name;
+
+
+    private Player_Spawner spawner;
+    private NetworkManager manager;
 
     // Start is called before the first frame update
     void Start(){
+        spawner = GameObject.Find("NetworkManager").GetComponent<Player_Spawner>();
+        manager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+        
         Canvas_Operator = GameObject.Find("Canvas with Operator");
         Canvas_Options = GameObject.Find("Canvas Option");
         Canvas_Demo = GameObject.Find("Canvas Demo");
@@ -44,12 +49,16 @@ public class Operating_Menu : MonoBehaviour {
         Debug.Log("Button -> OpeOption");
         //here we wanna make the PlayerSpawner 'WithOpe' variable switch from True to False to True ... on each click
         // & print the result on the menu (true & false setActive(...))
+
+        spawner.withOperator = !spawner.withOperator;
         return;
     }
 
     public void OpeChoosed(){
         Debug.Log("Button -> OpeChoosed");
         //here we wanna go on with the 'ok' button with the chosen parameter 'WithOpe'
+
+        manager.Connect();
         return;
     }
 

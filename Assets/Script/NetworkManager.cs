@@ -31,14 +31,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     void Start()
     {   
         Debug.Log("Starting NetManag");
-        Connect();
+        //Connect();
+        // nothing to do ???
     }
     
     public void Connect()
     {
         Debug.Log("Try to connect ...");
         PhotonNetwork.ConnectUsingSettings();
-        
     }
 
     public override void OnJoinedRoom()

@@ -9,7 +9,6 @@ public class Player_Spawner : MonoBehaviourPunCallbacks
     private GameObject spawnedOperatorPrefab;
     public bool withOperator  = false;
 
-    // Start is called before the first frame update
     public override void OnJoinedRoom()
     {
         Debug.Log("OnJoinedRoom <- PlayerSpawner");
