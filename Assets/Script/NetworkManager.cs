@@ -31,8 +31,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     void Start()
     {   
         Debug.Log("Starting NetManag");
-        //Connect();
-        // nothing to do ???
+        Connect();
     }
     
     public void Connect()

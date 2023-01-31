@@ -7,7 +7,7 @@ public class Player_Spawner : MonoBehaviourPunCallbacks
 {
     private GameObject spawnedPlayerPrefab;
     private GameObject spawnedOperatorPrefab;
-    public bool withOperator  = false;
+    public bool withOperator  = true;
 
     public override void OnJoinedRoom()
     {

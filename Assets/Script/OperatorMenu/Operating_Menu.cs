@@ -22,6 +22,7 @@ public class Operating_Menu : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start(){
+        Debug.Log("Starting Operating_Menu");
         fromDemo = false;
         spawner = GameObject.Find("NetworkManager").GetComponent<Player_Spawner>();
         manager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
@@ -52,11 +53,11 @@ public class Operating_Menu : MonoBehaviour {
         // & print the result on the menu (true & false setActive(...))
         spawner.withOperator = !spawner.withOperator;
         if(spawner.withOperator){
-            Canvas_Operator.Find("True").gameObject.SetActive(true);
-            Canvas_Operator.Find("False").gameObject.SetActive(false);
+            GameObject.Find("True").gameObject.SetActive(true);
+            GameObject.Find("False").gameObject.SetActive(false);
         } else {
-            Canvas_Operator.Find("True").gameObject.SetActive(false);
-            Canvas_Operator.Find("False").gameObject.SetActive(true);
+            GameObject.Find("True").gameObject.SetActive(false);
+            GameObject.Find("False").gameObject.SetActive(true);
         }
     }
 
