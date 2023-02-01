@@ -1,0 +1,7 @@
+g06 p01 kine action
+1.513428; Move
+1.54554; Move
+1.600819; Move
+2.156055; Rotate
+7.62561; Move
+8.237518; Move

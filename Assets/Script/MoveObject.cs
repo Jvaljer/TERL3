@@ -40,6 +40,8 @@ public class MoveObject : MonoBehaviourPun
 
         if (ob != null) // follow the mouvement
         {
+            Debug.Log("MoveObjects -> ob != null");
+
             float x, y, z;
             Vector3 v = MurR.localScale;
             Vector3 p = MurR.position;
@@ -50,27 +52,41 @@ public class MoveObject : MonoBehaviourPun
 
 
             if (ob.transform.parent.name == "MUR L")
-            {
+            {   
+                Debug.Log("ob.transform.parent.name == 'MUR L'");
                 //change
-                if (hit.transform.name == "MUR B") { nameM = hit.transform.name; }
+                if (hit.transform.name == "MUR B") { 
+                    Debug.Log("switching from L to B");
+                    nameM = hit.transform.name; 
+                }
                 //move on L
                 ob.transform.localPosition = new Vector3(m_Pointer.transform.position.z / v.x, y, z);  // /10
             }
 
             else if (ob.transform.parent.name == "MUR B")
             {
+                Debug.Log("ob.transform.parent.name == 'MUR B'");
                 //change
-                if (hit.transform.name == "MUR L") { nameM = hit.transform.name; }
+                if (hit.transform.name == "MUR L") { 
+                    Debug.Log("switching from B to L");
+                    nameM = hit.transform.name; 
+                }
 
-                if (hit.transform.name == "MUR R") { nameM = hit.transform.name; }
+                if (hit.transform.name == "MUR R") { 
+                    Debug.Log("switching from B to R");
+                    nameM = hit.transform.name; 
+                }
                 // move on B
                 ob.transform.localPosition = new Vector3(x, y, z);
             }
 
             else if (ob.transform.parent.name == "MUR R")
             {
+                Debug.Log("ob.transform.parent.name == 'MUR R'");
                 //change
-                if (hit.transform.name == "MUR B") { nameM = hit.transform.name; }
+                if (hit.transform.name == "MUR B") { 
+                    nameM = hit.transform.name; 
+                }
                 //move on R
                 ob.transform.localPosition = new Vector3(-m_Pointer.transform.position.z / v.x, y, z);
             }
@@ -78,13 +94,15 @@ public class MoveObject : MonoBehaviourPun
             //if change then rpc change wall
             if (nameM != "")
             {
+                Debug.Log("nameM != _ ");
                 photonView.RPC("ChangeMur", Photon.Pun.RpcTarget.All, nameM, ob.GetComponent<PhotonView>().ViewID);
                 nameM = "";
             }
 
         }
         if (interactWithUI.GetStateUp(m_pose.inputSource))
-        {
+        {   
+            Debug.Log("Triggering stuff");
             Move();
         }   
     }

@@ -34,7 +34,7 @@ public class Trial
 
     public bool curentTrialIsRunning = false;
     public bool trialEnded = false;
-    public bool canTagCard = false;
+    public bool canTagCard = true;
     public bool canStartTimer = false;
 
     // measures
@@ -119,7 +119,7 @@ public class Trial
             card.transform.GetChild(0).GetComponent<Renderer>().material = player.none;
         }
         initialCardMaterial = card.transform.GetChild(0).GetComponent<Renderer>().material;
-        Debug.Log(task);
+        Debug.Log("task : " + task);
         if (task == "search")
         {
             teleport.tpToOther();
