@@ -129,11 +129,11 @@ public class Network_Player : MonoBehaviourPun
         }
 
         //making it impossible to move in any possible way if the expe is paused
-        if(expe.paused){
+        /*if(expe.paused){
             right.gameObject.SetActive(false);
         } else {
             right.gameObject.SetActive(true);
-        }
+        } */
 
         bool? synctagTest = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)")?.GetComponent<Teleporter>().synctag;
         bool? isOtherSyncedTest = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)")?.GetComponent<Teleporter>().isOtherSynced;
@@ -153,7 +153,7 @@ public class Network_Player : MonoBehaviourPun
             MapPosition();
         }
 
-        if (Physics.Raycast(ray, out hit) && !expe.paused) {
+        if (Physics.Raycast(ray, out hit) /*&& !expe.paused */) {
             //change tag color of the ray cast
             if (interactWithUI.GetStateDown(m_pose.inputSource)) {
 
