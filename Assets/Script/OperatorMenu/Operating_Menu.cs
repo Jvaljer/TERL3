@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Operating_Menu : MonoBehaviour {
 
+    //Must Manage to make it fits the screen's size...
+
+
     private Player_Spawner spawner;
     private NetworkManager manager;
 
     private GameObject OperatorSetting;
-    private GameObject StartingMenu;
 
     /*//awake could be nice ?
     void Awake(){
         //same as Start() ? 
     }
+
     */
     // Start is called before the first frame update
     void Start(){
@@ -21,10 +24,10 @@ public class Operating_Menu : MonoBehaviour {
         manager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
 
         OperatorSetting = GameObject.Find("Operator Setting");
-        StartingMenu = GameObject.Find("Starting Menu");
 
         OperatorSetting.gameObject.SetActive(true);
-        StartingMenu.gameObject.SetActive(false);
+
+        spawner.withOperator = true;
     }
 
     // Update is called once per frame
@@ -48,17 +51,5 @@ public class Operating_Menu : MonoBehaviour {
         manager.Connect();
         OperatorSetting.SetActive(false);
     }
-
-    //StartingMenu 'OnClick' methods
-    public void StartDemo(){
-        //must implement
-        //  -> shall do the same as if pressing D in the current model
-        StartingMenu.gameObject.SetActive(false);
-    }
-
-    public void StartExpe(){
-        //must implement 
-        //  -> shall do the same as if pressing SPACE in the current model
-        StartingMenu.gameObject.SetActive(false);
-    }
+    
 }
