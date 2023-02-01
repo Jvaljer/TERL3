@@ -49,6 +49,8 @@ public class rendering : MonoBehaviourPunCallbacks {
     public bool demoRunning = false;
     public bool cardsCreated = false;
 
+    public bool expePaused = false;
+
     public class MyCard {
         // Creation of the card 
         public GameObject goCard = null;
@@ -299,6 +301,14 @@ public class rendering : MonoBehaviourPunCallbacks {
     } 
 
     public void PauseExpe(){
-        expePaused = true;
+        Debug.Log("render -> Pausing the current expe");
+        expePaused = expe.paused;
+        expe.Pause();
+    }
+
+    public void ResumeExpe(){
+        Debug.Log("render -> Resuming the current expe");
+        expePaused = expe.paused;
+        expe.Resume();
     }
 }

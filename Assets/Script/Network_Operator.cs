@@ -52,6 +52,7 @@ public class Network_Operator : MonoBehaviourPun {
             //Debug.Log("Searching for an expe");
             //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
             expe = render.expe; 
+            expePaused = render.expePaused;
             if(expe!=null){
                 Debug.Log("ope -> expe isn't null anymore");
                 expePaused = false;
@@ -105,10 +106,8 @@ public class Network_Operator : MonoBehaviourPun {
             Debug.Log(".                     P was pressed (operator)");
             if(expePaused){
                 render.ResumeExpe();
-                expePaused = false;
             } else {
                 render.PauseExpe();
-                expePaused = true;
             }
         }
     }

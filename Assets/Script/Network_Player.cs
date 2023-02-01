@@ -119,12 +119,20 @@ public class Network_Player : MonoBehaviourPun
                 render.TPressedOperator();
             }
         }
+
         if (expe == null) {
             //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
             expe = render?.expe;
             if(expe!=null){
                 Debug.Log("expe has been found");
             }
+        }
+
+        //making it impossible to move in any possible way if the expe is paused
+        if(expe.paused){
+            right.gameObject.SetActive(false);
+        } else {
+            right.gameObject.SetActive(true);
         }
 
         bool? synctagTest = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)")?.GetComponent<Teleporter>().synctag;
@@ -145,7 +153,7 @@ public class Network_Player : MonoBehaviourPun
             MapPosition();
         }
 
-        if (Physics.Raycast(ray, out hit)) {
+        if (Physics.Raycast(ray, out hit) && !expe.paused) {
             //change tag color of the ray cast
             if (interactWithUI.GetStateDown(m_pose.inputSource)) {
 

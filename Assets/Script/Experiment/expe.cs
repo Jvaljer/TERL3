@@ -29,6 +29,8 @@ public class Expe {
     public bool expeRunning = false;
     public bool trialRunning = false;
 
+    public bool paused = false;
+
     static class ThreadSafeRandom {
         [ThreadStatic] private static System.Random Local;
 
@@ -230,4 +232,13 @@ public class Expe {
         }
     }
 
+    public void Pause(){
+        Debug.Log("expe -> Pausing the current expe");
+        paused = true;
+    }
+
+    public void Resume(){
+        Debug.Log("expe -> Resuming the current expe");
+        paused = false;
+    }
 }
