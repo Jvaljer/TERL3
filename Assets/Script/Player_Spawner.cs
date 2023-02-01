@@ -8,10 +8,13 @@ public class Player_Spawner : MonoBehaviourPunCallbacks
     private GameObject spawnedPlayerPrefab;
     private GameObject spawnedOperatorPrefab;
     public bool withOperator  = true;
+    public bool notChoosed = true;
 
     public override void OnJoinedRoom()
     {
         Debug.Log("OnJoinedRoom <- PlayerSpawner");
+
+        //while(notChoosed){ Debug.Log(""); }
 
         int ActorNumber = PhotonNetwork.LocalPlayer.ActorNumber;
         Debug.Log("with Operator -> " + withOperator);

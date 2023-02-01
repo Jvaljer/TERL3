@@ -11,6 +11,8 @@ public class Operating_Menu : MonoBehaviour {
     private NetworkManager manager;
 
     private GameObject OperatorSetting;
+    private GameObject With;
+    private GameObject Without;
 
     /*//awake could be nice ?
     void Awake(){
@@ -24,6 +26,8 @@ public class Operating_Menu : MonoBehaviour {
         manager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
 
         OperatorSetting = GameObject.Find("Operator Setting");
+        With = GameObject.Find("With");
+        Without = GameObject.Find("Without");
 
         OperatorSetting.gameObject.SetActive(true);
 
@@ -39,11 +43,11 @@ public class Operating_Menu : MonoBehaviour {
     public void SwitchOperatorState(){
         spawner.withOperator = !spawner.withOperator;
         if(spawner.withOperator){
-            GameObject.Find("With").SetActive(true);
-            GameObject.Find("Without").SetActive(false);
+            With.SetActive(true);
+            Without.SetActive(false);
         } else {
-            GameObject.Find("With").SetActive(false);
-            GameObject.Find("Without").SetActive(true);
+            With.SetActive(false);
+            Without.SetActive(true);
         }
     }
 

@@ -49,7 +49,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        Debug.Log("new player");
+        Debug.Log("new Photno.Player");
         base.OnPlayerEnteredRoom(newPlayer);
     }
   

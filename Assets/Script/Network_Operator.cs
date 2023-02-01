@@ -54,10 +54,11 @@ public class Network_Operator : MonoBehaviourPun {
             expe = render.expe; 
             if(expe!=null){
                 Debug.Log("ope -> expe isn't null anymore");
+                expePaused = false;
             }
         }
 
-        if(!locked){
+        if(!locked || expePaused){
             //the operator is free to move and watch how he wants
 
             transform.Translate(Vector3.forward * 0.01f * Time.fixedTime * Input.GetAxis("Vertical"));
@@ -69,11 +70,6 @@ public class Network_Operator : MonoBehaviourPun {
                 rotationX = Mathf.Clamp(rotationX, -90,90);
                 transform.rotation = Quaternion.Euler(rotationX,rotationY,0);
             }
-        }
-        
-        if(expePaused){
-            //must implement a pause in the expe
-            render.PauseExpe();
         }
 
         //else the operator can't do nothing but press buttons
@@ -103,6 +99,17 @@ public class Network_Operator : MonoBehaviourPun {
         if(Input.GetKeyDown(KeyCode.D)){
             Debug.Log(".                     D was pressed (operator)");
             render.DPressedOperator();
+        }
+
+        if(Input.GetKeyDown(KeyCode.P)){
+            Debug.Log(".                     P was pressed (operator)");
+            if(expePaused){
+                render.ResumeExpe();
+                expePaused = false;
+            } else {
+                render.PauseExpe();
+                expePaused = true;
+            }
         }
     }
 
