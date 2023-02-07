@@ -49,10 +49,16 @@ public class MoveObject : MonoBehaviourPun
             //Debug.Log("the hit object has tag : " + hit_name);
             if(hit_name == "Card"){
                 Debug.Log("hitting a Card");
+                if(interactWithUI.GetStateDown(m_pose.inputSource)){
+                    //here we wanna set the clicked card as 'moving' until the user clicks a second time
+                    //we need to get the card's ID to know its state
+                }
             }
         } /*else {
             Debug.Log("nothing hit");
         }*/
+        // I couldn't success to make this already existing code, so I implemented mine (just before this comment)
+        /*
         if(!expeRunning){
             Debug.Log("MoveObjects is updating");
             //Pointer
@@ -116,6 +122,7 @@ public class MoveObject : MonoBehaviourPun
                 Move();
             } 
         }  
+        */
     }
 
     private void Move() {

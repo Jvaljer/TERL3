@@ -54,9 +54,10 @@ public class rendering : MonoBehaviourPunCallbacks {
     public class MyCard {
         // Creation of the card 
         public GameObject goCard = null;
-        public string tag = "";
+        public string pos_tag = "";
         public PhotonView pv;
         public Transform parent;
+        public int id_on_wall;
        
 
         public MyCard(Texture2D tex, Transform mur , int i) {
@@ -65,6 +66,8 @@ public class rendering : MonoBehaviourPunCallbacks {
             parent = mur;
             pv = goCard.GetPhotonView();
             Debug.Log("MyCard created on Mur : " + parent);
+            id_on_wall = i;
+            pos_tag = "onWall";
         }
     }
 
