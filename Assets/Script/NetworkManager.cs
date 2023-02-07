@@ -10,9 +10,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("OnConnectedToMaster <- NetworkManager");
-        Debug.Log("Connected to server!!");
         base.OnConnectedToMaster();
-
+        Debug.Log("Connected to server!!");
+        
         // Create the room 
         RoomOptions roomOptions = new RoomOptions
         {   

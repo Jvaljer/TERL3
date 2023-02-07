@@ -22,6 +22,7 @@ public class Operating_Menu : MonoBehaviour {
     */
     // Start is called before the first frame update
     void Start(){
+        Debug.Log("Operating_Menu is starting");
         spawner = GameObject.Find("NetworkManager").GetComponent<Player_Spawner>();
         manager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
 

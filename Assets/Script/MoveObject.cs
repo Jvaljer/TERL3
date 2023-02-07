@@ -27,88 +27,84 @@ public class MoveObject : MonoBehaviourPun
     public Transform MurR;
 
     private string nameM = "";
+
+    private bool expeRunning = false;
+    
     // Start is called before the first frame update
     void Awake()
-    {
+    {   
+        Debug.Log("MoveObjects is awakening");
         m_pose = GetComponent<SteamVR_Behaviour_Pose>();   
     }
     // Update is called once per frame
     void Update()
     {
-         //Pointer
-        m_HasPosition = UpdatePointer();
+        if(!expeRunning){
+            Debug.Log("MoveObjects is updating");
+            //Pointer
+            m_HasPosition = UpdatePointer();
 
-        if (ob != null) // follow the mouvement
-        {
-            Debug.Log("MoveObjects -> ob != null");
+            if (ob != null) { // follow the mouvement 
+                Debug.Log("MoveObjects -> ob != null");
 
-            float x, y, z;
-            Vector3 v = MurR.localScale;
-            Vector3 p = MurR.position;
+                float x, y, z;
+                Vector3 v = MurR.localScale;
+                Vector3 p = MurR.position;
 
-            x = m_Pointer.transform.position.x / v.x;
-            y = (m_Pointer.transform.position.y - p.y) / v.y;
-            z = -0.02f;
+                x = m_Pointer.transform.position.x / v.x;
+                y = (m_Pointer.transform.position.y - p.y) / v.y;
+                z = -0.02f;
 
 
-            if (ob.transform.parent.name == "MUR L")
-            {   
-                Debug.Log("ob.transform.parent.name == 'MUR L'");
-                //change
-                if (hit.transform.name == "MUR B") { 
-                    Debug.Log("switching from L to B");
-                    nameM = hit.transform.name; 
+                if (ob.transform.parent.name == "MUR L"){   
+                    Debug.Log("ob.transform.parent.name == 'MUR L'");
+                    //change
+                    if (hit.transform.name == "MUR B") { 
+                        Debug.Log("switching from L to B");
+                        nameM = hit.transform.name; 
+                    }
+                    //move on L
+                    ob.transform.localPosition = new Vector3(m_Pointer.transform.position.z / v.x, y, z);  // /10
+                } else if (ob.transform.parent.name == "MUR B") {
+                    Debug.Log("ob.transform.parent.name == 'MUR B'");
+                    //change
+                    if (hit.transform.name == "MUR L") { 
+                        Debug.Log("switching from B to L");
+                        nameM = hit.transform.name; 
+                    }
+
+                    if (hit.transform.name == "MUR R") { 
+                        Debug.Log("switching from B to R");
+                        nameM = hit.transform.name; 
+                    }
+                    // move on B
+                    ob.transform.localPosition = new Vector3(x, y, z);
+                } else if (ob.transform.parent.name == "MUR R") {
+                    Debug.Log("ob.transform.parent.name == 'MUR R'");
+                    //change
+                    if (hit.transform.name == "MUR B") { 
+                        nameM = hit.transform.name; 
+                    }
+                    //move on R
+                    ob.transform.localPosition = new Vector3(-m_Pointer.transform.position.z / v.x, y, z);
                 }
-                //move on L
-                ob.transform.localPosition = new Vector3(m_Pointer.transform.position.z / v.x, y, z);  // /10
-            }
 
-            else if (ob.transform.parent.name == "MUR B")
-            {
-                Debug.Log("ob.transform.parent.name == 'MUR B'");
-                //change
-                if (hit.transform.name == "MUR L") { 
-                    Debug.Log("switching from B to L");
-                    nameM = hit.transform.name; 
+                //if change then rpc change wall
+                if (nameM != "") {
+                    Debug.Log("nameM != _ ");
+                    photonView.RPC("ChangeMur", Photon.Pun.RpcTarget.All, nameM, ob.GetComponent<PhotonView>().ViewID);
+                    nameM = "";
                 }
 
-                if (hit.transform.name == "MUR R") { 
-                    Debug.Log("switching from B to R");
-                    nameM = hit.transform.name; 
-                }
-                // move on B
-                ob.transform.localPosition = new Vector3(x, y, z);
-            }
-
-            else if (ob.transform.parent.name == "MUR R")
-            {
-                Debug.Log("ob.transform.parent.name == 'MUR R'");
-                //change
-                if (hit.transform.name == "MUR B") { 
-                    nameM = hit.transform.name; 
-                }
-                //move on R
-                ob.transform.localPosition = new Vector3(-m_Pointer.transform.position.z / v.x, y, z);
-            }
-
-            //if change then rpc change wall
-            if (nameM != "")
-            {
-                Debug.Log("nameM != _ ");
-                photonView.RPC("ChangeMur", Photon.Pun.RpcTarget.All, nameM, ob.GetComponent<PhotonView>().ViewID);
-                nameM = "";
-            }
-
-        }
-        if (interactWithUI.GetStateUp(m_pose.inputSource))
-        {   
-            Debug.Log("Triggering stuff");
-            Move();
-        }   
+            }   
+            if (interactWithUI.GetStateUp(m_pose.inputSource)) {   
+                Debug.Log("Triggering stuff");
+                Move();
+            } 
+        }  
     }
 
-    private void Move()
-    {
+    private void Move() {
         // Debug.Log("Move");
 
         float x, y, z;
@@ -126,24 +122,14 @@ public class MoveObject : MonoBehaviourPun
         else if(hit.transform.tag == "Card" &&  ob == null){
             hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
             ob = hit.transform.gameObject;
-        }
-        else if(hit.transform.tag == "Wall" || hit.transform.tag == "Card")
-        {
+        } else if(hit.transform.tag == "Wall" || hit.transform.tag == "Card") {
             
-            if(ob != null)
-            {
-                if(ob.transform.parent.name == "MUR L")
-                {
+            if(ob != null) {
+                if(ob.transform.parent.name == "MUR L") {
                     ob.transform.localPosition = new Vector3(m_Pointer.transform.position.z / v.x, y, z);
-                }
-       
-                else if (ob.transform.parent.name == "MUR B")
-                {
+                } else if (ob.transform.parent.name == "MUR B") {
                     ob.transform.localPosition = new Vector3(x, y, z);
-                }
-
-                else if (ob.transform.parent.name == "MUR R")
-                {
+                } else if (ob.transform.parent.name == "MUR R") {
                     ob.transform.localPosition = new Vector3(-m_Pointer.transform.position.z / v.x, y, z);
                 }
                 ob = null;
@@ -165,5 +151,13 @@ public class MoveObject : MonoBehaviourPun
             }
         }
         return false;
+    }
+
+    public void expeHasStarted(){
+        expeRunning = true;
+    }
+
+    public void expeHasEnded(){
+        expeRunning = false;
     }
 }

@@ -58,6 +58,7 @@ public class Network_Player : MonoBehaviourPun
     private string moveMode = "drag"; // "TP" | "joy" | "sync"
 
     Expe expe; // the aim is to remove this, and directly refers to ope.expe instead -> wanna centralize the expe management 
+    private MoveObject moveOb;
 
     void Start() {
         //photonView = GetComponent<PhotonView>();
@@ -91,6 +92,7 @@ public class Network_Player : MonoBehaviourPun
         
         palette.gameObject.SetActive(true); //abling / disabling the left hand palette 
 
+        moveOb = right?.GetComponent<MoveObject>();
         if (photonView.IsMine) {
             //don't show my avatar
             Debug.Log("PhotonView.IsMine (Start)" + PhotonNetwork.LocalPlayer.ActorNumber.ToString() );
@@ -105,7 +107,7 @@ public class Network_Player : MonoBehaviourPun
 
     // Update is called once per frame
     void Update() {
-        if(GameObject.Find("/Network Operator(Clone)")==null){
+        if(GameObject.Find("/Network Operator(Clone)")==null && PhotonNetwork.IsMasterClient){
             if(Input.GetKeyDown(KeyCode.Space)){
                 Debug.Log(".                Space was pressed (player one)");
                 render.spacePressedOperator();
@@ -117,6 +119,10 @@ public class Network_Player : MonoBehaviourPun
             if(Input.GetKeyDown(KeyCode.T)){
                 Debug.Log(".                T was pressed (player one)");
                 render.TPressedOperator();
+            } 
+            if(Input.GetKeyDown(KeyCode.D)){
+                Debug.Log(".                D was pressed (player one)");
+                render.DPressedOperator();
             }
         }
 
@@ -124,7 +130,12 @@ public class Network_Player : MonoBehaviourPun
             //expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
             expe = render?.expe;
             if(expe!=null){
+                //we are disabling the possibility to change the MoveMode by itself (triggering the palette)
+                palette.gameObject.SetActive(false);
+                moveOb.expeHasStarted();
                 Debug.Log("expe has been found");
+            } else {
+                moveOb.expeHasEnded();
             }
         }
 
