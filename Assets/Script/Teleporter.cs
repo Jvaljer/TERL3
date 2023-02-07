@@ -115,29 +115,18 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* 
-        //testing trigger detection
-        if(interactWithUI.GetStateDown(m_pose.inputSource) && m_HasPosition){
-            Debug.Log("trigger 1");
-        }
-        if(interactWithUI.GetLastStateDown(m_pose.inputSource) && m_HasPosition){
-            Debug.Log("trigger 2");
-        }
-
-        //testing click detection (on touchpad)
-        if(m_TeleportAction.GetStateDown(m_pose.inputSource)){
-            Debug.Log("click 1");
-        }
-        if(m_TeleportAction.GetStateUp(m_pose.inputSource)){
-            Debug.Log("click 2");
-        }
-        if(m_TeleportAction.GetLastStateDown(m_pose.inputSource)){
-            Debug.Log("click 3");
-        }
-        if(m_TeleportAction.GetState(m_pose.inputSource)){
-            Debug.Log("click 4");
-        }
-        */
+        
+        //inrecation list & detection from RIGHT controler (ray one)
+            // m_HasPosition 
+        // boolean which tells if the ray is hitting something
+            // interactWithUI.---(m_pose.inputSource) ==> the input source is the trigger
+        // GetStateDown -> when trigger is fully pressed (not released yet) & makes no diff between long/short click
+        // GetLastStateDown -> same shit
+            // m_TeleportAction.---(m_pose.inputSource) ==> the input source is the joy-click
+        // GetStateDown -> when joy is pressed (not released yet) & only returns ONE TIME
+        // GetLastStateDown -> same shit
+        // GetStateUp -> when joy is fully clicked (pressed+released) & only returns ONE TIME
+        // GetState -> while joy is pressed (not released yet) & well WHILE it's pressed
         
         /*
         if (Time.frameCount == 3 && (cam.rotation.eulerAngles.y < 315 || cam.rotation.eulerAngles.y > 45))

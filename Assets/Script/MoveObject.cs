@@ -30,15 +30,29 @@ public class MoveObject : MonoBehaviourPun
 
     private bool expeRunning = false;
     
+    private RaycastHit hit_test;
+
     // Start is called before the first frame update
-    void Awake()
-    {   
+    void Awake() {   
         Debug.Log("MoveObjects is awakening");
         m_pose = GetComponent<SteamVR_Behaviour_Pose>();   
     }
+    
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
+        //testing some features
+        Ray ray_test = new Ray(transform.position, transform.forward);
+        bool h = Physics.Raycast(ray_test,out hit_test);
+        if(h){
+            //Debug.Log("hitting on something");
+            string hit_name = hit_test.transform.tag;
+            //Debug.Log("the hit object has tag : " + hit_name);
+            if(hit_name == "Card"){
+                Debug.Log("hitting a Card");
+            }
+        } /*else {
+            Debug.Log("nothing hit");
+        }*/
         if(!expeRunning){
             Debug.Log("MoveObjects is updating");
             //Pointer
@@ -116,10 +130,9 @@ public class MoveObject : MonoBehaviourPun
         z = -0.02f;
 
 
-        if (!m_HasPosition)
+        if (!m_HasPosition){
             return;
-        
-        else if(hit.transform.tag == "Card" &&  ob == null){
+        }else if(hit.transform.tag == "Card" &&  ob == null){
             hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
             ob = hit.transform.gameObject;
         } else if(hit.transform.tag == "Wall" || hit.transform.tag == "Card") {
