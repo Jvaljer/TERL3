@@ -48,7 +48,7 @@ public class DragDrop : MonoBehaviourPun
     public GameObject player;
 
     GameObject emptyToMoveCard;
-    private bool cardSeletedForGroupMove = false;
+    private bool cardSelectedForGroupMove = false;
     private Vector3 loalscaleEmpty;
     private string moveMode = "drag";
 
@@ -58,16 +58,14 @@ public class DragDrop : MonoBehaviourPun
 
 
     // Start is called before the first frame update
-    void Awake()
-    {
-        teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();
+    void Awake(){
         m_pose = GetComponent<SteamVR_Behaviour_Pose>();
         expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
+        teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();
     }
     // Update is called once per frame
-    void Update()
-    {
-        //d�commenter pour r�activer le drag and drop
+    void Update(){
+        //décommenter pour réactiver le drag and drop
         
         if(expe == null){
             expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
@@ -99,7 +97,7 @@ public class DragDrop : MonoBehaviourPun
                 photonView.RPC("Destroyempty", Photon.Pun.RpcTarget.All, emptyToMoveCard.GetComponent<PhotonView>().ViewID);
 
                // Destroy(emptyToMoveCard);
-                cardSeletedForGroupMove = false;
+                cardSelectedForGroupMove = false;
             }
 
             isMoving = false;
@@ -273,7 +271,7 @@ public class DragDrop : MonoBehaviourPun
             if (cardList[i].transform.GetChild(0).GetComponent<Renderer>().material.name == nameR)
             {
                 nbCardToTeleport++;
-                if (cardSeletedForGroupMove == false)
+                if (cardSelectedForGroupMove == false)
                 {
                     cardList[i].GetComponent<PhotonView>().RequestOwnership();
                 }
@@ -331,7 +329,7 @@ public class DragDrop : MonoBehaviourPun
         Vector3 p = mur.position;
        
       
-        cardSeletedForGroupMove = true;
+        cardSelectedForGroupMove = true;
         if (murName != emptyToMoveCard.transform.parent.name)
         {
             photonView.RPC("ChangeMur2", Photon.Pun.RpcTarget.All, murName , emptyToMoveCard.GetComponent<PhotonView>().ViewID);
