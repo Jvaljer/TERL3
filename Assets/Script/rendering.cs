@@ -289,8 +289,10 @@ public class rendering : MonoBehaviourPunCallbacks {
     }
 
     public void CardDeletion(){
+        //first method, we get every card that is IN the list and we destroy it using the PhotonNetwork 'Destroy()' method
         for (int i=0; i<cardList.Capacity-1; i++){
             if(cardList[i] != null){
+                cardList[i].GetComponent<PhotonView>().RequestOwnership();
                 PhotonNetwork.Destroy(cardList[i]);
             }
         }
