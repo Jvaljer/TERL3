@@ -292,8 +292,16 @@ public class rendering : MonoBehaviourPunCallbacks {
         //first method, we get every card that is IN the list and we destroy it using the PhotonNetwork 'Destroy()' method
         for (int i=0; i<cardList.Capacity-1; i++){
             if(cardList[i] != null){
-                cardList[i].GetComponent<PhotonView>().RequestOwnership();
-                PhotonNetwork.Destroy(cardList[i]);
+                GameObject ob = cardList[i];
+                int ownerId = ob.GetComponent<PhotonView>().Owner.ActorNumber;
+                Debug.Log("card n°" + i + "is owned by :" + ownerId);
+                if(ownerId != PhotonNetwork.MasterClient.ActorNumber){
+                    Debug.Log("Switching Ownership");
+                    ownerId = PhotonNetwork.MasterClient.ActorNumber;
+                    ob.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient.ActorNumber);
+                    Debug.Log("now, card n°" + i + "is owned by :" + ownerId);
+                }
+                PhotonNetwork.Destroy(ob);
             }
         }
     }
@@ -304,8 +312,8 @@ public class rendering : MonoBehaviourPunCallbacks {
             CardCreation();
             demoRunning = true;
         } else if(cardsCreated && !expeEnCours){
-            CardDeletion();
             demoRunning = false;
+            CardDeletion();
         }
     } 
 
