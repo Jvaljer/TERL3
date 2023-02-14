@@ -69,30 +69,26 @@ public class DragDrop : MonoBehaviourPun
     {
         //d�commenter pour r�activer le drag and drop
         
-        if(expe == null)
-        {
+        if(expe == null){
             expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
         }
         //Pointer
         m_HasPosition = UpdatePointer();
         //m_Pointer.SetActive(m_HasPosition);
 
-        if (interactWithUI.GetStateUp(m_pose.inputSource))
-        {
-            if (wait && ob!=null)
-            {
+        if (interactWithUI.GetStateUp(m_pose.inputSource)){
+            Debug.Log("DragDrop got State Up of input");
+            if (wait && ob!=null){
                 //just a clic -> tag
               
                 player = GameObject.Find("Network Player(Clone)");
                 player.GetComponent<PhotonView>().RPC("ChangeTag", Photon.Pun.RpcTarget.AllBuffered, hit.transform.gameObject.GetComponent<PhotonView>().ViewID);
             }
 
-            if (emptyToMoveCard != null)
-            {               
+            if (emptyToMoveCard != null){               
                 int children = emptyToMoveCard.transform.childCount;
 
-                for (int i = 0; i<children; i++)
-                {
+                for (int i = 0; i<children; i++){
                     if (emptyToMoveCard.GetComponent<PhotonView>().IsMine)
                     {
                         photonView.RPC("ChangeMur", Photon.Pun.RpcTarget.All, emptyToMoveCard.transform.parent.name, emptyToMoveCard.transform.GetChild(0).GetComponent<PhotonView>().ViewID);
@@ -114,9 +110,10 @@ public class DragDrop : MonoBehaviourPun
             timer = 0;
         }
 
-        if (interactWithUI.GetStateDown(m_pose.inputSource) && m_HasPosition)
-        {
-            if (hit.transform.tag == "Card" && teleport.moveMode == "sync") {
+        if (interactWithUI.GetStateDown(m_pose.inputSource) && m_HasPosition){
+            Debug.Log("DragDrop got State Down + m_HasPosition of input");
+            if (hit.transform.tag == "Card" /*&& teleport.moveMode == "sync"*/) {
+                Debug.Log("hitting a Card");
                 //request multi user
                 hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
                 //card
@@ -125,16 +122,13 @@ public class DragDrop : MonoBehaviourPun
                 ob = hit.transform.gameObject;
                 
             }
-            else if (hit.transform.tag == "MoveControlTP")
-            {
+            else if (hit.transform.tag == "MoveControlTP") {
                 moveMode = "TP";
             }
-            else if (hit.transform.tag == "MoveControlJoy")
-            {
+            else if (hit.transform.tag == "MoveControlJoy"){
                 moveMode = "joy";
             }
-            else if (hit.transform.tag == "MoveControlDrag")
-            {
+            else if (hit.transform.tag == "MoveControlDrag"){
                 moveMode = "drag";
             }
 
