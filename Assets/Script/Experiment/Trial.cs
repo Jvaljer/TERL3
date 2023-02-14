@@ -114,7 +114,8 @@ public class Trial
     public void startTrial()
     {
         if( player == null ){
-            card.transform.GetChild(0).GetComponent<Renderer>().material = ope.none;
+            if(card.transform.GetChild(0).GetComponent<Renderer>().material == null)
+                card.transform.GetChild(0).GetComponent<Renderer>().material = ope.none;
         } else {
             card.transform.GetChild(0).GetComponent<Renderer>().material = player.none;
         }

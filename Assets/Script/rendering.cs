@@ -59,6 +59,8 @@ public class rendering : MonoBehaviourPunCallbacks {
         public Transform parent;
         public int id_on_wall;
 
+        public Transform initial_parent;
+
         public MyCard(Texture2D tex, Transform mur , int i) {
             GameObject goCard = PhotonNetwork.InstantiateRoomObject("Card", mur.position, mur.rotation, 0, null);
             goCard.GetComponent<Renderer>().material.SetTexture("_MainTex", tex);
@@ -67,9 +69,13 @@ public class rendering : MonoBehaviourPunCallbacks {
             Debug.Log("MyCard created on Mur : " + parent);
             id_on_wall = i;
             pos_tag = "onWall";
+
+            initial_parent = mur;
         }
 
         public void Reset(){
+            //must implement
+            //here we simply wanna put the card back on its original location on its initial parent.
             return;
         }
     }
