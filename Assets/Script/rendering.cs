@@ -27,6 +27,7 @@ public class rendering : MonoBehaviourPunCallbacks {
     //Card list
     public List<GameObject> cardList;
     public List<GameObject> cardListToTeleport;
+    public List<MyCard> myCardList;
 
     //List of textures
     public object[] textures;
@@ -59,6 +60,8 @@ public class rendering : MonoBehaviourPunCallbacks {
         public Transform parent;
         public int id_on_wall;
        
+        public Transform origin_parent;
+        public Vector3 initial_pos;
 
         public MyCard(Texture2D tex, Transform mur , int i) {
             GameObject goCard = PhotonNetwork.InstantiateRoomObject("Card", mur.position, mur.rotation, 0, null);
@@ -68,6 +71,9 @@ public class rendering : MonoBehaviourPunCallbacks {
             Debug.Log("MyCard created on Mur : " + parent);
             id_on_wall = i;
             pos_tag = "onWall";
+
+            origin_parent = mur;
+            initial_pos = goCard.transform.position;
         }
     }
 
@@ -130,7 +136,7 @@ public class rendering : MonoBehaviourPunCallbacks {
                     pos = i - 2 * cardPerWall;
                 }
                 MyCard c = new MyCard((Texture2D)textures[i], mur, i);
-                photonView.RPC("addListCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID);
+                photonView.RPC("addListCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, c);
                 c.pv.RPC("LoadCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, mur.GetComponent<PhotonView>().ViewID, pos, i);
             }
             else {
@@ -143,8 +149,9 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     //Add card to the list of card
-    void addListCard(int OB) {
+    void addListCard(int OB, MyCard c) {
         cardList.Add(PhotonView.Find(OB).gameObject);
+        myCardList.Add(c);
     }
 
     [PunRPC]
@@ -256,23 +263,28 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     public void spacePressedOperator() {
         if (!expeEnCours){
-            if(demoRunning){
-                //wanna reset the cards & then let all recreate
-                demoRunning = false;
-                CardDeletion();
-            } 
             bool b_;
             if(GameObject.Find("Network Operator(Clone)")==null){
                 b_ = false;
             } else {
                 b_ = true;
             }
-            Cards();
-            CardCreation();
-            photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb, b_);
+            if(demoRunning){
+                //wanna reset the cards & then let all recreate
+                demoRunning = false;
+                //CardDeletion(); 
+                SetCardsInvisible();
+                ResetCards();
+                photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb, b_);
+                SetCardsVisible();
+            } else {
+                Cards();
+                CardCreation();
+                photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb, b_);
             
-            print("Expe Started succesfully !");
-            expeEnCours = true;
+                print("Expe Started succesfully !");
+                expeEnCours = true;
+            }
         } else if (expeEnCours && !trialEnCours) {
             Debug.Log("expeEnCour && !trialEnCours ->");
             photonView.RPC("nextTrial", Photon.Pun.RpcTarget.AllBuffered);
@@ -289,7 +301,7 @@ public class rendering : MonoBehaviourPunCallbacks {
     }
 
     public void CardDeletion(){
-        //first method, we get every card that is IN the list and we destroy it using the PhotonNetwork 'Destroy()' method
+        //we get every card that is IN the list and we destroy it using the PhotonNetwork 'Destroy()' method
         for (int i=0; i<cardList.Capacity-1; i++){
             if(cardList[i] != null){
                 GameObject ob = cardList[i];
@@ -313,7 +325,8 @@ public class rendering : MonoBehaviourPunCallbacks {
             demoRunning = true;
         } else if(cardsCreated && !expeEnCours){
             demoRunning = false;
-            CardDeletion();
+            //CardDeletion();
+            SetCardsInvisible();
         }
     } 
 
@@ -327,5 +340,27 @@ public class rendering : MonoBehaviourPunCallbacks {
         Debug.Log("render -> Resuming the current expe");
         expePaused = expe.paused;
         expe.Resume();
+    }
+
+    public void SetCardsInvisible(){
+        //here we wanna reset all cards to their initial position
+        for (int i=0; i<cardList.Capacity-1; i++){
+            GameObject ob = cardList[i];
+            photonView.RPC("DestroyCard", Photon.Pun.RpcTarget.All, ob.GetComponent<PhotonView>().ViewID, 0);
+        }
+    }
+
+    public void SetCardsVisible(){
+        for (int i=0; i<cardList.Capacity-1; i++){
+            GameObject ob = cardList[i];
+            photonView.RPC("UndoCard", Photon.Pun.RpcTarget.All, ob.GetComponent<PhotonView>().ViewID, 0);
+        }
+    }
+
+    public void ResetCards(){
+        for (int i=0; i<cardList.Capacity-1; i++){
+            GameObject ob = cardList[i];
+
+        }
     }
 }
