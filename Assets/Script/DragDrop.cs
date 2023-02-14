@@ -150,7 +150,7 @@ public class DragDrop : MonoBehaviourPun
             }
 
             //destroy a card a remove the tag
-            if (ob != null && UpdatePointer()  &&  hit.transform.tag == "trash"){
+            if (ob != null && UpdatePointer() && hit.transform.tag == "trash"){
                 //Debug.Log("destroy");
                 photonView.GetComponent<PhotonView>().RPC("AddObUndo", Photon.Pun.RpcTarget.All, ob.GetComponent<PhotonView>().ViewID);
                 player = GameObject.Find("Network Player(Clone)");
@@ -408,14 +408,13 @@ public class DragDrop : MonoBehaviourPun
         }
     }
 
-    private bool UpdatePointer()
-    {
+    private bool UpdatePointer() {
         Ray ray = new Ray(transform.position, transform.forward);
 
         //check if there is a hit
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.transform.tag == "MoveControlJoy" || hit.transform.tag == "MoveControlDrag" || hit.transform.tag == "MoveControlTP" || hit.transform.tag == "Tp" || hit.transform.tag == "TpLimit" || hit.transform.tag == "Card" || hit.transform.tag == "Wall" || hit.transform.tag == "tag")
+            if (hit.transform.tag == "MoveControlJoy" || hit.transform.tag == "MoveControlDrag" || hit.transform.tag == "MoveControlTP" || hit.transform.tag == "Tp" || hit.transform.tag == "TpLimit" || hit.transform.tag == "Card" || hit.transform.tag == "Wall" || hit.transform.tag == "tag" || hit.transform.tag == "trash")
             {
                 m_Pointer.transform.position = hit.point;
                 return true;

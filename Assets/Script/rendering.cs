@@ -289,8 +289,10 @@ public class rendering : MonoBehaviourPunCallbacks {
     }
 
     public void CardDeletion(){
-        for(int i=0; i<cardList.Capacity; i++){
-            DestroyCard(i,0);
+        for (int i=0; i<cardList.Capacity-1; i++){
+            if(cardList[i] != null){
+                PhotonNetwork.Destroy(cardList[i]);
+            }
         }
     }
 
