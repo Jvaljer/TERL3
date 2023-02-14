@@ -53,7 +53,7 @@ public class Expe {
         Debug.Log("group : " + group  +"   participant : " + part + "   trialNb : " + startNb );
 
         teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();
-        render = GameObject.Find("Network Operator(Clone)").GetComponent<Network_Operator>().render;
+        render = GameObject.Find("Network Operator(Clone)")?.GetComponent<Network_Operator>().render;
 
         string mydate = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
         //  Debug.Log("Goupe: " + trial.group + );

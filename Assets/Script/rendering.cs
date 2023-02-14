@@ -259,6 +259,7 @@ public class rendering : MonoBehaviourPunCallbacks {
             if(demoRunning){
                 //wanna reset the cards & then let all recreate
                 demoRunning = false;
+                CardDeletion();
             } 
             bool b_;
             if(GameObject.Find("Network Operator(Clone)")==null){
@@ -288,8 +289,9 @@ public class rendering : MonoBehaviourPunCallbacks {
     }
 
     public void CardDeletion(){
-        cardList.Clear();
-        cardsCreated = false;
+        for(int i=0; i<cardList.Capacity; i++){
+            DestroyCard(i,0);
+        }
     }
 
     public void DPressedOperator(){

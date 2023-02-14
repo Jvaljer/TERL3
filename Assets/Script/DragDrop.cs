@@ -55,7 +55,7 @@ public class DragDrop : MonoBehaviourPun
     Teleporter teleport;
 
     Expe expe;
-
+    private bool enabled = true;
 
     // Start is called before the first frame update
     void Awake(){
@@ -69,160 +69,155 @@ public class DragDrop : MonoBehaviourPun
         
         if(expe == null){
             expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
+            if(expe != null){
+                enabled = false;
+            }
         }
-        //Pointer
-        m_HasPosition = UpdatePointer();
-        //m_Pointer.SetActive(m_HasPosition);
 
-        if (interactWithUI.GetStateUp(m_pose.inputSource)){
-            Debug.Log("DragDrop got State Up of input");
-            if (wait && ob!=null){
-                //just a clic -> tag
+        if(enabled){
+            //Pointer
+            m_HasPosition = UpdatePointer();
+            //m_Pointer.SetActive(m_HasPosition);
+
+            if (interactWithUI.GetStateUp(m_pose.inputSource)){
+                Debug.Log("DragDrop got State Up of input");
+                if (wait && ob!=null){
+                    //just a clic -> tag
               
-                player = GameObject.Find("Network Player(Clone)");
-                player.GetComponent<PhotonView>().RPC("ChangeTag", Photon.Pun.RpcTarget.AllBuffered, hit.transform.gameObject.GetComponent<PhotonView>().ViewID);
-            }
-
-            if (emptyToMoveCard != null){               
-                int children = emptyToMoveCard.transform.childCount;
-
-                for (int i = 0; i<children; i++){
-                    if (emptyToMoveCard.GetComponent<PhotonView>().IsMine)
-                    {
-                        photonView.RPC("ChangeMur", Photon.Pun.RpcTarget.All, emptyToMoveCard.transform.parent.name, emptyToMoveCard.transform.GetChild(0).GetComponent<PhotonView>().ViewID);
-                        //  emptyToMoveCard.transform.GetChild(0).transform.parent = emptyToMoveCard.transform.parent;
-                    }
-
+                    player = GameObject.Find("Network Player(Clone)");
+                    player.GetComponent<PhotonView>().RPC("ChangeTag", Photon.Pun.RpcTarget.AllBuffered, hit.transform.gameObject.GetComponent<PhotonView>().ViewID);
                 }
-                photonView.RPC("Destroyempty", Photon.Pun.RpcTarget.All, emptyToMoveCard.GetComponent<PhotonView>().ViewID);
 
-               // Destroy(emptyToMoveCard);
-                cardSelectedForGroupMove = false;
+                if (emptyToMoveCard != null){               
+                    int children = emptyToMoveCard.transform.childCount;
+
+                    for (int i = 0; i<children; i++){
+                        if (emptyToMoveCard.GetComponent<PhotonView>().IsMine) {
+                            photonView.RPC("ChangeMur", Photon.Pun.RpcTarget.All, emptyToMoveCard.transform.parent.name, emptyToMoveCard.transform.GetChild(0).GetComponent<PhotonView>().ViewID);
+                            //  emptyToMoveCard.transform.GetChild(0).transform.parent = emptyToMoveCard.transform.parent;
+                        }
+
+                    }
+                    photonView.RPC("Destroyempty", Photon.Pun.RpcTarget.All, emptyToMoveCard.GetComponent<PhotonView>().ViewID);
+
+                    // Destroy(emptyToMoveCard);
+                    cardSelectedForGroupMove = false;
+                }
+
+                isMoving = false;
+                ob = null;
+                wait = false;
+                longclic = false;
+                //Debug.Log("reset");
+                timer = 0;
             }
 
-            isMoving = false;
-            ob = null;
-            wait = false;
-            longclic = false;
-            //Debug.Log("reset");
-            timer = 0;
-        }
-
-        if (interactWithUI.GetStateDown(m_pose.inputSource) && m_HasPosition){
-            Debug.Log("DragDrop got State Down + m_HasPosition of input");
-            if (hit.transform.tag == "Card" /*&& teleport.moveMode == "sync"*/) {
-                Debug.Log("hitting a Card");
-                //request multi user
-                hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
-                //card
-                trialStartContraint = true;
-                StartCoroutine(switchContraint());
-                ob = hit.transform.gameObject;
+            if (interactWithUI.GetStateDown(m_pose.inputSource) && m_HasPosition){
+                Debug.Log("DragDrop got State Down + m_HasPosition of input");
+                if (hit.transform.tag == "Card" /*&& teleport.moveMode == "sync"*/) {
+                    Debug.Log("hitting a Card");
+                    //request multi user
+                    hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
+                    //card
+                    trialStartContraint = true;
+                    StartCoroutine(switchContraint());
+                    ob = hit.transform.gameObject;
                 
-            }
-            else if (hit.transform.tag == "MoveControlTP") {
-                moveMode = "TP";
-            }
-            else if (hit.transform.tag == "MoveControlJoy"){
-                moveMode = "joy";
-            }
-            else if (hit.transform.tag == "MoveControlDrag"){
-                moveMode = "drag";
+                }
+                else if (hit.transform.tag == "MoveControlTP") {
+                    moveMode = "TP";
+                }
+                else if (hit.transform.tag == "MoveControlJoy"){
+                    moveMode = "joy";
+                }
+                else if (hit.transform.tag == "MoveControlDrag"){
+                    moveMode = "drag";
+                }
+
+                coordClic = hit.transform.position;
+                forwardClic = transform.forward;
+                //start waiting
+                wait = true;
+                timer = Time.time;
+
             }
 
-            coordClic = hit.transform.position;
-            forwardClic = transform.forward;
-            //start waiting
-            wait = true;
-            timer = Time.time;
+            //move more than 2* -> moving
+            if (ob != null && wait && Vector3.Angle(forwardClic, transform.forward) > 2) {
+                //expe.curentTrial.incNbDragCard();
+                isMoving = true;
+                wait = false;
+            }
 
-        }
-        
-        if (ob != null && wait && Vector3.Angle(forwardClic, transform.forward) > 2) //move more than 2* -> moving
-        {
-            //expe.curentTrial.incNbDragCard();
-            isMoving = true;
-            wait = false;
-        }
+            //destroy a card a remove the tag
+            if (ob != null && UpdatePointer()  &&  hit.transform.tag == "trash"){
+                //Debug.Log("destroy");
+                photonView.GetComponent<PhotonView>().RPC("AddObUndo", Photon.Pun.RpcTarget.All, ob.GetComponent<PhotonView>().ViewID);
+                player = GameObject.Find("Network Player(Clone)");
+                player.GetComponent<PhotonView>().RPC("removeTag", Photon.Pun.RpcTarget.AllBuffered, ob.GetComponent<PhotonView>().ViewID);
 
-        //destroy a card a remove the tag
-        if (ob != null && UpdatePointer()  &&  hit.transform.tag == "trash")
-        {
-            //Debug.Log("destroy");
-            photonView.GetComponent<PhotonView>().RPC("AddObUndo", Photon.Pun.RpcTarget.All, ob.GetComponent<PhotonView>().ViewID);
-            player = GameObject.Find("Network Player(Clone)");
-            player.GetComponent<PhotonView>().RPC("removeTag", Photon.Pun.RpcTarget.AllBuffered, ob.GetComponent<PhotonView>().ViewID);
-
-            salle = GameObject.Find("Salle");
-            salle.GetComponent<PhotonView>().RPC("DestroyCard", Photon.Pun.RpcTarget.All, ob.GetComponent<PhotonView>().ViewID, obUndo.Count);
+                salle = GameObject.Find("Salle");
+                salle.GetComponent<PhotonView>().RPC("DestroyCard", Photon.Pun.RpcTarget.All, ob.GetComponent<PhotonView>().ViewID, obUndo.Count);
             
-            ob = null;
+                ob = null;
 
-            //expe.curentTrial.incNbDestroyCard();
-
-        }
+                //expe.curentTrial.incNbDestroyCard();
+            }
     
-        //undo the last destroy action
-        if (obUndo != null && UpdatePointer() && hit.transform.tag == "trash" && interactWithUI.GetStateDown(m_pose.inputSource))
-        {
-            Debug.Log("undo");
-            GameObject temp = obUndo[obUndo.Count-1];
-            salle = GameObject.Find("Salle");
-            salle.GetComponent<PhotonView>().RPC("UndoCard", Photon.Pun.RpcTarget.All, temp.GetComponent<PhotonView>().ViewID , obUndo.Count);
-            photonView.GetComponent<PhotonView>().RPC("RemoveObUndo", Photon.Pun.RpcTarget.All, temp.GetComponent<PhotonView>().ViewID);
+            //undo the last destroy action
+            if (obUndo != null && UpdatePointer() && hit.transform.tag == "trash" && interactWithUI.GetStateDown(m_pose.inputSource)){
+                Debug.Log("undo");
+                GameObject temp = obUndo[obUndo.Count-1];
+                salle = GameObject.Find("Salle");
+                salle.GetComponent<PhotonView>().RPC("UndoCard", Photon.Pun.RpcTarget.All, temp.GetComponent<PhotonView>().ViewID , obUndo.Count);
+                photonView.GetComponent<PhotonView>().RPC("RemoveObUndo", Photon.Pun.RpcTarget.All, temp.GetComponent<PhotonView>().ViewID);
 
-            //expe.curentTrial.incNbUndoCard();
-        }
+                //expe.curentTrial.incNbUndoCard();
+            }
       
 
-        if (wait)
-        {
-            if (Time.time - timer > 1.5) //  after 1.5s it is long clic
-            {
-               longclic = true;
-               wait = false;
-              Debug.Log("long clic");
+            if (wait){
+                //  after 1.5s it is long clic
+                if (Time.time - timer > 1.5) {
+                    longclic = true;
+                    wait = false;
+                    Debug.Log("long clic");
+                }
             }
-        }
 
-        //long clic -> move cards with tag 
-        //Debug.Log(!modeMove && longclic && UpdatePointer() && (hit.transform.tag == "Wall" || hit.transform.tag == "Card") );
-        if (longclic && UpdatePointer() && (hit.transform.tag == "Wall" || hit.transform.tag == "Card"))
-        {
-            string namewall = "";
-            if (hit.transform.tag == "Card")
-            {
-                if (hit.transform.parent.tag != "Wall")
-                {
+            //long clic -> move cards with tag 
+            //Debug.Log(!modeMove && longclic && UpdatePointer() && (hit.transform.tag == "Wall" || hit.transform.tag == "Card") );
+            if (longclic && UpdatePointer() && (hit.transform.tag == "Wall" || hit.transform.tag == "Card")){
+                string namewall = "";
+                if (hit.transform.tag == "Card"){
+                    if (hit.transform.parent.tag != "Wall") {
                     namewall = hit.transform.parent.parent.name; // we want the wall and not the empty
+                    } else {
+                        namewall = hit.transform.parent.name;
+                    }
+                } else {
+                    namewall = hit.transform.name;
                 }
-                else
-                {
-                    namewall = hit.transform.parent.name;
-                }
-            }
-            else
-            {
-                namewall = hit.transform.name;
-            }
-            salle = GameObject.Find("Salle");
-            player = GameObject.Find("Network Player(Clone)");
+                salle = GameObject.Find("Salle");
+                player = GameObject.Find("Network Player(Clone)");
 
-            if (emptyToMoveCard == null){
-                emptyToMoveCard = PhotonNetwork.Instantiate("emptyToMoveCard", transform.position, transform.rotation);
-                //emptyToMoveCard = new GameObject("TempEmptyToMove");
-                photonView.RPC("Initempty", Photon.Pun.RpcTarget.All, player.GetComponent<Network_Player>().nameR, namewall, emptyToMoveCard.GetComponent<PhotonView>().ViewID);
-                //expe.curentTrial.incNbGroupCardTP(namewall);
-            }
-           TeleportCard(player.GetComponent<Network_Player>().nameR, namewall);
-            // photonView.RPC("TeleportCard", Photon.Pun.RpcTarget.All, player.GetComponent<Network_Player>().nameR, namewall);
+                if (emptyToMoveCard == null){
+                    emptyToMoveCard = PhotonNetwork.Instantiate("emptyToMoveCard", transform.position, transform.rotation);
+                    //emptyToMoveCard = new GameObject("TempEmptyToMove");
+                    photonView.RPC("Initempty", Photon.Pun.RpcTarget.All, player.GetComponent<Network_Player>().nameR, namewall, emptyToMoveCard.GetComponent<PhotonView>().ViewID);
+                    //expe.curentTrial.incNbGroupCardTP(namewall);
+                }
+                TeleportCard(player.GetComponent<Network_Player>().nameR, namewall);
+                // photonView.RPC("TeleportCard", Photon.Pun.RpcTarget.All, player.GetComponent<Network_Player>().nameR, namewall);
 
            
+            }
+            if (interactWithUI.GetState(m_pose.inputSource)) {
+                Move();
+            }
         }
-        if (interactWithUI.GetState(m_pose.inputSource))
-        {
-            Move();
-        }
+        
+        
     }
 
 
