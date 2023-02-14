@@ -139,7 +139,7 @@ public class DragDrop : MonoBehaviourPun
             timer = Time.time;
 
         }
-        /*
+        
         if (ob != null && wait && Vector3.Angle(forwardClic, transform.forward) > 2) //move more than 2* -> moving
         {
             //expe.curentTrial.incNbDragCard();
@@ -224,7 +224,7 @@ public class DragDrop : MonoBehaviourPun
         if (interactWithUI.GetState(m_pose.inputSource))
         {
             Move();
-        }*/
+        }
     }
 
 
