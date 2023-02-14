@@ -117,7 +117,9 @@ public class DragDrop : MonoBehaviourPun
                 if (hit.transform.tag == "Card" /*&& teleport.moveMode == "sync"*/) {
                     Debug.Log("hitting a Card");
                     //request multi user
-                    hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
+
+                    //hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
+                    
                     //card
                     trialStartContraint = true;
                     StartCoroutine(switchContraint());
