@@ -118,8 +118,8 @@ public class DragDrop : MonoBehaviourPun
                     Debug.Log("hitting a Card");
                     //request multi user
 
-                    //hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
-                    
+                    hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
+
                     //card
                     trialStartContraint = true;
                     StartCoroutine(switchContraint());

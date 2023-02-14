@@ -293,7 +293,6 @@ public class rendering : MonoBehaviourPunCallbacks {
         for (int i=0; i<cardList.Capacity-1; i++){
             if(cardList[i] != null){
                 GameObject ob = cardList[i];
-                /*
                 int ownerId = ob.GetComponent<PhotonView>().Owner.ActorNumber;
                 Debug.Log("card n°" + i + "is owned by :" + ownerId);
                 if(ownerId != PhotonNetwork.MasterClient.ActorNumber){
@@ -302,7 +301,6 @@ public class rendering : MonoBehaviourPunCallbacks {
                     ob.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient.ActorNumber);
                     Debug.Log("now, card n°" + i + "is owned by :" + ownerId);
                 }
-                */
                 PhotonNetwork.Destroy(ob);
             }
         }
