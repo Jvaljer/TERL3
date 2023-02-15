@@ -117,28 +117,38 @@ public class rendering : MonoBehaviourPunCallbacks {
     }
 
     public void CardCreation() { 
-        
         Debug.Log("CardCreation with MasterClient : " + PhotonNetwork.IsMasterClient);
-
 
         Transform mur;
         int pos;
+        string wall;
         for (int i = 0 ; i < cardPerWall*3 ; i++) {
+            Debug.Log("     i = " + i);
             if (i < textures.Length) {
+                Debug.Log("     i<textures.length (" + i + "<" + textures.Length + ")");
                 // Slit the card over the 3 walls
                 if (i < cardPerWall) {
+                    Debug.Log("         i < cardPerWall (" + i + "<" + cardPerWall + ")");
                     mur = MurL;
+                    wall = "L";
                     pos = i;
                 }
                 else if (i < 2 * cardPerWall) {
+                    Debug.Log("         i < 2*cardPerWall (" + i + "<" + 2*cardPerWall + ")");
                     mur = MurB;
+                    wall = "B";
                     pos = i - cardPerWall;
                 }
                 else {
+                    Debug.Log("         else (" + i + "," + cardPerWall + ")");
                     mur = MurR;
+                    wall = "R";
                     pos = i - 2 * cardPerWall;
                 }
+
+                Debug.Log("creating MyCard c : { textures[" + i + "] , Mur" + wall + " , id_on_wall : " + i + "}");
                 MyCard c = new MyCard((Texture2D)textures[i], mur, i);
+                Debug.Log("adding the card to the list");
                 photonView.RPC("addListCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID);
                 c.pv.RPC("LoadCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, mur.GetComponent<PhotonView>().ViewID, pos, i);
             }
@@ -305,21 +315,26 @@ public class rendering : MonoBehaviourPunCallbacks {
     }
 
     public void CardDeletion(){
+
         //we get every card that is IN the list and we destroy it using the PhotonNetwork 'Destroy()' method
-        for (int i=0; i<cardList.Capacity-1; i++){
+        for (int i=0; i<cardList.Capacity; i++){
             if(cardList[i] != null){
                 GameObject ob = cardList[i];
                 int ownerId = ob.GetComponent<PhotonView>().Owner.ActorNumber;
-                Debug.Log("card n°" + i + "is owned by :" + ownerId);
+                //Debug.Log("card n°" + i + "is owned by :" + ownerId);
                 if(ownerId != PhotonNetwork.MasterClient.ActorNumber){
-                    Debug.Log("Switching Ownership");
+                    Debug.Log("card n°" + i + "is owned by :" + ownerId);
+                    //Debug.Log("Switching Ownership");
                     ownerId = PhotonNetwork.MasterClient.ActorNumber;
                     ob.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient.ActorNumber);
-                    Debug.Log("now, card n°" + i + "is owned by :" + ownerId);
+                    //Debug.Log("now, card n°" + i + "is owned by :" + ownerId);
                 }
+                Debug.Log("Destroying card n°" + i);
                 PhotonNetwork.Destroy(ob);
             }
         }
+        cardList.Clear();
+        Debug.Log("all cards well destroyed");
     }
 
     public void DPressedOperator(){
