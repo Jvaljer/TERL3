@@ -115,31 +115,6 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        //inrecation list & detection from RIGHT controler (ray one)
-            // m_HasPosition 
-        // boolean which tells if the ray is hitting something
-            // interactWithUI.---(m_pose.inputSource) ==> the input source is the trigger
-        // GetStateDown -> when trigger is fully pressed (not released yet) & makes no diff between long/short click
-        // GetLastStateDown -> same shit
-            // m_TeleportAction.---(m_pose.inputSource) ==> the input source is the joy-click
-        // GetStateDown -> when joy is pressed (not released yet) & only returns ONE TIME
-        // GetLastStateDown -> same shit
-        // GetStateUp -> when joy is fully clicked (pressed+released) & only returns ONE TIME
-        // GetState -> while joy is pressed (not released yet) & well WHILE it's pressed
-        
-        /*
-        if (Time.frameCount == 3 && (cam.rotation.eulerAngles.y < 315 || cam.rotation.eulerAngles.y > 45))
-        {
-            initialCamRotationY = cam.rotation.eulerAngles.y;
-            Debug.Log("Camera initial rotation");
-            cameraRig.RotateAround(cam.position, Vector3.up, initialCamRotationY);
-            CameraRotator.RotateAround(cam.position, Vector3.up, -initialCamRotationY);
-            ControllerRotator.RotateAround(cam.position, Vector3.up, -initialCamRotationY);
-            Debug.Log("Camera:"+CameraRotator.rotation.eulerAngles.y+" Ctrl:"+ControllerRotator.rotation.eulerAngles.y);
-            cameraRig.RotateAround(cam.position, Vector3.up, -initialCamRotationY);
-        }
-        */
         if (expe == null)
         {
             expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
