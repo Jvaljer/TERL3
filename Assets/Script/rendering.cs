@@ -47,6 +47,8 @@ public class rendering : MonoBehaviourPunCallbacks {
     public Expe expe;
 
     public bool demoRunning = false;
+    public bool demoHasBeenCreated = false;
+    public bool demoHasBeenDestroyed = false;
     public bool cardsCreated = false;
 
     public bool expePaused = false;
@@ -123,33 +125,34 @@ public class rendering : MonoBehaviourPunCallbacks {
         int pos;
         string wall;
         for (int i = 0 ; i < cardPerWall*3 ; i++) {
-            Debug.Log("     i = " + i);
+            //Debug.Log("     i = " + i);
             if (i < textures.Length) {
-                Debug.Log("     i<textures.length (" + i + "<" + textures.Length + ")");
+                //Debug.Log("     i<textures.length (" + i + "<" + textures.Length + ")");
                 // Slit the card over the 3 walls
                 if (i < cardPerWall) {
-                    Debug.Log("         i < cardPerWall (" + i + "<" + cardPerWall + ")");
+                    //Debug.Log("         i < cardPerWall (" + i + "<" + cardPerWall + ")");
                     mur = MurL;
                     wall = "L";
                     pos = i;
                 }
                 else if (i < 2 * cardPerWall) {
-                    Debug.Log("         i < 2*cardPerWall (" + i + "<" + 2*cardPerWall + ")");
+                    //Debug.Log("         i < 2*cardPerWall (" + i + "<" + 2*cardPerWall + ")");
                     mur = MurB;
                     wall = "B";
                     pos = i - cardPerWall;
                 }
                 else {
-                    Debug.Log("         else (" + i + "," + cardPerWall + ")");
+                    //Debug.Log("         else (" + i + "," + cardPerWall + ")");
                     mur = MurR;
                     wall = "R";
                     pos = i - 2 * cardPerWall;
                 }
 
-                Debug.Log("creating MyCard c : { textures[" + i + "] , Mur" + wall + " , id_on_wall : " + i + "}");
+                //Debug.Log("creating MyCard c : { textures[" + i + "] , Mur" + wall + " , id_on_wall : " + i + "}");
                 MyCard c = new MyCard((Texture2D)textures[i], mur, i);
-                Debug.Log("adding the card to the list");
-                photonView.RPC("addListCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID);
+                //Debug.Log("adding the card to the list");
+                //Debug.Log("cardList -> len : " + cardList.Capacity);
+                photonView.RPC("addListCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, demoHasBeenCreated);
                 c.pv.RPC("LoadCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, mur.GetComponent<PhotonView>().ViewID, pos, i);
             }
             else {
@@ -162,8 +165,16 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     //Add card to the list of card
-    void addListCard(int OB) {
-        cardList.Add(PhotonView.Find(OB).gameObject);
+    void addListCard(int OB, bool b_) {
+        if(b_){
+            for(int i=0; i<60; i++){
+                if(cardList[i]==null){
+                    cardList[i] = PhotonView.Find(OB).gameObject;
+                }
+            }
+        } else {
+            cardList.Add(PhotonView.Find(OB).gameObject);
+        }
     }
 
     [PunRPC]
@@ -281,7 +292,7 @@ public class rendering : MonoBehaviourPunCallbacks {
             } else {
                 b_ = true;
             }
-            if(demoRunning){
+            if(demoRunning || demoHasBeenCreated){
                 //wanna reset the cards & then let all recreate
                 demoRunning = false;
                 CardDeletion(); 
@@ -315,9 +326,10 @@ public class rendering : MonoBehaviourPunCallbacks {
     }
 
     public void CardDeletion(){
-
         //we get every card that is IN the list and we destroy it using the PhotonNetwork 'Destroy()' method
-        for (int i=0; i<cardList.Capacity; i++){
+        Debug.Log("cardList.Capacity -> " + cardList.Capacity);
+        
+        for (int i=0; i<60; i++){
             if(cardList[i] != null){
                 GameObject ob = cardList[i];
                 int ownerId = ob.GetComponent<PhotonView>().Owner.ActorNumber;
@@ -331,10 +343,12 @@ public class rendering : MonoBehaviourPunCallbacks {
                 }
                 Debug.Log("Destroying card n°" + i);
                 PhotonNetwork.Destroy(ob);
+                if(cardList[i] == null){
+                    Debug.Log("Well Destroyed n°"+i);
+                }
             }
         }
-        cardList.Clear();
-        Debug.Log("all cards well destroyed");
+    Debug.Log("all cards well destroyed");
     }
 
     public void DPressedOperator(){
@@ -342,9 +356,11 @@ public class rendering : MonoBehaviourPunCallbacks {
             Cards();
             CardCreation();
             demoRunning = true;
+            demoHasBeenCreated = true;
         } else if(cardsCreated && !expeEnCours){
             demoRunning = false;
             CardDeletion();
+            demoHasBeenDestroyed = true;
             //ResetCards();
         }
     } 
