@@ -110,6 +110,11 @@ public class Network_Operator : MonoBehaviourPun {
                 render.PauseExpe();
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.I)){
+            Debug.Log(".                     I was pressed (operator)");
+            render.IPressedOperator();
+        }
     }
 
     private bool isMouseOffScreen(){

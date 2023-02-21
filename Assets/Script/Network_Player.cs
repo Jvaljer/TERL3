@@ -323,5 +323,9 @@ public class Network_Player : MonoBehaviourPun
             Debug.Log(".                D was pressed (player one)");
             render.DPressedOperator();
         }
+        if(Input.GetKeyDown(KeyCode.I)){
+            Debug.Log(".                I was pressed (player one)");
+            render.IPressedOperator();
+        }
     }
 }

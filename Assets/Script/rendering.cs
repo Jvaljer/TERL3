@@ -50,6 +50,7 @@ public class rendering : MonoBehaviourPunCallbacks {
     public bool demoHasBeenCreated = false;
     public bool demoHasBeenDestroyed = false;
     public bool cardsCreated = false;
+    public bool cardsDestroyed = false;
 
     public bool expePaused = false;
 
@@ -68,7 +69,7 @@ public class rendering : MonoBehaviourPunCallbacks {
             goCard.GetComponent<Renderer>().material.SetTexture("_MainTex", tex);
             parent = mur;
             pv = goCard.GetPhotonView();
-            Debug.Log("MyCard created on Mur : " + parent);
+            //Debug.Log("MyCard created on Mur : " + parent);
             id_on_wall = i;
             pos_tag = "onWall";
 
@@ -159,7 +160,6 @@ public class rendering : MonoBehaviourPunCallbacks {
                 break;
             }
         }
-
         cardsCreated = true;
     }
 
@@ -341,30 +341,44 @@ public class rendering : MonoBehaviourPunCallbacks {
                     ob.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient.ActorNumber);
                     //Debug.Log("now, card n°" + i + "is owned by :" + ownerId);
                 }
-                Debug.Log("Destroying card n°" + i);
+                //Debug.Log("Destroying card n°" + i);
                 PhotonNetwork.Destroy(ob);
-                if(cardList[i] == null){
+                /*if(cardList[i] == null){
                     Debug.Log("Well Destroyed n°"+i);
-                }
+                } */
             }
         }
-    Debug.Log("all cards well destroyed");
+        Debug.Log("all cards well destroyed");
+        cardsDestroyed = true;
     }
 
     public void DPressedOperator(){
-        if(!demoRunning && !expeEnCours){
+
+        if(!demoHasBeenCreated){
+            Debug.Log("Initializing demo");
             Cards();
             CardCreation();
-            demoRunning = true;
             demoHasBeenCreated = true;
-        } else if(cardsCreated && !expeEnCours){
-            demoRunning = false;
+            demoRunning = true;
+        } else if(demoRunning && !demoHasBeenDestroyed){
+            Debug.Log("initial Destruction of demo");
             CardDeletion();
             demoHasBeenDestroyed = true;
-            //ResetCards();
+            demoRunning = false;
+        } else if(!demoRunning && demoHasBeenCreated){
+            Debug.Log("casual demo start");
+            CardCreation();
+            demoRunning = true;
+        } else if(demoRunning && demoHasBeenDestroyed){
+            Debug.Log("casual demo stop");
+            CardDeletion();
+            demoRunning = false;
         }
     } 
 
+    public void IPressedOperator(){
+        Debug.Log("current state : demoRunning(" + demoRunning + ") - demoHasBeenCreated(" + demoHasBeenCreated + ") - expeEnCours(" + expeEnCours + ") - demoHasBeenDestroyed(" + demoHasBeenDestroyed + ") - cardsCreated(" + cardsCreated + ")");
+    }
     public void PauseExpe(){
         Debug.Log("render -> Pausing the current expe");
         expePaused = expe.paused;
