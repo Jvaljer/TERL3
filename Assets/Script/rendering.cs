@@ -320,7 +320,7 @@ public class rendering : MonoBehaviourPunCallbacks {
     public void TPressedOperator() {
         expe.teleport.photonView.RPC("tpToOther", Photon.Pun.RpcTarget.Others);
     }
-
+    
     public void CardDeletion(){
         //we get every card that is IN the list and we destroy it using the PhotonNetwork 'Destroy()' method
         Debug.Log("cardList.Capacity -> " + cardList.Capacity);
@@ -414,7 +414,7 @@ public class rendering : MonoBehaviourPunCallbacks {
                 GameObject ob = cardList[i];
                 PhotonView ob_pv = ob.GetComponent<PhotonView>();
                 int pv = ob_pv.ViewID;
-                DestroyCard(pv,0);
+                photonView.RPC("DestroyCard",Photon.Pun.RpcTarget.All,pv,0);
             }
         }
     }
@@ -425,7 +425,7 @@ public class rendering : MonoBehaviourPunCallbacks {
                 GameObject ob = cardList[i];
                 PhotonView ob_pv = ob.GetComponent<PhotonView>();
                 int pv = ob_pv.ViewID;
-                UndoCard(pv,0);
+                photonView.RPC("UndoCard",Photon.Pun.RpcTarget.All,pv,0);
             }
         }
         return;
