@@ -329,16 +329,30 @@ public class rendering : MonoBehaviourPunCallbacks {
                 int ob_owner = ob_pv.Owner.ActorNumber;
                 int master_id = PhotonNetwork.MasterClient.ActorNumber;
                 //Debug.Log("card n°" + i + "is owned by :" + ownerId);
+                
                 if(ob_owner != master_id){
-                    Debug.Log("card n°" + i + "is owned by :" + ob_owner);
-                    Debug.Log("Switching Ownership to " + master_id);
-                    //Apparently the MasterClient can't claim back the ownership... at least it doesn't work the same way as it works for a simple takes of Ownership
-                    ob.GetComponent<PhotonView>().RequestOwnership();
-
-                    Debug.Log("now, card n°" + i + "is owned by :" + ob_pv.Owner.ActorNumber);
+                    if(PhotonNetwork.IsMasterClient){
+                        Debug.Log("I'm well the masterclient so ...");
+                        ob_pv.RequestOwnership();
+                        if(ob_pv.Owner.ActorNumber == master_id){
+                            Debug.Log("ownership request well done with 'RequestOwnership'");
+                        } else {
+                            ob_owner = ob_pv.Owner.ActorNumber;
+                            Debug.Log("owner of the card is : " + ob_owner);
+                        }
+                        ob_pv.TransferOwnership(PhotonNetwork.MasterClient);
+                        if(ob_pv.Owner.ActorNumber == master_id){
+                            Debug.Log("ownership request well done with 'TransferOwnership'");
+                        } else {
+                            ob_owner = ob_pv.Owner.ActorNumber;
+                            Debug.Log("owner of the card is : " + ob_owner);
+                        }
+                    }
                 }
-                Debug.Log("Destroying card n°" + i);
-                PhotonNetwork.Destroy(ob);
+                Debug.Log("using simple destroy");
+                DestroyCard(ob_pv.ViewID,0);
+                /*Debug.Log("using PhotonNetwork destroy");
+                PhotonNetwork.Destroy(ob_pv);*/
                 if(cardList[i] == null){
                     Debug.Log("Well Destroyed n°"+i);
                 }
