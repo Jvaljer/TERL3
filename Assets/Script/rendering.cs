@@ -325,15 +325,17 @@ public class rendering : MonoBehaviourPunCallbacks {
         for (int i=0; i<60; i++){
             if(cardList[i] != null){
                 GameObject ob = cardList[i];
-                int ownerId = ob.GetComponent<PhotonView>().Owner.ActorNumber;
+                PhotonView ob_pv = ob.GetComponent<PhotonView>();
+                int ob_owner = ob_pv.Owner.ActorNumber;
+                int master_id = PhotonNetwork.MasterClient.ActorNumber;
                 //Debug.Log("card n°" + i + "is owned by :" + ownerId);
-                if(ownerId != PhotonNetwork.MasterClient.ActorNumber){
-                    Debug.Log("card n°" + i + "is owned by :" + ownerId);
-                    Debug.Log("Switching Ownership");
-                    ownerId = PhotonNetwork.MasterClient.ActorNumber;
-                    //ob.GetComponent<PhotonView>().TransferOwnership(1);
+                if(ob_owner != master_id){
+                    Debug.Log("card n°" + i + "is owned by :" + ob_owner);
+                    Debug.Log("Switching Ownership to " + master_id);
+                    //Apparently the MasterClient can't claim back the ownership... at least it doesn't work the same way as it works for a simple takes of Ownership
                     ob.GetComponent<PhotonView>().RequestOwnership();
-                    Debug.Log("now, card n°" + i + "is owned by :" + ob.GetComponent<PhotonView>().Owner.ActorNumber);
+
+                    Debug.Log("now, card n°" + i + "is owned by :" + ob_pv.Owner.ActorNumber);
                 }
                 Debug.Log("Destroying card n°" + i);
                 PhotonNetwork.Destroy(ob);
@@ -385,8 +387,4 @@ public class rendering : MonoBehaviourPunCallbacks {
         expe.Resume();
     }
 
-
-    public void ResetCards(){
-        return;
-    }
 }

@@ -328,4 +328,5 @@ public class Network_Player : MonoBehaviourPun
             render.IPressedOperator();
         }
     }
+
 }
