@@ -114,17 +114,17 @@ public class DragDrop : MonoBehaviourPun
 
             if (interactWithUI.GetStateDown(m_pose.inputSource) && m_HasPosition){
                 Debug.Log("DragDrop got State Down + m_HasPosition of input");
-                if (hit.transform.tag == "Card" /*&& teleport.moveMode == "sync"*/) {
+                if (hit.transform.tag == "Card") {
                     Debug.Log("hitting a Card");
                     //request multi user
-
+                    Debug.Log("switching this cards owner : " + hit.transform.gameObject.GetComponent<PhotonView>().Owner.ActorNumber);
                     hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
 
                     //card
                     trialStartContraint = true;
                     StartCoroutine(switchContraint());
                     ob = hit.transform.gameObject;
-                
+                    Debug.Log("now this card is owned by " + ob.GetComponent<PhotonView>().Owner.ActorNumber);
                 }
                 else if (hit.transform.tag == "MoveControlTP") {
                     moveMode = "TP";
