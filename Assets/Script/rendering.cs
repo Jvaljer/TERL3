@@ -75,12 +75,6 @@ public class rendering : MonoBehaviourPunCallbacks {
 
             initial_parent = mur;
         }
-
-        public void Reset(){
-            //must implement
-            //here we simply wanna put the card back on its original location on its initial parent.
-            return;
-        }
     }
 
     void Update() {
@@ -197,7 +191,7 @@ public class rendering : MonoBehaviourPunCallbacks {
 
         print("calling on new Expe() with ->\n  participant : " + participant + "\n  group : " + grp + "\n  nbTrial : " + nb  );
         expe = new Expe(participant, grp, nb, cardList, withOpe);
-        print("\n\n    expe has well been instantiated !" + expe);
+        print("    expe has well been instantiated !" + expe);
 
         if (expe.curentTrial.collabEnvironememnt == "C") {
             //desactiver son
@@ -295,8 +289,7 @@ public class rendering : MonoBehaviourPunCallbacks {
             if(demoRunning || demoHasBeenCreated){
                 //wanna reset the cards & then let all recreate
                 demoRunning = false;
-                CardDeletion(); 
-                //ResetCards();
+                CardDeletion();
                 CardCreation();
                 photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb, b_);
                 print("Expe Started succesfully !");
@@ -336,16 +329,17 @@ public class rendering : MonoBehaviourPunCallbacks {
                 //Debug.Log("card n°" + i + "is owned by :" + ownerId);
                 if(ownerId != PhotonNetwork.MasterClient.ActorNumber){
                     Debug.Log("card n°" + i + "is owned by :" + ownerId);
-                    //Debug.Log("Switching Ownership");
+                    Debug.Log("Switching Ownership");
                     ownerId = PhotonNetwork.MasterClient.ActorNumber;
-                    ob.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.MasterClient.ActorNumber);
-                    //Debug.Log("now, card n°" + i + "is owned by :" + ownerId);
+                    //ob.GetComponent<PhotonView>().TransferOwnership(1);
+                    ob.GetComponent<PhotonView>().RequestOwnership();
+                    Debug.Log("now, card n°" + i + "is owned by :" + ob.GetComponent<PhotonView>().Owner.ActorNumber);
                 }
-                //Debug.Log("Destroying card n°" + i);
+                Debug.Log("Destroying card n°" + i);
                 PhotonNetwork.Destroy(ob);
-                /*if(cardList[i] == null){
+                if(cardList[i] == null){
                     Debug.Log("Well Destroyed n°"+i);
-                } */
+                }
             }
         }
         Debug.Log("all cards well destroyed");
