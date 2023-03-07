@@ -289,8 +289,10 @@ public class rendering : MonoBehaviourPunCallbacks {
             if(demoRunning || demoHasBeenCreated){
                 //wanna reset the cards & then let all recreate
                 demoRunning = false;
-                CardDeletion();
-                CardCreation();
+                //CardDeletion();
+                CardDeletion_2();
+                //CardCreation();
+                CardReCreation();
                 photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb, b_);
                 print("Expe Started succesfully !");
                 expeEnCours = true;
@@ -311,7 +313,8 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     public void EPressedOperator() {
         photonView.RPC("endExpe", Photon.Pun.RpcTarget.AllBuffered);
-        CardDeletion();
+        //CardDeletion();
+        CardDeletion_2();
     }
 
     public void TPressedOperator() {
@@ -372,16 +375,19 @@ public class rendering : MonoBehaviourPunCallbacks {
             demoRunning = true;
         } else if(demoRunning && !demoHasBeenDestroyed){
             Debug.Log("initial Destruction of demo");
-            CardDeletion();
+            //CardDeletion();
+            CardDeletion_2();
             demoHasBeenDestroyed = true;
             demoRunning = false;
         } else if(!demoRunning && demoHasBeenCreated){
             Debug.Log("casual demo start");
-            CardCreation();
+            //CardCreation();
+            CardReCreation();
             demoRunning = true;
         } else if(demoRunning && demoHasBeenDestroyed){
             Debug.Log("casual demo stop");
-            CardDeletion();
+            //CardDeletion();
+            CardDeletion_2();
             demoRunning = false;
         }
     } 
@@ -401,4 +407,27 @@ public class rendering : MonoBehaviourPunCallbacks {
         expe.Resume();
     }
 
+    public void CardDeletion_2(){
+        //here we don't wanna DESTROY cards for real, but simple put them in the trash and disable the possibility to UNDO them
+        for(int i=0; i<60; i++){
+            if(cardList[i]!=null){
+                GameObject ob = cardList[i];
+                PhotonView ob_pv = ob.GetComponent<PhotonView>();
+                int pv = ob_pv.ViewID;
+                DestroyCard(pv,0);
+            }
+        }
+    }
+    public void CardReCreation(){
+        //here we just wanna UNDO all cards from trash, and enable the possibility to put them back in it
+        for(int i=0; i<60; i++){
+            if(cardList[i]!=null){
+                GameObject ob = cardList[i];
+                PhotonView ob_pv = ob.GetComponent<PhotonView>();
+                int pv = ob_pv.ViewID;
+                UndoCard(pv,0);
+            }
+        }
+        return;
+    }
 }
