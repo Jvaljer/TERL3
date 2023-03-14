@@ -462,16 +462,11 @@ public class rendering : MonoBehaviourPunCallbacks {
     [PunRPC]
     public void ResetCards(){
         for(int i=0; i<60; i++){
-            Debug.Log("ob = card at pos "+i);
             GameObject ob = cardList[i];
-            Debug.Log("got the card right");
             if(cardInitPos[i]!=null){
-                Debug.Log("cardInitPos isn't null -> "+cardInitPos[i]);
                 ob.transform.localPosition = cardInitPos[i];
             } else {
-                Debug.Log("erroooooor");
             }
         }
-        Debug.Log("got out of the for loop");
     }
 }
