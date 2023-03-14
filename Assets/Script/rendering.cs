@@ -147,8 +147,11 @@ public class rendering : MonoBehaviourPunCallbacks {
                 photonView.RPC("addListCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, demoHasBeenCreated);
                 c.pv.RPC("LoadCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, mur.GetComponent<PhotonView>().ViewID, pos, i);
                 photonView.RPC("addListPos", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, demoHasBeenCreated);
-            }
-            else {
+
+                GameObject ob = PhotonView.Find(c.pv.ViewID).gameObject;
+                Vector3 ob_lS = ob.transform.localScale;
+                Debug.Log("the localScale of the actual object is : "+ob_lS);
+            }  else {
                 break;
             }
         }
@@ -474,16 +477,9 @@ public class rendering : MonoBehaviourPunCallbacks {
                 wall = MurR;
             }
 
-            float div = 2 * 1000f;
-            float width, height;
-            Vector3 scale = wall.localScale;
-
-            height = tex.height / div;
-            width = (tex.width / div) * (scale.y / scale.x);
-
             ob.transform.parent = wall;
             ob.transform.rotation = wall.rotation;
-            ob.transform.localScale = new Vector3(width, height,1.0f);
+            ob.transform.localScale = new Vector3(0.033f, 0.239f, 1.0f);
 
             //in the cardInit list, there are the position of the card ON ITS ACTUAL PARENT (wall)
             if(cardInitPos[i]!=null){
