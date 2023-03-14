@@ -461,6 +461,8 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     public void ResetCards(){
+        //here if the cards were moved from there original parent wall, then they'll be reseted at the exact same position
+        // BUT NOT ON THEIR ORIGINAL WALL PARENT !!!
         for(int i=0; i<60; i++){
             GameObject ob = cardList[i];
             if(cardInitPos[i]!=null){
