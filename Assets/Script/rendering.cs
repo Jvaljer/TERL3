@@ -321,6 +321,7 @@ public class rendering : MonoBehaviourPunCallbacks {
         expe.teleport.photonView.RPC("tpToOther", Photon.Pun.RpcTarget.Others);
     }
     
+    [PunRPC]
     public void CardDeletion(){
         //we get every card that is IN the list and we destroy it using the PhotonNetwork 'Destroy()' method
         Debug.Log("cardList.Capacity -> " + cardList.Capacity);
@@ -375,19 +376,19 @@ public class rendering : MonoBehaviourPunCallbacks {
             demoRunning = true;
         } else if(demoRunning && !demoHasBeenDestroyed){
             Debug.Log("initial Destruction of demo");
-            //CardDeletion();
-            CardDeletion_2();
+            photonView.RPC("CardDeletion",Photon.Pun.RpcTarget.All);
+            //CardDeletion_2();
             demoHasBeenDestroyed = true;
             demoRunning = false;
         } else if(!demoRunning && demoHasBeenCreated){
             Debug.Log("casual demo start");
-            //CardCreation();
-            CardReCreation();
+            CardCreation();
+            //CardReCreation();
             demoRunning = true;
         } else if(demoRunning && demoHasBeenDestroyed){
             Debug.Log("casual demo stop");
-            //CardDeletion();
-            CardDeletion_2();
+            photonView.RPC("CardDeletion",Photon.Pun.RpcTarget.All);
+            //CardDeletion_2();
             demoRunning = false;
         }
     } 
@@ -416,7 +417,6 @@ public class rendering : MonoBehaviourPunCallbacks {
                 PhotonView ob_pv = ob.GetComponent<PhotonView>();
                 int pv = ob_pv.ViewID;
                 photonView.RPC("DestroyCard",Photon.Pun.RpcTarget.All,pv,0);
-                photonView.RPC("PlayerDestroyCard",Photon.Pun.RpcTarget.All,pv);
             }
         }
     }
@@ -430,21 +430,8 @@ public class rendering : MonoBehaviourPunCallbacks {
                 PhotonView ob_pv = ob.GetComponent<PhotonView>();
                 int pv = ob_pv.ViewID;
                 photonView.RPC("UndoCard",Photon.Pun.RpcTarget.All,pv,0);
-                photonView.RPC("PlayerDestroyCard",Photon.Pun.RpcTarget.All,pv,0);
             }
         }
-        return;
-    }
-
-    [PunRPC]
-    public void PlayerDestroyCard(PhotonView card_view){
-        //must implement
-        return;
-    }
-
-    [PunRPC]
-    public void PlayerUndoCard(PhotonView card_view){
-        //must implement
         return;
     }
 }
