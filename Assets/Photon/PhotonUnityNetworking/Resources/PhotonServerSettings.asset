@@ -80,6 +80,13 @@ MonoBehaviour:
   - curentTrialConditionCheck
   - trialStarted
   - resetPosition
+  - CardDeletion_2
+  - CardReCreation
+  - PlayerDestroyCard
+  - PlayerUndoCard
+  - CardDeletion
+  - ResetCards
+  - addListPos
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -150,7 +150,7 @@ public class rendering : MonoBehaviourPunCallbacks {
                 //Debug.Log("cardList -> len : " + cardList.Capacity);
                 photonView.RPC("addListCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, demoHasBeenCreated);
                 c.pv.RPC("LoadCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, mur.GetComponent<PhotonView>().ViewID, pos, i);
-                photonView.RPC("addListPos", Photon.Pun.RpcTarget.AllBuffered,c.pv.ViewID, demoHasBeenCreated);
+                photonView.RPC("addListPos", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, demoHasBeenCreated);
             }
             else {
                 break;
