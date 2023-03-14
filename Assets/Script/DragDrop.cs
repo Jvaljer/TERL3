@@ -454,7 +454,7 @@ public class DragDrop : MonoBehaviourPun
         w = tex.width / div;
 
         w = w * (v.y / v.x);
-        Debug.Log("Changement de mur ");
+        //Debug.Log("Changement de mur ");
         PhotonView.Find(OB).gameObject.transform.parent = mur;
         PhotonView.Find(OB).gameObject.transform.rotation = mur.rotation;
 

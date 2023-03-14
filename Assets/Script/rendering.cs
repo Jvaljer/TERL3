@@ -462,6 +462,7 @@ public class rendering : MonoBehaviourPunCallbacks {
         for(int i=0; i<60; i++){
             GameObject ob = cardList[i];
             Transform wall;
+            Texture tex = (Texture) textures[i];
             if(i < cardPerWall){
                 //then the card was originally on wall L
                 wall = MurL;
@@ -473,8 +474,16 @@ public class rendering : MonoBehaviourPunCallbacks {
                 wall = MurR;
             }
 
+            float div = 2 * 1000f;
+            float width, height;
+            Vector3 scale = wall.localScale;
+
+            height = tex.height / div;
+            width = (tex.width / div) * (scale.y / scale.x);
+
             ob.transform.parent = wall;
             ob.transform.rotation = wall.rotation;
+            ob.transform.localScale = new Vector3(height, width,1.0f);
             //in the cardInit list, there are the position of the card ON ITS ACTUAL PARENT (wall)
             if(cardInitPos[i]!=null){
                 ob.transform.localPosition = cardInitPos[i];
