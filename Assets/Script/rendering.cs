@@ -465,7 +465,7 @@ public class rendering : MonoBehaviourPunCallbacks {
         for(int i=0; i<60; i++){
             GameObject ob = cardList[i];
             Transform wall;
-            Texture2D tex = (Texture2D) textures[i];
+            
             if(i < cardPerWall){
                 //then the card was originally on wall L
                 wall = MurL;
