@@ -407,6 +407,7 @@ public class rendering : MonoBehaviourPunCallbacks {
         expe.Resume();
     }
 
+    [PunRPC]
     public void CardDeletion_2(){
         //here we don't wanna DESTROY cards for real, but simple put them in the trash and disable the possibility to UNDO them
         for(int i=0; i<60; i++){
@@ -415,9 +416,12 @@ public class rendering : MonoBehaviourPunCallbacks {
                 PhotonView ob_pv = ob.GetComponent<PhotonView>();
                 int pv = ob_pv.ViewID;
                 photonView.RPC("DestroyCard",Photon.Pun.RpcTarget.All,pv,0);
+                photonView.RPC("PlayerDestroyCard",Photon.Pun.RpcTarget.All,pv);
             }
         }
     }
+
+    [PunRPC]
     public void CardReCreation(){
         //here we just wanna UNDO all cards from trash, and enable the possibility to put them back in it
         for(int i=0; i<60; i++){
@@ -426,8 +430,21 @@ public class rendering : MonoBehaviourPunCallbacks {
                 PhotonView ob_pv = ob.GetComponent<PhotonView>();
                 int pv = ob_pv.ViewID;
                 photonView.RPC("UndoCard",Photon.Pun.RpcTarget.All,pv,0);
+                photonView.RPC("PlayerDestroyCard",Photon.Pun.RpcTarget.All,pv,0);
             }
         }
+        return;
+    }
+
+    [PunRPC]
+    public void PlayerDestroyCard(PhotonView card_view){
+        //must implement
+        return;
+    }
+
+    [PunRPC]
+    public void PlayerUndoCard(PhotonView card_view){
+        //must implement
         return;
     }
 }
