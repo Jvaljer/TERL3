@@ -58,10 +58,9 @@ public class Network_Player : MonoBehaviourPun
     private string moveMode = "drag"; // "TP" | "joy" | "sync"
 
     Expe expe; // the aim is to remove this, and directly refers to ope.expe instead -> wanna centralize the expe management 
+    private bool is_operator;
 
     void Start() {
-        //photonView = GetComponent<PhotonView>();
-        Debug.Log("Start NetworkPlayer With Operator");
         //getting the operator 
         if(GameObject.Find("/Network Operator(Clone)")!=null){
             Debug.Log("operator found -> implementing 3 computers model");
@@ -72,11 +71,17 @@ public class Network_Player : MonoBehaviourPun
             //these 2 lines aren't working, returning NULL on both
             room = ope_Script.room;
             render = ope_Script.render;
-        
+
+            is_operator = false;
         } else {
             Debug.Log("no operator -> implement 2 players functionnability");
             room = GameObject.Find("/Salle");
             render = room.GetComponent<rendering>();
+            if(photonView.IsMine && PhotonNetwork.LocalPlayer.ActorNumber==1){
+                is_operator = true;
+            } else {
+                is_operator = false;
+            }
         }
         
         //room + wall + camera
@@ -105,7 +110,8 @@ public class Network_Player : MonoBehaviourPun
 
     // Update is called once per frame
     void Update() {
-        if(GameObject.Find("/Network Operator(Clone)")==null && PhotonNetwork.IsMasterClient){
+        if(Gis_operator){
+            Debug.Log("Hallelujah ---------------------------------------------------------");
             OperatorActions();
         }
 
