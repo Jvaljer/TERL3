@@ -110,8 +110,7 @@ public class Network_Player : MonoBehaviourPun
 
     // Update is called once per frame
     void Update() {
-        if(Gis_operator){
-            Debug.Log("Hallelujah ---------------------------------------------------------");
+        if(is_operator){
             OperatorActions();
         }
 
