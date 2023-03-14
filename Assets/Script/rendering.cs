@@ -325,7 +325,9 @@ public class rendering : MonoBehaviourPunCallbacks {
     public void CardDeletion(){
         //we get every card that is IN the list and we destroy it using the PhotonNetwork 'Destroy()' method
         Debug.Log("cardList.Capacity -> " + cardList.Capacity);
-        
+        if(demoHasBeenDestroyed){
+
+        }
         for (int i=0; i<60; i++){
             if(cardList[i] != null){
                 GameObject ob = cardList[i];
@@ -369,7 +371,7 @@ public class rendering : MonoBehaviourPunCallbacks {
     public void DPressedOperator(){
 
         if(!demoHasBeenCreated){
-            Debug.Log("Initializing demo");
+            Debug.Log("Initializing demo & starting it");
             Cards();
             CardCreation();
             demoHasBeenCreated = true;
@@ -381,12 +383,12 @@ public class rendering : MonoBehaviourPunCallbacks {
             demoHasBeenDestroyed = true;
             demoRunning = false;
         } else if(!demoRunning && demoHasBeenCreated){
-            Debug.Log("casual demo start");
+            Debug.Log("not first demo start");
             CardCreation();
             //CardReCreation();
             demoRunning = true;
         } else if(demoRunning && demoHasBeenDestroyed){
-            Debug.Log("casual demo stop");
+            Debug.Log("not first demo stop");
             photonView.RPC("CardDeletion",Photon.Pun.RpcTarget.All);
             //CardDeletion_2();
             demoRunning = false;
