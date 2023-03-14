@@ -63,8 +63,6 @@ public class rendering : MonoBehaviourPunCallbacks {
         public Transform parent;
         public int id_on_wall;
 
-        public Transform initial_parent;
-
         public MyCard(Texture2D tex, Transform mur , int i) {
             GameObject goCard = PhotonNetwork.InstantiateRoomObject("Card", mur.position, mur.rotation, 0, null);
             goCard.GetComponent<Renderer>().material.SetTexture("_MainTex", tex);
@@ -73,8 +71,6 @@ public class rendering : MonoBehaviourPunCallbacks {
             //Debug.Log("MyCard created on Mur : " + parent);
             id_on_wall = i;
             pos_tag = "onWall";
-
-            initial_parent = mur;
         }
     }
 
@@ -465,9 +461,23 @@ public class rendering : MonoBehaviourPunCallbacks {
         // BUT NOT ON THEIR ORIGINAL WALL PARENT !!!
         for(int i=0; i<60; i++){
             GameObject ob = cardList[i];
+            Transform wall;
+            if(i < cardPerWall){
+                //then the card was originally on wall L
+                wall = MurL;
+            } else if(i < 2* cardPerWall){
+                //then the card was originally on wall B
+                wall = MurB;
+            } else {
+                //it was originally on wall R 
+                wall = MurR;
+            }
+
+            ob.transform.parent = wall;
+            ob.transform.rotation = wall.rotation;
+            //in the cardInit list, there are the position of the card ON ITS ACTUAL PARENT (wall)
             if(cardInitPos[i]!=null){
                 ob.transform.localPosition = cardInitPos[i];
-            } else {
             }
         }
     }
