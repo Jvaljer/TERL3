@@ -80,7 +80,7 @@ public class DragDrop : MonoBehaviourPun
             //m_Pointer.SetActive(m_HasPosition);
 
             if (interactWithUI.GetStateUp(m_pose.inputSource)){
-                Debug.Log("DragDrop got State Up of input");
+                //Debug.Log("DragDrop got State Up of input");
                 if (wait && ob!=null){
                     //just a clic -> tag
               
@@ -113,9 +113,9 @@ public class DragDrop : MonoBehaviourPun
             }
 
             if (interactWithUI.GetStateDown(m_pose.inputSource) && m_HasPosition){
-                Debug.Log("DragDrop got State Down + m_HasPosition of input");
+                //Debug.Log("DragDrop got State Down + m_HasPosition of input");
                 if (hit.transform.tag == "Card") {
-                    Debug.Log("hitting a Card");
+                    //Debug.Log("hitting a Card");
                     //request multi user
                     hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
 

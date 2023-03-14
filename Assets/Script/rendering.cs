@@ -26,6 +26,7 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     //Card list
     public List<GameObject> cardList;
+    public List<Vector3> cardInitPos;
     public List<GameObject> cardListToTeleport;
 
     //List of textures
@@ -54,7 +55,7 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     public bool expePaused = false;
 
-    public class MyCard {
+    public class MyCard : MonoBehaviour {
         // Creation of the card 
         public GameObject goCard = null;
         public string pos_tag = "";
@@ -149,6 +150,7 @@ public class rendering : MonoBehaviourPunCallbacks {
                 //Debug.Log("cardList -> len : " + cardList.Capacity);
                 photonView.RPC("addListCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, demoHasBeenCreated);
                 c.pv.RPC("LoadCard", Photon.Pun.RpcTarget.AllBuffered, c.pv.ViewID, mur.GetComponent<PhotonView>().ViewID, pos, i);
+                photonView.RPC("addListPos", Photon.Pun.RpcTarget.AllBuffered,c.pv.ViewID, demoHasBeenCreated);
             }
             else {
                 break;
@@ -158,16 +160,31 @@ public class rendering : MonoBehaviourPunCallbacks {
     }
 
     [PunRPC]
+    void addListPos(int OB, bool b_){
+        if(b_){
+            for( int i=0; i<60; i++){
+                GameObject ob = PhotonView.Find(OB).gameObject;
+                cardInitPos[i] = ob.transform.localPosition;
+            }
+        } else {
+            GameObject ob = PhotonView.Find(OB).gameObject;
+            cardInitPos.Add(ob.transform.localPosition);
+        }
+    }
+
+    [PunRPC]
     //Add card to the list of card
     void addListCard(int OB, bool b_) {
         if(b_){
             for(int i=0; i<60; i++){
                 if(cardList[i]==null){
-                    cardList[i] = PhotonView.Find(OB).gameObject;
+                    GameObject ob = PhotonView.Find(OB).gameObject;
+                    cardList[i] = ob;
                 }
             }
         } else {
-            cardList.Add(PhotonView.Find(OB).gameObject);
+            GameObject ob = PhotonView.Find(OB).gameObject;
+            cardList.Add(ob);
         }
     }
 
@@ -330,6 +347,7 @@ public class rendering : MonoBehaviourPunCallbacks {
         }
         for (int i=0; i<60; i++){
             if(cardList[i] != null){
+                Debug.Log("card at position "+i+" isn't null");
                 GameObject ob = cardList[i];
                 PhotonView ob_pv = ob.GetComponent<PhotonView>();
                 int ob_owner = ob_pv.Owner.ActorNumber;
@@ -356,12 +374,13 @@ public class rendering : MonoBehaviourPunCallbacks {
                     }
                 }
                 Debug.Log("using simple destroy");
-                DestroyCard(ob_pv.ViewID,0);
-                /*Debug.Log("using PhotonNetwork destroy");
-                PhotonNetwork.Destroy(ob_pv);*/
+                Debug.Log("using PhotonNetwork destroy");
+                PhotonNetwork.Destroy(ob_pv);
                 if(cardList[i] == null){
                     Debug.Log("Well Destroyed n°"+i);
                 }
+            } else {
+                Debug.Log("Card at position "+i+" is null...");
             }
         }
         Debug.Log("all cards well destroyed");
@@ -378,19 +397,19 @@ public class rendering : MonoBehaviourPunCallbacks {
             demoRunning = true;
         } else if(demoRunning && !demoHasBeenDestroyed){
             Debug.Log("initial Destruction of demo");
-            photonView.RPC("CardDeletion",Photon.Pun.RpcTarget.All);
-            //CardDeletion_2();
+            //photonView.RPC("CardDeletion",Photon.Pun.RpcTarget.All);
+            CardDeletion_2();
             demoHasBeenDestroyed = true;
             demoRunning = false;
         } else if(!demoRunning && demoHasBeenCreated){
             Debug.Log("not first demo start");
-            CardCreation();
-            //CardReCreation();
+            //CardCreation();
+            CardReCreation();
             demoRunning = true;
         } else if(demoRunning && demoHasBeenDestroyed){
             Debug.Log("not first demo stop");
-            photonView.RPC("CardDeletion",Photon.Pun.RpcTarget.All);
-            //CardDeletion_2();
+            //photonView.RPC("CardDeletion",Photon.Pun.RpcTarget.All);
+            CardDeletion_2();
             demoRunning = false;
         }
     } 
@@ -413,6 +432,9 @@ public class rendering : MonoBehaviourPunCallbacks {
     [PunRPC]
     public void CardDeletion_2(){
         //here we don't wanna DESTROY cards for real, but simple put them in the trash and disable the possibility to UNDO them
+        if(demoHasBeenCreated){
+            photonView.RPC("ResetCards",Photon.Pun.RpcTarget.All);
+        }
         for(int i=0; i<60; i++){
             if(cardList[i]!=null){
                 GameObject ob = cardList[i];
@@ -435,5 +457,21 @@ public class rendering : MonoBehaviourPunCallbacks {
             }
         }
         return;
+    }
+
+    [PunRPC]
+    public void ResetCards(){
+        for(int i=0; i<60; i++){
+            Debug.Log("ob = card at pos "+i);
+            GameObject ob = cardList[i];
+            Debug.Log("got the card right");
+            if(cardInitPos[i]!=null){
+                Debug.Log("cardInitPos isn't null -> "+cardInitPos[i]);
+                ob.transform.localPosition = cardInitPos[i];
+            } else {
+                Debug.Log("erroooooor");
+            }
+        }
+        Debug.Log("got out of the for loop");
     }
 }
