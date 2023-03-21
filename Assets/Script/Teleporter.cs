@@ -115,8 +115,7 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (expe == null)
-        {
+        if (expe == null){
             expe = GameObject.Find("/Salle").GetComponent<rendering>().expe;
         }
         //Pointer
@@ -124,34 +123,23 @@ public class Teleporter : MonoBehaviour
         //Debug.Log(hit);
         photonView.RPC("receiveOtherPosition", Photon.Pun.RpcTarget.Others, cam.position, cameraRig.rotation.eulerAngles, cameraRig.position);
 
-        if (interactWithUI.GetStateDown(m_pose.inputSource) && m_HasPosition)
-        {
-            if (hit.transform.tag == "MoveControlTP" && moveMode != "TP")
-            {
-                if (moveMode == "sync")
-                {
+        if (interactWithUI.GetStateDown(m_pose.inputSource) && m_HasPosition) {
+            if (hit.transform.tag == "MoveControlTP" && moveMode != "TP") {
+                if (moveMode == "sync"){
                     photonView.RPC("toggleOtherSync", Photon.Pun.RpcTarget.Others);
                 }
                 moveMode = "TP";
-            }
-            else if (hit.transform.tag == "MoveControlJoy" && moveMode != "joy")
-            {
-                if (moveMode == "sync")
-                {
+            } else if (hit.transform.tag == "MoveControlJoy" && moveMode != "joy") {
+                if (moveMode == "sync"){
                     photonView.RPC("toggleOtherSync", Photon.Pun.RpcTarget.Others);
                 }
                 moveMode = "joy";
-            }
-            else if (hit.transform.tag == "MoveControlDrag" && moveMode != "drag")
-            {
-                if(moveMode == "sync")
-                {
+            } else if (hit.transform.tag == "MoveControlDrag" && moveMode != "drag") {
+                if(moveMode == "sync"){
                     photonView.RPC("toggleOtherSync", Photon.Pun.RpcTarget.Others);
                 }
                 moveMode = "drag";
-            }
-            else if (hit.transform.tag == "MoveControlSync" && !isOtherSynced && moveMode != "sync")
-            {
+            } else if (hit.transform.tag == "MoveControlSync" && !isOtherSynced && moveMode != "sync") {
                 moveMode = "sync";
                 photonView.RPC("toggleOtherSync", Photon.Pun.RpcTarget.Others);
                 tpToOther();

@@ -87,6 +87,7 @@ MonoBehaviour:
   - CardDeletion
   - ResetCards
   - addListPos
+  - TpToCenter
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

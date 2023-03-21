@@ -310,6 +310,7 @@ public class rendering : MonoBehaviourPunCallbacks {
                 //CardCreation();
                 CardReCreation();
                 photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb, b_);
+                photonView.RPC("TpToCenter", Photon.Pun.RpcTarget.AllBuffered, b_);
                 print("Expe Started succesfully !");
                 expeEnCours = true;
             } else {
@@ -486,5 +487,25 @@ public class rendering : MonoBehaviourPunCallbacks {
                 ob.transform.localPosition = cardInitPos[i];
             }
         }
+    }
+
+    [PunRPC]
+    public void TpToCenter(bool b_){
+        int no1, no2;
+        if(b_){
+            //there's an operator
+            no1 = 1;
+            no2 = 2;
+        } else {
+            //there's no operator
+            no1 = 0;
+            no2 = 1;
+        }
+
+        GameObject p1 = PhotonView.Find(no1).gameObject;
+        GameObject p2 = PhotonView.Find(no2).gameObject;
+
+        p1.GetComponent<Teleporter>().resetPosition();
+        p2.GetComponent<Teleporter>().resetPosition();
     }
 }
