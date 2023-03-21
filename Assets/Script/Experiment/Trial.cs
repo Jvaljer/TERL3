@@ -1,246 +1,104 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using Photon.Pun;
 using Photon.Realtime;
-using UnityEditor;
 
-public class Trial
-{
-    public GameObject card;
-    private Material initialCardMaterial;
+public class Trial {
+    //card attributes
+    private GameObject card;
+    private Material init_card_material;
 
-    private Network_Operator ope;
-    private Network_Player player;
+    //participants attributes
+    private GameObject operator;
+    private Network_Operator operator_script;
+    private GameObject player;
+    private Network_Player player_script;
+    private GameObject controller;
+    private Teleporter controller_tp;
 
-    private Teleporter teleport;
-    private rendering render;
-    private Transform cardArea;
-    private Expe expe;
-    
-    // input
-    public string group;
-    public string participant;
-    public string trialNb;
-    public string training;
+    //room & expe attributes
+    private GameObject room;
+    private rendering room_render;
+    private Transform cards_area;
+    private Experiment experiment;
 
-    public string collabEnvironememnt;
-    public string moveMode;
-    public string task;
-    public string wall;
-    public string cardToTag;
+    //input variables
+    private string group;
+    private string participant;
+    private string trial_nb;
+    private string training;
+    private string collab_env;
+    private string move_mode;
+    private string task;
+    private string wall;
+    private string card_to_tag;
 
-    public bool curentTrialIsRunning = false;
-    public bool trialEnded = false;
-    public bool canTagCard = true;
-    public bool canStartTimer = false;
+    //trial's statements
+    private bool current_trial_running = false;
+    private bool triel_ended = false;
+    private bool can_tag_card = true;
+    private bool start_timer = false;
 
-    // measures
-    // public float size;
-    // public int tct;
-    // public float mux, muy, muz;
+    //logs informations
+    private int move_nb = 0;
+    private int switch_wall_nb = 0;
+    private int drag_wall_floor_nb = 0;
+    private int roate_nb = 0;
+    private float total_dist = 0;
+    private float total_rotate = 0;
+    private float trial_time;
+    private float move_time = 0;
 
-    //move
-    public int nbMove = 0;
-    public int nbMoveWall = 0;
-    public int nbDragWallFloor = 0;
-    public int nbRotate = 0;
-
-    public float distTotal = 0;
-    public float rotateTotal = 0;
-
-    public float trialTime;
-    public float moveTime = 0;
-
-    public string pathLog = "";
-    public StreamWriter kineWriter;
+    //logs writing info
+    private string path_log = "";
+    private StreamWriter kine_writer;
     private float timer = 0;
 
+    //Constructor
+    public Trial(Experiment E_, string p_, string g_, string c_env, string trial, string train, string mm_, string t_, string w_, string ct_){
+        SetParticipants(p_);
 
-    public Trial(Expe e,
-        string g_, string p_,
-        string colabEnv, string trial, string train, string moveM, string t, string w, string cardT
-        )
-    {   
+        controller = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)");
+        controller_tp = controller.GetComponent<Teleporter>();
+        room = GameObject.Find("/Salle");
+        room_render = room.GetComponent<Rendering>();
+        cards_area = room_render.card_area;
 
-        if(p_ == "ope" ){
-            Debug.Log("Operator is master");
-            ope = GameObject.Find("Network Operator(Clone)").GetComponent<Network_Operator>();
-            player = null;
-        } else if(p_ == ""){
-            Debug.Log("adding a pause ?");
-            ope = GameObject.Find("Network Operator(Clone)")?.GetComponent<Network_Operator>();
-            player = GameObject.Find("Network Player(Clone)")?.GetComponent<Network_Player>();
-        } else {
-            Debug.Log("Player is master");
-            player = GameObject.Find("Network Player(Clone)").GetComponent<Network_Player>();
-            ope = null;
-        }
-
-        teleport = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)").GetComponent<Teleporter>();
-        render = GameObject.Find("/Salle").GetComponent<rendering>();
-        cardArea = GameObject.Find("/Salle").GetComponent<rendering>().cardArea;
-
-        expe = e;
+        expe = E_;
         group = g_;
         participant = p_;
-        collabEnvironememnt = colabEnv;
-        trialNb = trial;
+        collab_env = c_env;
+        trial_nb = trial;
         training = train;
-        moveMode = moveM;
-        task = t;
-        wall = w;
-        cardToTag = cardT;
+        move_mode = mm_;
+        task = t_;
+        wall = w_;
+        card_to_tag = ct_;
         timer = Time.time;
 
-        if (cardT != "")
-        {
-            card = expe.cardList[int.Parse(cardT)];
+        if(card_to_tag!=""){
+            card = experiment.cardList[int.Parse(card_to_tag)];
         }
-        //Debug.Log("card found" + card);
     }
 
-    public string StringToLog()
-    {
-        string str = group + ";" + participant + ";" + collabEnvironememnt + ";" + moveMode;
+    //setters
+    public void SetParticipants(string name){
+        if(name=="ope"){
+            operator = GameObject.Find("Network Operator(Clone)");
+            operator_script = operator.GetComponent<Network_Operator>();
+        } else if(name==""){
+            operator = GameObject.Find("Network Operator(Clone)");
+            operator_script = operator?.GetComponent<Network_Operator>();
 
-        return str;
-    }
-
-
-
-    public void startTrial()
-    {
-        if( player == null ){
-            if(card.transform.GetChild(0).GetComponent<Renderer>().material == null)
-                card.transform.GetChild(0).GetComponent<Renderer>().material = ope.none;
+            player = GameObject.Find("Network Player(Clone)");
+            player_script = player?.GetComponent<Network_Player>();
         } else {
-            card.transform.GetChild(0).GetComponent<Renderer>().material = player.none;
+            player = GameObject.Find("Network Player(Clone)");
+            player_script = player.GetComponent<Network_Player>();
         }
-        initialCardMaterial = card.transform.GetChild(0).GetComponent<Renderer>().material;
-        Debug.Log("task : " + task);
-        if (task == "search")
-        {
-            teleport.tpToOther();
-            teleport.isOtherSynced = false;
-            teleport.moveMode = "sync";
-        }
-        else
-        {
-            teleport.isOtherSynced = true;
-            teleport.moveMode = moveMode;
-        }
-        //player.palette.gameObject.SetActive(false);
-        canStartTimer = true;
-        Debug.Log("Trial started, card to tag " + cardToTag + ";" + teleport.moveMode);
-    }
-
-    public void startTrialTimer()
-    {
-        Debug.Log("                                                             Trial Timer started" + trialNb);
-        trialTime = Time.time;
-        if (task == "search")
-        {
-            card.transform.GetChild(1).gameObject.SetActive(true);
-        }
-        curentTrialIsRunning = true;
-        canStartTimer = false;
-    }
-
-    public void checkConditions()
-    {
-        float dist = (teleport.centerBetweenPlayers - card.transform.position).magnitude;
-        if (dist < 3)
-        {
-            cardArea.position = new Vector3(card.transform.position.x, 0, card.transform.position.z);
-            cardArea.rotation = card.transform.rotation;
-            cardArea.gameObject.SetActive(true);
-        }
-        if (!trialEnded && (card.transform.rotation.eulerAngles.y == 0 && Math.Abs(teleport.centerBetweenPlayers.x - card.transform.position.x) < 1 && Math.Abs(teleport.centerBetweenPlayers.z - card.transform.position.z) < 2.5f) || (card.transform.rotation.eulerAngles.y != 0 && Math.Abs(teleport.centerBetweenPlayers.x - card.transform.position.x) < 2.5f && Math.Abs(teleport.centerBetweenPlayers.z - card.transform.position.z) < 1))
-        {
-            canTagCard = true;
-            if( player == null ){
-                cardArea.GetComponent<Renderer>().material = ope.white;
-            } else {
-                cardArea.GetComponent<Renderer>().material = player.white;
-            }
-        }
-        else
-        {
-            canTagCard = false;
-            if ( player == null ){
-                cardArea.GetComponent<Renderer>().material = ope.none;
-            } else {
-                cardArea.GetComponent<Renderer>().material = player.none;
-            }
-        }
-        if (!trialEnded && canTagCard && card.transform.GetChild(0).GetComponent<Renderer>().material != initialCardMaterial)
-        {
-            Debug.Log("Card tagged with new color " + card);
-            endTrial();
-        }
-    }
-
-    public void endTrial()
-    {
-        trialTime = Time.time - trialTime;
-        cardArea.gameObject.SetActive(false);
-        if( player == null ){
-            card.transform.GetChild(1).GetComponent<Renderer>().material = ope.green;
-        } else {
-            card.transform.GetChild(1).GetComponent<Renderer>().material = player.green;
-        }
-        trialEnded = true;
-        curentTrialIsRunning = false;
-        render.nextTrial();
-    }
-
-
-    public void incNbMove()
-    {
-        Debug.Log("                                    incNbMove");
-        nbMove += 1;
-        kineWriter.WriteLine(Time.time - timer + "; Move");
-        kineWriter.Flush();
-    }
-    public void incNbMoveWall()
-    {
-        Debug.Log("                                    incNbMoveWall");
-        nbMoveWall += 1;
-        kineWriter.WriteLine(Time.time - timer + "; MoveWall");
-        kineWriter.Flush();
-    }
-    public void incNbDragWallFloor()
-    {
-        Debug.Log("                                    incNbDragWallFloor");
-        nbDragWallFloor += 1;
-        kineWriter.WriteLine(Time.time - timer + "; DragWallFloor");
-        kineWriter.Flush();
-    }
-    public void incNbRotate()
-    {
-        nbRotate += 1;
-        Debug.Log("                                    incNbRotate");
-        kineWriter.WriteLine(Time.time - timer + "; Rotate");
-        kineWriter.Flush();
-    }
-    public void incDistTotal(float dist)
-    {
-        distTotal += dist;
-        kineWriter.WriteLine(Time.time - timer + "; Move " + dist);
-        kineWriter.Flush();
-    }
-    public void incRotateTotal(float angle)
-    {
-        rotateTotal += Mathf.Abs(angle);
-        kineWriter.WriteLine(Time.time - timer + "; Rotate " + angle);
-        kineWriter.Flush();
-    }
-
-    public void incMoveTime(float t)
-    {
-        moveTime += t;
     }
 }
