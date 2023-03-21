@@ -317,6 +317,7 @@ public class rendering : MonoBehaviourPunCallbacks {
                 Cards();
                 CardCreation();
                 photonView.RPC("startExpe", Photon.Pun.RpcTarget.AllBuffered, group, firstTrialNb, b_);
+                photonView.RPC("TpToCenter", Photon.Pun.RpcTarget.AllBuffered, b_);
             
                 print("Expe Started succesfully !");
                 expeEnCours = true;
@@ -491,6 +492,7 @@ public class rendering : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     public void TpToCenter(bool b_){
+        print("running TpToCenter with ("+b_+")");
         int no1, no2;
         if(b_){
             //there's an operator
@@ -503,7 +505,17 @@ public class rendering : MonoBehaviourPunCallbacks {
         }
 
         GameObject p1 = PhotonView.Find(no1).gameObject;
+        if(p1==null){
+            print("p1 is null duh...");
+        } else {
+            print("got p1 correctly");
+        }
         GameObject p2 = PhotonView.Find(no2).gameObject;
+        if(p2==null){
+            print("p2 is null duh...");
+        } else {
+            print("got p2 correctly");
+        }
 
         p1.GetComponent<Teleporter>().resetPosition();
         p2.GetComponent<Teleporter>().resetPosition();
