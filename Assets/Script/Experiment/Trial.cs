@@ -158,7 +158,25 @@ public class Trial {
     }
 
     public void StartTrial(){
-        //must implement
-        return;
+        if(player==null){
+            if(card.transform.GetChild(0).GetComponent<Renderer>().material == null){
+                card.transform.GetChild(0).GetComponent<Renderer>().material = operator_script.None;
+            }
+        } else {
+            card.transform.GetChild(0).GetComponent<Renderer>().material = player_script.None;
+        }
+
+        init_card_material = card.transform.GetChild(0).GetComponent<Renderer>().material;
+
+        if(task=="search"){
+            controller_tp.TpToOther();
+            controller_tp.is_other_sync = false;
+            controller_tp.move_mode = "sync";
+        } else {
+            controller_tp.is_other_sync = true;
+            controller_tp.move_mode = move_mode;
+        }
+
+        start_timer = true;
     }
 }

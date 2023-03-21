@@ -191,22 +191,38 @@ public class Experiment {
     }
 
     public void SetInfoLocation(){
-        //must implement 
-        return;
+        controller_tp.menu.transform.position = controller_tp.cam.position + 1f*controller_tp.cam.forward;
+        controller_tp.menu.transform.rotation = controller_tp.cam.rotation;
+        controller_tp.menu.transform.RotateAround(controller_tp.menu.transform.position, Vector3.up, controller_tp.cam.rotation.eulerAngles.y - controller_tp.menu.transform.rotation.eulerAngles.y);
     }
 
     public void Write(){
-        //must implement
-        return;
+        writer.WriteLine(
+            // "factor"
+            trials[trial_nb].group + ";" + trials[trial_nb].participant + ";" + trials[trial_nb].collabEnvironememnt + ";" + trials[trial_nb].trialNb + ";" + trials[trial_nb].training + ";" + trials[trial_nb].moveMode + ";" + trials[trial_nb].task + ";" + trials[trial_nb].wall + ";" + trials[trial_nb].cardToTag + ";"
+            // measure
+            + trials[trial_nb].nbMove + ";" + trials[trial_nb].nbMoveWall + ";" + trials[trial_nb].nbDragWallFloor  + ";" + trials[trial_nb].distTotal + ";" + trials[trial_nb].nbRotate + ";" + trials[trial_nb].rotateTotal + ";"
+            + trials[trial_nb].trialTime + ";" + trials[trial_nb].moveTime
+            );
+        writer.Flush();
     }
 
     public void Finished(){
-        //must implement
-        return;
+        Write();
+        controller_tp.menu.transform.Find("textInfo").gameObject.SetActive(true);
+        controller_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "Fin de l'expérience";
+        trial_running = false;
+        expe_running = false;
+        writer.Close();
+        kineWriter.Close();
     }
 
     public void IncrementTrialNb(){
-        //must implement
-        return;
+        trial_nb += 1;
+        if (trial_nb - 2 >= 0 && theTrials[trial_nb - 2].group != "#pause"){
+            trials[trial_nb - 2].card.transform.GetChild(1).gameObject.SetActive(false);
+            trials[trial_nb - 2].card.transform.GetChild(1).GetComponent<Renderer>().material = player_script.lightRed;
+            trials[trial_nb - 2].card.transform.GetChild(0).GetComponent<Renderer>().material = player_script.none;
+        }
     }
 }
