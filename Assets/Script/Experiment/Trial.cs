@@ -22,7 +22,7 @@ public class Trial {
 
     //room & expe attributes
     private GameObject room;
-    private rendering room_render;
+    private Rendering room_render;
     private Transform cards_area;
     private Experiment experiment;
 
@@ -39,7 +39,7 @@ public class Trial {
 
     //trial's statements
     private bool current_trial_running = false;
-    private bool triel_ended = false;
+    private bool trial_ended = false;
     private bool can_tag_card = true;
     private bool start_timer = false;
 
@@ -90,6 +90,8 @@ public class Trial {
         if(name=="ope"){
             operator = GameObject.Find("Network Operator(Clone)");
             operator_script = operator.GetComponent<Network_Operator>();
+
+            player = null;
         } else if(name==""){
             operator = GameObject.Find("Network Operator(Clone)");
             operator_script = operator?.GetComponent<Network_Operator>();
@@ -99,6 +101,64 @@ public class Trial {
         } else {
             player = GameObject.Find("Network Player(Clone)");
             player_script = player.GetComponent<Network_Player>();
+
+            operator = null;
         }
+    }
+
+    //all other methods
+    public void CheckConditions(){
+        float dist = (controller_tp.center_btw_players - card.transform.position).magnitude;
+
+        if(dist < 3){
+
+        } 
+
+        bool fst_cond = (card.transform.rotation.eulerAngles.y==0 
+            && Math.Abs(controller_tp.center_btw_players.x - card.transform.position.x)<1
+            && Math.Abs(controller_tp.center_btw_players.z - card.transform.position.z)<2.5f);
+        bool snd_cond = (card.transform.rotation.eulerAngles.y!=0
+            && Math.Abs(controller_tp.center_btw_players.x - card.transform.position.x)<2.5f
+            && Math.Abs(controller_tp.center_btw_players.z - card.transform.position.z)<1);
+
+        if (!trial_ended && fst_cond || snd_cond ){
+            can_tag_card = true;
+            if(player==null){
+                card_area.GetComponent<Renderer>().material = operator_script.white;
+            } else {
+                card_area.GetComponent<Renderer>().material = player_script.white;
+            }
+        } else {
+            can_tag_card = false;
+            if(player==null){
+                card_area.GetComponent<Renderer>().material = operator_script.None;
+            } else {
+                card_area.GetComponent<Renderer>().material = player_script.None;
+            }
+        }
+
+        if(!trial_ended && can_tag_card && card.transform.GetChild(0).GetComponent<Renderer>().material!=init_card_material){
+            EndTrial();
+        }
+    }
+
+    public void EndTrial(){
+        trial_time = Time.time - trial_time;
+        card_area.gameObject.SetActive(false);
+
+        if(player==null){
+            card.transform.GetChild(1).GetComponent<Renderer>().material = operator_script.Green;
+        } else {
+            card.transform.GetChild(1).GetComponent<Renderer>().material = player_script.Green;
+        }
+
+        trial_ended = true;
+        current_trial_running = false;
+        room_render.photonView.RPC("NextTrial", Photon.Pun.RpcTarget.AllBuffered);
+    }
+
+    public void StartTrial(){
+        //must implement
+        return;
     }
 }
