@@ -27,13 +27,13 @@ public class Trial {
     private Experiment experiment;
 
     //input variables
-    private string group;
+    private string group { get; private set; }
     private string participant;
     private string trial_nb;
-    private string training;
+    private string training { get; private set; }
     public string collab_env { get; private set; }
-    private string move_mode;
-    private string task;
+    private string move_mode { get; private set; }
+    private string task { get; private set; }
     private string wall;
     private string card_to_tag;
 
@@ -142,21 +142,6 @@ public class Trial {
         }
     }
 
-    public void EndTrial(){
-        trial_time = Time.time - trial_time;
-        card_area.gameObject.SetActive(false);
-
-        if(player==null){
-            card.transform.GetChild(1).GetComponent<Renderer>().material = operator_script.Green;
-        } else {
-            card.transform.GetChild(1).GetComponent<Renderer>().material = player_script.Green;
-        }
-
-        trial_ended = true;
-        current_trial_running = false;
-        room_render.photonView.RPC("NextTrial", Photon.Pun.RpcTarget.AllBuffered);
-    }
-
     public void StartTrial(){
         if(player==null){
             if(card.transform.GetChild(0).GetComponent<Renderer>().material == null){
@@ -178,5 +163,20 @@ public class Trial {
         }
 
         start_timer = true;
+    }
+
+    public void EndTrial(){
+        trial_time = Time.time - trial_time;
+        card_area.gameObject.SetActive(false);
+
+        if(player==null){
+            card.transform.GetChild(1).GetComponent<Renderer>().material = operator_script.Green;
+        } else {
+            card.transform.GetChild(1).GetComponent<Renderer>().material = player_script.Green;
+        }
+
+        trial_ended = true;
+        current_trial_running = false;
+        room_render.photonView.RPC("NextTrial", Photon.Pun.RpcTarget.AllBuffered);
     }
 }

@@ -151,8 +151,39 @@ public class Rendering : MonoBehaviourPunCallBacks {
     }
 
     public void CreateCards(){
-        //must implement
-        return;
+        Transform wall_object;
+        int on_wall_pos;
+        string wall_label;
+
+        for(int i=0; i< card_per_wall*3; i++){
+            if(i< textures.Length){
+                if(i< card_per_wall){
+                    wall_object = LeftWall;
+                    wall_label = "L";
+                    on_wall_pos = i;
+                } else if(i< 2*card_per_wall){
+                    wall_object = BackWall;
+                    wall_label = "B";
+                    on_wall_pos = i - card_per_wall;
+                } else {
+                    wall_object = RightWall;
+                    wall_label = "R";
+                    on_wall_pos = i - 2*card_per_wall;
+                }
+
+                Texture2D texture = (Texture2D)textures[i];
+                MyCard card = new MyCard(texture, wall_object, i);
+                photonView.RPC("AddCardToList", Photon.Pun.RpcTarget.AllBuffered);
+                card.pv.RPC("LoadCard", Photon.Pun.RpcTarget.AllBuffered);
+                photonView.RPC("AddPosToList", Photon.Pun.RpcTarget.AllBuffered);
+
+                GameObject card_object = PhotonView.Find(card.pv.ViewID).gameObject;
+                Vector3 card_scale = card_object.transform.localScale;
+            } else {
+                break;
+            }
+            cards_created = true;
+        }
     }
 
     //PunRPC methods
@@ -202,11 +233,6 @@ public class Rendering : MonoBehaviourPunCallBacks {
         //int pv;
         for(int i=0; i<60; i++){
             card = card_list[i];
-            
-            /* if(card!=null){
-                card_pv = card.GetComponent<PhotonView>();
-                pv = card_pv.ViewID;
-            } */
 
             if(i < card_per_wall){
                 wall = LeftWall;
@@ -223,7 +249,7 @@ public class Rendering : MonoBehaviourPunCallBacks {
             if(card_init_pos[i]!=null){
                 card.transform.localPosition = card_init_pos[i];
             }
-            //PhotonView.Find(pv).gameObject.SetActive(false);
+    
             card.SetActive(false);
         }
     }
@@ -250,13 +276,6 @@ public class Rendering : MonoBehaviourPunCallBacks {
 
     [PunRPC]
     public void NextTrial(){
-        //must implement
-        return;
-    }
-
-    [PunRPC]
-    public void DeleteCard(int pv){
-        //must implement
-        return;
+        experiment.NextTrial();
     }
 }
