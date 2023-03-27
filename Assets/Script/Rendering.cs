@@ -119,6 +119,42 @@ public class Rendering : MonoBehaviourPunCallBacks {
         experiment.controller_tp.photonView.RPC("TpToOther", Photon.Pun.RpcTarget.Others);
     }
 
+    public string SetParticipantName(){
+        string str;
+        switch (PhotonNetwork.LocalPlayer.ActorNumber){
+            case 1:
+                if(with_ope){
+                    str = "ope";
+                } else {
+                    str = "p01";
+                }
+                break;
+            case 2:
+                if(with_ope){
+                    str = "p01";
+                } else {
+                    str = "p02";
+                }
+                break;
+            case 3:
+                str = "p02";
+                break;
+            default:
+                break;
+        }
+        return str;
+    }
+
+    public void InstantiateCards(){
+        //must implement
+        return;
+    }
+
+    public void CreateCards(){
+        //must implement
+        return;
+    }
+
     //PunRPC methods
     [PunRPC]
     void CurrentTrialConditionsCheck(){
@@ -162,14 +198,16 @@ public class Rendering : MonoBehaviourPunCallBacks {
     public void ResetCards(){
         Transform wall;
         GameObject card;
-        PhotonView card_pv;
-        int pv;
+        //PhotonView card_pv;
+        //int pv;
         for(int i=0; i<60; i++){
             card = card_list[i];
-            if(card!=null){
+            
+            /* if(card!=null){
                 card_pv = card.GetComponent<PhotonView>();
                 pv = card_pv.ViewID;
-            }
+            } */
+
             if(i < card_per_wall){
                 wall = LeftWall;
             } else if(i < 2* card_per_wall){
@@ -185,24 +223,39 @@ public class Rendering : MonoBehaviourPunCallBacks {
             if(card_init_pos[i]!=null){
                 card.transform.localPosition = card_init_pos[i];
             }
-            PhotonView.Find(pv).gameObject.SetActive(false);
+            //PhotonView.Find(pv).gameObject.SetActive(false);
+            card.SetActive(false);
         }
     }
 
     [PunRPC]
-    public void StartExperiment(){
-        //must implement
-        return;
+    public void StartExperiment(string grp, int nb){
+        participant = SetParticipantName();
+        experiment = new Experiment(participant, grp, nb, card_list, with_ope);
+
+        if(experiment.current_trial.collab_env == "C"){
+            GameObject sound = GameObject.Find("Network Voice");
+            sound.SetActive(false);
+        }
     }
 
     [PunRPC]
     public void ActivateCards(){
+        GameObject card_pv;
+        int pv;
+        foreach(GameObject card in card_list){
+            card.SetActive(false);
+        }
+    }
+
+    [PunRPC]
+    public void NextTrial(){
         //must implement
         return;
     }
 
     [PunRPC]
-    public void NextTrial(){
+    public void DeleteCard(int pv){
         //must implement
         return;
     }

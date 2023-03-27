@@ -13,7 +13,7 @@ public class Trial {
     private Material init_card_material;
 
     //participants attributes
-    private GameObject operator;
+    private GameObject operator_;
     private Network_Operator operator_script;
     private GameObject player;
     private Network_Player player_script;
@@ -31,7 +31,7 @@ public class Trial {
     private string participant;
     private string trial_nb;
     private string training;
-    private string collab_env;
+    public string collab_env { get; private set; }
     private string move_mode;
     private string task;
     private string wall;
@@ -88,13 +88,13 @@ public class Trial {
     //setters
     public void SetParticipants(string name){
         if(name=="ope"){
-            operator = GameObject.Find("Network Operator(Clone)");
-            operator_script = operator.GetComponent<Network_Operator>();
+            operator_ = GameObject.Find("Network Operator(Clone)");
+            operator_script = operator_.GetComponent<Network_Operator>();
 
             player = null;
         } else if(name==""){
-            operator = GameObject.Find("Network Operator(Clone)");
-            operator_script = operator?.GetComponent<Network_Operator>();
+            operator_ = GameObject.Find("Network Operator(Clone)");
+            operator_script = operator_?.GetComponent<Network_Operator>();
 
             player = GameObject.Find("Network Player(Clone)");
             player_script = player?.GetComponent<Network_Player>();
@@ -102,7 +102,7 @@ public class Trial {
             player = GameObject.Find("Network Player(Clone)");
             player_script = player.GetComponent<Network_Player>();
 
-            operator = null;
+            operator_ = null;
         }
     }
 

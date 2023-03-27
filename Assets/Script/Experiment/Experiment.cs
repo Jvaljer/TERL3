@@ -40,7 +40,7 @@ public class Experiment {
     private readonly string expe_description_file;
     private List<Trial> trials;
     private List<GameObject> card_list;
-    private Trial current_trial;
+    public Trial current_trial { get; private set; }
     private StreamWriter writer;
     private StreamWriter kine_writer;
 
