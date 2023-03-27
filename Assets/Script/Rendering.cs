@@ -278,4 +278,38 @@ public class Rendering : MonoBehaviourPunCallBacks {
     public void NextTrial(){
         experiment.NextTrial();
     }
+
+    [PunRPC]
+    public void AddPosToList(int PV){
+        GameObject card = PhotonView.Find(PV).gameObject;
+        if(demo_created){
+            int index = 0;
+            foreach(GameObject ob in card_list){
+                if(ob==card){
+                    break;
+                }
+                index++;
+            }
+            card_init_pos[index] = card.transform.localPosition;
+        } else {
+            card_init_pos.Add(card.transform.localPosition);
+        }
+    }
+
+    [PunRPC]
+    public void AddCardToList(int PV){
+        GameObject card = PhotonView.Find(PV).gameObject;
+        if(demo_created){
+            int index = 0;
+            foreach(GameObject ob in card_list){
+                if(ob==null){
+                    break;
+                }
+                index++;
+            }
+            card_list[i] = card;
+        } else {
+            card_list.Add(card);
+        }
+    }
 }
