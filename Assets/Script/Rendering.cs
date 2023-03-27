@@ -186,7 +186,7 @@ public class Rendering : MonoBehaviourPunCallBacks {
         }
     }
 
-    //PunRPC methods
+    //Photon PunRPC methods
     [PunRPC]
     void CurrentTrialConditionsCheck(){
         experiment.current_trial.CheckConditions();
