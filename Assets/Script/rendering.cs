@@ -372,7 +372,6 @@ public class rendering : MonoBehaviourPunCallbacks {
                         }
                     }
                 }
-                Debug.Log("using simple destroy");
                 Debug.Log("using PhotonNetwork destroy");
                 PhotonNetwork.Destroy(ob_pv);
                 if(cardList[i] == null){
@@ -434,6 +433,7 @@ public class rendering : MonoBehaviourPunCallbacks {
         if(demoHasBeenCreated){
             photonView.RPC("ResetCards",Photon.Pun.RpcTarget.All);
         }
+
         for(int i=0; i<60; i++){
             if(cardList[i]!=null){
                 GameObject ob = cardList[i];
