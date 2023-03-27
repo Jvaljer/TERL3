@@ -225,4 +225,14 @@ public class Experiment {
             trials[trial_nb - 2].card.transform.GetChild(0).GetComponent<Renderer>().material = player_script.none;
         }
     }
+
+    public void End(){
+        Write();
+        controller_tp.menu.transform.Find("text_info").gameObject.SetActive(true);
+        controller_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "End of the experiment";
+        trial_running = false;
+        expe_running = false;
+        writer.Close();
+        kine_writer.Close();
+    }
 }

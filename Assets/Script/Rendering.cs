@@ -30,9 +30,9 @@ public class Rendering : MonoBehaviourPunCallBacks {
     private GameObject sphere4;
 
     //room walls
-    private Transform BWall;
-    private Tranform LWall;
-    private Transform RWall;
+    private Transform BackWall;
+    private Tranform LeftWall;
+    private Transform RightWall;
 
     //room attributes
     private Trasnform card_area;
@@ -61,6 +61,7 @@ public class Rendering : MonoBehaviourPunCallBacks {
     private bool demo_running = false;
     private bool demo_created = false;
     private bool demo_destroyed = false;
+    private bool with_ope = (GameObject.Find("Network Operator(Clone)")==null) ;
     
     //Awake Unity method that is called before anything else
     void Awake(){
@@ -87,6 +88,37 @@ public class Rendering : MonoBehaviourPunCallBacks {
         }
     }
 
+    //operator's method 
+    public void SpacePressed(){
+        if(!expe_running){
+            if(demo_running || demo_created){
+                demo_running = false;
+                photonView.RPC("ResetCards", Photon.Pun.RpcTarget.All);
+                photonView.RPC("ActivateCards", Photon.Pun.RpcTarget.All);
+                photonView.RPC("StartExperiment", Photon.Pun.RpcTarget.All);
+                expe_running = true;
+            } else {
+                InstantiateCards();
+                CreateCards();
+                photonView.RPC("StartExperiment", Photon.Pun.RpcTarget.All);
+                expe_running = true;
+            }
+        } else if(expe_running && !trial_running){
+            photonView.RPC("NextTrial", Photon.Pun.RpcTarget.AllBuffered);
+        }
+    }
+
+    public void EPressed(){
+        //ends the expe
+        photonView.RPC("DeleteCards", Photon.Pun.RpcTarget.AllBuffered);
+        photonView.RPC("EndExpe", Photon.Pun.RpcTarget.AllBuffered);
+    }
+
+    public void TPressed(){
+        //we wanna teleport both player to the center of the room ?
+        experiment.controller_tp.photonView.RPC("TpToOther", Photon.Pun.RpcTarget.Others);
+    }
+
     //PunRPC methods
     [PunRPC]
     void CurrentTrialConditionsCheck(){
@@ -96,5 +128,82 @@ public class Rendering : MonoBehaviourPunCallBacks {
     [PunRPC]
     public void NextTrial(){
         experiment.NextTrial();
+    }
+
+    [PunRPC]
+    public void EndExpe(){
+        experiment.End();
+        expe_running = false;
+        trial_running = false;
+    }
+
+    [PunRPC]
+    public void DeleteCards(){
+        //here we destroy all the room's card
+        foreach(GameObject card in cardList){
+            if(card != null){
+                PhotonView card_pv = card.GetComponent<PhotonView>();
+                int card_owner = card_pv.Owner.ActorNumber;
+                int master_id = PhotonNetwork.MasterClient.ActorNumber;
+
+                if(card_owner != master_id){
+                    if(PhotonNetwork.IsMasterClient){
+                        card_pv.RequestOwnership();
+                        card_pv.TransferOwnership(PhotonNetwork.MasterClient);
+                    }
+                }
+            }
+            PhotonNetwork.Destroy(card_pv);
+            cards_destroyed = true;
+        }
+    }
+
+    [PunRPC]
+    public void ResetCards(){
+        Transform wall;
+        GameObject card;
+        PhotonView card_pv;
+        int pv;
+        for(int i=0; i<60; i++){
+            card = card_list[i];
+            if(card!=null){
+                card_pv = card.GetComponent<PhotonView>();
+                pv = card_pv.ViewID;
+            }
+            if(i < card_per_wall){
+                wall = LeftWall;
+            } else if(i < 2* card_per_wall){
+                wall = BackWall;
+            } else {
+                wall = RightWall;
+            }
+
+            card.transform.parent = wall;
+            card.transform.rotation = wall.rotation;
+            card.transform.localScale = new Vector3(0.033f, 0.239f, 1.0f);
+
+            if(card_init_pos[i]!=null){
+                card.transform.localPosition = card_init_pos[i];
+            }
+            PhotonView.Find(pv).gameObject.SetActive(false);
+        }
+    }
+
+    [PunRPC]
+    public void StartExperiment(){
+        //must implement
+        return;
+    }
+
+    [PunRPC]
+    public void ActivateCards(){
+        //must implement
+        return;
+    }
+
+    [PunRPC]
+    public void NextTrial(){
+        //must implement
+        return;
     }
 }
