@@ -81,6 +81,8 @@ public class Teleporter : MonoBehaviour {
     private int nb_click = 0;
 
     //move mode attributes
+    private bool e_ = false;
+    private bool w_ = false;
     public string move_mode { get; private set; } = "drag";
     private bool is_other_synced = false;
     private bool tag_sync = true;
@@ -116,7 +118,39 @@ public class Teleporter : MonoBehaviour {
         if(click.GetStateDown(pose.inputSource)){
             ClickStateDown();
         }
+
+        if(move_mode != "Sync"){
+            if(move_mode == "Tp"){
+                if(click.GetStateDown(pose.inputSource)){
+                    ClickTeleport();
+                }
+                if(wait && (Time.time - timer > 0.7f)){
+                    long_click = true;
+                    wait = false;
+                }
+                if(long_click){
+                    tp_sync = true;
+                    TryTeleport();
+                    long_click = false;
+                }
+
+                if(click.GetStateUp(pose.inputSource)){
+                    ClickStateUp();
+                }
+                if(moving){
+                    prev_coord = intersect.transform.position;
+                }
+
+                if(has_pos==true){
+                    MenuHandling();
+                }
+
+            } else if(move_mode == "Joy"){
+
+            }
+        }
     }
+    
 
     //methods
     public void CheckForExpe(){
@@ -126,13 +160,41 @@ public class Teleporter : MonoBehaviour {
     }
 
     public bool UpdatePointer(){
-        //must implement
-        return true;
+        Ray ray = new Ray(transform.position, transform.forward);
+
+        if(Physics.Raycast(ray, out hit)){
+            string hit_tag = hit.transform.tag;
+            if(hit_tag!="" && hit_tag!=null){
+                //must test all existing tags ??
+                intersect.transform.position = hit.point;
+                return true;
+            }
+        }
+        return false;
     }
 
     public void TriggerStateDown(){
-        //must implement
-        return;
+        string hit_tag = hit.transform.tag;
+        if(hit_tag=="move_ctrl_TP" && move_mode!="Tp"){
+            if(move_mode=="Sync"){
+                photonView.RPC("ToggleOtherSync", Photon.Pun.RpcTarget.Others);
+            }
+            move_mode = "Tp";
+        } else if(hit_tag=="move_ctrl_Joy" && move_mode!="Joy"){
+            if(move_mode=="Sync"){
+                photonView.RPC("ToggleOtherSync", Photon.Pun.RpcTarget.Others);
+            }
+            move_mode = "Joy";
+        } else if(hit_tag=="move_ctrl_Drag" && move_mode!="Drag"){
+            if(move_mode=="Sync"){
+                photonView.RPC("ToggleOtherSync", Photon.Pun.RpcTarget.Others);
+            }
+            move_mode = "Drag";
+        } else if(hit_tag=="move_ctrl_Sync" && move_mode!="Sync"){
+            move_mode = "Sync";
+            photonView.RPC("ToggleOtherSync", Photon.Pun.RpcTarget.Others);
+            photonView.RPC("TpToOther", Photon.Pun.RpcTarget.AllBuffered);
+        }
     }
 
     public void TriggerLastStateDown(){
@@ -145,10 +207,149 @@ public class Teleporter : MonoBehaviour {
         return;
     }
 
+    public void ClickTeleport(){
+        //must implement
+        return;
+    }
+
+    public void TryTeleport(){
+        if(teleporting){
+            return;
+        }
+
+        Vector3 intersect_pos = intersect.transform.position;
+        if(e_){
+            if(tp_sync || is_other_sync){
+                photonView.RPC("RotationRig")
+            }
+        }
+    }
+
+    public void MenuHandling(){
+        //might need to correct this
+        string hit_name = hit.transform.name;
+        if(name=="Synchro" || name=="Not Synchro"){
+            menu.SetActive(false);
+            photonView.RPC("TeleportMode", Photon.Pun.RpcTarget.All, tp_sync);
+        } else if(name=="Synchro Tag" ||name=="Not Synchro Tag"){
+            menu.SetActive(false);
+            player = GameObject.Find("Network Player(Clone)");
+            tag_sync = true;
+            photonView.RPC("TagMode", Photon.Pun.RpcTarget.All, tag_sync);
+        } else if(name=="Cancel"){
+            menu.SetActive(false);
+        }
+    }
+
+    public void UpdateCenter(){
+        center_btw_players = (other_player_pos + cam.position) / 2f;
+        center_btw_players.y = 0;
+    }
+
+    //Routine methods
+    private IEnumerator MoveRigCasual(Vector3 translation, Transform wall){
+        move_timer = Time.time;
+        teleporting = true;
+
+        SteamVR_Fade.Start(Color.black, fade_time, true);
+        yield return new WaitForSeconds(fade_time);
+
+        if(wal!=null){
+            cam_rig.rotation = wall.rotation;
+            if(experiment!=null && experiment.current_trial.current_trial_running){
+                experiment.current_trial.IncrementTotalRotation(wall.rotation.eulerAngles.y - cam_rig.rotation.eulerAngles.y);
+                if(wall.rotation.eulerAngles.y - cam_rig.rotation.eulerAngles.y!=0){
+                    experiment.current_trial.IncrementRotationNb();
+                }
+            }
+        }
+
+        if(cam.position + translation.x <-3.5f){
+            translation.x = -3.5f - cam.position.x;
+        }
+        if(cam.position.x + translation.x > 3.5f){
+            translation.x = 3.5f - cam.position.x;
+        }
+        if(cam.position.z + translation.z < -3.5f){
+            translation.z = -3.5f - cam.position.z;
+        }
+        if(cam.position.z + translation.z > 3.5f){
+            translation.z = 3.5f - cam.position.z;
+        }
+
+        if(experiment!=null && experiment.current_trial.current_trial_running){
+            experiment.current_trial.IncrementTotalDist(translation.magnitude);
+        }
+
+        SteamVR_Fade.Start(Color.clear, fade_time, true);
+        if(tp_sync || is_other_sync){
+            photonView.RPC("MoveRig", Photon.Pun.RpcTarget.Others, cam_rig.position, cam_rig.rotation.eulerAngles);
+            tp_sync = false;
+        }
+        teleporting = false;
+
+        if(experiment!=null && experiment.current_trial.current_trial_running){
+            experiment.current_trial.IncrementMoveNb();
+            experiment.current_trial.IncrementMoveTime(Time.time - move_timer);
+            move_timer = Time.time;
+
+            if(wall!=null){
+                experiment.current_trial.IncrementWallSwitchNb();
+            }
+        }
+    }
+
+    private IEnumerator MoveRigForSyncTp(Vector3 pos, Vector3 rota){
+        move_timer = Time.time;
+        teleporting = true;
+
+        SteamVR_Fade.Start(Color.black, fade_time, true);
+        yield return new WaitForSeconds(fade_time);
+
+        cam_rig.RotateAround(camp.position, Vector3.up, rota.y - cam_rig.rotation.eulerAngles.y);
+
+        if(experiment!=null && experiment.current_trial.current_trial_running){
+            experiment.current_trial.IncrementTotalRotation(rota.y - cam_rig.rotation.eulerAngles.y);
+            experiment.current_trial.IncrementTotalDist((pos - cam_rig.position).magnitude);
+        }
+        cam_rig.position = pos;
+
+        SteamVR_Fade.Start(Color.clear, fade_time, true);
+        teleporting = false;
+
+        if(experiment!=null && experiment.current_trial.current_trial_running){
+            experiment.current_trial.IncrementMoveTime(Time.time - move_timer);
+        }
+        experiment.SetInfoLocation();
+    }
+
     //Photon PunRPC methods
     [PunRPC]
     public void ReceiveOtherPos(Vector3 pos, Vector3 rota, Vector3 cam_rig_pos){
+        other_player_cam_rig_pos = cam_rig_pos;
+        other_player_pos = position;
+        other_player_pos.y = 0;
+        other_player_rotation = rotation;
+
+        UpdateCenter();
+
+        cube.transform.position = center_btw_players;
+    }
+
+    [PunRPC]
+    public void TpToOther(){
+        StartCoroutine(MoveRigForSyncTp(other_player_cam_rig_pos, other_player_rotation));
+    }
+
+    [PunRPC]
+    public void RotationRig(string str){
         //must implement
-        return true;
+        return;
+    }
+
+    [PunRPC]
+    public void MoveRig(Vector3 translation, Vector3 rota){
+        //must implement
+        return;
     }
 }
