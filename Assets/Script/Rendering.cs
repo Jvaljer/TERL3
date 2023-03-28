@@ -53,7 +53,7 @@ public class Rendering : MonoBehaviourPunCallBacks {
     private int fst_trial_nb;
 
     //experiment attributes & statements
-    private Experiment experiment;
+    private Experiment experiment { get; private set; }
     private bool expe_running = false;
     private bool trial_running = false;
 
@@ -119,6 +119,25 @@ public class Rendering : MonoBehaviourPunCallBacks {
         experiment.controller_tp.photonView.RPC("TpToOther", Photon.Pun.RpcTarget.Others);
     }
 
+    public void DPressed(){
+        if(!demo_created){
+            InstantiateCards();
+            CreateCards();
+            demo_created = true;
+            demo_running = true;
+        } else if(demo_running && !demo_destroyed){
+            photonView.RPC("ResetCards", Photon.Pun.RpcTarget.All);
+            demo_destroyed = true;
+            demo_running = false;
+        } else if(!demo_running && demo_created){
+            photonView.RPC("ActivateCards", Photon.Pun.RpcTarget.All);
+            demo_running = true;
+        } else if(demo_running && demo_destroyed){
+            photonView.RPC("ResetCards", Photon.Pun.RpcTarget.All);
+            demo_running = false;
+        }
+    }
+
     public string SetParticipantName(){
         string str;
         switch (PhotonNetwork.LocalPlayer.ActorNumber){
@@ -146,8 +165,11 @@ public class Rendering : MonoBehaviourPunCallBacks {
     }
 
     public void InstantiateCards(){
-        //must implement
-        return;
+        if(training){
+            textures = Resources.LoadAll("dixit_training/", typeof(Texture2D));
+        } else {
+            textures = Resources.LoadAll("dixit_all/", typeof(Texture2D));
+        }
     }
 
     public void CreateCards(){
