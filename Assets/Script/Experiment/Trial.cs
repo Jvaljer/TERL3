@@ -38,7 +38,7 @@ public class Trial {
     private string card_to_tag;
 
     //trial's statements
-    private bool current_trial_running = false;
+    private bool current_trial_running { get; private set; } = false;
     private bool trial_ended = false;
     private bool can_tag_card = true;
     private bool start_timer = false;
@@ -178,5 +178,38 @@ public class Trial {
         trial_ended = true;
         current_trial_running = false;
         room_render.photonView.RPC("NextTrial", Photon.Pun.RpcTarget.AllBuffered);
+    }
+
+    //Logs Incrementation methods
+    public void IncrementTotalRotation(float angle){
+        total_rotate += Mathf.Abs(angle);
+        kine_writer.WriteLine(Time.time - timer + "; Rotate " + angle);
+        kine_writer.Flush();
+    }
+
+    public void IncrementTotalDist(float dist){
+        total_dist += dist;
+        kine_writer.WriteLine(Time.time - timer + "; Move " + dist);
+        kine_writer.Flush();
+    }
+
+    public void IncrementMoveTime(float t_){
+        move_time += t_;
+    }
+
+    public void IncrementRotationNb(){
+        roate_nb += 1;
+        kine_writer.WriteLine(Time.time - timer + ";Rotate");
+        kine_writer.Flush();
+    }
+
+    public void IncrementMoveNb(){
+        //must implement
+        return;
+    }
+
+    public void IncrementWallSwitchNb(){
+        //must implement
+        return;
     }
 }
