@@ -41,7 +41,7 @@ public class Trial {
     private bool current_trial_running { get; private set; } = false;
     private bool trial_ended = false;
     private bool can_tag_card = true;
-    private bool start_timer = false;
+    private bool start_timer { get; private set; } = false;
 
     //logs informations
     private int move_nb = 0;
@@ -209,6 +209,11 @@ public class Trial {
     }
 
     public void IncrementWallSwitchNb(){
+        //must implement
+        return;
+    }
+
+    public void StartTimer(){
         //must implement
         return;
     }

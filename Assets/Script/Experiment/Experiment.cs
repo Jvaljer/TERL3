@@ -31,7 +31,7 @@ public class Experiment {
     private GameObject player;
     private Network_Player player_script;
     private GameObject controller;
-    private Teleporter controller_tp;
+    private Teleporter ctrl_tp;
     
     //room script
     private Rendering room_render;
@@ -60,7 +60,7 @@ public class Experiment {
         player = GameObject.Find("Network Player(Clone)");
         player_script = player.GetComponent<Network_Player>();
         controller = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)");
-        controller_tp = controller.GetComponent<Teleporter>();
+        ctrl_tp = controller.GetComponent<Teleporter>();
 
         //getting the operator's room attribute depending on who's the operator (master client)
         int master_id = PhotonNetwork.MasterClient.ActorNumber;
@@ -125,22 +125,22 @@ public class Experiment {
         if(!trial_running){
             trial_running = true;
             SetInfoLocation();
-            controller_tp.menu.SetActive(true);
+            ctrl_tp.menu.SetActive(true);
 
             if(trials[trial_nb].task=="search"){
                 if(trials[trial_nb].training=="1"){
-                    controller_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search \n Training";
+                    ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search \n Training";
                 } else {
-                    controller_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search";
+                    ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search";
                 }
-                controller_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
+                ctrl_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
             } else {
                 if(trials[trial_nb].training=="1"){
-                    controller_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode + "\n Training";
+                    ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode + "\n Training";
                 } else {
-                    controller_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode;
+                    ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode;
                 }
-                controller_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
+                ctrl_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
             }
 
             trials[trial_nb].StartTrial();
@@ -157,33 +157,33 @@ public class Experiment {
 
             if(trials[trial_nb].group=="#pause"){
                 trial_running = false;
-                controller_tp.photonView.RPC("ResetPosition", Photon.Pun.RpcTarget.AllBuffered);
-                controller_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "Pause";
+                ctrl_tp.photonView.RPC("ResetPosition", Photon.Pun.RpcTarget.AllBuffered);
+                ctrl_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "Pause";
                 writer.WriteLine("#pause;");
                 writer.Flush();
                 IncrementTrialNb();
-                controller_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Next move " + theTrials[trialNb].moveMode;
+                ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Next move " + theTrials[trialNb].moveMode;
                 SetInfoLocation();
-                controller_tp.menu.SetActive(true);
+                ctrl_tp.menu.SetActive(true);
             } else {
                 SetInfoLocation();
 
                 if(trials[trial_nb].task=="search"){
                     if(trials[trial_nb].training=="1"){
-                        controller_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search \n Training";
+                        ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search \n Training";
                     } else {
-                        controller_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search";
+                        ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search";
                     }
-                    controller_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
+                    ctrl_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
                 } else {
                     if (trials[trial_nb].training == "1") {
-                        controller_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode + "\n Training";
+                        ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode + "\n Training";
                     } else {
-                        controller_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode;
+                        ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode;
                     }
-                    controller_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
+                    ctrl_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
                 }
-                controller_tp.menu.SetActive(true);
+                ctrl_tp.menu.SetActive(true);
                 trials[trial_nb].startTrial();
                 current_trial = trials[trial_nb];
             }
@@ -191,9 +191,9 @@ public class Experiment {
     }
 
     public void SetInfoLocation(){
-        controller_tp.menu.transform.position = controller_tp.cam.position + 1f*controller_tp.cam.forward;
-        controller_tp.menu.transform.rotation = controller_tp.cam.rotation;
-        controller_tp.menu.transform.RotateAround(controller_tp.menu.transform.position, Vector3.up, controller_tp.cam.rotation.eulerAngles.y - controller_tp.menu.transform.rotation.eulerAngles.y);
+        ctrl_tp.menu.transform.position = ctrl_tp.cam.position + 1f*ctrl_tp.cam.forward;
+        ctrl_tp.menu.transform.rotation = ctrl_tp.cam.rotation;
+        ctrl_tp.menu.transform.RotateAround(ctrl_tp.menu.transform.position, Vector3.up, ctrl_tp.cam.rotation.eulerAngles.y - ctrl_tp.menu.transform.rotation.eulerAngles.y);
     }
 
     public void Write(){
@@ -209,8 +209,8 @@ public class Experiment {
 
     public void Finish(){
         Write();
-        controller_tp.menu.transform.Find("textInfo").gameObject.SetActive(true);
-        controller_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "Fin de l'expérience";
+        ctrl_tp.menu.transform.Find("textInfo").gameObject.SetActive(true);
+        ctrl_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "Fin de l'expérience";
         trial_running = false;
         expe_running = false;
         writer.Close();
@@ -228,8 +228,8 @@ public class Experiment {
 
     public void End(){
         Write();
-        controller_tp.menu.transform.Find("text_info").gameObject.SetActive(true);
-        controller_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "End of the experiment";
+        ctrl_tp.menu.transform.Find("text_info").gameObject.SetActive(true);
+        ctrl_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "End of the experiment";
         trial_running = false;
         expe_running = false;
         writer.Close();
@@ -240,22 +240,22 @@ public class Experiment {
         if(!trial_running){
             trial_running = true;
             SetInfoLocation();
-            controller_tp.menu.SetActive(true);
+            ctrl_tp.menu.SetActive(true);
 
             if(trials[trial_nb].task == "Search"){
                 if(trials[trial_nb].training == "1"){
-                    controller_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Search \n Training";
+                    ctrl_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Search \n Training";
                 } else {
-                    controller_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Search";
+                    ctrl_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Search";
                 }
-                controller_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
+                ctrl_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
             } else {
                 if(trials[trial_nb].training == "1"){
-                    controller_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Navigate " + trials[trial_nb].moveMode + "\n Training";
+                    ctrl_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Navigate " + trials[trial_nb].moveMode + "\n Training";
                 } else {
-                    controller_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Navigate " + trials[trial_nb].moveMode;
+                    ctrl_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Navigate " + trials[trial_nb].moveMode;
                 }
-                controller_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
+                ctrl_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
             }
 
             trials[trial_nb].StartTrial();
@@ -271,34 +271,41 @@ public class Experiment {
             IncrementTrialNb();
             if(trials[trial_nb].group == "#pause"){
                 trial_running = false;
-                controller_tp.photonView.RPC("ResetPosition", Photon.Pun.RpcTarget.AllBuffered);
-                controller_tp.menu.transform.Find("text_info").GetComponent<TextMesh>();
+                ctrl_tp.photonView.RPC("ResetPosition", Photon.Pun.RpcTarget.AllBuffered);
+                ctrl_tp.menu.transform.Find("text_info").GetComponent<TextMesh>();
                 writer.WriteLine("#pause;");
                 IncrementTrialNb();
-                controller_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Next move " + trials[trial_nb].moveMode;
+                ctrl_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Next move " + trials[trial_nb].moveMode;
                 SetInfoLocation();
-                controller_tp.menu.SetActive(true);
+                ctrl_tp.menu.SetActive(true);
             } else {
                 SetInfoLocation();
                 if(trials[trial_nb].task == "Search"){
                     if(trials[trial_nb].training == "1"){
-                        controller_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Search \n Training";
+                        ctrl_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Search \n Training";
                     } else {
-                        controller_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Search";
+                        ctrl_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Search";
                     }
-                    controller_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
+                    ctrl_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
                 } else {
                     if(trials[trial_nb].training == "1"){
-                        controller_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Navigate " + trials[trial_nb].moveMode + "\n Training";
+                        ctrl_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Navigate " + trials[trial_nb].moveMode + "\n Training";
                     } else {
-                        controller_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Navigate " + trials[trial_nb].moveMode;
+                        ctrl_tp.menu.transform.Find("move_mode_text").GetComponent<TextMesh>().text = "Navigate " + trials[trial_nb].moveMode;
                     }
-                    controller_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
+                    ctrl_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
                 }
-                controller_tp.menu.SetActive(true);
+                ctrl_tp.menu.SetActive(true);
                 trials[trial_nb].StartTrial();
                 current_trial = trials[trial_nb];
             }
         }
+    }
+
+    public IEnumerator TrialStarted(){
+        current_trial.StartTimer();
+        ctrl_tp.menu.transform.Find("text_info").GetComponent<TextMesh>().text = "Trial Started";
+        yield return new WaitForSeconds(5);
+        ctrl_tp.menu.SetActive(false);
     }
 }

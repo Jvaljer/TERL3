@@ -198,8 +198,10 @@ public class Teleporter : MonoBehaviour {
     }
 
     public void TriggerLastStateDown(){
-        //must implement
-        return;
+        if(experiment!=null && !ctrl_right.GetComponent<DragDrop>().trial_start_cond && experiment.trial_running && experiment.current_trial.start_timer && move_mode=="Sync"){
+            experiment.photonView.RPC("TrialStart", Photon.Pun.RpcTarget.AllBuffered);
+        }
+        move_timer = Time.time;
     }
 
     public void ClickStateDown(){
@@ -219,9 +221,67 @@ public class Teleporter : MonoBehaviour {
 
         Vector3 intersect_pos = intersect.transform.position;
         if(e_){
-            if(tp_sync || is_other_sync){
-                photonView.RPC("RotationRig")
+            if(tp_sync || is_other_synced){
+                photonView.RPC("RotationRig", Photon.Pun.RpcTarget.All, "e");
+            } else {
+                cam_rig.RotateAround(cam.position, Vector3.up, 90);
+                experiment.IncrementTotalRotation(90);
+                experiment.IncrementRotationNb();
             }
+            return;
+        } else if(w_){
+            if(tp_sync || is_other_synced){
+                photonView.RPC("RotationRig", Photon.Pun.RpcTarget.All, "w");
+            } else {
+                cam_rig.RotateAround(cam.position, Vector3.up, -90);
+                experiment.IncrementTotalRotation(90);
+                experiment.IncrementRotationNb();
+            }
+            return;
+        }
+        Vector3 translate_vec;
+        string hit_tag = hit.transform.tag;
+        if(!has_pos){
+            return;
+        } else if(hit_tag=="Tp"){
+            if(intersect_pos.x < -3.5f){ intersect_pos.x = -3.5f; }
+            if(intersect_pos.x > 3.5f){ intersect_pos.x = -3.5f; }
+            if(intersect_pos.z < -3.5f){ intersect_pos.z = -3.5f; }
+            if(intersect_pos.z < -3.5f){ intersect_pos.z = -3.5f; }
+
+            translate_vec = intersect_pos - cam.position;
+            translate_vec.y = 0;
+
+            StartCoroutine(MoveRig(translate_vec, null));
+
+        } else if(hit_tag=="Wall" || hit_tag=="Card"){
+            Transform parent_wall;
+
+            Vector3 cam_look = new Vector3(cam.transforl.forward.x, 0, cam.transform.forward.z);
+            hit_object = Physics.RaycastAll(cam_rig.transform.position, cam_rig.transform.forward, 100.0f);
+
+            float x = -cam_rig.transform.position.x;
+            float z = -cam_rig.transform.position.y;
+
+            string hit_name = hit.transform.name;
+            string hit_parent_name = hit.transform.parent.name;
+            if(hit_name=="BackWall" || hit_parent_name=="BackWall"){
+                translate_vec = new Vector3(intersect.transform.position.x - cam.position.x, 0, 3-cam.position.z);
+                parent_wall = BackWall;
+
+            } else if(hit_name=="RightWall" || hit_parent_name=="RightWall"){
+                translate_vec = new Vector3(intersect.transform.position.x - cam.position.x, 0, 3-cam.position.z);
+                parent_wall = RightWall;
+
+            } else if(hit_name=="LeftWall" || hit_parent_name=="LeftWall"){
+                translate_vec = new Vector3(intersect.transform.position.x - cam.position.x, 0, 3-cam.position.z);
+                parent_wall = LeftWall;
+
+            }
+            StartCoroutine(MoveRig(translate_vec, parent_wall));
+
+        } else if(hit_tag=="Player"){
+            photonView.RPC("TpToOther", Photon.Pun.RpcTarget.AllBuffered);
         }
     }
 
@@ -282,7 +342,7 @@ public class Teleporter : MonoBehaviour {
         }
 
         SteamVR_Fade.Start(Color.clear, fade_time, true);
-        if(tp_sync || is_other_sync){
+        if(tp_sync || is_other_synced){
             photonView.RPC("MoveRig", Photon.Pun.RpcTarget.Others, cam_rig.position, cam_rig.rotation.eulerAngles);
             tp_sync = false;
         }
@@ -343,13 +403,29 @@ public class Teleporter : MonoBehaviour {
 
     [PunRPC]
     public void RotationRig(string str){
-        //must implement
-        return;
+        Transform cam_rig_bis = SteamVR_Render.Top().origin.parent;
+
+        if(str=="e"){
+            cube.transform.RotateAround(cube.transform.position, Vector3.up, 90);
+            cam_rig_bis.RotateAround(cube.transform.position, Vector3.up, 90);
+
+            if(experiment!=null){
+                experiment.current_trial.IncrementTotalRotation(90);
+                experiment.current_trial.IncrementRotationNb();
+            }
+        } else if(str=="w"){
+            cube.transform.RotateAround(cube.transform.position, Vector3.up, -90);
+            cam_rig_bis.RotateAround(cube.transform.position, Vector3.up, -90);
+
+            if(experiment!=null){
+                experiment.current_trial.IncrementTotalRotation(90);
+                experiment.current_trial.IncrementRotationNb();
+            }
+        }
     }
 
     [PunRPC]
     public void MoveRig(Vector3 translation, Vector3 rota){
-        //must implement
-        return;
+        StartCoroutine(MoveRigForSyncTp(translation, rota));
     }
 }
