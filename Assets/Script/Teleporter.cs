@@ -117,13 +117,13 @@ public class Teleporter : MonoBehaviour {
 
         position = SteamVR_Actions.default_Pos.GetAxis(SteamVR_Input_Sources.Any);
         if(click.GetStateDown(pose.inputSource)){
-            ClickStateDown();
+            ClickPress();
         }
 
         if(move_mode != "Sync"){
             if(move_mode == "Tp"){
                 if(click.GetStateDown(pose.inputSource)){
-                    ClickTeleport();
+                    ClickTeleportDown();
                 }
                 if(wait && (Time.time - timer > 0.7f)){
                     long_click = true;
@@ -136,8 +136,9 @@ public class Teleporter : MonoBehaviour {
                 }
 
                 if(click.GetStateUp(pose.inputSource)){
-                    ClickStateUp();
+                    ClickTeleportUp();
                 }
+
                 if(moving){
                     prev_coord = pointer.transform.position;
                 }
@@ -147,12 +148,28 @@ public class Teleporter : MonoBehaviour {
                 }
 
             } else if(move_mode == "Joy"){
-                //must continue implementing
+                OldFingerCheck();
+
                 if(click.GetState(pose.inputSource)){
-                    ClickState();
+                    ClickJoy();
                 }
+
+                old_finger.x = position.x;
+                old_finger.y = position.y;
+
             } else if(move_mode == "Drag"){
-                //must implement
+                if(click.GetStateUp(pose.inputSource) && experiment != null && experiment.current_trial.current_trial_running){
+                    ClickDragUp();
+                }
+
+                if(click.GetStateDown(pose.inputSource)){
+                    move_timer = Time.time;
+                    initial_drag_direction = (hit.point - new Vector3(ctrl_right.position.x, 0, ctrl_right.position.z)).normalized;
+                }
+
+                if(click.GetState(pose.inputSource)){
+                    ClickDrag();
+                }
             }
         }
     }
@@ -210,13 +227,13 @@ public class Teleporter : MonoBehaviour {
         move_timer = Time.time;
     }
 
-    public void ClickStateDown(){
+    public void ClickPress(){
         old_ctrl_rotation = ctrl_right.transform.rotation.eulerAngles;
         old_ctrl_forward = ctrl_right.forward;
         init_hit = hit;
     }
 
-    public void ClickTeleport(){
+    public void ClickTeleportDown(){
         if(position.x < -0.5f){
             w_ = true;
             TryTeleport();
@@ -230,12 +247,89 @@ public class Teleporter : MonoBehaviour {
         }
     }
 
-    public void ClickStateUp(){
+    public void ClickTeleportUp(){
+        moving = false;
+        long_click = false;
+        e_ = false;
+        w_ = false;
+
+        if(wait){
+            TryTeleport();
+        }
+
+        wait = false;
+        long_click = false;
+    }
+
+    public void ClickJoy(){
+        Quaternion rota = Quaternion.Euler(ctrl_right.rotation.eulerAngles);
+        Matrix4x4 mat = Matrix4x4.Rotate(rota);
+        Vector3 translate_vec = new Vector3(0,0,0);
+
+        if(position.x < -0.5f){
+            float joy_rota = -joystick_rotation * Vector3.Cross(Vector3.up, ctrl_right.forward).magnitude;
+            if(is_other_synced){
+                photonView.RPC("MoveRigTransform", Photon.PunRpcTarget.Others, translate_vec, joy_rota);
+                cam_rig.RotateAround(cam_rig.position, Vector3.up, joy_rota);
+            } else {
+                cam_rig.RotateAround(cam_rig.position, Vector3.up, joy_rota);
+            }
+
+            if(experiment != null && experiment.current_trial.current_trial_running){
+                experiment.current_trial.IncrementTotalRotation(joy_rota* -1f);
+            }
+        }
+
+        if(position.y > 0.5f){
+            translate_vec = mat.MultiplyPoint3x4(plus_Z * joy_rota * 1/FPS.GetCurrentFPS());
+
+            Vector3 cam_angle = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z);
+            Vector3 ctrl_angle = new Vector3(ctrl_right.transform.forward.x, 0, ctrl_right.transform.forward.z);
+
+            double cross_product = Vector3.Cross(cam_angle, ctrl_angle).y;
+
+            if(cross_product > 0){
+                cam_rotator.RotateAround(cam.position, Vector3.up, 0.25f);
+            } else if(cross_product < 0){
+                cam_rotator.RotateAround(cam.position, Vector3.up, -0.25f);
+            }
+        }
+
+        if(position.y < -0.5f){
+            translate_vec = mat.MultiplyPoint3x4(minus_Z * joy_rota * 1/FPS.GetCurrentFPS());
+        }
+
+        if(position.x > 0.5f){
+            if(is_other_synced){
+                photonView.RPC("MoveRigTransform", Photon.PunRpcTarget.Others, translate_vec, joy_rota * -1f);
+                cam_rig.RotateAround(cam_rig.position, Vector3.up, joy_rota * -1f);
+            } else {
+                cam_rig.RotateAround(cam.position, Vector3.up, joy_rota * -1f);
+            }
+
+            if(experiment != null && experiment.current_trial.current_trial_running){
+                experiment.current_trial.IncrementTotalDist(joy_rota * -1f);
+            }
+        }
+
+        translate_vec.y = 0;
+        Translate(3.5f);
+        cam_rig.position += translate_vec;
+
+        if(experiment != null && experiment.current_trial.current_trial_running){
+            experiment.current_trial.IncrementTotalDist(translate_vec.magnitude);
+        }
+        if(is_other_synced){
+            photonView.RPC("MoveRigTransform", Photon.Pun.RpcTarget.Others, translateVect, 0f);
+        }
+    }
+
+    public void ClickDragUp(){
         //must implement
         return;
     }
 
-    public void ClickState(){
+    public void ClickDrag(){
         //must implement
         return;
     }
@@ -333,14 +427,14 @@ public class Teleporter : MonoBehaviour {
     }
 
     //Routine methods
-    private IEnumerator MoveRigCasual(Vector3 translation, Transform wall){
+    private IEnumerator MoveRigRoutine(Vector3 translation, Transform wall){
         move_timer = Time.time;
         teleporting = true;
 
         SteamVR_Fade.Start(Color.black, fade_time, true);
         yield return new WaitForSeconds(fade_time);
 
-        if(wal!=null){
+        if(wall!=null){
             cam_rig.rotation = wall.rotation;
             if(experiment!=null && experiment.current_trial.current_trial_running){
                 experiment.current_trial.IncrementTotalRotation(wall.rotation.eulerAngles.y - cam_rig.rotation.eulerAngles.y);
@@ -350,18 +444,7 @@ public class Teleporter : MonoBehaviour {
             }
         }
 
-        if(cam.position + translation.x <-3.5f){
-            translation.x = -3.5f - cam.position.x;
-        }
-        if(cam.position.x + translation.x > 3.5f){
-            translation.x = 3.5f - cam.position.x;
-        }
-        if(cam.position.z + translation.z < -3.5f){
-            translation.z = -3.5f - cam.position.z;
-        }
-        if(cam.position.z + translation.z > 3.5f){
-            translation.z = 3.5f - cam.position.z;
-        }
+        Translate(3.5f);
 
         if(experiment!=null && experiment.current_trial.current_trial_running){
             experiment.current_trial.IncrementTotalDist(translation.magnitude);
@@ -409,6 +492,47 @@ public class Teleporter : MonoBehaviour {
         experiment.SetInfoLocation();
     }
 
+    public void OldFingerCheck(){
+        if(click.GetLastStateDown(pose.inputSource)){
+            old_finger.x = position.x;
+            old_finger.y = position.y;
+        }
+
+        if( (old_finger.x > 0.5f && (position.x < 0.5f || click.GetStateUp(pose.inputSource)))
+        || (old_finger.x < -0.5f && (position.x > -0.5f || click.GetStateUp(pose.inputSource))) 
+        && experiment.current_trial.current_trial_running) {
+
+            experiment.current_trial.IncrementRotationNb();
+        }
+
+        if( (old_finger.y > 0.5f && (position.y < 0.5f || click.GetStateUp(pose.inputSource)))
+        || (old_finger.y < -0.5f && (position.y > -0.5f || click.GetStateUp(pose.inputSource))) 
+        && experiment.current_trial.current_trial_running) {
+
+            experiment.current_trial.IncrementMoveNb();
+            experiment.current_trial.IncrementMoveTime(Time.time - move_timer);
+            move_timer = Time.time;
+        }
+
+        if( (old_finger.y < 0.5f && position.y > 0.5f) || (old_finger.y > -0.5f && position.y < -0.5f) ){
+            move_timer = Time.time;
+        }
+    }
+
+    public void Translate(float n){
+        if(cam.position.x + translate.x < -n){
+            translat.x = -n - cam.position.x;
+        }
+        if(cam.position.x + translate.x > n){
+            translat.x = n - cam.position.x;
+        }
+        if(cam.position.z + translate.z < -n){
+            translat.z = -n - cam.position.z;
+        }
+        if(cam.position.z + translate.x > n){
+            translat.x = n - cam.position.z;
+        }
+    }
     //Photon PunRPC methods
     [PunRPC]
     public void ReceiveOtherPos(Vector3 pos, Vector3 rota, Vector3 cam_rig_pos){
@@ -453,5 +577,15 @@ public class Teleporter : MonoBehaviour {
     [PunRPC]
     public void MoveRig(Vector3 translation, Vector3 rota){
         StartCoroutine(MoveRigForSyncTp(translation, rota));
+    }
+
+    [PunRPC]
+    public void MoveRigTransform(Vector3 translate, float rota){
+        Translate(4f);
+
+        cam_rig.position += translate;
+        cam_rig.RotateAround(other_player_cam_rig_pos, Vector3.up, rota);
+        experiment.current_trial.IncrementTotalRotation(joystick_rotation);
+        experiment.current_trial.IncrementTotalDist(translate.magnitude);
     }
 }
