@@ -325,13 +325,111 @@ public class Teleporter : MonoBehaviour {
     }
 
     public void ClickDragUp(){
-        //must implement
-        return;
+        if(hit.transform != null){
+            if(hit.transform.tag == "Tp"){
+                if(init_hit.transform != null && (init_hit.transform.tag == "Wall" || init_hit.transform.tag == "Card")){
+                    experiment.current_trial.IncrementDragWallFloorNb();
+                }
+            }
+
+            if(hit.transform.tag == "Wall" || hit.transform.tag == "Card"){
+                experiment.current_trial.IncrementMoveNb();
+                experiment.current_trial.IncrementMoveWallNb();
+            }
+
+            experiment.current_trial.IncrementMoveTime(Time.time - move_timer);
+            move_timer = Time.time;
+        } else {
+            experiment.current_trial.IncrementRotationNb();
+            move_timer = Time.time;
+        }
     }
 
     public void ClickDrag(){
-        //must implement
-        return;
+        Vector3 translate_vec = new Vector3(0, 0, 0);
+
+        if(has_pos && hit.transform.tag == "TP"){
+            float old_angle = Vector3.SignedAngle(Vector3.down, old_ctrl_forward, Vector3.Cross(Vector3.down, initialDragDirection).normalized);
+            float current_angle = Vector3.SignedAngle(Vector3.down, ctrl_right.forward, Vector3.Cross(Vector3.down, initial_drag_direction).normalized);
+        
+            float a = Mathf.Tan(old_angle * Mathf.PI/180);
+            float b = Mathf.Tan(current_angle * Mathf.PI/180);
+
+            translate_vec = initial_drag_direction;
+            translate_vec *= (a_b) * ctrl_right.position.y;
+            translate_vec.y = 0;
+
+            Translate(3.5f);
+
+            cam_rig.position += translate_vec;
+
+            if(experiment != null && experiment.current_trial.current_trial_running){
+                experiment.current_trial.IncrementTotalDist(translate_vec.magnitude);
+            }        
+
+            if(is_other_synced){
+                photonView.RPC("MoveRigTransform", Photon.Pun.RpcTarget.Others, translate_vec, 0f);
+            }
+        } else if(has_pos && (hit.transform.tag=="Wall" || hit.transform.parent.tag=="Wall")){
+            Transform wall;
+            float a, b, wall_dist;
+            float a_tan = Mathf.Tan( (old_ctrl_rotation.y - wall.rotation.eulerAngles.y) * Mathf.PI/180);
+            float b_tan = Mathf.Tan( (ctrl_right.rotation.eulerAngles.y - wall.rotation.eulerAngles.y) * Mathf.PI/180);
+
+            if(hit.transform.name=="BackWall" || hit.transform.parent.name=="BackWall"){
+                wall = BackWall;
+                wall_dist = Mathf.Abs(wall.position.z - ctrl_right.position.z);
+
+                a = a_tan;
+                b = b_tan;
+
+                translate_vec.x = 1.0f;
+            } else if(hit.transform.name=="RightWall" || hit.transform.parent.name=="RightWall"){
+                wall = RightWall;
+                wall_dist = Mathf.Abs(wall.position.x - ctrl_right.position.x);
+
+                a = - a_tan;
+                b = - b_tan;
+
+                translate_vec.z = 1.0f;
+            } else if(hit.transform.name=="LeftWall" || hit.transform.parent.name=="LeftWall"){
+                wall = LeftWall;
+                wall_dist = Mathf.Abs(wall.position.x - ctrl_right.position.x);
+
+                a = a_tan;
+                b = b_tan;
+
+                translate_vec.z = 1.0f;
+            }
+
+            translate_vec *= (a-b) * wall_dist;
+            Translate(3.5f);
+            cam_rig.position += translate_vec;
+
+            if(experiment != null && experiment.current_trial.current_trial_running){
+                experiment.current_trial.IncrementTotalDist(translate_vec.magnitude);
+            }
+
+            if(is_other_synced){
+                photonView.RPC("MoveRigTransform", Photon.Pun.RpcTarget.Others, translate_vec, 0f);
+            }
+        } else {
+            float angle = old_ctrl_rotation.y - ctrl_right.transform.rotation.eulerAngles.y;
+
+            if(is_other_synced){
+                photonView.RPC("MoveRigTransform", Photon.Pun.RpcTarget.Others, translate_vec, angle);
+                cam_rig.RotateAround(cam_rig.position, Vector3.up, angle);
+            } else {
+                cam_rig.RotateAround(cam.position, Vector3.up, angle);
+            }
+
+            if(experiment != null && experiment.current_trial.current_trial_running){
+                experiment.IncrementTotalRotation(angle);
+            }
+        }
+
+        old_ctrl_forward = ctrl_right.forward;
+        old_ctrl_rotation = ctrl_right.transform.rotation.eulerAngles;
     }
 
     public void TryTeleport(){

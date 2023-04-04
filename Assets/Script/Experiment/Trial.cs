@@ -215,6 +215,11 @@ public class Trial {
         kine_writer.Flush();
     }
 
+    public void IncrementMoveWallNb(){
+        //must implement
+        return;
+    }
+
     public void StartTimer(){
         trial_time = Time.time;
         if(task=="Search"){
