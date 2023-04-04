@@ -204,17 +204,23 @@ public class Trial {
     }
 
     public void IncrementMoveNb(){
-        //must implement
-        return;
+        move_nb += 1;
+        kine_writer.WriteLine(Time.time - timer + "; Move");
+        kine_writer.Flush();
     }
 
-    public void IncrementWallSwitchNb(){
-        //must implement
-        return;
+    public void IncrementDragWallFloorNb(){
+        drag_wall_floor_nb += 1;
+        kine_writer.WriteLine(Time.time - timer + "; DragWallFloor");
+        kine_writer.Flush();
     }
 
     public void StartTimer(){
-        //must implement
-        return;
+        trial_time = Time.time;
+        if(task=="Search"){
+            card.transform.GetChild(1).gameObject.SetActive(true);
+        }
+        current_trial_running = true;
+        start_timer = false;
     }
 }

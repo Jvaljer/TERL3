@@ -37,9 +37,10 @@ public class Teleporter : MonoBehaviour {
     private Transform LeftWall;
 
     //Raycast atributes
-    private GameObject intersect;
+    private GameObject pointer;
     private bool has_pos = false;
     RaycastHit hit;
+    RaycastHit init_hit;
     RaycastHit[] hit_object;
 
     //SteamVR inputs
@@ -138,7 +139,7 @@ public class Teleporter : MonoBehaviour {
                     ClickStateUp();
                 }
                 if(moving){
-                    prev_coord = intersect.transform.position;
+                    prev_coord = pointer.transform.position;
                 }
 
                 if(has_pos==true){
@@ -146,7 +147,12 @@ public class Teleporter : MonoBehaviour {
                 }
 
             } else if(move_mode == "Joy"){
-
+                //must continue implementing
+                if(click.GetState(pose.inputSource)){
+                    ClickState();
+                }
+            } else if(move_mode == "Drag"){
+                //must implement
             }
         }
     }
@@ -166,7 +172,7 @@ public class Teleporter : MonoBehaviour {
             string hit_tag = hit.transform.tag;
             if(hit_tag!="" && hit_tag!=null){
                 //must test all existing tags ??
-                intersect.transform.position = hit.point;
+                pointer.transform.position = hit.point;
                 return true;
             }
         }
@@ -205,11 +211,31 @@ public class Teleporter : MonoBehaviour {
     }
 
     public void ClickStateDown(){
-        //must implement 
-        return;
+        old_ctrl_rotation = ctrl_right.transform.rotation.eulerAngles;
+        old_ctrl_forward = ctrl_right.forward;
+        init_hit = hit;
     }
 
     public void ClickTeleport(){
+        if(position.x < -0.5f){
+            w_ = true;
+            TryTeleport();
+        } else if(position.x > 0.5f){
+            e_ = true;
+            TryTeleport();
+        } else {
+            nb_click++;
+            click_coord = pointer.transform.position;
+            prev_coord = pointer.transform.position;
+        }
+    }
+
+    public void ClickStateUp(){
+        //must implement
+        return;
+    }
+
+    public void ClickState(){
         //must implement
         return;
     }
@@ -219,7 +245,7 @@ public class Teleporter : MonoBehaviour {
             return;
         }
 
-        Vector3 intersect_pos = intersect.transform.position;
+        Vector3 pointer_pos = pointer.transform.position;
         if(e_){
             if(tp_sync || is_other_synced){
                 photonView.RPC("RotationRig", Photon.Pun.RpcTarget.All, "e");
@@ -244,12 +270,12 @@ public class Teleporter : MonoBehaviour {
         if(!has_pos){
             return;
         } else if(hit_tag=="Tp"){
-            if(intersect_pos.x < -3.5f){ intersect_pos.x = -3.5f; }
-            if(intersect_pos.x > 3.5f){ intersect_pos.x = -3.5f; }
-            if(intersect_pos.z < -3.5f){ intersect_pos.z = -3.5f; }
-            if(intersect_pos.z < -3.5f){ intersect_pos.z = -3.5f; }
+            if(pointer_pos.x < -3.5f){ pointer_pos.x = -3.5f; }
+            if(pointer_pos.x > 3.5f){ pointer_pos.x = -3.5f; }
+            if(pointer_pos.z < -3.5f){ pointer_pos.z = -3.5f; }
+            if(pointer_pos.z < -3.5f){ pointer_pos.z = -3.5f; }
 
-            translate_vec = intersect_pos - cam.position;
+            translate_vec = pointer_pos - cam.position;
             translate_vec.y = 0;
 
             StartCoroutine(MoveRig(translate_vec, null));
@@ -266,15 +292,15 @@ public class Teleporter : MonoBehaviour {
             string hit_name = hit.transform.name;
             string hit_parent_name = hit.transform.parent.name;
             if(hit_name=="BackWall" || hit_parent_name=="BackWall"){
-                translate_vec = new Vector3(intersect.transform.position.x - cam.position.x, 0, 3-cam.position.z);
+                translate_vec = new Vector3(pointer.transform.position.x - cam.position.x, 0, 3-cam.position.z);
                 parent_wall = BackWall;
 
             } else if(hit_name=="RightWall" || hit_parent_name=="RightWall"){
-                translate_vec = new Vector3(intersect.transform.position.x - cam.position.x, 0, 3-cam.position.z);
+                translate_vec = new Vector3(pointer.transform.position.x - cam.position.x, 0, 3-cam.position.z);
                 parent_wall = RightWall;
 
             } else if(hit_name=="LeftWall" || hit_parent_name=="LeftWall"){
-                translate_vec = new Vector3(intersect.transform.position.x - cam.position.x, 0, 3-cam.position.z);
+                translate_vec = new Vector3(pointer.transform.position.x - cam.position.x, 0, 3-cam.position.z);
                 parent_wall = LeftWall;
 
             }
@@ -354,7 +380,7 @@ public class Teleporter : MonoBehaviour {
             move_timer = Time.time;
 
             if(wall!=null){
-                experiment.current_trial.IncrementWallSwitchNb();
+                experiment.current_trial.IncrementDragWallFloorNb();
             }
         }
     }
