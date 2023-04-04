@@ -334,7 +334,7 @@ public class Teleporter : MonoBehaviour {
 
             if(hit.transform.tag == "Wall" || hit.transform.tag == "Card"){
                 experiment.current_trial.IncrementMoveNb();
-                experiment.current_trial.IncrementMoveWallNb();
+                experiment.current_trial.IncrementWallSwitchNb();
             }
 
             experiment.current_trial.IncrementMoveTime(Time.time - move_timer);

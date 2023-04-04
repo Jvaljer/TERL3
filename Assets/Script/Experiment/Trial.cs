@@ -215,9 +215,10 @@ public class Trial {
         kine_writer.Flush();
     }
 
-    public void IncrementMoveWallNb(){
-        //must implement
-        return;
+    public void IncrementWallSwitchNb(){
+        switch_wall_nb += 1;
+        kine_writer.WriteLine(Time.time - timer + "; WallSwitch");
+        kine_writer.Flush();
     }
 
     public void StartTimer(){
