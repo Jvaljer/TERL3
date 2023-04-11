@@ -88,7 +88,7 @@ public class Rendering : MonoBehaviourPunCallBacks {
         }
     }
 
-    //operator's method 
+    //operatoring method 
     public void SpacePressed(){
         if(!expe_running){
             if(demo_running || demo_created){

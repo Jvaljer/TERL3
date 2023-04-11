@@ -85,8 +85,8 @@ public class Teleporter : MonoBehaviour {
     private bool e_ = false;
     private bool w_ = false;
     public string move_mode { get; private set; } = "drag";
-    private bool is_other_synced = false;
-    private bool tag_sync = true;
+    private bool is_other_synced { get; private set; } = false;
+    private bool tag_sync { get; private set; } = true;
 
     //self atttributes
     private PhotonView photon_view;
