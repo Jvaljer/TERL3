@@ -56,7 +56,7 @@ public class NetworkPlayer : MonoBehaviourPun {
     //synchro attributes
     private bool sync_tag = true;
     private bool is_other_synced;
-    private string move_mode = "drag"; //possible others are : "TP" "joy" "sync"
+    private string move_mode = "Drag"; //possible others are : "TP" "Joy" "Sync"
 
     //Unity Start method, used as an initializer
     void Start(){
@@ -143,18 +143,73 @@ public class NetworkPlayer : MonoBehaviourPun {
 
     //other methods
     private void MapPosition(){
-        //must implement
-        return;
+        //positionning the left hand
+        palette.position = ctrl_left.transform.position;
+        palette.rotation = ctrl_left.transform.rotation;
+
+        //right hand
+        right_hand.position = ctrl_right.transform.position;
+        right_hand.rotation = ctrl_right.transform.rotation;
+
+        //the ray
+        ray.position = ctrl_right.transform.position;
+        ray.rotation = ctrl_right.transform.rotation;
+
+        //the head
+        head.position = headset.transform.position:
+        head.rotation = headset.transform.rotation;
+
+        //the body
+        chest.position = headset.transform.position;
+
+        //the circle & position
+        pos.position = new Vector3(headset.transform.position.x, 0, headset.transform.position.z);
+        circle.rotation = new Quaternion(0, headset.transform.rotation.y, 0, headset.transform.rotation.w);
     }
 
-    private void UpdateRay(){
-        //must implement
-        return;
+    private void UpdateRayColor(){
+        ray_name = hit.transform.GetComponent<Renderer>().material.name;
+        photonView.RPC("ChangeRayColor", Photon.Pun.RpcTarget.all, ray_name);
+        ctrl_right.GetComponent<PhotonView>().RPC("RayColor");
     }   
 
     private void UpdatePalette(string ht_){
-        //must implement
-        return;
+        switch (ht_){
+            case "MoveCtrl_TP":
+                palette.Find("GameObjectMoveJoy/CubeJoy").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveDrag/CubeDrag").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveSync/CubeSync").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveTP/CubeTP").GetComponent<Renderer>().material = green;
+                move_mode = "TP";
+                break;
+
+            case "MoveCtrl_Joy":
+                palette.Find("GameObjectMoveJoy/CubeJoy").GetComponent<Renderer>().material = green;
+                palette.Find("GameObjectMoveDrag/CubeDrag").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveSync/CubeSync").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveTP/CubeTP").GetComponent<Renderer>().material = red;
+                move_mode = "Joy";
+                break;
+
+            case "MoveCtrl_Drag":
+                palette.Find("GameObjectMoveJoy/CubeJoy").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveDrag/CubeDrag").GetComponent<Renderer>().material = green;
+                palette.Find("GameObjectMoveSync/CubeSync").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveTP/CubeTP").GetComponent<Renderer>().material = red;
+                move_mode = "Drag";
+                break;
+
+            case "MoveCtrl_Sync":
+                palette.Find("GameObjectMoveJoy/CubeJoy").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveDrag/CubeDrag").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveSync/CubeSync").GetComponent<Renderer>().material = green;
+                palette.Find("GameObjectMoveTP/CubeTP").GetComponent<Renderer>().material = red;
+                move_mode = "Sync";
+                break;
+
+            default:
+                break;
+        }
     }
 
     //PunRPC methods
@@ -162,5 +217,32 @@ public class NetworkPlayer : MonoBehaviourPun {
     private void ChangeMoveMode(string mm_){
         //must implement
         return;
+    }
+
+    [PunRPC]
+    private void ChangeRayColor(string color){
+        Material material;
+        switch (color){
+            case "blue (Instance)":
+                material = blue;
+                break;
+
+            case "green (Instance)":
+                material = green;
+                break;
+
+            case "red (Instance)":
+                material = red;
+                break;
+
+            case "white (Instance)":
+                material = white;
+                break;
+
+            default:
+                material = none;
+                break;
+        }
+        ray_cast.GetComponent<Renderer>().material = material;
     }
 }
