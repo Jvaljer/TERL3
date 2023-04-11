@@ -43,7 +43,7 @@ public class Rendering : MonoBehaviourPunCallBacks {
 
     //cards informations & statements
     private object[] textures;
-    private static int card_per_wall = 20;
+    private static int card_per_wall { get; private set; } = 20;
     private bool cards_created = false;
     private bool cards_destroyed = false;
 
@@ -196,7 +196,7 @@ public class Rendering : MonoBehaviourPunCallBacks {
                 Texture2D texture = (Texture2D)textures[i];
                 MyCard card = new MyCard(texture, wall_object, i);
                 photonView.RPC("AddCardToList", Photon.Pun.RpcTarget.AllBuffered);
-                card.pv.RPC("LoadCard", Photon.Pun.RpcTarget.AllBuffered);
+                card.pv.RPC("LoadCard", Photon.Pun.RpcTarget.AllBuffered, card.pv.ViewID, wall_object.GetComponent<PhotonView>().ViewID, wall_pos, i);
                 photonView.RPC("AddPosToList", Photon.Pun.RpcTarget.AllBuffered);
 
                 GameObject card_object = PhotonView.Find(card.pv.ViewID).gameObject;

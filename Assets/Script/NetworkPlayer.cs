@@ -142,6 +142,11 @@ public class NetworkPlayer : MonoBehaviourPun {
     }
 
     //other methods
+    private void OperatorActions(){
+        //must implement
+        return;
+    }
+
     private void MapPosition(){
         //positionning the left hand
         palette.position = ctrl_left.transform.position;
