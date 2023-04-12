@@ -1,3 +1,0 @@
-g02 p01 kine action
-20.60091; Rotate 0
-20.60091; Move 5.488547

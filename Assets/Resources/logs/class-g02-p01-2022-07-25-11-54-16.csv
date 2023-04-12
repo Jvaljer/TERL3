@@ -1,4 +1,0 @@
-Group;Participant;CollabEnvironememnt;trialNb;training;MoveMode;Task;Wall;CardToTag;nbMove;nbMoveWall;nbDragWallFloor;distTotal;nbRotate;rotateTotal;trialTime;moveTime
-g02;p01;C;51;0;drag;move;R;40;2;2;0;6.163534;0;0;5.110954;57.41081
-#pause;
-g02;p01;C;52;1;joy;move;B;23;0;0;0;0;0;0;0;0

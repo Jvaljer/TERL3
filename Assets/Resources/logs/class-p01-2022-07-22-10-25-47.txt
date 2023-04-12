@@ -1,7 +1,0 @@
-g02 p01 kine action
-37.72868; Rotate 0
-37.72868; Move 3.418752
-46.81342; Rotate 0
-46.81342; Move 3.931247
-46.81342; Move
-46.81342; MoveWall

@@ -1,7 +1,0 @@
-g06 p01 kine action
-25.59351; Rotate
-28.1921; Rotate
-28.29213; Rotate
-31.97944; Move
-33.33419; Move
-33.38979; Rotate
