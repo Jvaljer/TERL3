@@ -230,8 +230,39 @@ public class NetworkPlayer : MonoBehaviourPun {
     //PunRPC methods
     [PunRPC]
     public void ChangeMoveMode(string mm_){
-        //must implement
-        return;
+        switch (mm_){
+            case "TP":
+                palette.Find("GameObjectMoveJoy/CubeJoy").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveDrag/CubeDrag").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveSync/CubeSync").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveTP/CubeTP").GetComponent<Renderer>().material = green;
+                break;
+
+            case "Joy":
+                palette.Find("GameObjectMoveJoy/CubeJoy").GetComponent<Renderer>().material = green;
+                palette.Find("GameObjectMoveDrag/CubeDrag").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveSync/CubeSync").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveTP/CubeTP").GetComponent<Renderer>().material = red;
+                break;
+
+            case "Drag":
+                palette.Find("GameObjectMoveJoy/CubeJoy").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveDrag/CubeDrag").GetComponent<Renderer>().material = green;
+                palette.Find("GameObjectMoveSync/CubeSync").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveTP/CubeTP").GetComponent<Renderer>().material = red;
+                break;
+
+            case "Sync":
+                palette.Find("GameObjectMoveJoy/CubeJoy").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveDrag/CubeDrag").GetComponent<Renderer>().material = red;
+                palette.Find("GameObjectMoveSync/CubeSync").GetComponent<Renderer>().material = green;
+                palette.Find("GameObjectMoveTP/CubeTP").GetComponent<Renderer>().material = red;
+                break;
+
+            default:
+                break;
+        }
+        move_mode = mm_;
     }
 
     [PunRPC]
