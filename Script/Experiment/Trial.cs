@@ -40,7 +40,7 @@ public class Trial {
     //trial's statements
     private bool current_trial_running { get; private set; } = false;
     private bool trial_ended = false;
-    private bool can_tag_card = true;
+    private bool can_tag_card { get; private set; } = true;
     private bool start_timer { get; private set; } = false;
 
     //logs informations

@@ -24,10 +24,10 @@ public class Rendering : MonoBehaviourPunCallBacks {
     }
 
     //trash components
-    private GameObject sphere1;
-    private GameObject sphere2;
-    private GameObject sphere3;
-    private GameObject sphere4;
+    private GameObject trash_sphere1;
+    private GameObject trash_sphere2;
+    private GameObject trash_sphere3;
+    private GameObject trash_sphere4;
 
     //room walls
     private Transform BackWall;
@@ -38,7 +38,7 @@ public class Rendering : MonoBehaviourPunCallBacks {
     private Trasnform card_area;
 
     //cards attributes
-    private List<GameObject> card_list;
+    private List<GameObject> card_list { get; private set; }
     private List<Vector3> card_init_pos;
 
     //cards informations & statements
@@ -289,10 +289,10 @@ public class Rendering : MonoBehaviourPunCallBacks {
 
     [PunRPC]
     public void ActivateCards(){
-        GameObject card_pv;
-        int pv;
+        //GameObject card_pv;
+        //int pv;
         foreach(GameObject card in card_list){
-            card.SetActive(false);
+            card.SetActive(true);
         }
     }
 
@@ -332,6 +332,48 @@ public class Rendering : MonoBehaviourPunCallBacks {
             card_list[i] = card;
         } else {
             card_list.Add(card);
+        }
+    }
+
+    [PunRPC]
+    public void UndoCard(int ob_id, int trash_nb){
+        PhotonView.Find(ob_id).gameObject.SetActive(true);
+        switch (trash_nb){
+            case 0 || 1:
+                trash_sphere1.SetActive(false);
+                break;
+            case 2:
+                trash_sphere2.SetActive(false);
+                break;
+            case 3:
+                trash_sphere3.SetActive(false);
+                break;
+            case 4:
+                trash_sphere4.SetActive(false);
+                break;
+            default:
+                break;
+        }
+    }
+
+    [PunRPC]
+    public void DestroyCard(int ob_id, int trash_nb){
+        PhotonView.Find(ob_id).gameObject.SetActive(false);
+        switch (trash_nb){
+            case 0 || 1:
+                trash_sphere1.SetActive(true);
+                break;
+            case 2:
+                trash_sphere2.SetActive(true);
+                break;
+            case 3:
+                trash_sphere3.SetActive(true);
+                break;
+            case 4:
+                trash_sphere4.SetActive(true);
+                break;
+            default:
+                break;
         }
     }
 }

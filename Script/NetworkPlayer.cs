@@ -38,7 +38,7 @@ public class NetworkPlayer : MonoBehaviourPun {
 
     //related operator & corresponding script
     private bool is_operator;
-    private GameObject operator;
+    private GameObject ope;
     private NetWorkOperator ope_script;
 
     //other self attributes
@@ -49,7 +49,7 @@ public class NetworkPlayer : MonoBehaviourPun {
     //controller's attributes
     private RaycastHit hit;
     private string ray_name;
-    private string ray_tag;
+    private string ray_tag_name;
     private SteamVR_Behaviour_Pose pose;
     private SteamVR_Action_Boolean trigger = SteamVR_Input.GetBooleanAction("InteractUI");
 
@@ -62,8 +62,8 @@ public class NetworkPlayer : MonoBehaviourPun {
     void Start(){
         if(GameObject.Find("/Network Operator(Clone)")!=null){
             //if we get an operator then we are instantiating the referred operator as the existing one
-            operator = GameObject.Find("/Network Operator(Clone)");
-            ope_script = operator.GetComponent<NetworkOperator>();
+            ope = GameObject.Find("/Network Operator(Clone)");
+            ope_script = ope.GetComponent<NetworkOperator>();
             is_operator = false;
         } else {
             //and if we don't get any operator then this player is direclty referring to the room
@@ -129,7 +129,7 @@ public class NetworkPlayer : MonoBehaviourPun {
         if(Physics.Raycast(ray, out hit)){
             //checking to change either color of raycast or move_mode
             if(trigger.GetStateDown(pose.inputSource)){
-                if(hit.transform.tag=="Color tag"){
+                if(hit.transform.tag=="Color tag" && (sync_tag || photonView.IsMine)){
                     //then we change the color of the ray
                     UpdateRayColor();
                 } else if(photonView.IsMine){
@@ -143,8 +143,18 @@ public class NetworkPlayer : MonoBehaviourPun {
 
     //other methods
     private void OperatorActions(){
-        //must implement
-        return;
+        if(Input.GetKeyDown(KeyCode.Space)){
+            room_render.SpacePressed();
+        }
+        if(Input.GetKeyDown(KeyCode.E)){
+            room_render.EPressed();
+        }
+        if(Input.GetKeyDown(KeyCode.T)){
+            room_render.TPressed();
+        }
+        if(Input.GetKeyDown(KeyCode.D)){
+            room_render.DPressed();
+        }
     }
 
     private void MapPosition(){
@@ -161,7 +171,7 @@ public class NetworkPlayer : MonoBehaviourPun {
         ray.rotation = ctrl_right.transform.rotation;
 
         //the head
-        head.position = headset.transform.position:
+        head.position = headset.transform.position;
         head.rotation = headset.transform.rotation;
 
         //the body
@@ -175,7 +185,7 @@ public class NetworkPlayer : MonoBehaviourPun {
     private void UpdateRayColor(){
         ray_name = hit.transform.GetComponent<Renderer>().material.name;
         photonView.RPC("ChangeRayColor", Photon.Pun.RpcTarget.all, ray_name);
-        ctrl_right.GetComponent<PhotonView>().RPC("RayColor");
+        ctrl_right.GetComponent<PhotonView>().RPC("RayColor", Photon.Pun.RpcTarget.All, ray_name);
     }   
 
     private void UpdatePalette(string ht_){
@@ -219,13 +229,13 @@ public class NetworkPlayer : MonoBehaviourPun {
 
     //PunRPC methods
     [PunRPC]
-    private void ChangeMoveMode(string mm_){
+    public void ChangeMoveMode(string mm_){
         //must implement
         return;
     }
 
     [PunRPC]
-    private void ChangeRayColor(string color){
+    public void ChangeRayColor(string color){
         Material material;
         switch (color){
             case "blue (Instance)":
@@ -249,5 +259,45 @@ public class NetworkPlayer : MonoBehaviourPun {
                 break;
         }
         ray_cast.GetComponent<Renderer>().material = material;
+    }
+
+    [PunRPC]
+    public void RemoveTag(int ob_id){
+        if(PhotonView.Find(ob_id).gameObject.tag!="Card"){
+            return;
+        }
+        PhotonView.Find(ob_id).gameObject.transform.GetChild(0).GetComponent<Renderer>().material = none;
+    }
+
+    [PunRPC]
+    public void ChangeTag(int ob_id){
+        if(PhotonView.Find(ob_id).gameObject.tag!="Card"){
+            return;
+        }
+
+        ray_tag_name = ray_cast.GetComponent<Renderer>().material.name;
+        Material mat;
+
+        if(experiment!=null && experiment.current_trial.can_tag_card){
+            switch (ray_tag_name){
+                case "green (Instance)":
+                    mat = green;
+                    break;
+                case "blue (Instance)":
+                    mat = blue;
+                    break;
+                case "red (Instance)":
+                    mat = red;
+                    break;
+                case "white (Instance)":
+                    mat = white;
+                    break;
+                default:
+                    mat = none;
+                    break;
+            }
+
+            PhotonView.Find(ob_id).gameObject.transform.GetChild(0).GetComponent<Renderer>().material = mat;
+        }
     }
 }

@@ -46,7 +46,7 @@ public class Experiment {
 
 
     //Constructor
-    public Expe(string prt, string grp, int start_nb, List<GameObject> c_list, bool with_ope) {
+    public Experiment(string prt, string grp, int start_nb, List<GameObject> c_list, bool with_ope) {
         
 
         //variables instantiation 
