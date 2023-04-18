@@ -39,10 +39,10 @@ public class NetworkPlayer : MonoBehaviourPun {
     //related operator & corresponding script
     private bool is_operator;
     private GameObject ope;
-    private NetWorkOperator ope_script;
+    private NetworkOperator ope_script;
 
     //other self attributes
-    private boolean pun_view = true;
+    private bool pun_view = true;
     private Transform ray;
     private Transform pos;
 

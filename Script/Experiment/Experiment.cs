@@ -29,7 +29,7 @@ public class Experiment {
 
     //participant attributes
     private GameObject player;
-    private Network_Player player_script;
+    private NetworkPlayer player_script;
     private GameObject controller;
     private Teleporter ctrl_tp;
     
@@ -121,75 +121,6 @@ public class Experiment {
     }
 
     //all other methods
-    public void NextTrial(){
-        if(!trial_running){
-            trial_running = true;
-            SetInfoLocation();
-            ctrl_tp.menu.SetActive(true);
-
-            if(trials[trial_nb].task=="search"){
-                if(trials[trial_nb].training=="1"){
-                    ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search \n Training";
-                } else {
-                    ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search";
-                }
-                ctrl_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
-            } else {
-                if(trials[trial_nb].training=="1"){
-                    ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode + "\n Training";
-                } else {
-                    ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode;
-                }
-                ctrl_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
-            }
-
-            trials[trial_nb].StartTrial();
-            current_trial = trials[trial_nb];
-            trial_running = true;
-        } else if(trial_nb==trials.Count-1){
-            Write();
-            trials[trial_nb-1].card.transform.GetChild(1).gameObject.SetActive(false);
-            trials[trial_nb].card.transform.GetChild(1).gameObject.SetActive(false);
-            Finish();
-        } else {
-            Write();
-            IncrementTrialNb();
-
-            if(trials[trial_nb].group=="#pause"){
-                trial_running = false;
-                ctrl_tp.photonView.RPC("ResetPosition", Photon.Pun.RpcTarget.AllBuffered);
-                ctrl_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "Pause";
-                writer.WriteLine("#pause;");
-                writer.Flush();
-                IncrementTrialNb();
-                ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Next move " + theTrials[trialNb].moveMode;
-                SetInfoLocation();
-                ctrl_tp.menu.SetActive(true);
-            } else {
-                SetInfoLocation();
-
-                if(trials[trial_nb].task=="search"){
-                    if(trials[trial_nb].training=="1"){
-                        ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search \n Training";
-                    } else {
-                        ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Search";
-                    }
-                    ctrl_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one synchronized \n click to start the trial \n spot the card and tell the other";
-                } else {
-                    if (trials[trial_nb].training == "1") {
-                        ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode + "\n Training";
-                    } else {
-                        ctrl_tp.menu.transform.Find("moveModeText").GetComponent<TextMesh>().text = "Navigate " + theTrials[trialNb].moveMode;
-                    }
-                    ctrl_tp.menu.transform.Find("textInfo").GetComponent<TextMesh>().text = "You are the one moving \n wait for the other to start \n let the other tell you where to go";
-                }
-                ctrl_tp.menu.SetActive(true);
-                trials[trial_nb].startTrial();
-                current_trial = trials[trial_nb];
-            }
-        }
-    }
-
     public void SetInfoLocation(){
         ctrl_tp.menu.transform.position = ctrl_tp.cam.position + 1f*ctrl_tp.cam.forward;
         ctrl_tp.menu.transform.rotation = ctrl_tp.cam.rotation;

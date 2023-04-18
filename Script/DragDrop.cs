@@ -29,7 +29,7 @@ public class DragDrop : MonoBehaviourPun {
     private Vector3 click_forward;
 
     //object to move
-    private Gameobject obj;
+    private GameObject obj;
 
     //undoed objects
     private List<GameObject> undo_objects;
@@ -59,8 +59,8 @@ public class DragDrop : MonoBehaviourPun {
     private Vector3 empty_local_scale;
     private string move_mode = "Drag";
 
-    //class enabled predicate
-    private bool enabled = true;
+    //class available predicate
+    private bool available = true;
 
     //Unity Awake method, called before any 'Start' method, used here as an initializer
     void Awake(){
@@ -75,10 +75,10 @@ public class DragDrop : MonoBehaviourPun {
     void Update(){
         if(experiment==null && room_render.experiment){
             experiment = GameObject.Find("/Room").GetComponent<Rendering>().experiment;
-            enabled = false;
+            available = false;
         }
 
-        if(enabled){
+        if(available){
             has_pos = UpdatePointer();
 
             if(trigger.GetStateUp(pose.inputSource)){
@@ -334,11 +334,6 @@ public class DragDrop : MonoBehaviourPun {
         PhotonView.Find(ob_id).gameObject.transform.parent = wall;
         PhotonView.Find(ob_id).gameObject.transform.rotation = wall.rotation;
         PhotonView.Find(ob_id).gameObject.transform.localScale = new Vector3(width, height, 1.0f);
-    }
-
-    [PunRPC]
-    public void DestroyEmpty(int ob_id){
-        Destroy(PhotonView.Find(ob_id).gameObject);
     }
 
     [PunRPC]

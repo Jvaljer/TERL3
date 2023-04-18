@@ -21,7 +21,7 @@ public class NetworkOperator : MonoBehaviourPun {
     
     //physical body & camera + attributes
     private GameObject body;
-    private GameObject camera;
+    private GameObject cam;
     private bool cam_locked = true;
 
     //room & corresponding script + experiment
@@ -33,9 +33,9 @@ public class NetworkOperator : MonoBehaviourPun {
     //Unity Start method, used as an initializer
     void Start(){
         room = GameObject.Find("Room");
-        moving = GameObject.Find("/[moving_camera]");
+        cam = GameObject.Find("/[moving_camera]");
         if(!photonView.IsMine){
-            moving.gameObject.SetActive(false);
+            cam.gameObject.SetActive(false);
         }
         room_render = room.GetComponent<Rendering>();
     }

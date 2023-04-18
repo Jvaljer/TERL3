@@ -29,7 +29,7 @@ public class Teleporter : MonoBehaviour {
     private Vector3 other_player_pos = new Vector3(0,0,0);
     private Vector3 other_player_rotation = new Vector3(0, 0, 0);
     private Vector3 other_player_cam_rig_pos = new Vector3(0, 0, 0);
-    public Vector3 center_btw_players { get; private set; } = new Vector3(0, 0, 0);
+    public Vector3 center_btw_players { get; } = new Vector3(0, 0, 0);
 
     //room's wall
     private Transform BackWall;
@@ -45,7 +45,7 @@ public class Teleporter : MonoBehaviour {
 
     //SteamVR inputs
     private SteamVR_Action_Boolean click;
-    private SteamCR_Action_Boolean trigger = SteamVR_Input.GetBoolean("InteractUI");
+    private SteamVR_Action_Boolean trigger = SteamVR_Input.GetBoolean("InteractUI");
 
     //SteamVR Pose
     private SteamVR_Behaviour_Pose pose = null;
@@ -85,8 +85,8 @@ public class Teleporter : MonoBehaviour {
     private bool e_ = false;
     private bool w_ = false;
     public string move_mode { get; private set; } = "drag";
-    private bool is_other_synced { get; private set; } = false;
-    private bool tag_sync { get; private set; } = true;
+    private bool is_other_synced { get; } = false;
+    private bool tag_sync { get; } = true;
 
     //self atttributes
     private PhotonView photon_view;

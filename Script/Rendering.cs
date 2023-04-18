@@ -5,7 +5,7 @@ using UnityEditor;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class Rendering : MonoBehaviourPunCallBacks {
+public class Rendering : MonoBehaviourPunCallbacks {
 
     public class MyCard : MonoBehaviour {
         //specific card attributes
@@ -14,7 +14,7 @@ public class Rendering : MonoBehaviourPunCallBacks {
         private PhotonView pv;
         private Transform parent;
 
-        public MyCard(Texture2D tex, Trasnform wall){
+        public MyCard(Texture2D tex, Transform wall){
             GameObject go_card = PhotonNetwork.InstantiateRoomObject("Card", wall.position,wall.position,0,null);
             go_card.GetComponent<Renderer>().material.SetTexture("_MainTex", tex);
             parent = wall;
@@ -31,19 +31,19 @@ public class Rendering : MonoBehaviourPunCallBacks {
 
     //room walls
     private Transform BackWall;
-    private Tranform LeftWall;
+    private Transform LeftWall;
     private Transform RightWall;
 
     //room attributes
-    private Trasnform card_area;
+    private Transform card_area;
 
     //cards attributes
-    private List<GameObject> card_list { get; private set; }
+    private List<GameObject> card_list { get; }
     private List<Vector3> card_init_pos;
 
     //cards informations & statements
     private object[] textures;
-    private static int card_per_wall { get; private set; } = 20;
+    private static int card_per_wall { get; } = 20;
     private bool cards_created = false;
     private bool cards_destroyed = false;
 
@@ -53,7 +53,7 @@ public class Rendering : MonoBehaviourPunCallBacks {
     private int fst_trial_nb;
 
     //experiment attributes & statements
-    private Experiment experiment { get; private set; }
+    private Experiment experiment { get; }
     private bool expe_running = false;
     private bool trial_running = false;
 
@@ -294,11 +294,6 @@ public class Rendering : MonoBehaviourPunCallBacks {
         foreach(GameObject card in card_list){
             card.SetActive(true);
         }
-    }
-
-    [PunRPC]
-    public void NextTrial(){
-        experiment.NextTrial();
     }
 
     [PunRPC]

@@ -14,9 +14,9 @@ public class Trial {
 
     //participants attributes
     private GameObject operator_;
-    private Network_Operator operator_script;
+    private NetworkOperator operator_script;
     private GameObject player;
-    private Network_Player player_script;
+    private NetworkPlayer player_script;
     private GameObject controller;
     private Teleporter controller_tp;
 
@@ -27,21 +27,21 @@ public class Trial {
     private Experiment experiment;
 
     //input variables
-    private string group { get; private set; }
+    private string group { get; }
     private string participant;
     private string trial_nb;
-    private string training { get; private set; }
-    public string collab_env { get; private set; }
-    private string move_mode { get; private set; }
-    private string task { get; private set; }
+    private string training { get; }
+    private string collab_env { get; }
+    private string move_mode { get; }
+    private string task { get; }
     private string wall;
     private string card_to_tag;
 
     //trial's statements
-    private bool current_trial_running { get; private set; } = false;
+    private bool current_trial_running { get; } = false;
     private bool trial_ended = false;
-    private bool can_tag_card { get; private set; } = true;
-    private bool start_timer { get; private set; } = false;
+    private bool can_tag_card { get; } = true;
+    private bool start_timer { get; } = false;
 
     //logs informations
     private int move_nb = 0;

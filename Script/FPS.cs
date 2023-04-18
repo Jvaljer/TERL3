@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collection.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FPS : MonoBehaviour {
