@@ -12,7 +12,7 @@ public class DragDrop : MonoBehaviourPun {
     private RaycastHit hit;
 
     //trigger boolean
-    private SteamVR_Action_Boolean trigger = SteamVR.Input.GetBooleanAction("InteractUI");
+    private SteamVR_Action_Boolean trigger = SteamVR_Input.GetBooleanAction("InteractUI");
 
     //pose
     private SteamVR_Behaviour_Pose pose;
@@ -73,7 +73,7 @@ public class DragDrop : MonoBehaviourPun {
 
     //Unity Update method, called once per frame
     void Update(){
-        if(experiment==null && room_render.experiment){
+        if(experiment==null && room_render.experiment!=null){
             experiment = GameObject.Find("/Room").GetComponent<Rendering>().experiment;
             available = false;
         }
@@ -142,7 +142,7 @@ public class DragDrop : MonoBehaviourPun {
 
     //other methods
     private bool UpdatePointer(){
-        Ray ray = new Ray(trandform.position, transform.forward);
+        Ray ray = new Ray(transform.position, transform.forward);
 
         //we wanna check if there's a hit 
         if(Physics.Raycast(ray, out hit)){
@@ -160,7 +160,7 @@ public class DragDrop : MonoBehaviourPun {
 
         for(int i=0; i<children; i++){
             if(empty_to_move_card.GetComponent<PhotonView>().IsMine){
-                photonView.RPC("WallSwitch", Photon.Pun.RpcTarget.AllBuffered, empty_to_move_card.transform.parent.name, empty_to_move_card.transform.GetBooleanActionetChild(0).GetComponent<PhotonView>().ViewID);
+                photonView.RPC("WallSwitch", Photon.Pun.RpcTarget.AllBuffered, empty_to_move_card.transform.parent.name, empty_to_move_card.transform.GetChild(0).GetComponent<PhotonView>().ViewID);
             }
         }
 
@@ -203,7 +203,7 @@ public class DragDrop : MonoBehaviourPun {
 
     private void TrashClickUndo(){
         GameObject tmp = undo_objects[undo_objects.Count-1];
-        room.GetComponent<PhotonView>().RPC("UndoCard", Photon.Pun.RpcTarget.All, tmp.GetComponent<PhotonView>().ViewID, undo_objects.Counr);
+        room.GetComponent<PhotonView>().RPC("UndoCard", Photon.Pun.RpcTarget.All, tmp.GetComponent<PhotonView>().ViewID, undo_objects.Count);
         photonView.GetComponent<PhotonView>().RPC("RemoveUndoObj", Photon.Pun.RpcTarget.All, tmp.GetComponent<PhotonView>().ViewID);
     }
 
@@ -318,6 +318,12 @@ public class DragDrop : MonoBehaviourPun {
                 wall = null;
                 break;
         }
+    }
+
+    //IEnumerators 
+    private IEnumerator SwitchConstraint(){
+        yield return new WaitForSeconds(1);
+        trial_start_cstr = false;
     }
 
     //PunRPC methods

@@ -17,8 +17,8 @@ public class Trial {
     private NetworkOperator operator_script;
     private GameObject player;
     private NetworkPlayer player_script;
-    private GameObject controller;
-    private Teleporter controller_tp;
+    private GameObject ctrl;
+    private Teleporter ctrl_tp;
 
     //room & expe attributes
     private GameObject room;
@@ -27,48 +27,48 @@ public class Trial {
     private Experiment experiment;
 
     //input variables
-    private string group { get; }
-    private string participant;
+    public string group;
+    public string participant;
     private string trial_nb;
-    private string training { get; }
-    private string collab_env { get; }
-    private string move_mode { get; }
-    private string task { get; }
+    public string training;
+    public string collab_env;
+    public string move_mode;
+    public string task;
     private string wall;
     private string card_to_tag;
 
     //trial's statements
-    private bool current_trial_running { get; } = false;
+    public bool current_trial_running= false;
     private bool trial_ended = false;
-    private bool can_tag_card { get; } = true;
-    private bool start_timer { get; } = false;
+    public bool can_tag_card = true;
+    public bool start_timer = false;
 
     //logs informations
-    private int move_nb = 0;
-    private int switch_wall_nb = 0;
-    private int drag_wall_floor_nb = 0;
-    private int roate_nb = 0;
-    private float total_dist = 0;
-    private float total_rotate = 0;
-    private float trial_time;
-    private float move_time = 0;
+    public int move_nb = 0;
+    public int switch_wall_nb = 0;
+    public int drag_wall_floor_nb = 0;
+    public int roate_nb = 0;
+    public float total_dist = 0;
+    public float total_rotate = 0;
+    public float trial_time;
+    public float move_time = 0;
 
     //logs writing info
-    private string path_log = "";
-    private StreamWriter kine_writer;
+    public string path_log = "";
+    public StreamWriter kine_writer;
     private float timer = 0;
 
     //Constructor
     public Trial(Experiment E_, string p_, string g_, string c_env, string trial, string train, string mm_, string t_, string w_, string ct_){
         SetParticipants(p_);
 
-        controller = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)");
-        controller_tp = controller.GetComponent<Teleporter>();
+        ctrl = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)");
+        ctrl_tp = ctrl.GetComponent<Teleporter>();
         room = GameObject.Find("/Salle");
         room_render = room.GetComponent<Rendering>();
         cards_area = room_render.card_area;
 
-        expe = E_;
+        experiment = E_;
         group = g_;
         participant = p_;
         collab_env = c_env;
@@ -81,7 +81,7 @@ public class Trial {
         timer = Time.time;
 
         if(card_to_tag!=""){
-            card = experiment.cardList[int.Parse(card_to_tag)];
+            card = experiment.card_list[int.Parse(card_to_tag)];
         }
     }
 
@@ -89,18 +89,18 @@ public class Trial {
     public void SetParticipants(string name){
         if(name=="ope"){
             operator_ = GameObject.Find("Network Operator(Clone)");
-            operator_script = operator_.GetComponent<Network_Operator>();
+            operator_script = operator_.GetComponent<NetworkOperator>();
 
             player = null;
         } else if(name==""){
             operator_ = GameObject.Find("Network Operator(Clone)");
-            operator_script = operator_?.GetComponent<Network_Operator>();
+            operator_script = operator_?.GetComponent<NetworkOperator>();
 
             player = GameObject.Find("Network Player(Clone)");
-            player_script = player?.GetComponent<Network_Player>();
+            player_script = player?.GetComponent<NetworkPlayer>();
         } else {
             player = GameObject.Find("Network Player(Clone)");
-            player_script = player.GetComponent<Network_Player>();
+            player_script = player.GetComponent<NetworkPlayer>();
 
             operator_ = null;
         }
@@ -108,32 +108,32 @@ public class Trial {
 
     //all other methods
     public void CheckConditions(){
-        float dist = (controller_tp.center_btw_players - card.transform.position).magnitude;
+        float dist = (ctrl_tp.center_btw_players - card.transform.position).magnitude;
 
         if(dist < 3){
 
         } 
 
         bool fst_cond = (card.transform.rotation.eulerAngles.y==0 
-            && Math.Abs(controller_tp.center_btw_players.x - card.transform.position.x)<1
-            && Math.Abs(controller_tp.center_btw_players.z - card.transform.position.z)<2.5f);
+            && Math.Abs(ctrl_tp.center_btw_players.x - card.transform.position.x)<1
+            && Math.Abs(ctrl_tp.center_btw_players.z - card.transform.position.z)<2.5f);
         bool snd_cond = (card.transform.rotation.eulerAngles.y!=0
-            && Math.Abs(controller_tp.center_btw_players.x - card.transform.position.x)<2.5f
-            && Math.Abs(controller_tp.center_btw_players.z - card.transform.position.z)<1);
+            && Math.Abs(ctrl_tp.center_btw_players.x - card.transform.position.x)<2.5f
+            && Math.Abs(ctrl_tp.center_btw_players.z - card.transform.position.z)<1);
 
         if (!trial_ended && fst_cond || snd_cond ){
             can_tag_card = true;
             if(player==null){
-                card_area.GetComponent<Renderer>().material = operator_script.white;
+                cards_area.GetComponent<Renderer>().material = operator_script.white;
             } else {
-                card_area.GetComponent<Renderer>().material = player_script.white;
+                cards_area.GetComponent<Renderer>().material = player_script.white;
             }
         } else {
             can_tag_card = false;
             if(player==null){
-                card_area.GetComponent<Renderer>().material = operator_script.None;
+                cards_area.GetComponent<Renderer>().material = operator_script.none;
             } else {
-                card_area.GetComponent<Renderer>().material = player_script.None;
+                cards_area.GetComponent<Renderer>().material = player_script.none;
             }
         }
 
@@ -145,21 +145,21 @@ public class Trial {
     public void StartTrial(){
         if(player==null){
             if(card.transform.GetChild(0).GetComponent<Renderer>().material == null){
-                card.transform.GetChild(0).GetComponent<Renderer>().material = operator_script.None;
+                card.transform.GetChild(0).GetComponent<Renderer>().material = operator_script.none;
             }
         } else {
-            card.transform.GetChild(0).GetComponent<Renderer>().material = player_script.None;
+            card.transform.GetChild(0).GetComponent<Renderer>().material = player_script.none;
         }
 
         init_card_material = card.transform.GetChild(0).GetComponent<Renderer>().material;
 
         if(task=="search"){
-            controller_tp.TpToOther();
-            controller_tp.is_other_sync = false;
-            controller_tp.move_mode = "sync";
+            ctrl_tp.TpToOther();
+            ctrl_tp.is_other_synced = false;
+            ctrl_tp.move_mode = "sync";
         } else {
-            controller_tp.is_other_sync = true;
-            controller_tp.move_mode = move_mode;
+            ctrl_tp.is_other_synced = true;
+            ctrl_tp.move_mode = move_mode;
         }
 
         start_timer = true;
@@ -167,7 +167,7 @@ public class Trial {
 
     public void EndTrial(){
         trial_time = Time.time - trial_time;
-        card_area.gameObject.SetActive(false);
+        cards_area.gameObject.SetActive(false);
 
         if(player==null){
             card.transform.GetChild(1).GetComponent<Renderer>().material = operator_script.Green;

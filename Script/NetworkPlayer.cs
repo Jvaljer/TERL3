@@ -18,12 +18,12 @@ public class NetworkPlayer : MonoBehaviourPun {
     public Transform circle;
 
     //Materials (tag colors)
-    private Material blue;
-    private Material green;
-    private Material white;
-    private Material red;
-    private Material light_red;
-    private Material none;
+    public Material blue;
+    public Material green;
+    public Material white;
+    public Material red;
+    public Material light_red;
+    public Material none;
 
     //camera tracker
     private GameObject cam_rig;
@@ -33,7 +33,7 @@ public class NetworkPlayer : MonoBehaviourPun {
 
     //room & corresponding script
     private GameObject room;
-    private Rendering room_render;
+    public Rendering room_render;
     private Experiment experiment;
 
     //related operator & corresponding script
@@ -48,7 +48,7 @@ public class NetworkPlayer : MonoBehaviourPun {
 
     //controller's attributes
     private RaycastHit hit;
-    private string ray_name;
+    public string ray_name;
     private string ray_tag_name;
     private SteamVR_Behaviour_Pose pose;
     private SteamVR_Action_Boolean trigger = SteamVR_Input.GetBooleanAction("InteractUI");
@@ -102,9 +102,9 @@ public class NetworkPlayer : MonoBehaviourPun {
             OperatorActions();
         }
 
-        if(experiment==null && room_render.expe!=null){
+        if(experiment==null && room_render.experiment!=null){
             //whilst we are inside an experiment then the ability to switch the move mode is disabled
-            expe = room_render.expe;
+            experiment = room_render.experiment;
             palette.gameObject.SetActive(false);
         }
 
@@ -135,7 +135,7 @@ public class NetworkPlayer : MonoBehaviourPun {
                 } else if(photonView.IsMine){
                     //then we change the move mode of THIS player
                     UpdatePalette(hit.transform.tag);
-                    photonView.RPC("ChangeMoveMode", Photon.Pun.RpcTarget.all, move_mode);
+                    photonView.RPC("ChangeMoveMode", Photon.Pun.RpcTarget.All, move_mode);
                 }
             }
         }

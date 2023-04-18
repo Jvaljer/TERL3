@@ -12,12 +12,12 @@ public class NetworkOperator : MonoBehaviourPun {
     private float sensivity = 5f;
 
     //Materials components
-    private Material blue;
-    private Material green;
-    private Material white;
-    private Material red;
-    private Material light_red;
-    private Material none;
+    public Material blue;
+    public Material green;
+    public Material white;
+    public Material red;
+    public Material light_red;
+    public Material none;
     
     //physical body & camera + attributes
     private GameObject body;
@@ -26,7 +26,7 @@ public class NetworkOperator : MonoBehaviourPun {
 
     //room & corresponding script + experiment
     private GameObject room;
-    private Rendering room_render;
+    public Rendering room_render;
     private Experiment experiment;
 
 
@@ -52,7 +52,7 @@ public class NetworkOperator : MonoBehaviourPun {
             if(!MouseOffScreen()){
                 rotation_x -= Input.GetAxis("Mouse Y")*sensivity;
                 rotation_y += Input.GetAxis("Mouse X") * sensivity;
-                rotation_x = Mathf.Clamp(rotationX, -90,90);
+                rotation_x = Mathf.Clamp(rotation_x, -90,90);
                 transform.rotation = Quaternion.Euler(rotation_x,rotation_y,0);
             }
         }
@@ -60,7 +60,7 @@ public class NetworkOperator : MonoBehaviourPun {
         //all operator's inputs for specifics actions
         if(Input.GetKeyDown(KeyCode.L)){
             //locking the camera
-            cam_locked != cam_locked;
+            cam_locked = !cam_locked;
         }
         if(Input.GetKeyDown(KeyCode.Space)){
             //triggering the room's experiment

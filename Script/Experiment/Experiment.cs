@@ -5,6 +5,7 @@ using System.IO;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class Experiment {
     
@@ -24,14 +25,14 @@ public class Experiment {
     private string group;
     private int trial_start = 1;
     private int trial_nb = 0;
-    private bool expe_running = false;
-    private bool trial_running = false;
+    public bool expe_running = false;
+    public bool trial_running = false;
 
     //participant attributes
     private GameObject player;
     private NetworkPlayer player_script;
     private GameObject controller;
-    private Teleporter ctrl_tp;
+    public Teleporter ctrl_tp;
     
     //room script
     private Rendering room_render;
@@ -39,8 +40,8 @@ public class Experiment {
     //specific logs variables
     private readonly string expe_description_file;
     private List<Trial> trials;
-    private List<GameObject> card_list;
-    public Trial current_trial { get; private set; }
+    public List<GameObject> card_list;
+    public Trial current_trial;
     private StreamWriter writer;
     private StreamWriter kine_writer;
 
@@ -58,14 +59,14 @@ public class Experiment {
 
         //getting the player's attributes
         player = GameObject.Find("Network Player(Clone)");
-        player_script = player.GetComponent<Network_Player>();
+        player_script = player.GetComponent<NetworkPlayer>();
         controller = GameObject.Find("/[CameraRig]/ControllerRotator/Controller (right)");
         ctrl_tp = controller.GetComponent<Teleporter>();
 
         //getting the operator's room attribute depending on who's the operator (master client)
         int master_id = PhotonNetwork.MasterClient.ActorNumber;
-        GameObject master = PhotonNetwork.Find(master_id).gameObject;
-        room_render = SetRoomRender(with_ope);
+        GameObject master = PhotonView.Find(master_id).gameObject;
+        room_render = SetRoomRender(master, with_ope);
 
         //initialization of Log files for this expe
         string date = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
@@ -106,9 +107,9 @@ public class Experiment {
     //all setters
     public Rendering SetRoomRender(GameObject GO, bool b_){
         if(!b_){
-            return (GO.GetComponent<Network_Player>().render);
+            return (GO.GetComponent<NetworkPlayer>().room_render);
         } else {
-            return (GO.GetComponent<Network_Operator>().render);
+            return (GO.GetComponent<NetworkOperator>().room_render);
         }
     }
 
@@ -130,10 +131,10 @@ public class Experiment {
     public void Write(){
         writer.WriteLine(
             // "factor"
-            trials[trial_nb].group + ";" + trials[trial_nb].participant + ";" + trials[trial_nb].collabEnvironememnt + ";" + trials[trial_nb].trialNb + ";" + trials[trial_nb].training + ";" + trials[trial_nb].moveMode + ";" + trials[trial_nb].task + ";" + trials[trial_nb].wall + ";" + trials[trial_nb].cardToTag + ";"
+            trials[trial_nb].group + ";" + trials[trial_nb].participant + ";" + trials[trial_nb].collab_env + ";" + trials[trial_nb].trial_nb + ";" + trials[trial_nb].training + ";" + trials[trial_nb].move_mode + ";" + trials[trial_nb].task + ";" + trials[trial_nb].wall + ";" + trials[trial_nb].card_to_tag + ";"
             // measure
-            + trials[trial_nb].nbMove + ";" + trials[trial_nb].nbMoveWall + ";" + trials[trial_nb].nbDragWallFloor  + ";" + trials[trial_nb].distTotal + ";" + trials[trial_nb].nbRotate + ";" + trials[trial_nb].rotateTotal + ";"
-            + trials[trial_nb].trialTime + ";" + trials[trial_nb].moveTime
+            + trials[trial_nb].move_nb + ";" + trials[trial_nb].switch_wall_nb + ";" + trials[trial_nb].drag_wall_floor_nb  + ";" + trials[trial_nb].total_dist + ";" + trials[trial_nb].roate_nb + ";" + trials[trial_nb].total_rotate + ";"
+            + trials[trial_nb].trial_time + ";" + trials[trial_nb].move_time
             );
         writer.Flush();
     }

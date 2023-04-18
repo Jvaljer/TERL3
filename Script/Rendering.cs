@@ -35,15 +35,15 @@ public class Rendering : MonoBehaviourPunCallbacks {
     private Transform RightWall;
 
     //room attributes
-    private Transform card_area;
+    public Transform card_area;
 
     //cards attributes
-    private List<GameObject> card_list { get; }
+    public List<GameObject> card_list;
     private List<Vector3> card_init_pos;
 
     //cards informations & statements
     private object[] textures;
-    private static int card_per_wall { get; } = 20;
+    public static int card_per_wall = 20;
     private bool cards_created = false;
     private bool cards_destroyed = false;
 
@@ -53,9 +53,10 @@ public class Rendering : MonoBehaviourPunCallbacks {
     private int fst_trial_nb;
 
     //experiment attributes & statements
-    private Experiment experiment { get; }
+    public Experiment experiment;
     private bool expe_running = false;
     private bool trial_running = false;
+    private bool training = false;
 
     //demo statements
     private bool demo_running = false;
@@ -65,10 +66,10 @@ public class Rendering : MonoBehaviourPunCallbacks {
     
     //Awake Unity method that is called before anything else
     void Awake(){
-        sphere1.SetActive(false);
-        sphere2.SetActive(false);
-        sphere3.SetActive(false);
-        sphere4.SetActive(false);
+        trash_sphere1.SetActive(false);
+        trash_sphere2.SetActive(false);
+        trash_sphere3.SetActive(false);
+        trash_sphere4.SetActive(false);
     }
 
     //Update method from Unity, called once per frame
@@ -116,7 +117,7 @@ public class Rendering : MonoBehaviourPunCallbacks {
 
     public void TPressed(){
         //we wanna teleport both player to the center of the room ?
-        experiment.controller_tp.photonView.RPC("TpToOther", Photon.Pun.RpcTarget.Others);
+        experiment.ctrl_tp.photon_view.RPC("TpToOther", Photon.Pun.RpcTarget.Others);
     }
 
     public void DPressed(){
@@ -159,12 +160,14 @@ public class Rendering : MonoBehaviourPunCallbacks {
                 str = "p02";
                 break;
             default:
+                str = "";
                 break;
         }
         return str;
     }
 
     public void InstantiateCards(){
+        //gloabally you'll never have training==true it is in order to do some testing
         if(training){
             textures = Resources.LoadAll("dixit_training/", typeof(Texture2D));
         } else {

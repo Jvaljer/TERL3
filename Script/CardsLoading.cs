@@ -12,7 +12,7 @@ public class CardsLoading : MonoBehaviour {
     private static float height = 0.239f;
 
     //cards dispositions values
-    private static int card_per_line = Mathf.RoundToInt(rendering.card_per_wall/2);
+    private static int card_per_line = Mathf.RoundToInt(Rendering.card_per_wall/2);
     private float card_spacing;
     private float min_card_x = -0.35f - width;
 
@@ -24,7 +24,7 @@ public class CardsLoading : MonoBehaviour {
             textures = Resources.LoadAll("dixit_all/", typeof(Texture2D));
         }
         //defining spacing attribute
-        card_spacing = 0.7f / (card_per_line - ((int)(rendering.card_per_wall%2)));
+        card_spacing = 0.7f / (card_per_line - ((int)(Rendering.card_per_wall%2)));
 
         //getting the concerned wall & card
         Transform wall = PhotonView.Find(wall_pv_id).transform;

@@ -14,7 +14,7 @@ public class Teleporter : MonoBehaviour {
     //player attributes
     private GameObject player;
     private Transform cam_rig;
-    private Transform cam;
+    public Transform cam;
     private Transform cam_rotator;
     private Transform ctrl_rotator;
     private Transform ctrl_right;
@@ -45,7 +45,7 @@ public class Teleporter : MonoBehaviour {
 
     //SteamVR inputs
     private SteamVR_Action_Boolean click;
-    private SteamVR_Action_Boolean trigger = SteamVR_Input.GetBoolean("InteractUI");
+    private SteamVR_Action_Boolean trigger = SteamVR_Input.GetBooleanAction("InteractUI");
 
     //SteamVR Pose
     private SteamVR_Behaviour_Pose pose = null;
@@ -84,12 +84,12 @@ public class Teleporter : MonoBehaviour {
     //move mode attributes
     private bool e_ = false;
     private bool w_ = false;
-    public string move_mode { get; private set; } = "drag";
-    private bool is_other_synced { get; } = false;
-    private bool tag_sync { get; } = true;
+    public string move_mode = "Drag"; //other are "Tp" "Joy" "Sync"
+    public bool is_other_synced = false;
+    public bool tag_sync = true;
 
     //self atttributes
-    private PhotonView photon_view;
+    public PhotonView photon_view;
     private Vector2 position;
     private Experiment experiment;
 
