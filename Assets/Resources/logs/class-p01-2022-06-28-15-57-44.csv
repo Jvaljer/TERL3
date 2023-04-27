@@ -1,0 +1,7 @@
+Group;Participant;CollabEnvironememnt;MoveMode;CardToTag;nbMove;distTotal;nbRotate;rotateTotal;trialTime;moveTime;
+g01;p01;C;drag;12;6;201;0;102;23.21156;731.5917;
+g01;p01;C;sync;28;0;314;0;314;28.43161;0;
+#pause;
+g01;p01;C;TP;40;0;0;0;0;29.29724;0;
+g01;p01;C;sync;2;0;3;0;4;40.19254;1.556686;
+#pause;

@@ -1,0 +1,7 @@
+Group;Participant;CollabEnvironememnt;trialNb;training;MoveMode;Task;Wall;CardToTag;nbMove;nbMoveWall;nbDragWallFloor;distTotal;nbRotate;rotateTotal;trialTime;moveTime
+g02;p01;C;0;1;TP;move;B;22;1;1;0;4.148781;0;0;6.022293;0.5110168
+g02;p01;C;1;1;TP;search;B;37;0;0;0;5.389667;0;0;9.129608;0.5174866
+g02;p01;C;2;1;TP;move;L;11;1;1;0;8.465245;0;0;10.02237;0.5109558
+g02;p01;C;3;1;TP;search;L;8;0;0;0;5.743208;0;0;6.297287;0.5198059
+g02;p01;C;4;1;TP;move;R;47;1;1;0;7.553371;2;180;7.503769;0.5106049
+g02;p01;C;5;1;TP;search;R;51;0;0;0;2.973286;0;0;4.453522;0.5117645

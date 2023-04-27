@@ -1,0 +1,10 @@
+Group;Participant;CollabEnvironememn;MoveMode;CardToTag;
+g01;p01;C;drag;12;
+g01;p02;C;drag;12;
+g01;p01;C;drag;28;
+g01;p02;C;drag;28;
+#pause;
+g01;p01;C;TP;40;
+g01;p02;C;TP;40;
+g01;p01;C;TP;2;
+g01;p02;C;TP;2;
