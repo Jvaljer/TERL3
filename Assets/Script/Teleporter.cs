@@ -29,7 +29,7 @@ public class Teleporter : MonoBehaviourPun {
     private Vector3 other_player_pos = new Vector3(0,0,0);
     private Vector3 other_player_rotation = new Vector3(0, 0, 0);
     private Vector3 other_player_cam_rig_pos = new Vector3(0, 0, 0);
-    public Vector3 center_btw_players { get; } = new Vector3(0, 0, 0);
+    public Vector3 center_btw_players = new Vector3(0, 0, 0);
 
     //room's wall
     private Transform BackWall;
@@ -222,7 +222,7 @@ public class Teleporter : MonoBehaviourPun {
 
     public void TriggerLastStateDown(){
         if(experiment!=null && !ctrl_right.GetComponent<DragDrop>().trial_start_cond && experiment.trial_running && experiment.current_trial.start_timer && move_mode=="Sync"){
-            experiment.photonView.RPC("TrialStart", Photon.Pun.RpcTarget.AllBuffered);
+            photonView.RPC("TrialStart", Photon.Pun.RpcTarget.AllBuffered);
         }
         move_timer = Time.time;
     }
@@ -265,11 +265,11 @@ public class Teleporter : MonoBehaviourPun {
         Quaternion rota = Quaternion.Euler(ctrl_right.rotation.eulerAngles);
         Matrix4x4 mat = Matrix4x4.Rotate(rota);
         Vector3 translate_vec = new Vector3(0,0,0);
+        float joy_rota = -joystick_rotation * Vector3.Cross(Vector3.up, ctrl_right.forward).magnitude;
 
         if(position.x < -0.5f){
-            float joy_rota = -joystick_rotation * Vector3.Cross(Vector3.up, ctrl_right.forward).magnitude;
             if(is_other_synced){
-                photon_view.RPC("MoveRigTransform", Photon.PunRpcTarget.Others, translate_vec, joy_rota);
+                photon_view.RPC("MoveRigTransform", Photon.Pun.RpcTarget.Others, translate_vec, joy_rota);
                 cam_rig.RotateAround(cam_rig.position, Vector3.up, joy_rota);
             } else {
                 cam_rig.RotateAround(cam_rig.position, Vector3.up, joy_rota);
@@ -301,7 +301,7 @@ public class Teleporter : MonoBehaviourPun {
 
         if(position.x > 0.5f){
             if(is_other_synced){
-                photon_view.RPC("MoveRigTransform", Photon.PunRpcTarget.Others, translate_vec, joy_rota * -1f);
+                photon_view.RPC("MoveRigTransform", Photon.Pun.RpcTarget.Others, translate_vec, joy_rota * -1f);
                 cam_rig.RotateAround(cam_rig.position, Vector3.up, joy_rota * -1f);
             } else {
                 cam_rig.RotateAround(cam.position, Vector3.up, joy_rota * -1f);
@@ -313,14 +313,14 @@ public class Teleporter : MonoBehaviourPun {
         }
 
         translate_vec.y = 0;
-        Translate(3.5f);
+        Translate(translate_vec, 3.5f);
         cam_rig.position += translate_vec;
 
         if(experiment != null && experiment.current_trial.current_trial_running){
             experiment.current_trial.IncrementTotalDist(translate_vec.magnitude);
         }
         if(is_other_synced){
-            photon_view.RPC("MoveRigTransform", Photon.Pun.RpcTarget.Others, translateVect, 0f);
+            photon_view.RPC("MoveRigTransform", Photon.Pun.RpcTarget.Others, translate_vec, 0f);
         }
     }
 
@@ -349,17 +349,17 @@ public class Teleporter : MonoBehaviourPun {
         Vector3 translate_vec = new Vector3(0, 0, 0);
 
         if(has_pos && hit.transform.tag == "TP"){
-            float old_angle = Vector3.SignedAngle(Vector3.down, old_ctrl_forward, Vector3.Cross(Vector3.down, initialDragDirection).normalized);
+            float old_angle = Vector3.SignedAngle(Vector3.down, old_ctrl_forward, Vector3.Cross(Vector3.down, initial_drag_direction).normalized);
             float current_angle = Vector3.SignedAngle(Vector3.down, ctrl_right.forward, Vector3.Cross(Vector3.down, initial_drag_direction).normalized);
         
             float a = Mathf.Tan(old_angle * Mathf.PI/180);
             float b = Mathf.Tan(current_angle * Mathf.PI/180);
 
             translate_vec = initial_drag_direction;
-            translate_vec *= (a_b) * ctrl_right.position.y;
+            translate_vec *= (a - b) * ctrl_right.position.y;
             translate_vec.y = 0;
 
-            Translate(3.5f);
+            Translate(translate_vec, 3.5f);
 
             cam_rig.position += translate_vec;
 
@@ -373,37 +373,40 @@ public class Teleporter : MonoBehaviourPun {
         } else if(has_pos && (hit.transform.tag=="Wall" || hit.transform.parent.tag=="Wall")){
             Transform wall;
             float a, b, wall_dist;
-            float a_tan = Mathf.Tan( (old_ctrl_rotation.y - wall.rotation.eulerAngles.y) * Mathf.PI/180);
-            float b_tan = Mathf.Tan( (ctrl_right.rotation.eulerAngles.y - wall.rotation.eulerAngles.y) * Mathf.PI/180);
 
             if(hit.transform.name=="BackWall" || hit.transform.parent.name=="BackWall"){
                 wall = BackWall;
                 wall_dist = Mathf.Abs(wall.position.z - ctrl_right.position.z);
 
-                a = a_tan;
-                b = b_tan;
+                a = Mathf.Tan( (old_ctrl_rotation.y - wall.rotation.eulerAngles.y) * Mathf.PI/180);
+                b = Mathf.Tan( (ctrl_right.rotation.eulerAngles.y - wall.rotation.eulerAngles.y) * Mathf.PI/180);
 
                 translate_vec.x = 1.0f;
             } else if(hit.transform.name=="RightWall" || hit.transform.parent.name=="RightWall"){
                 wall = RightWall;
                 wall_dist = Mathf.Abs(wall.position.x - ctrl_right.position.x);
 
-                a = - a_tan;
-                b = - b_tan;
+                a = - Mathf.Tan( (old_ctrl_rotation.y - wall.rotation.eulerAngles.y) * Mathf.PI/180);
+                b = - Mathf.Tan( (ctrl_right.rotation.eulerAngles.y - wall.rotation.eulerAngles.y) * Mathf.PI/180);
 
                 translate_vec.z = 1.0f;
             } else if(hit.transform.name=="LeftWall" || hit.transform.parent.name=="LeftWall"){
                 wall = LeftWall;
                 wall_dist = Mathf.Abs(wall.position.x - ctrl_right.position.x);
 
-                a = a_tan;
-                b = b_tan;
+                a = Mathf.Tan( (old_ctrl_rotation.y - wall.rotation.eulerAngles.y) * Mathf.PI/180);
+                b = Mathf.Tan( (ctrl_right.rotation.eulerAngles.y - wall.rotation.eulerAngles.y) * Mathf.PI/180);
 
                 translate_vec.z = 1.0f;
+            } else {
+                //never happening
+                wall_dist = 0;
+                a = 0;
+                b = 0;
             }
 
             translate_vec *= (a-b) * wall_dist;
-            Translate(3.5f);
+            Translate(translate_vec, 3.5f);
             cam_rig.position += translate_vec;
 
             if(experiment != null && experiment.current_trial.current_trial_running){
@@ -457,7 +460,7 @@ public class Teleporter : MonoBehaviourPun {
             }
             return;
         }
-        Vector3 translate_vec;
+        Vector3 translate_vec = new Vector3(0,0,0);
         string hit_tag = hit.transform.tag;
         if(!has_pos){
             return;
@@ -470,12 +473,13 @@ public class Teleporter : MonoBehaviourPun {
             translate_vec = pointer_pos - cam.position;
             translate_vec.y = 0;
 
-            StartCoroutine(MoveRig(translate_vec, null));
+            photon_view.RPC("MoveRig", Photon.Pun.RpcTarget.All, translate_vec, null);
+            //StartCoroutine(MoveRig(translate_vec, null));
 
         } else if(hit_tag=="Wall" || hit_tag=="Card"){
-            Transform parent_wall;
+            Transform parent_wall = null;
 
-            Vector3 cam_look = new Vector3(cam.transforl.forward.x, 0, cam.transform.forward.z);
+            Vector3 cam_look = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z);
             hit_object = Physics.RaycastAll(cam_rig.transform.position, cam_rig.transform.forward, 100.0f);
 
             float x = -cam_rig.transform.position.x;
@@ -495,8 +499,9 @@ public class Teleporter : MonoBehaviourPun {
                 translate_vec = new Vector3(pointer.transform.position.x - cam.position.x, 0, 3-cam.position.z);
                 parent_wall = LeftWall;
 
-            }
-            StartCoroutine(MoveRig(translate_vec, parent_wall));
+            } 
+            photon_view.RPC("MoveRig", Photon.Pun.RpcTarget.All, translate_vec, parent_wall);
+            //StartCoroutine(MoveRig(translate_vec, parent_wall));
 
         } else if(hit_tag=="Player"){
             photon_view.RPC("TpToOther", Photon.Pun.RpcTarget.AllBuffered);
@@ -542,7 +547,7 @@ public class Teleporter : MonoBehaviourPun {
             }
         }
 
-        Translate(3.5f);
+        Translate(translation, 3.5f);
 
         if(experiment!=null && experiment.current_trial.current_trial_running){
             experiment.current_trial.IncrementTotalDist(translation.magnitude);
@@ -573,7 +578,7 @@ public class Teleporter : MonoBehaviourPun {
         SteamVR_Fade.Start(Color.black, fade_time, true);
         yield return new WaitForSeconds(fade_time);
 
-        cam_rig.RotateAround(camp.position, Vector3.up, rota.y - cam_rig.rotation.eulerAngles.y);
+        cam_rig.RotateAround(cam.position, Vector3.up, rota.y - cam_rig.rotation.eulerAngles.y);
 
         if(experiment!=null && experiment.current_trial.current_trial_running){
             experiment.current_trial.IncrementTotalRotation(rota.y - cam_rig.rotation.eulerAngles.y);
@@ -617,18 +622,18 @@ public class Teleporter : MonoBehaviourPun {
         }
     }
 
-    public void Translate(float n){
+    public void Translate(Vector3 translate, float n){
         if(cam.position.x + translate.x < -n){
-            translat.x = -n - cam.position.x;
+            translate.x = -n - cam.position.x;
         }
         if(cam.position.x + translate.x > n){
-            translat.x = n - cam.position.x;
+            translate.x = n - cam.position.x;
         }
         if(cam.position.z + translate.z < -n){
-            translat.z = -n - cam.position.z;
+            translate.z = -n - cam.position.z;
         }
         if(cam.position.z + translate.x > n){
-            translat.x = n - cam.position.z;
+            translate.x = n - cam.position.z;
         }
     }
     //Photon PunRPC methods
@@ -637,7 +642,7 @@ public class Teleporter : MonoBehaviourPun {
         other_player_cam_rig_pos = cam_rig_pos;
         other_player_pos = position;
         other_player_pos.y = 0;
-        other_player_rotation = rotation;
+        other_player_rotation = rota;
 
         UpdateCenter();
 
@@ -679,11 +684,16 @@ public class Teleporter : MonoBehaviourPun {
 
     [PunRPC]
     public void MoveRigTransform(Vector3 translate, float rota){
-        Translate(4f);
+        Translate(translate,4f);
 
         cam_rig.position += translate;
         cam_rig.RotateAround(other_player_cam_rig_pos, Vector3.up, rota);
         experiment.current_trial.IncrementTotalRotation(joystick_rotation);
         experiment.current_trial.IncrementTotalDist(translate.magnitude);
+    }
+
+    [PunRPC]
+    public void StartTrial(){
+        StartCoroutine(experiment.TrialStarted());
     }
 }

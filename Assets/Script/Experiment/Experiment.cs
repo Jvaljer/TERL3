@@ -157,6 +157,15 @@ public class Experiment {
             trials[trial_nb - 2].card.transform.GetChild(0).GetComponent<Renderer>().material = player_script.none;
         }
     }
+    public void IncrementTotalRotation(float r){
+        //must implement
+        return;
+    }
+
+    public void IncrementRotationNb(){
+        //must implement
+        return;
+    }
 
     public void End(){
         Write();

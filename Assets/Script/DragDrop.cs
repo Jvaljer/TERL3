@@ -172,7 +172,7 @@ public class DragDrop : MonoBehaviourPun {
         switch (tag){
             case "Card":
                 hit.transform.gameObject.GetComponent<PhotonView>().RequestOwnership();
-                trial_start_cstr = true;
+                trial_start_cond = true;
                 StartCoroutine(SwitchConstraint());
                 obj = hit.transform.gameObject;
                 break;
@@ -325,7 +325,7 @@ public class DragDrop : MonoBehaviourPun {
     //IEnumerators 
     private IEnumerator SwitchConstraint(){
         yield return new WaitForSeconds(1);
-        trial_start_cstr = false;
+        trial_start_cond = false;
     }
 
     //PunRPC methods
